@@ -1,0 +1,22 @@
+[
+  {
+    "path": "app-debug.apk",
+    "bytes": 24012433,
+    "sha256": "4710b3f3fccf44daab4ba197ce0634f2c3965864e0b49fc21f6c49ff685c468b"
+  },
+  {
+    "path": "build-resumed.log",
+    "bytes": 4990,
+    "sha256": "319d437240cf41544d33c97a77fe2bdc6ee94d2c40d2d93f6086ae0d3fc5bb5d"
+  },
+  {
+    "path": "lint-results-debug.html",
+    "bytes": 61979,
+    "sha256": "5c0772916d373a2d6237f1a9f2904a4e514e5cc6f3bcdec581f59aa5d2b96f1a"
+  },
+  {
+    "path": "lint-results-debug.xml",
+    "bytes": 2066,
+    "sha256": "cc223e40f85a3ea83bdea5e35b25d1a6d995c56f1f897f0c11be62d58abbea21"
+  }
+]

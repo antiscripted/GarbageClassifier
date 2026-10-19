@@ -2,6 +2,7 @@ package org.garbageclassifier.camera
 
 import android.content.Context
 import android.util.Size
+import androidx.camera.core.Camera
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.Preview
@@ -25,6 +26,7 @@ class CameraController(
 ) : Closeable {
     private val worker = Executors.newSingleThreadExecutor()
     private val main = ContextCompat.getMainExecutor(context)
+    private var boundCamera: Camera? = null
     private var provider: ProcessCameraProvider? = null
     private var preview: Preview? = null
     private var analysis: ImageAnalysis? = null
@@ -67,6 +69,7 @@ class CameraController(
                 val group = UseCaseGroup.Builder().setViewPort(viewport)
                     .addUseCase(cameraPreview).addUseCase(cameraAnalysis).build()
                 val camera = cameraProvider.bindToLifecycle(owner, CameraSelector.DEFAULT_BACK_CAMERA, group)
+                boundCamera = camera
                 camera.cameraInfo.cameraState.observe(owner) { state ->
                     if (active && current == generation && state.error != null) {
                         onCameraError(IllegalStateException("Camera error ${state.error?.code}"))
@@ -82,6 +85,8 @@ class CameraController(
     fun stop() {
         active = false
         generation++
+        boundCamera?.cameraInfo?.cameraState?.removeObservers(owner)
+        boundCamera = null
         analysis?.clearAnalyzer()
         val useCases = listOfNotNull(preview, analysis).toTypedArray()
         if (useCases.isNotEmpty()) provider?.unbind(*useCases)

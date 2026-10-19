@@ -1,5 +1,8 @@
 package org.garbageclassifier
 
+import android.app.AlertDialog
+import android.widget.ScrollView
+import android.widget.TextView
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -42,6 +45,7 @@ class MainActivity : ComponentActivity() {
     private var selectedBin = BinType.WET
     private var lastResult = 0L
     private var running = false
+    private var licenseDialog: AlertDialog? = null
     private val permissionHistory by lazy { getPreferences(MODE_PRIVATE) }
     private val permissionRequest = registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
         if (granted) startCamera() else showPermission()
@@ -80,6 +84,7 @@ class MainActivity : ComponentActivity() {
         camera = CameraController(this, this, binding.preview, ::display,
             { error -> showError(error, R.string.camera_unavailable) },
             { error -> showError(error, R.string.unclear) })
+        binding.licensesButton.setOnClickListener { showLicenses() }
         inspection = savedInstanceState?.getBoolean("inspection") ?: false
         selectedBin = if (savedInstanceState?.getBoolean("dry") == true) BinType.DRY else BinType.WET
         binding.modeGroup.check(if (inspection) R.id.inspectionButton else R.id.scannerButton)
@@ -94,6 +99,7 @@ class MainActivity : ComponentActivity() {
             selectedBin = if (checked == R.id.dryButton) BinType.DRY else BinType.WET
             clearResults(R.string.hold_object)
         }
+        if (savedInstanceState?.getBoolean("licenses") == true) showLicenses()
         binding.preview.addOnLayoutChangeListener { _, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
             if (right - left != oldRight - oldLeft || bottom - top != oldBottom - oldTop) {
                 if (running) {
@@ -125,13 +131,42 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun startCamera() {
-        if (!lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED) || !hasCameraPermission()) return
+        if (!lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED) || !hasCameraPermission() ||
+            licenseDialog?.isShowing == true) return
         clearResults(R.string.hold_object)
         binding.actionButton.isVisible = false
         running = true
         handler.removeCallbacks(expiry)
         handler.post(expiry)
         camera.start()
+    }
+
+    private fun showLicenses() {
+        if (licenseDialog?.isShowing == true) return
+        running = false
+        handler.removeCallbacks(expiry)
+        camera.stop()
+        clearResults(R.string.hold_object)
+        val padding = (20 * resources.displayMetrics.density).toInt()
+        val text = TextView(this).apply {
+            textSize = 14f
+            setTextIsSelectable(true)
+            setPadding(padding, padding, padding, padding)
+            text = listOf("NOTICE.txt", "MODEL-AND-APP-AGPL-3.0.txt", "ANDROIDX-LITERT-APACHE-2.0.txt")
+                .joinToString("\n\n") { name -> assets.open("licenses/$name").bufferedReader().use { it.readText() } }
+        }
+        val scroll = ScrollView(this).apply { addView(text) }
+        licenseDialog = AlertDialog.Builder(this)
+            .setTitle(R.string.licenses)
+            .setView(scroll)
+            .setPositiveButton(R.string.close) { dialog, _ -> dialog.dismiss() }
+            .create().also { dialog ->
+                dialog.setOnDismissListener {
+                    licenseDialog = null
+                    if (!isFinishing && !isDestroyed) startCamera()
+                }
+                dialog.show()
+            }
     }
 
     private fun showPermission() {
@@ -229,6 +264,7 @@ class MainActivity : ComponentActivity() {
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
+        outState.putBoolean("licenses", licenseDialog?.isShowing == true)
         outState.putBoolean("inspection", inspection)
         outState.putBoolean("dry", selectedBin == BinType.DRY)
         super.onSaveInstanceState(outState)
@@ -244,6 +280,9 @@ class MainActivity : ComponentActivity() {
     }
 
     override fun onDestroy() {
+        licenseDialog?.setOnDismissListener(null)
+        licenseDialog?.dismiss()
+        licenseDialog = null
         camera.close()
         super.onDestroy()
     }

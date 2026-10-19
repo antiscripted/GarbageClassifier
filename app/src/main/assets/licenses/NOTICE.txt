@@ -1,0 +1,16 @@
+Garbage Classifier
+
+Application source: https://github.com/antiscripted/GarbageClassifier
+This application and its bundled detector are distributed under the GNU Affero General Public License version 3. The complete license follows. They are provided without warranty. When distributing the APK, provide the complete corresponding source, model, license notices and build instructions with it.
+
+Detector: YOLO-TrashDet-Pruned by alexNova / Alejandro Casanova, based on Ultralytics YOLOv8.
+https://huggingface.co/alexNova/YOLO-TrashDet-Pruned
+Revision: fbb540cd6b415c08387f4c305d153a3c358ea78b
+File: YOLOv8n-TrashDet-10-imgsz320-int8.tflite
+License: AGPL-3.0, as declared by the author and export metadata.
+The bundled weights are unmodified. The Android application, preprocessing, decoding, UI and segregation rules in this repository were implemented separately.
+
+AndroidX CameraX, Activity, Core and Lifecycle: Copyright The Android Open Source Project. Apache License 2.0.
+Google AI Edge LiteRT: Copyright Google AI Edge Authors and the TensorFlow Authors. Apache License 2.0.
+Kotlin: Copyright JetBrains s.r.o. and Kotlin Programming Language contributors. Apache License 2.0.
+The Apache License 2.0 follows the AGPL license.

@@ -16,4 +16,6 @@
     <string name="open_settings">Open settings</string>
     <string name="camera_unavailable">Camera unavailable</string>
     <string name="try_again">Try again</string>
+    <string name="licenses">Licenses</string>
+    <string name="close">Close</string>
 </resources>
