@@ -1,0 +1,422 @@
+[
+  {
+    "image": "dataset-resized/glass/glass1.jpg",
+    "expected": "Glass",
+    "predicted": "Not Recyclable",
+    "confidence": 0.5007987022399902,
+    "margin": 0.3116901218891144
+  },
+  {
+    "image": "dataset-resized/glass/glass2.jpg",
+    "expected": "Glass",
+    "predicted": "Glass",
+    "confidence": 0.9345371723175049,
+    "margin": 0.9344481278312742
+  },
+  {
+    "image": "dataset-resized/glass/glass3.jpg",
+    "expected": "Glass",
+    "predicted": "Wooden",
+    "confidence": 0.21401739120483398,
+    "margin": 0.15267806500196457
+  },
+  {
+    "image": "dataset-resized/glass/glass4.jpg",
+    "expected": "Glass",
+    "predicted": "Glass",
+    "confidence": 0.914175808429718,
+    "margin": 0.9125180005794391
+  },
+  {
+    "image": "dataset-resized/glass/glass5.jpg",
+    "expected": "Glass",
+    "predicted": "Paper",
+    "confidence": 0.25974133610725403,
+    "margin": 0.21994981914758682
+  },
+  {
+    "image": "dataset-resized/glass/glass6.jpg",
+    "expected": "Glass",
+    "predicted": "Plastic",
+    "confidence": 0.5772274732589722,
+    "margin": 0.5473804976791143
+  },
+  {
+    "image": "dataset-resized/glass/glass7.jpg",
+    "expected": "Glass",
+    "predicted": "Not Recyclable",
+    "confidence": 0.42121750116348267,
+    "margin": 0.3868231102824211
+  },
+  {
+    "image": "dataset-resized/glass/glass8.jpg",
+    "expected": "Glass",
+    "predicted": "Wooden",
+    "confidence": 0.3640432059764862,
+    "margin": 0.2904222831130028
+  },
+  {
+    "image": "dataset-resized/glass/glass9.jpg",
+    "expected": "Glass",
+    "predicted": "Metal",
+    "confidence": 0.8595470190048218,
+    "margin": 0.8062802664935589
+  },
+  {
+    "image": "dataset-resized/glass/glass10.jpg",
+    "expected": "Glass",
+    "predicted": "Not Recyclable",
+    "confidence": 0.37418133020401,
+    "margin": 0.16592808067798615
+  },
+  {
+    "image": "dataset-resized/plastic/plastic1.jpg",
+    "expected": "Plastic",
+    "predicted": "Plastic",
+    "confidence": 0.8942602276802063,
+    "margin": 0.8859222326427698
+  },
+  {
+    "image": "dataset-resized/plastic/plastic2.jpg",
+    "expected": "Plastic",
+    "predicted": "Metal",
+    "confidence": 0.1760905236005783,
+    "margin": 0.0839138776063919
+  },
+  {
+    "image": "dataset-resized/plastic/plastic3.jpg",
+    "expected": "Plastic",
+    "predicted": "Metal",
+    "confidence": 0.320940226316452,
+    "margin": 0.2604740187525749
+  },
+  {
+    "image": "dataset-resized/plastic/plastic4.jpg",
+    "expected": "Plastic",
+    "predicted": "Metal",
+    "confidence": 0.9570897221565247,
+    "margin": 0.9518180708400905
+  },
+  {
+    "image": "dataset-resized/plastic/plastic5.jpg",
+    "expected": "Plastic",
+    "predicted": "Plastic",
+    "confidence": 0.9066854119300842,
+    "margin": 0.9043224838096648
+  },
+  {
+    "image": "dataset-resized/plastic/plastic6.jpg",
+    "expected": "Plastic",
+    "predicted": "Plastic",
+    "confidence": 0.15549501776695251,
+    "margin": 0.09774395823478699
+  },
+  {
+    "image": "dataset-resized/plastic/plastic7.jpg",
+    "expected": "Plastic",
+    "predicted": "Metal",
+    "confidence": 0.42478564381599426,
+    "margin": 0.3247832655906677
+  },
+  {
+    "image": "dataset-resized/plastic/plastic8.jpg",
+    "expected": "Plastic",
+    "predicted": "Not Recyclable",
+    "confidence": 0.8723522424697876,
+    "margin": 0.8511191122233868
+  },
+  {
+    "image": "dataset-resized/plastic/plastic9.jpg",
+    "expected": "Plastic",
+    "predicted": "Not Recyclable",
+    "confidence": 0.4184395968914032,
+    "margin": 0.39673526026308537
+  },
+  {
+    "image": "dataset-resized/plastic/plastic10.jpg",
+    "expected": "Plastic",
+    "predicted": "Not Recyclable",
+    "confidence": 0.7980401515960693,
+    "margin": 0.7956215781159699
+  },
+  {
+    "image": "dataset-resized/metal/metal1.jpg",
+    "expected": "Metal",
+    "predicted": "Metal",
+    "confidence": 0.9303463101387024,
+    "margin": 0.9249706268310547
+  },
+  {
+    "image": "dataset-resized/metal/metal2.jpg",
+    "expected": "Metal",
+    "predicted": "Metal",
+    "confidence": 0.38795024156570435,
+    "margin": 0.23833812773227692
+  },
+  {
+    "image": "dataset-resized/metal/metal3.jpg",
+    "expected": "Metal",
+    "predicted": "Metal",
+    "confidence": 0.45218488574028015,
+    "margin": 0.4071294032037258
+  },
+  {
+    "image": "dataset-resized/metal/metal4.jpg",
+    "expected": "Metal",
+    "predicted": "Metal",
+    "confidence": 0.938883364200592,
+    "margin": 0.9379370565875433
+  },
+  {
+    "image": "dataset-resized/metal/metal5.jpg",
+    "expected": "Metal",
+    "predicted": "Plastic",
+    "confidence": 0.876783013343811,
+    "margin": 0.8406733386218548
+  },
+  {
+    "image": "dataset-resized/metal/metal6.jpg",
+    "expected": "Metal",
+    "predicted": "Not Recyclable",
+    "confidence": 0.16922003030776978,
+    "margin": 0.16874438960803673
+  },
+  {
+    "image": "dataset-resized/metal/metal7.jpg",
+    "expected": "Metal",
+    "predicted": "Metal",
+    "confidence": 0.8461295962333679,
+    "margin": 0.835953394882381
+  },
+  {
+    "image": "dataset-resized/metal/metal8.jpg",
+    "expected": "Metal",
+    "predicted": "Metal",
+    "confidence": 0.9380087852478027,
+    "margin": 0.9376128571166191
+  },
+  {
+    "image": "dataset-resized/metal/metal9.jpg",
+    "expected": "Metal",
+    "predicted": "Metal",
+    "confidence": 0.4198596775531769,
+    "margin": 0.2745607793331146
+  },
+  {
+    "image": "dataset-resized/metal/metal10.jpg",
+    "expected": "Metal",
+    "predicted": "Metal",
+    "confidence": 0.9608603119850159,
+    "margin": 0.9605190262373071
+  },
+  {
+    "image": "dataset-resized/paper/paper1.jpg",
+    "expected": "Paper",
+    "predicted": "Paper",
+    "confidence": 0.9594324231147766,
+    "margin": 0.9588051274186
+  },
+  {
+    "image": "dataset-resized/paper/paper2.jpg",
+    "expected": "Paper",
+    "predicted": "Not Recyclable",
+    "confidence": 0.9595670104026794,
+    "margin": 0.9484536368399858
+  },
+  {
+    "image": "dataset-resized/paper/paper3.jpg",
+    "expected": "Paper",
+    "predicted": "Ceramic",
+    "confidence": 0.8757565021514893,
+    "margin": 0.8697851430624723
+  },
+  {
+    "image": "dataset-resized/paper/paper4.jpg",
+    "expected": "Paper",
+    "predicted": "Not Recyclable",
+    "confidence": 0.5268439054489136,
+    "margin": 0.5077525693923235
+  },
+  {
+    "image": "dataset-resized/paper/paper5.jpg",
+    "expected": "Paper",
+    "predicted": "Plastic",
+    "confidence": 0.8188290596008301,
+    "margin": 0.7747887596487999
+  },
+  {
+    "image": "dataset-resized/paper/paper6.jpg",
+    "expected": "Paper",
+    "predicted": "Paper",
+    "confidence": 0.5701501965522766,
+    "margin": 0.5499974694103003
+  },
+  {
+    "image": "dataset-resized/paper/paper7.jpg",
+    "expected": "Paper",
+    "predicted": "Paper",
+    "confidence": 0.933887779712677,
+    "margin": 0.9325330824358389
+  },
+  {
+    "image": "dataset-resized/paper/paper8.jpg",
+    "expected": "Paper",
+    "predicted": "Metal",
+    "confidence": 0.9152001142501831,
+    "margin": 0.9135885327123106
+  },
+  {
+    "image": "dataset-resized/paper/paper9.jpg",
+    "expected": "Paper",
+    "predicted": "Paper",
+    "confidence": 0.45652931928634644,
+    "margin": 0.3237256109714508
+  },
+  {
+    "image": "dataset-resized/paper/paper10.jpg",
+    "expected": "Paper",
+    "predicted": "Wooden",
+    "confidence": 0.19844383001327515,
+    "margin": 0.1954397999215871
+  },
+  {
+    "image": "dataset-resized/cardboard/cardboard1.jpg",
+    "expected": "Paper",
+    "predicted": "Paper",
+    "confidence": 0.9609155058860779,
+    "margin": 0.9586981332395226
+  },
+  {
+    "image": "dataset-resized/cardboard/cardboard2.jpg",
+    "expected": "Paper",
+    "predicted": "Paper",
+    "confidence": 0.4690781235694885,
+    "margin": 0.4671244260389358
+  },
+  {
+    "image": "dataset-resized/cardboard/cardboard3.jpg",
+    "expected": "Paper",
+    "predicted": "Paper",
+    "confidence": 0.9739931225776672,
+    "margin": 0.9736806539585814
+  },
+  {
+    "image": "dataset-resized/cardboard/cardboard4.jpg",
+    "expected": "Paper",
+    "predicted": "Paper",
+    "confidence": 0.9583227038383484,
+    "margin": 0.9582385195972165
+  },
+  {
+    "image": "dataset-resized/cardboard/cardboard5.jpg",
+    "expected": "Paper",
+    "predicted": "Paper",
+    "confidence": 0.22311456501483917,
+    "margin": 0.217967898119241
+  },
+  {
+    "image": "dataset-resized/cardboard/cardboard6.jpg",
+    "expected": "Paper",
+    "predicted": "Paper",
+    "confidence": 0.7196727991104126,
+    "margin": 0.7040269616991282
+  },
+  {
+    "image": "dataset-resized/cardboard/cardboard7.jpg",
+    "expected": "Paper",
+    "predicted": "Paper",
+    "confidence": 0.6260269284248352,
+    "margin": 0.5403915196657181
+  },
+  {
+    "image": "dataset-resized/cardboard/cardboard8.jpg",
+    "expected": "Paper",
+    "predicted": "Plastic",
+    "confidence": 0.36436745524406433,
+    "margin": 0.3564717322587967
+  },
+  {
+    "image": "dataset-resized/cardboard/cardboard9.jpg",
+    "expected": "Paper",
+    "predicted": "Wooden",
+    "confidence": 0.6410252451896667,
+    "margin": 0.6236595511436462
+  },
+  {
+    "image": "dataset-resized/cardboard/cardboard10.jpg",
+    "expected": "Paper",
+    "predicted": "Paper",
+    "confidence": 0.9517005681991577,
+    "margin": 0.9513937590527348
+  },
+  {
+    "image": "dataset-resized/trash/trash1.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "Plastic",
+    "confidence": 0.45871463418006897,
+    "margin": 0.3720841333270073
+  },
+  {
+    "image": "dataset-resized/trash/trash2.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "Metal",
+    "confidence": 0.6143593788146973,
+    "margin": 0.21534860134124756
+  },
+  {
+    "image": "dataset-resized/trash/trash3.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "Plastic",
+    "confidence": 0.3872030973434448,
+    "margin": 0.33340805768966675
+  },
+  {
+    "image": "dataset-resized/trash/trash4.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "Plastic",
+    "confidence": 0.400215208530426,
+    "margin": 0.341873399913311
+  },
+  {
+    "image": "dataset-resized/trash/trash5.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "Paper",
+    "confidence": 0.9213428497314453,
+    "margin": 0.9210080998018384
+  },
+  {
+    "image": "dataset-resized/trash/trash6.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "Metal",
+    "confidence": 0.5549002885818481,
+    "margin": 0.3943835347890854
+  },
+  {
+    "image": "dataset-resized/trash/trash7.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "Food waste",
+    "confidence": 0.5248593091964722,
+    "margin": 0.5167443826794624
+  },
+  {
+    "image": "dataset-resized/trash/trash8.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "Leather",
+    "confidence": 0.5193309783935547,
+    "margin": 0.36013178527355194
+  },
+  {
+    "image": "dataset-resized/trash/trash9.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "Metal",
+    "confidence": 0.9621971845626831,
+    "margin": 0.9613006839645095
+  },
+  {
+    "image": "dataset-resized/trash/trash10.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "Metal",
+    "confidence": 0.7949645519256592,
+    "margin": 0.7557090260088444
+  }
+]

@@ -1,0 +1,58 @@
+{
+  "source": "https://huggingface.co/alexNova/YOLO-TrashDet-Pruned",
+  "revision": "fbb540cd6b415c08387f4c305d153a3c358ea78b",
+  "upstream_file": "TFLite Format/YOLOv8n-TrashDet-10-imgsz320-int8.tflite",
+  "mirror": "https://github.com/Alejandro-Casanova/Android-Trash-Detection-with-YOLO/blob/14a626f9654603237c86a8064805f50c4a659921/app/src/main/assets/best_10_imgsz320_int8.tflite",
+  "sha256": "9c258ac8a0344cd07deb28ddcedb096e5bd30c092b807ff7e442f40279d8f54d",
+  "bytes": 2836973,
+  "license": "AGPL-3.0",
+  "input": {
+    "name": "inputs_0",
+    "shape": [
+      1,
+      320,
+      320,
+      3
+    ],
+    "dtype": "float32",
+    "color_order": "RGB",
+    "range": [
+      0,
+      1
+    ],
+    "quantization_scale": 0.0,
+    "zero_point": 0
+  },
+  "output": {
+    "name": "Identity",
+    "shape": [
+      1,
+      14,
+      2100
+    ],
+    "dtype": "float32",
+    "layout": "channels_first",
+    "box_format": "normalized center_x,center_y,width,height",
+    "classes_start_channel": 4,
+    "has_objectness": false,
+    "requires_sigmoid": false,
+    "has_nms": false
+  },
+  "weights": {
+    "quantized_tensor_count": 65,
+    "dtype": "int8",
+    "scheme": "per-channel hybrid/dynamic-range quantization; float input/output and activations"
+  },
+  "labels": [
+    "Not Recyclable",
+    "Food waste",
+    "Glass",
+    "Textile",
+    "Metal",
+    "Wooden",
+    "Leather",
+    "Plastic",
+    "Ceramic",
+    "Paper"
+  ]
+}

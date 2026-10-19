@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Garbage Classifier</string>
+    <string name="hold_object">Hold object up to camera</string>
+    <string name="classified">Object classified</string>
+    <string name="unclear">Object not clear</string>
+    <string name="put_in_bin">Put in %1$s bin</string>
+    <string name="scanner">Scanner</string>
+    <string name="inspection">Bin inspection</string>
+    <string name="wet">Wet</string>
+    <string name="dry">Dry</string>
+    <string name="correct_bin">Correct bin</string>
+    <string name="wrong_bin">Wrong bin</string>
+    <string name="permission_required">Camera permission required</string>
+    <string name="allow_camera">Allow camera</string>
+    <string name="open_settings">Open settings</string>
+    <string name="camera_unavailable">Camera unavailable</string>
+    <string name="try_again">Try again</string>
+</resources>

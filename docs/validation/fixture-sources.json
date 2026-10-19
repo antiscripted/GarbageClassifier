@@ -1,0 +1,38 @@
+[
+  {
+    "file": "cardboard1.jpg",
+    "sha256": "9573fd98a5aca2ab9a4c5b9ebcdfa4dcf9719b216c2025ee4305c4df611c885f",
+    "source": "https://github.com/garythung/trashnet/blob/master/data/dataset-resized.zip",
+    "member": "dataset-resized/cardboard/cardboard1.jpg"
+  },
+  {
+    "file": "glass1.jpg",
+    "sha256": "084511aff76ddb2668538ed7a25fe803d53e625cd3734f5a5656e00a76fb7a92",
+    "source": "https://github.com/garythung/trashnet/blob/master/data/dataset-resized.zip",
+    "member": "dataset-resized/glass/glass1.jpg"
+  },
+  {
+    "file": "metal1.jpg",
+    "sha256": "c9e3856e65f887bd3b04edf686e6e1d265a67306a0b3a3c7a05edb83af2447b3",
+    "source": "https://github.com/garythung/trashnet/blob/master/data/dataset-resized.zip",
+    "member": "dataset-resized/metal/metal1.jpg"
+  },
+  {
+    "file": "paper1.jpg",
+    "sha256": "25063c2320fd0fff4dc04317a7627418695c9970618a48073bb79cb3e542859c",
+    "source": "https://github.com/garythung/trashnet/blob/master/data/dataset-resized.zip",
+    "member": "dataset-resized/paper/paper1.jpg"
+  },
+  {
+    "file": "plastic1.jpg",
+    "sha256": "5a81a13c442580a6839e0d350f98d6a6712f6dff47afbc5b436945327ca9ad37",
+    "source": "https://github.com/garythung/trashnet/blob/master/data/dataset-resized.zip",
+    "member": "dataset-resized/plastic/plastic1.jpg"
+  },
+  {
+    "file": "trash1.jpg",
+    "sha256": "befe03db44ad0923b3f88239c071084950190e54381dc51679007917cfd315fa",
+    "source": "https://github.com/garythung/trashnet/blob/master/data/dataset-resized.zip",
+    "member": "dataset-resized/trash/trash1.jpg"
+  }
+]

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 8.9.2">
+
+    <issue
+        id="DisableBaselineAlignment"
+        severity="Warning"
+        message="Set `android:baselineAligned=&quot;false&quot;` on this element for better performance"
+        category="Performance"
+        priority="3"
+        summary="Missing `baselineAligned` attribute"
+        explanation="When a `LinearLayout` is used to distribute the space proportionally between nested layouts, the baseline alignment property should be turned off to make the layout computation faster."
+        errorLine1="    &lt;LinearLayout android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;0dp&quot; android:layout_weight=&quot;1&quot; android:orientation=&quot;horizontal&quot;>"
+        errorLine2="     ~~~~~~~~~~~~">
+        <location
+            file="/workspace/GarbageClassifier/app/src/main/res/layout-land/activity_main.xml"
+            line="4"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="NestedWeights"
+        severity="Warning"
+        message="Nested weights are bad for performance"
+        category="Performance"
+        priority="3"
+        summary="Nested layout weights"
+        explanation="Layout weights require a widget to be measured twice. When a `LinearLayout` with non-zero weights is nested inside another `LinearLayout` with non-zero weights, then the number of measurements increase exponentially."
+        errorLine1="        &lt;FrameLayout android:id=&quot;@+id/cameraContainer&quot; android:layout_width=&quot;0dp&quot; android:layout_height=&quot;match_parent&quot; android:layout_weight=&quot;1&quot; android:background=&quot;@drawable/preview_background&quot;>"
+        errorLine2="                                                                                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/workspace/GarbageClassifier/app/src/main/res/layout-land/activity_main.xml"
+            line="5"
+            column="120"/>
+    </issue>
+
+</issues>
