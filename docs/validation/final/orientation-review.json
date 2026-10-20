@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-20",
+  "device": "API 29 x86_64 software emulator",
+  "checks": [
+    "Portrait: preview/result bounds and Wet/Dry selection passed before screenshot capture attempt",
+    "Landscape: rotated view bounds verified; bin inspection and Dry selection preserved",
+    "Returning to portrait preserves Wet selection; Scanner hides bin-selection controls"
+  ],
+  "method": "Actual Android UI hierarchy, view bounds and selected-state assertions; new screenshots are not claimed"
+}

@@ -1,0 +1,2 @@
+a36e198fcdf690f13ff335d352f181a88a10cdf920f1a70ec06c3fc67759e73b  GarbageClassifier-debug.apk
+3d6ae62134b7b9eb64065c6740b208c3ba5b0159e09b519c072a729d4181d259  GarbageClassifier-source.zip

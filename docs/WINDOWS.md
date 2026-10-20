@@ -19,7 +19,7 @@ If Android reports that an existing installation conflicts, it may be signed by 
 3. Extract the complete supplied source ZIP to a short path such as `C:\Projects\GarbageClassifier`. Open that directory, which contains `settings.gradle.kts`, in Android Studio. Alternatively clone the delivery branch:
 
    ```powershell
-   git clone --branch feat/complete-offline-classifier https://github.com/antiscripted/GarbageClassifier.git C:\Projects\GarbageClassifier
+   git clone --branch finish/review-build-2026-10-20 https://github.com/antiscripted/GarbageClassifier.git C:\Projects\GarbageClassifier
    ```
 
 4. In Android Studio, open Settings → Build, Execution, Deployment → Build Tools → Gradle. Set Gradle JDK to the installed JDK 17 directory. Allow Gradle to use the included wrapper.

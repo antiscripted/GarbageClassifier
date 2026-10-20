@@ -1,5 +1,7 @@
 # Model verification and accuracy limits
 
+Model evaluation below was completed on 19 October 2026. The 20 October finishing task retains the same model without retraining, replacement or new comparison work.
+
 ## Bundled artifact
 
 The app uses the requested `alexNova/YOLO-TrashDet-Pruned` 320×320 TFLite export. No model was trained or paid API integrated.

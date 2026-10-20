@@ -1,0 +1,4 @@
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+Portrait: live camera region and result visible; Wet and Dry selection works; synthetic scene stays uncertain
+/sdcard/review-screen.png: 1 file pulled, 0 skipped. 0.3 MB/s (8168 bytes in 0.022s)
+Landscape: actual rotated layout, preview and result visible; bin inspection and Dry selection preserved

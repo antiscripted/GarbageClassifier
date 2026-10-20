@@ -2,7 +2,9 @@
 
 Native Kotlin Android app for the Class 9 AI startup competition. Opens the rear camera, runs a bundled waste detector entirely on the phone, and shows a material, a wet/dry recommendation and a bounding box. Bin inspection flags recognizable objects that disagree with the selected bin. No account, server, microphone, uploads, paid API or Internet permission is used.
 
-**Review build, 19 October 2026:** the application and automated checks are implemented. The pretrained model makes confident mistakes on some waste materials. This is a working educational prototype, not a validated general-purpose waste sorter. Physical Galaxy M51 testing and student/teacher acceptance are still required before the 20–21 October review and 25 October competition.
+**Review build, 20 October 2026:** the application and automated checks are implemented. The pretrained model makes confident mistakes on some waste materials. This is a working educational prototype, not a validated general-purpose waste sorter. Physical Galaxy M51 testing and student/teacher acceptance are still required before the 20–21 October review and 25 October competition.
+
+The downloadable APK and matching complete source ZIP are in [`delivery/`](delivery/). File checksums are in `delivery/SHA256SUMS.txt`.
 
 ## Get started
 

@@ -1,6 +1,6 @@
 # Cloud build environment
 
-The existing checkout is `/workspace/GarbageClassifier`. Use it directly; do not create a worktree unless the user explicitly asks. Preservation branches and their archived outputs remain available. The completed work is on `feat/complete-offline-classifier`.
+The existing checkout is `/workspace/GarbageClassifier`. Use it directly; do not create a worktree unless the user explicitly asks. Preservation branches and their archived outputs remain available. The completed work is on `finish/review-build-2026-10-20`.
 
 ## Build setup
 
@@ -31,7 +31,7 @@ export ANDROID_AVD_HOME=/workspace/tooling/android-home/avd
 export XDG_RUNTIME_DIR=/workspace/tooling/runtime
 mkdir -p "$XDG_RUNTIME_DIR"
 nohup "$ANDROID_HOME/emulator/emulator" -avd GarbageClassifier29 \
-  -no-window -no-audio -no-boot-anim -no-snapshot \
+  -no-window -no-audio -no-boot-anim -no-snapshot -no-metrics \
   -gpu swiftshader_indirect -accel off -cores 2 -memory 2048 \
   -camera-back emulated -camera-front none \
   > /workspace/tooling/emulator.log 2>&1 &

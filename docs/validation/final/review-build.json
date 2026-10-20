@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-20",
+  "preservation_commit": "7e52212b7fa1d2ea3e332038c96768ac5c958bb6",
+  "production_source_unchanged": true,
+  "apk_sha256": "a36e198fcdf690f13ff335d352f181a88a10cdf920f1a70ec06c3fc67759e73b",
+  "model_sha256": "9c258ac8a0344cd07deb28ddcedb096e5bd30c092b807ff7e442f40279d8f54d",
+  "jvm_tests_rerun_on": "2026-10-20",
+  "jvm_results": {
+    "tests": 53,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "android_results": {
+    "date": "2026-10-19",
+    "passed": 8,
+    "failed": 0,
+    "exact_same_apk": true
+  },
+  "model_retrained": false,
+  "model_replaced": false,
+  "physical_Galaxy_M51_tested": false,
+  "permission_review": "permission-review.json",
+  "orientation_review": "orientation-review.json",
+  "fresh_screenshot_verification_completed": false
+}

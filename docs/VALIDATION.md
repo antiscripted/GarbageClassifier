@@ -1,6 +1,6 @@
 # Validation and remaining limits
 
-Review date: **19 October 2026 (India)**. Student/teacher review target: **20–21 October**; competition deadline: **25 October**. The APK is an educational review build. Software checks do not establish reliable waste recognition.
+Review date: **20 October 2026 (India)**. Student/teacher review target: **20–21 October**; competition deadline: **25 October**. The APK is an educational review build. Software checks do not establish reliable waste recognition.
 
 ## Build and packaging checks
 
@@ -10,7 +10,7 @@ The actual Linux cloud build used Temurin JDK 17.0.20.1+1, Gradle 8.11.1, Androi
 ./gradlew :app:testDebugUnitTest :app:assembleDebug :app:assembleDebugAndroidTest :app:lintDebug --console plain
 ```
 
-The debug APK and test APK built successfully. Lint has zero errors and one `NestedWeights` performance warning for the two-axis landscape layout. The earlier baseline-alignment warning was fixed; the remaining small layout is retained without suppression or another layout dependency. Landscape controls scroll on short displays.
+The debug APK and test APK built successfully. The Gradle command was run again on 20 October, with the JVM test task explicitly rerun (`:app:testDebugUnitTest --rerun`); 53 tests passed. The APK SHA-256 remains `a36e198fcdf690f13ff335d352f181a88a10cdf920f1a70ec06c3fc67759e73b`, identical to the APK used by the passing eight-test Android run on 19 October. No application source or model change was needed in the finishing pass. Lint has zero errors and one `NestedWeights` performance warning for the two-axis landscape layout. The earlier baseline-alignment warning was fixed; the remaining small layout is retained without suppression or another layout dependency. Landscape controls scroll on short displays.
 
 Static APK inspection verified the real model's exact bytes/SHA-256, no test photographs in the main APK, no INTERNET or RECORD_AUDIO permission, and only CAMERA as a runtime permission. AndroidX also contributes an app-scoped signature permission for private receiver handling. `apksigner verify --verbose` passes with APK Signature Scheme v2. `zipalign -c -P 16 4` passes, and ELF inspection finds 16 KB load-segment alignment in all nine packaged native libraries. These checks support modern packaging compatibility; no Android 15/16 or 16 KB-page-size device was boot-tested here.
 
@@ -31,7 +31,15 @@ The Android suite has eight tests:
 7. `cameraStreamsAndBinSelectionSurvivesRecreation`: actual rear-camera preview reaches STREAMING; Dry/bin-inspection selection survives recreation; preview resumes after background/foreground.
 8. `licensesSurviveRecreationAndCloseResumesPreview`: the preview becomes IDLE while Licenses is open, the dialog survives recreation, and Close resumes STREAMING.
 
-Final Android result: **8 passed, 0 failed**, 168.097 seconds; the complete final runner output is in `docs/validation/final/instrumentation-final-pass.log`. The freshly rerun JVM suite reports **53 passed, 0 failed, 0 errors, 0 skipped**. The emulator is API 29 x86_64 with a synthetic rear camera, SwiftShader and software CPU emulation, without KVM. Its Wi-Fi and mobile data are disabled. It is not a Samsung phone and its runtime is not a performance benchmark.
+Existing Android result from 19 October for this exact APK: **8 passed, 0 failed**, 168.097 seconds; the complete final runner output is in `docs/validation/final/instrumentation-final-pass.log`. The freshly rerun JVM suite reports **53 passed, 0 failed, 0 errors, 0 skipped**. The emulator is API 29 x86_64 with a synthetic rear camera, SwiftShader and software CPU emulation, without KVM. Its Wi-Fi and mobile data are disabled. It is not a Samsung phone and its runtime is not a performance benchmark.
+
+## Finishing checks on 20 October
+
+The actual Android permission dialog was exercised from cleared application data: initial denial shows Camera permission required / Allow camera; permanent denial shows Open settings; that action opens Android application settings; a fresh ALLOW returns directly to the scanner. Wi-Fi and mobile data were both confirmed disabled. The results are in `docs/validation/final/permission-review.json` and the matching log.
+
+Actual Android view-state assertions also passed for portrait preview/result bounds, Wet/Dry selection, a landscape transition preserving bin-inspection/Dry, and return to portrait preserving Wet. Switching back to Scanner hides bin-selection controls. These are recorded in `docs/validation/final/orientation-review.json`; they verify layout/state, not fresh screenshot rendering or physical box alignment. The emulator's screenshot limitation is described below. No production application bug was found that required a source change.
+
+The earlier eight-test Android run was reused because the APK bytes are unchanged. The source APK, model and existing license screen were retained without retraining, replacement, new wording or feature redesign. Only review evidence, branch/build instructions and delivery files were completed.
 
 ## Model evaluation
 
@@ -47,6 +55,8 @@ The requested model remains demonstrably unreliable on some materials: on the fo
 - ADB initially needed a writable Android user directory. It was prepared with the required filesystem permission; no credentials were copied and HOME was not repurposed.
 - The first license UI test accidentally matched “close” inside the legal text. A more specific button selector then exposed the platform's automatic “CLOSE” capitalization. The dialog now explicitly renders the approved “Close”, and the test targets the actual button. The failed runs are retained, not described as passing runs.
 - An interactive `uiautomator` dump briefly returned a null root during a window transition. A later dump and screenshot established the dialog's actual state. No application crash was recorded in that investigation.
+- On 20 October, the long-running software emulator returned black screenshots with the display still ON and logged `openColorBuffer` framebuffer errors. Its UI hierarchy remained responsive. An emulator restart was attempted to restore capture. Its slow software boot also raised a System UI (not Garbage Classifier) ANR dialog, dismissed with Wait. Fresh screenshot capture remained unreliable, so it is not claimed as completed visual verification; this was an environment issue, not a reason to modify application code. The failed capture is explicitly retained as `screenshots/emulator-framebuffer-failure.png`. Current rotation checks use Android view bounds and selected states; the retained valid portrait screenshot is dated 19 October.
+- The ad hoc orientation helper initially encountered the System UI dialog and then an already-landscape state during resume. Its state checks were corrected to continue from the actual orientation; no application change was made for these test-harness issues.
 - Android metrics initialization emits a read-only `analytics.settings` warning in this managed environment; builds and tests still run.
 - Official Indian government references and GitHub's PR API were blocked by the network proxy. Their domains were added to the configuration draft; current local-rule verification and automatic PR creation are not claimed.
 
