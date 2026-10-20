@@ -1,0 +1,13 @@
+# Corrected benchmark evidence
+
+The 11 EXIF-affected TACO images were rerun for the current model, EfficientNet and SigLIP2. Only affected rows were replaced; the earlier files remain in first-pass/. MobileNetV3 was run once with the corrected loader. All 104 TACO image dimensions match their annotations after orientation handling.
+
+The evaluation has 240 old TrashNet images, 360 new RealWaste images and 104 TACO scenes containing 494 annotated objects (333 with a supported material mapping). One of 105 selected TACO images was unavailable from the mirror (HTTP 404); it is recorded in data-download-errors.json. The dataset manifest was selected with a deterministic SHA-256 ordering before model results. The existing 240-image baseline probe was reused rather than rerun.
+
+Results are static-image probes, not temporal application accuracy or mAP. Classifier oracle crops use ground-truth boxes and cannot demonstrate detection performance. Hybrid results use up to five boxes from the existing detector at its existing 0.25 proposal cutoff. Classifier thresholds 0.60 and 0.80 are exploratory fixed comparisons, not calibrated probabilities. The current application uses 0.60 plus margin 0.15 and temporal confirmation; MobileNetV3 exposes no runner-up margin.
+
+The field unsupported_acceptance records recommendations where this evaluation has no supported material target. It is not automatically proof of an incorrect material: TrashNet trash, RealWaste Miscellaneous Trash, vegetation and ambiguous TACO categories are not precise negative ground truth. Counts of wrong material, confidently wrong predictions and wrong bins use only known material targets. Published annotations also contain visually ambiguous examples; these were retained rather than relabelled after seeing outputs.
+
+TACO includes transparent/colored glass, clear/opaque plastic containers, food, paper/carton, cans, clutter and occlusion. Original photographic angles and lighting vary, but this is not a controlled multi-angle or lighting test on the owner's phone. Upstream training overlap is unknown; TrashNet overlap is particularly plausible for SigLIP2. RealWaste comes from a separate landfill collection, but unseen status cannot be guaranteed.
+
+Images and candidate weights are research assets outside the app and are not redistributed here. RealWaste attribution: Single, Iranmanesh and Raad (2023), DOI 10.24432/C5SS4G, CC BY 4.0 as declared by the pinned mirror. TACO: Proença and Simões (2020), arXiv:2003.06975; per-image licensing is not populated in the source annotations. Preserve original URLs and obtain image rights before redistributing photos.

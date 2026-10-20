@@ -1,0 +1,33 @@
+mobile-detector: 50/704
+mobile-detector: 100/704
+mobile-detector: 150/704
+mobile-detector: 200/704
+mobile-detector: 250/704
+mobile-detector: 300/704
+mobile-detector: 350/704
+mobile-detector: 400/704
+mobile-detector: 450/704
+mobile-detector: 500/704
+mobile-detector: 550/704
+mobile-detector: 600/704
+mobile-detector: 650/704
+mobile-detector: 700/704
+{
+  "engine": "mobile-detector",
+  "kind": "detector",
+  "model_sha256": "b20b8cb6aeee3cd5314825b4433786fe6dc8867e96d1f67602e9214ae59ee649",
+  "model_bytes": 76092227,
+  "metadata": {
+    "parameter_count": 18980254,
+    "input_shape": "RGB CHW 0..1; internal min-size 320 max-size 640",
+    "output_shape": "boxes[N,4], labels[N], scores[N]",
+    "margin_available": false
+  },
+  "init_ms": 2135.9023220138624,
+  "host_inference_median_ms": 92.85870648454875,
+  "host_inference_p95_ms": 177.81481675774558,
+  "host_peak_rss_mib": 1855.87890625,
+  "cpu_threads": 2,
+  "timing_is_not_phone_timing": true,
+  "environment": "x86_64"
+}

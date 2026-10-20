@@ -1,0 +1,28 @@
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+{
+  "engine": "lite",
+  "kind": "detector",
+  "model_sha256": "9c258ac8a0344cd07deb28ddcedb096e5bd30c092b807ff7e442f40279d8f54d",
+  "model_bytes": 2836973,
+  "metadata": {
+    "input_shape": [
+      1,
+      320,
+      320,
+      3
+    ],
+    "output_shape": [
+      1,
+      14,
+      2100
+    ],
+    "parameter_count": null
+  },
+  "init_ms": 1884.4643060001545,
+  "host_inference_median_ms": 6.457876006606966,
+  "host_inference_p95_ms": 17.906957000377588,
+  "host_peak_rss_mib": 723.03515625,
+  "cpu_threads": 2,
+  "timing_is_not_phone_timing": true,
+  "environment": "x86_64"
+}

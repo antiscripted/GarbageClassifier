@@ -16,4 +16,20 @@ Retain API 24, ARM64, ARMv7 and x86_64 CPU support where feasible. Verify native
 
 ## Status
 
-Experiment branch created from the clean review build. Research and evaluation are pending. The existing working APK remains in `delivery/`.
+Experiment branch created from the clean review build. The existing working APK remains in `delivery/`.
+
+The corrected comparison is saved in `docs/experiments/2026-10-20/`. On 240 known-material RealWaste images, at the exploratory 0.60 cutoff:
+
+| Model | Correct | Wrong material | Rejected | Wrong wet/dry |
+| --- | ---: | ---: | ---: | ---: |
+| Existing detector | 86 | 80 | 74 | 5 |
+| EfficientNetB0 classifier | 42 | 58 | 140 | 41 |
+| MobileNetV3 Faster R-CNN detector | 77 | 39 | 124 | 4 |
+| SigLIP2 whole-image classifier | 182 | 27 | 31 | 3 |
+| Existing detector + SigLIP2 crops | 176 | 25 | 39 | 2 |
+
+Whole-image and cropped-object classification do not establish localization accuracy. See the separate TACO box results, confidence thresholds, per-class counts and limitations in `summary.json` and `corrected/README.md`. The classifiers do not provide their own boxes. SigLIP2 is promising for material recognition, but its 371.6 MB float weights and approximately 293 ms host inference per crop require a deployment feasibility check. No replacement is integrated yet. EfficientNet and MobileNetV3 are rejected for this upgrade.
+
+The next bounded step is to check whether quantized SigLIP2 inference preserves the improvement and can run with a portable Android CPU runtime. ONNX Runtime Android 1.22.0 declares minimum API 24 and packages ARM64, ARMv7 and x86_64; its 64-bit libraries have 16 KB ELF alignment. These static checks are not device tests.
+
+The owner also requested a four-second minimum result hold, conservative physical-object association, smoothed boxes, temporary-occlusion tolerance and reset tests. This stability change is required even if a model upgrade proves impractical. Existing recognition thresholds and unsupported-material rules must not be loosened.
