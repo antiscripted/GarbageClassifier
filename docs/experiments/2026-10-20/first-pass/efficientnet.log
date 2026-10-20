@@ -1,0 +1,41 @@
+efficientnet: 50/704
+efficientnet: 100/704
+efficientnet: 150/704
+efficientnet: 200/704
+efficientnet: 250/704
+efficientnet: 300/704
+efficientnet: 350/704
+efficientnet: 400/704
+efficientnet: 450/704
+efficientnet: 500/704
+efficientnet: 550/704
+efficientnet: 600/704
+efficientnet: 650/704
+efficientnet: 700/704
+{
+  "engine": "efficientnet",
+  "kind": "classifier",
+  "model_sha256": "08a542164f66a8817647de3228275a9bf8f8764a2c92d0b9f21fac25d98ba4ee",
+  "model_bytes": 28042792,
+  "metadata": {
+    "parameter_count": 4088001,
+    "input_shape": [
+      1,
+      224,
+      224,
+      3
+    ],
+    "output_shape": [
+      1,
+      30
+    ],
+    "normalization": "RGB 0..255; embedded EfficientNet rescaling"
+  },
+  "init_ms": 2913.820335001219,
+  "host_inference_median_ms": 24.23027000622824,
+  "host_inference_p95_ms": 39.13210421451366,
+  "host_peak_rss_mib": 895.16796875,
+  "cpu_threads": 2,
+  "timing_is_not_phone_timing": true,
+  "environment": "x86_64"
+}

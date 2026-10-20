@@ -1,0 +1,11 @@
+Downloaded/verified 50/465; errors 0
+Downloaded/verified 100/465; errors 0
+Downloaded/verified 150/465; errors 0
+Downloaded/verified 200/465; errors 0
+Downloaded/verified 250/465; errors 0
+Downloaded/verified 300/465; errors 0
+Downloaded/verified 350/465; errors 0
+Downloaded/verified 400/465; errors 0
+Downloaded/verified 450/465; errors 1
+{'trashnet': 240, 'realwaste': 360, 'taco': 104}
+1 images failed; inspect download-errors.json

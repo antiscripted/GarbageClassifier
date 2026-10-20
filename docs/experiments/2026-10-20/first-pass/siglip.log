@@ -1,0 +1,41 @@
+siglip: 50/704
+siglip: 100/704
+siglip: 150/704
+siglip: 200/704
+siglip: 250/704
+siglip: 300/704
+siglip: 350/704
+siglip: 400/704
+siglip: 450/704
+siglip: 500/704
+siglip: 550/704
+siglip: 600/704
+siglip: 650/704
+siglip: 700/704
+{
+  "engine": "siglip",
+  "kind": "classifier",
+  "model_sha256": "11d60d0db24713901fd72b86723a6724438d46aee34014afb5c575dac3ee7269",
+  "model_bytes": 371592608,
+  "metadata": {
+    "parameter_count": 92891914,
+    "input_shape": [
+      1,
+      3,
+      224,
+      224
+    ],
+    "output_shape": [
+      1,
+      10
+    ],
+    "normalization": "RGB bilinear resize; (pixel/255 - 0.5)/0.5"
+  },
+  "init_ms": 3471.483671979513,
+  "host_inference_median_ms": 292.6904670021031,
+  "host_inference_p95_ms": 382.35988059896044,
+  "host_peak_rss_mib": 1127.890625,
+  "cpu_threads": 2,
+  "timing_is_not_phone_timing": true,
+  "environment": "x86_64"
+}

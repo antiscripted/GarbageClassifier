@@ -8,7 +8,7 @@ import statistics
 import time
 
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageOps
 
 from verify_model import prepare_image
 
@@ -191,10 +191,14 @@ def main():
     parser.add_argument("--report", type=Path, required=True)
     parser.add_argument("--baseline", type=Path)
     parser.add_argument("--skip-trashnet", action="store_true")
+    parser.add_argument("--only-ids", type=Path)
     args = parser.parse_args()
     rows = json.loads((args.data / "manifest.json").read_text())
     if args.skip_trashnet:
         rows = [row for row in rows if row["dataset"] != "trashnet"]
+    if args.only_ids:
+        selected = set(json.loads(args.only_ids.read_text()))
+        rows = [row for row in rows if row["id"] in selected]
     baseline = {row["id"]: row for row in json.loads(args.baseline.read_text())["results"]} if args.baseline else {}
     constructors = {"lite": LiteDetector, "efficientnet": EfficientNet, "siglip": Siglip,
                     "mobile-detector": MobileDetector}
@@ -207,7 +211,9 @@ def main():
     durations = []
     for number, row in enumerate(rows, 1):
         with Image.open(args.data / row["path"]) as file:
-            image = file.convert("RGB")
+            image = ImageOps.exif_transpose(file).convert("RGB")
+        if row["dataset"] == "taco":
+            assert list(image.size) == row["annotated_size"], row["id"]
         record = dict(id=row["id"], dataset=row["dataset"], category=row["category"], expected=row["expected"])
         start = time.perf_counter()
         if row["dataset"] != "taco" or engine.kind == "detector":
@@ -237,6 +243,8 @@ def main():
                                              proposal_score=proposal["score"]))
         record["total_ms"] = (time.perf_counter() - start) * 1000
         results.append(record)
+        with args.report.with_suffix(".partial.jsonl").open("a") as checkpoint:
+            checkpoint.write(json.dumps(record) + "\n")
         if number % 50 == 0:
             print(f"{args.engine}: {number}/{len(rows)}", flush=True)
     report = dict(engine=args.engine, kind=engine.kind,
