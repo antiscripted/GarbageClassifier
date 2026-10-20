@@ -57,6 +57,11 @@ def class_result(scores, labels):
                 score=float(scores[best]), margin=float(scores[best] - scores[second]))
 
 
+def classifier_input(image):
+    data = np.asarray(image.resize((224, 224), Image.Resampling.BILINEAR), dtype=np.float32)
+    return ((data / 255 - 0.5) / 0.5).transpose(2, 0, 1).copy()[None]
+
+
 class LiteDetector:
     kind = "detector"
 
@@ -140,13 +145,37 @@ class Siglip:
                              normalization="RGB bilinear resize; (pixel/255 - 0.5)/0.5")
 
     def predict(self, image):
-        data = np.asarray(image.resize((224, 224), Image.Resampling.BILINEAR), dtype=np.float32)
-        tensor = self.torch.from_numpy(((data / 255 - 0.5) / 0.5).transpose(2, 0, 1).copy())[None]
+        tensor = self.torch.from_numpy(classifier_input(image))
         start = time.perf_counter()
         with self.torch.inference_mode():
             scores = self.model(pixel_values=tensor).logits.softmax(-1)[0].numpy()
         elapsed = (time.perf_counter() - start) * 1000
         return [class_result(scores, self.labels)], elapsed
+
+
+class OnnxClassifier:
+    kind = "classifier"
+
+    def __init__(self, path):
+        import onnxruntime as ort
+        options = ort.SessionOptions()
+        options.intra_op_num_threads = 2
+        options.inter_op_num_threads = 1
+        options.execution_mode = ort.ExecutionMode.ORT_SEQUENTIAL
+        self.session = ort.InferenceSession(str(path), options, providers=["CPUExecutionProvider"])
+        report = json.loads((path.parent / "export-report.json").read_text())
+        self.labels = [report["labels"][str(index)] for index in range(10)]
+        self.metadata = dict(parameter_count=report["parameters"], input_shape=[1, 3, 224, 224],
+                             output_shape=[1, 10], runtime=ort.__version__)
+
+    def predict(self, image):
+        data = classifier_input(image)
+        start = time.perf_counter()
+        logits = self.session.run(None, {"pixels": data})[0][0]
+        elapsed = (time.perf_counter() - start) * 1000
+        probabilities = np.exp(logits - logits.max())
+        probabilities /= probabilities.sum()
+        return [class_result(probabilities, self.labels)], elapsed
 
 
 class MobileDetector:
@@ -185,7 +214,7 @@ class MobileDetector:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--engine", choices=["lite", "efficientnet", "siglip", "mobile-detector"], required=True)
+    parser.add_argument("--engine", choices=["lite", "efficientnet", "siglip", "siglip-onnx", "mobile-detector"], required=True)
     parser.add_argument("--model", type=Path, required=True)
     parser.add_argument("--data", type=Path, required=True)
     parser.add_argument("--report", type=Path, required=True)
@@ -201,6 +230,7 @@ def main():
         rows = [row for row in rows if row["id"] in selected]
     baseline = {row["id"]: row for row in json.loads(args.baseline.read_text())["results"]} if args.baseline else {}
     constructors = {"lite": LiteDetector, "efficientnet": EfficientNet, "siglip": Siglip,
+                    "siglip-onnx": OnnxClassifier,
                     "mobile-detector": MobileDetector}
     start = time.perf_counter()
     engine = constructors[args.engine](args.model)
@@ -209,6 +239,8 @@ def main():
         engine.predict(Image.new("RGB", (512, 384), (114, 114, 114)))
     results = []
     durations = []
+    args.report.parent.mkdir(parents=True, exist_ok=True)
+    args.report.with_suffix(".partial.jsonl").write_text("")
     for number, row in enumerate(rows, 1):
         with Image.open(args.data / row["path"]) as file:
             image = ImageOps.exif_transpose(file).convert("RGB")

@@ -118,7 +118,7 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     summary = {}
-    for name in ["baseline", "float", "efficientnet", "siglip", "mobile-detector"]:
+    for name in ["baseline", "float", "efficientnet", "siglip", "siglip-int8", "mobile-detector"]:
         path = args.directory / (name + ".json")
         if not path.exists():
             continue

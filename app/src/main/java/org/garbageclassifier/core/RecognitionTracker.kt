@@ -34,6 +34,13 @@ class RecognitionTracker {
         if (lastUpdate != Long.MIN_VALUE && (timeMs < lastUpdate || timeMs - lastUpdate > 1500)) reset()
         lastUpdate = timeMs
         tracks.removeAll { expired(it, timeMs) }
+        val associations = observations.map { observation ->
+            tracks.filter { matches(it, observation.detection, timeMs) }
+        }
+        val sharedIds = associations.flatten().groupingBy { it.id }.eachCount()
+            .filterValues { it > 1 }.keys
+        val ambiguousIds = associations.filter { it.size > 1 }.flatten().map { it.id }.toSet() + sharedIds
+        tracks.removeAll { it.id in ambiguousIds }
         val available = tracks.toMutableList()
         val visible = mutableListOf<Recognition>()
         for (observation in observations.sortedByDescending { it.detection.confidence }) {

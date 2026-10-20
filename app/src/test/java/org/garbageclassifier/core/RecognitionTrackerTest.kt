@@ -190,4 +190,29 @@ class RecognitionTrackerTest {
             assertNull(tracker.update(listOf(observation()), time).single().bin)
         }
     }
+
+    @Test fun ambiguousCrossingRevokesBothLocksBeforeObjectsSeparate() {
+        val tracker = RecognitionTracker()
+        val objects = listOf(observation(bounds = Box(0f, 0f, 100f, 100f)),
+            observation(bounds = Box(60f, 0f, 160f, 100f)))
+        for (time in listOf(0L, 200L, 400L)) tracker.update(objects, time)
+        val ambiguous = tracker.update(listOf(observation(bounds = Box(30f, 0f, 130f, 100f))), 600)
+        assertTrue(ambiguous.all { it.bin == null })
+        assertTrue(tracker.update(objects, 800).all { it.bin == null })
+    }
+
+    @Test fun oneTrackCannotBeAssignedToTwoOverlappingObjects() {
+        val tracker = RecognitionTracker()
+        locked(tracker)
+        val objects = listOf(observation(bounds = Box(0f, 0f, 80f, 100f)),
+            observation(bounds = Box(20f, 0f, 100f, 100f)))
+        assertTrue(tracker.update(objects, 600).all { it.bin == null })
+    }
+
+    @Test fun gradualAppearanceDriftCannotMoveTheLockedIdentityToAnotherObject() {
+        val tracker = RecognitionTracker()
+        locked(tracker)
+        assertNotNull(tracker.update(listOf(observation(color = 0.3f)), 600).single().bin)
+        assertNull(tracker.update(listOf(observation(color = 0.4f)), 800).single().bin)
+    }
 }
