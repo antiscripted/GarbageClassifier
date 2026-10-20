@@ -6,7 +6,6 @@ import time
 from pathlib import Path
 
 import numpy as np
-import tensorflow as tf
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -22,6 +21,8 @@ def prepare_image(image, size):
 
 
 def main():
+    import tensorflow as tf
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--report", type=Path)
     parser.add_argument("--write-fixture", action="store_true")

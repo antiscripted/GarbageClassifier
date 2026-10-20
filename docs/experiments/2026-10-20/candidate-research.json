@@ -1,0 +1,377 @@
+[
+  {
+    "id": "Anindo21/yolov8n-waste-12cls-best",
+    "revision": "e1ea4f6b56977446b8511d4b05ff23305b6caf38",
+    "declared_license": null,
+    "architectures": null,
+    "labels": null,
+    "files": [
+      {
+        "path": "yolov8n-waste-12cls-best.tflite",
+        "bytes": 101653110,
+        "sha256": "2b1e900a1d09f3ca67d98fccb098c60904dd6247c97738b006a963b1f5375cdc"
+      }
+    ]
+  },
+  {
+    "id": "Claudineuwa/waste_classifier_Isaac",
+    "revision": "88b7bf6e9cbd2a832f73522bc2335960cbbd2fa4",
+    "declared_license": "mit",
+    "architectures": [
+      "ViTForImageClassification"
+    ],
+    "labels": {
+      "0": "biodegradable",
+      "1": "non_biodegradable"
+    },
+    "files": [
+      {
+        "path": "model.safetensors",
+        "bytes": 343223968,
+        "sha256": "af8a93025faf3e4fd053b12c9825a286a22ec22f64a50a8f27728a73cd5c078b"
+      }
+    ]
+  },
+  {
+    "id": "Darshan764/waste-classification-v2",
+    "revision": "a5649cbfc8690c9231451787fbbc4fcdb7546de7",
+    "declared_license": "apache-2.0",
+    "architectures": null,
+    "labels": null,
+    "files": [
+      {
+        "path": "model.weights.h5",
+        "bytes": 28042792,
+        "sha256": "08a542164f66a8817647de3228275a9bf8f8764a2c92d0b9f21fac25d98ba4ee"
+      }
+    ]
+  },
+  {
+    "id": "Ibrahim125/garbage-object-detection-fasterrcnn-mobilenetv3",
+    "revision": "d4ccde8a2d1d9132c7b9692c5f4fd1a40e878512",
+    "declared_license": "cc-by-4.0",
+    "architectures": null,
+    "labels": null,
+    "files": [
+      {
+        "path": "model.pth",
+        "bytes": 76092227,
+        "sha256": "b20b8cb6aeee3cd5314825b4433786fe6dc8867e96d1f67602e9214ae59ee649"
+      }
+    ]
+  },
+  {
+    "id": "SabaTariq510/waste-classification-models",
+    "revision": "44d80cd99663d672b8578513e6892e0595ef28fb",
+    "declared_license": "mit",
+    "architectures": null,
+    "labels": null,
+    "files": [
+      {
+        "path": "best_mobilenet.keras",
+        "bytes": 13969015,
+        "sha256": "21818e560b1caaeb9a37947dc700c122f30ce54b6e30baa2f338399bee061bf7"
+      },
+      {
+        "path": "bestyolomodel.pt",
+        "bytes": 6247914,
+        "sha256": "9b1ce6df2a4c417fa8ac801005b2e9ef1a86b603c389733c585280cc4604fe7e"
+      }
+    ]
+  },
+  {
+    "id": "ShihoAI/yolov8s-garbage-detection",
+    "revision": "da4adf3c05daf7aa5700abbffcaf175cdef0cb35",
+    "declared_license": "agpl-3.0",
+    "architectures": null,
+    "labels": null,
+    "files": [
+      {
+        "path": "best_yolov8s_final.pt",
+        "bytes": 22584035,
+        "sha256": "ffe470066dba636741f3f62af94689673e45ef3d90917b981f4ea3ff7fe8bb8e"
+      }
+    ]
+  },
+  {
+    "id": "W4ashabii/waste_classifier",
+    "revision": "bf33e535180ea11f811d52e190b4bf80e9649600",
+    "declared_license": "agpl-3.0",
+    "architectures": null,
+    "labels": null,
+    "files": [
+      {
+        "path": "best.pt",
+        "bytes": 10257864,
+        "sha256": "d3cad9c9c0131eec1f7c85e9b9d5ee71aa4d34958b6bf39a96a79d31a041ae27"
+      }
+    ]
+  },
+  {
+    "id": "Yorai/detr-resnet-50_finetuned_detect-waste",
+    "revision": "12c9760517571e60d5372d013021a509f555e6cc",
+    "declared_license": "apache-2.0",
+    "architectures": [
+      "DetrForObjectDetection"
+    ],
+    "labels": {
+      "0": "metals_and_plastic",
+      "1": "other",
+      "2": "non_recyclable",
+      "3": "glass",
+      "4": "paper",
+      "5": "bio",
+      "6": "unknown"
+    },
+    "files": [
+      {
+        "path": "pytorch_model.bin",
+        "bytes": 166528661,
+        "sha256": "f5e9cb4ec7bdc3274417ce8c5bcfb8787fad6c4eefb5321add70e8966c078065"
+      },
+      {
+        "path": "training_args.bin",
+        "bytes": 4027,
+        "sha256": "005e2575be85964661863d8e119e05bd58b2cb3f2de7c25c4e8b942103239142"
+      }
+    ]
+  },
+  {
+    "id": "acasal/rt_detrv2_finetuned_trashify_box_detector_v1",
+    "revision": "5d73f4983da3a661d364a11a83c953d355016b9b",
+    "declared_license": "apache-2.0",
+    "architectures": [
+      "RTDetrV2ForObjectDetection"
+    ],
+    "labels": {
+      "0": "bin",
+      "1": "hand",
+      "2": "not_bin",
+      "3": "not_hand",
+      "4": "not_trash",
+      "5": "trash",
+      "6": "trash_arm"
+    },
+    "files": [
+      {
+        "path": "model.safetensors",
+        "bytes": 171576780,
+        "sha256": "83f56583f3c10aa9619cf7ce22c66d9c49d78bcd44efe493d61e8bac91fffa94"
+      },
+      {
+        "path": "training_args.bin",
+        "bytes": 5265,
+        "sha256": "f0d65d55548f3fcbfd1de7c240d51a0436bd7a99aaaeaef0aa6554e6b0278b04"
+      }
+    ]
+  },
+  {
+    "id": "dima806/garbage_types_image_detection",
+    "revision": "766892e572f51ff457be945d0e80654e1c7c874d",
+    "declared_license": "apache-2.0",
+    "architectures": [
+      "ViTForImageClassification"
+    ],
+    "labels": {
+      "0": "battery",
+      "1": "biological",
+      "2": "brown-glass",
+      "3": "cardboard",
+      "4": "clothes",
+      "5": "green-glass",
+      "6": "metal",
+      "7": "paper",
+      "8": "plastic",
+      "9": "shoes",
+      "10": "trash",
+      "11": "white-glass"
+    },
+    "files": [
+      {
+        "path": "model.safetensors",
+        "bytes": 343254736,
+        "sha256": "b9d9dec6fe465c468dd9f4cd986e633c5ad770d2a5603c22a74cfeaf6c8327b4"
+      },
+      {
+        "path": "training_args.bin",
+        "bytes": 5112,
+        "sha256": "bbc0c982884ddde220b2d119f9fb47fdaddccb089e8ef201a0cf5a3daaebc02b"
+      }
+    ]
+  },
+  {
+    "id": "edwinpalegre/ee8225-group4-vit-trashnet-enhanced",
+    "revision": "853b212aab1a98ca4ce6d36061900face9eb85a7",
+    "declared_license": "apache-2.0",
+    "architectures": [
+      "ViTForImageClassification"
+    ],
+    "labels": {
+      "0": "biodegradable",
+      "1": "cardboard",
+      "2": "glass",
+      "3": "metal",
+      "4": "paper",
+      "5": "plastic",
+      "6": "trash"
+    },
+    "files": [
+      {
+        "path": "model.safetensors",
+        "bytes": 343239356,
+        "sha256": "2c69d05ce4119764c465bb481f67960d592deafc087530e3e1b0595db22f67b5"
+      },
+      {
+        "path": "training_args.bin",
+        "bytes": 4600,
+        "sha256": "189c3e56d89be40c60dbc87171e4e9f168eeaae7ed24ff0a008a1d03b002bc4c"
+      }
+    ]
+  },
+  {
+    "id": "hlopez/efficientDetD0-waste-detector",
+    "revision": "d7e8ca15c7c602ca7c6a905d59fc4817850e033d",
+    "declared_license": null,
+    "architectures": null,
+    "labels": null,
+    "files": []
+  },
+  {
+    "id": "hmrizal/recycled_waste_classification",
+    "revision": "726537753e2342884c4bb7bab9786f715830de10",
+    "declared_license": "apache-2.0",
+    "architectures": [
+      "ResNetForImageClassification"
+    ],
+    "labels": {
+      "0": "aluminium",
+      "1": "batteries",
+      "10": "takeaway cups",
+      "2": "cardboard",
+      "3": "disposable plates",
+      "4": "glass",
+      "5": "hard plastic",
+      "6": "paper",
+      "7": "paper towel",
+      "8": "polystyrene",
+      "9": "soft plastics"
+    },
+    "files": [
+      {
+        "path": "model.safetensors",
+        "bytes": 94376748,
+        "sha256": "57bb1f213d99faad7fc587ea1acced11d184b4831b746bc485439fb7b93a6ff6"
+      },
+      {
+        "path": "training_args.bin",
+        "bytes": 5176,
+        "sha256": "7ba4cdb3be1a4f3bd89a6eaa3d8216aa258a1af8333720fdd56acbe84e0b5522"
+      }
+    ]
+  },
+  {
+    "id": "iamsuman/household-waste-EfficientNetV2M",
+    "revision": "0d35a89004c6adbe45c2813cbd3c80b04bef6304",
+    "declared_license": "mit",
+    "architectures": null,
+    "labels": null,
+    "files": [
+      {
+        "path": "EfficientNetV2M.h5",
+        "bytes": 215784896,
+        "sha256": "90d2ad000a249a3ef5ff2e748443ae883e41b9129d4dbc3c87ea98c9604c74eb"
+      },
+      {
+        "path": "EfficientNetV2M_model.keras",
+        "bytes": 216738837,
+        "sha256": "3cd2e62e55f7233aab7f734818be6aab7897bb0b52e494aa12d3c6e9716b7272"
+      }
+    ]
+  },
+  {
+    "id": "muhammaddjunas/cvt-13-finetuned-waste",
+    "revision": "7342fe69db399f6b8ea9a24a77185a5a6f6ec26c",
+    "declared_license": "apache-2.0",
+    "architectures": [
+      "CvtForImageClassification"
+    ],
+    "labels": "Config contains 1000 ImageNet labels, not verified waste labels",
+    "files": [
+      {
+        "path": "pytorch_model.bin",
+        "bytes": 80270201,
+        "sha256": "0fbfa228eb2164e1070ab7df34ec60903309b05428560d4900facf01cc584078"
+      },
+      {
+        "path": "training_args.bin",
+        "bytes": 3515,
+        "sha256": "5e9d57286b64b7ee9e40556a014037658f2127a834bdf9ead959cbe3a28b0614"
+      }
+    ]
+  },
+  {
+    "id": "prithivMLmods/Augmented-Waste-Classifier-SigLIP2",
+    "revision": "d203b52311f70ac3245d5fb8345d88344bec138e",
+    "declared_license": "apache-2.0",
+    "architectures": [
+      "SiglipForImageClassification"
+    ],
+    "labels": {
+      "0": "Battery",
+      "1": "Biological",
+      "2": "Cardboard",
+      "3": "Clothes",
+      "4": "Glass",
+      "5": "Metal",
+      "6": "Paper",
+      "7": "Plastic",
+      "8": "Shoes",
+      "9": "Trash"
+    },
+    "files": [
+      {
+        "path": "model.safetensors",
+        "bytes": 371592608,
+        "sha256": "11d60d0db24713901fd72b86723a6724438d46aee34014afb5c575dac3ee7269"
+      },
+      {
+        "path": "training_args.bin",
+        "bytes": 5304,
+        "sha256": "de42aa43c631955f61143c2f68f1a4b33fbe517784032f7832f74bb08c64a27d"
+      }
+    ]
+  },
+  {
+    "id": "tahzaya/trash-sorter-ai",
+    "revision": "9c94df49a2de51f1378fc0dfd14f9ca8156b92ec",
+    "declared_license": "apache-2.0",
+    "architectures": null,
+    "labels": null,
+    "files": [
+      {
+        "path": "trash_sorter.keras",
+        "bytes": 9624066,
+        "sha256": "59438dad9e8437c4f9e4bce3e7aa558915cd545e06c87c0f1d123dbfc8ddb3ee"
+      },
+      {
+        "path": "trash_sorter.tflite",
+        "bytes": 8874492,
+        "sha256": "5b99873442136efdca2a54774ab8c3c8416b6d0d02c640e4185a1d6b3bd9593c"
+      }
+    ]
+  },
+  {
+    "id": "ysfad/openclip-finetune-waste",
+    "revision": "f38ebce29fe16340da11717db5c250819196b7b6",
+    "declared_license": "mit",
+    "architectures": null,
+    "labels": null,
+    "files": [
+      {
+        "path": "best_clip_finetuned_vit-b-16.pth",
+        "bytes": 1292359755,
+        "sha256": "0f0ea935f83f1795c20a6cb419eb0377771068221e3d7776ddc89e6c0448fce2"
+      }
+    ]
+  }
+]

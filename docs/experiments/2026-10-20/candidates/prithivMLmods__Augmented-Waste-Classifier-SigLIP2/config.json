@@ -1,0 +1,44 @@
+{
+  "_name_or_path": "google/siglip2-base-patch16-224",
+  "architectures": [
+    "SiglipForImageClassification"
+  ],
+  "id2label": {
+    "0": "Battery",
+    "1": "Biological",
+    "2": "Cardboard",
+    "3": "Clothes",
+    "4": "Glass",
+    "5": "Metal",
+    "6": "Paper",
+    "7": "Plastic",
+    "8": "Shoes",
+    "9": "Trash"
+  },
+  "initializer_factor": 1.0,
+  "label2id": {
+    "Battery": 0,
+    "Biological": 1,
+    "Cardboard": 2,
+    "Clothes": 3,
+    "Glass": 4,
+    "Metal": 5,
+    "Paper": 6,
+    "Plastic": 7,
+    "Shoes": 8,
+    "Trash": 9
+  },
+  "model_type": "siglip",
+  "problem_type": "single_label_classification",
+  "text_config": {
+    "model_type": "siglip_text_model",
+    "torch_dtype": "float32",
+    "vocab_size": 256000
+  },
+  "torch_dtype": "float32",
+  "transformers_version": "4.50.0.dev0",
+  "vision_config": {
+    "model_type": "siglip_vision_model",
+    "torch_dtype": "float32"
+  }
+}
