@@ -44,6 +44,7 @@ class MainActivity : ComponentActivity() {
     private var inspection = false
     private var selectedBin = BinType.WET
     private var lastResult = 0L
+    private var primaryTrackId: Long? = null
     private var running = false
     private var licenseDialog: AlertDialog? = null
     private val permissionHistory by lazy { getPreferences(MODE_PRIVATE) }
@@ -93,10 +94,12 @@ class MainActivity : ComponentActivity() {
         binding.modeGroup.setOnCheckedChangeListener { _, checked ->
             inspection = checked == R.id.inspectionButton
             binding.binGroup.isVisible = inspection
+            camera.resetTracking()
             clearResults(R.string.hold_object)
         }
         binding.binGroup.setOnCheckedChangeListener { _, checked ->
             selectedBin = if (checked == R.id.dryButton) BinType.DRY else BinType.WET
+            camera.resetTracking()
             clearResults(R.string.hold_object)
         }
         if (savedInstanceState?.getBoolean("licenses") == true) showLicenses()
@@ -200,6 +203,7 @@ class MainActivity : ComponentActivity() {
         val target = binding.preview.outputTransform ?: return
         val transform = CoordinateTransform(frame.transform, target)
         val visible = frame.recognitions.mapNotNull { recognition ->
+            if (!recognition.visible) return@mapNotNull null
             val box = recognition.detection.box
             val bounds = RectF(box.left, box.top, box.right, box.bottom)
             transform.mapRect(bounds)
@@ -221,7 +225,10 @@ class MainActivity : ComponentActivity() {
             OverlayItem(bounds, label, status)
         }
         binding.overlay.show(overlays)
-        val primary = visible.map { it.first }.sortedWith(
+        val candidates = visible.map { it.first }.ifEmpty {
+            frame.recognitions.filter { !it.visible && it.bin != null }
+        }
+        val sorted = candidates.sortedWith(
             compareBy<Recognition> {
                 if (inspection) when (statusOf(it)) {
                     SortingStatus.WRONG -> 0
@@ -229,7 +236,11 @@ class MainActivity : ComponentActivity() {
                     SortingStatus.CORRECT -> 2
                 } else if (it.bin != null) 0 else 1
             }.thenByDescending { it.detection.confidence }
-        ).firstOrNull()
+        )
+        val retained = candidates.firstOrNull { it.trackId == primaryTrackId && it.bin != null }
+        val primary = if (retained != null && (!inspection || statusOf(retained) == SortingStatus.WRONG ||
+                sorted.none { statusOf(it) == SortingStatus.WRONG })) retained else sorted.firstOrNull()
+        primaryTrackId = primary?.takeIf { it.bin != null }?.trackId
         if (primary?.bin == null) {
             setResult(getString(R.string.unclear), null, null)
         } else {
@@ -239,7 +250,8 @@ class MainActivity : ComponentActivity() {
             setResult(getString(status), "${primary.material?.label} · $bin", getString(R.string.put_in_bin, bin))
         }
         binding.resultCard.contentDescription = overlays.joinToString("\n") { it.label }
-            .ifEmpty { getString(R.string.unclear) }
+            .ifEmpty { listOf(binding.status.text, binding.material.text, binding.recommendation.text)
+                .filter { it.isNotEmpty() }.joinToString("\n") }
     }
 
     private fun statusOf(recognition: Recognition): SortingStatus = when {
@@ -252,6 +264,7 @@ class MainActivity : ComponentActivity() {
 
     private fun clearResults(message: Int) {
         lastResult = 0
+        primaryTrackId = null
         binding.overlay.show(emptyList())
         setResult(getString(message), null, null)
         binding.resultCard.contentDescription = getString(message)

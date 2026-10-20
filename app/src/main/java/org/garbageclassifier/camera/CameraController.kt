@@ -57,7 +57,10 @@ class CameraController(
                     .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
                     .build()
                 val cameraAnalyzer = CameraAnalyzer(context.applicationContext,
-                    { frame -> main.execute { if (active && current == generation) onFrame(frame) } },
+                    { frame -> main.execute {
+                        if (active && current == generation &&
+                            frame.trackingGeneration == analyzer?.trackingGeneration) onFrame(frame)
+                    } },
                     { error -> main.execute {
                         if (active && current == generation) onDetectorError(error)
                     } })
@@ -80,6 +83,10 @@ class CameraController(
                 onCameraError(error)
             }
         }, main)
+    }
+
+    fun resetTracking() {
+        analyzer?.resetTracking()
     }
 
     fun stop() {

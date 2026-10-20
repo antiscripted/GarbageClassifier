@@ -1,12 +1,24 @@
 package org.garbageclassifier.core
 
-data class Detection(val classId: Int, val confidence: Float, val margin: Float, val box: Box)
+data class Detection(
+    val classId: Int,
+    val confidence: Float,
+    val margin: Float,
+    val box: Box,
+    val appearance: ObjectAppearance? = null
+)
 
 enum class BinType { WET, DRY }
 enum class SortingStatus { CORRECT, WRONG, UNCERTAIN }
 
 data class Material(val id: Int, val label: String, val bin: BinType?)
-data class Recognition(val detection: Detection, val material: Material?, val confirmed: Boolean) {
+data class Recognition(
+    val detection: Detection,
+    val material: Material?,
+    val confirmed: Boolean,
+    val trackId: Long? = null,
+    val visible: Boolean = true
+) {
     val bin: BinType? get() = if (confirmed) material?.bin else null
 }
 
