@@ -1,8 +1,6 @@
 package org.garbageclassifier
 
 import android.app.AlertDialog
-import android.widget.ScrollView
-import android.widget.TextView
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -15,6 +13,8 @@ import android.os.SystemClock
 import android.provider.Settings
 import android.util.Log
 import android.view.View
+import android.widget.ScrollView
+import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.camera.view.PreviewView
@@ -61,8 +61,7 @@ class MainActivity : ComponentActivity() {
     private val resize = Runnable {
         if (running) {
             camera.stop()
-            clearResults(R.string.hold_object)
-            camera.start()
+            startCamera()
         }
     }
 
@@ -81,6 +80,7 @@ class MainActivity : ComponentActivity() {
         WindowCompat.getInsetsController(window, binding.root).isAppearanceLightNavigationBars = true
         binding.preview.implementationMode = PreviewView.ImplementationMode.COMPATIBLE
         binding.preview.scaleType = PreviewView.ScaleType.FILL_CENTER
+        binding.preview.keepScreenOn = true
         camera = CameraController(this, this, binding.preview, ::display,
             { error -> showError(error, R.string.camera_unavailable) },
             { error -> showError(error, R.string.unclear) })
@@ -136,6 +136,7 @@ class MainActivity : ComponentActivity() {
         clearResults(R.string.hold_object)
         binding.actionButton.isVisible = false
         running = true
+        lastResult = SystemClock.elapsedRealtime()
         handler.removeCallbacks(expiry)
         handler.post(expiry)
         camera.start()
@@ -152,7 +153,7 @@ class MainActivity : ComponentActivity() {
             textSize = 14f
             setTextIsSelectable(true)
             setPadding(padding, padding, padding, padding)
-            text = listOf("NOTICE.txt", "MODEL-AND-APP-AGPL-3.0.txt", "ANDROIDX-LITERT-APACHE-2.0.txt")
+            text = listOf("NOTICE.txt", "MODEL-AND-APP-AGPL-3.0.txt", "ANDROIDX-LITERT-APACHE-2.0.txt", "LITERT-NOTICES.txt")
                 .joinToString("\n\n") { name -> assets.open("licenses/$name").bufferedReader().use { it.readText() } }
         }
         val scroll = ScrollView(this).apply { addView(text) }
@@ -166,6 +167,7 @@ class MainActivity : ComponentActivity() {
                     if (!isFinishing && !isDestroyed) startCamera()
                 }
                 dialog.show()
+                dialog.getButton(AlertDialog.BUTTON_POSITIVE).isAllCaps = false
             }
     }
 

@@ -1,0 +1,962 @@
+[
+  {
+    "size": 320,
+    "image": "dataset-resized/glass/glass1.jpg",
+    "expected": "Glass",
+    "predicted": "cardboard",
+    "confidence": 0.309429794549942,
+    "milliseconds": 287.13915099797305
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/glass/glass2.jpg",
+    "expected": "Glass",
+    "predicted": "cardboard",
+    "confidence": 0.38826605677604675,
+    "milliseconds": 159.06888000608888
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/glass/glass3.jpg",
+    "expected": "Glass",
+    "predicted": "cardboard",
+    "confidence": 0.5203256607055664,
+    "milliseconds": 139.25938699685503
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/glass/glass4.jpg",
+    "expected": "Glass",
+    "predicted": "cardboard",
+    "confidence": 0.5484206676483154,
+    "milliseconds": 151.24743300839327
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/glass/glass5.jpg",
+    "expected": "Glass",
+    "predicted": "cardboard",
+    "confidence": 0.37054985761642456,
+    "milliseconds": 112.60025399678852
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/glass/glass6.jpg",
+    "expected": "Glass",
+    "predicted": "plastic",
+    "confidence": 0.308604896068573,
+    "milliseconds": 166.84048500610515
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/glass/glass7.jpg",
+    "expected": "Glass",
+    "predicted": "cardboard",
+    "confidence": 0.21702629327774048,
+    "milliseconds": 119.43306999455672
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/glass/glass8.jpg",
+    "expected": "Glass",
+    "predicted": "cardboard",
+    "confidence": 0.2798309922218323,
+    "milliseconds": 119.7758289927151
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/glass/glass9.jpg",
+    "expected": "Glass",
+    "predicted": "e-waste",
+    "confidence": 0.20272196829319,
+    "milliseconds": 164.18193400022574
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/glass/glass10.jpg",
+    "expected": "Glass",
+    "predicted": "cardboard",
+    "confidence": 0.5997301340103149,
+    "milliseconds": 130.56736400176305
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/plastic/plastic1.jpg",
+    "expected": "Plastic",
+    "predicted": "cardboard",
+    "confidence": 0.3397328555583954,
+    "milliseconds": 129.7216349921655
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/plastic/plastic2.jpg",
+    "expected": "Plastic",
+    "predicted": "cardboard",
+    "confidence": 0.6329257488250732,
+    "milliseconds": 143.0880440020701
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/plastic/plastic3.jpg",
+    "expected": "Plastic",
+    "predicted": "paper",
+    "confidence": 0.5531033873558044,
+    "milliseconds": 162.99684200203046
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/plastic/plastic4.jpg",
+    "expected": "Plastic",
+    "predicted": "paper",
+    "confidence": 0.36568593978881836,
+    "milliseconds": 188.94569399708416
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/plastic/plastic5.jpg",
+    "expected": "Plastic",
+    "predicted": "paper",
+    "confidence": 0.4350835382938385,
+    "milliseconds": 165.79297599673737
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/plastic/plastic6.jpg",
+    "expected": "Plastic",
+    "predicted": "paper",
+    "confidence": 0.23184022307395935,
+    "milliseconds": 117.62061899935361
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/plastic/plastic7.jpg",
+    "expected": "Plastic",
+    "predicted": "cardboard",
+    "confidence": 0.2807769477367401,
+    "milliseconds": 211.43389299686532
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/plastic/plastic8.jpg",
+    "expected": "Plastic",
+    "predicted": "paper",
+    "confidence": 0.6214116811752319,
+    "milliseconds": 153.42454600613564
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/plastic/plastic9.jpg",
+    "expected": "Plastic",
+    "predicted": "cardboard",
+    "confidence": 0.46182847023010254,
+    "milliseconds": 190.3524329973152
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/plastic/plastic10.jpg",
+    "expected": "Plastic",
+    "predicted": "paper",
+    "confidence": 0.48582881689071655,
+    "milliseconds": 188.3094029908534
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/metal/metal1.jpg",
+    "expected": "Metal",
+    "predicted": "metal",
+    "confidence": 0.22624795138835907,
+    "milliseconds": 210.46418200421613
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/metal/metal2.jpg",
+    "expected": "Metal",
+    "predicted": "metal",
+    "confidence": 0.3299257755279541,
+    "milliseconds": 153.0105849960819
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/metal/metal3.jpg",
+    "expected": "Metal",
+    "predicted": "cardboard",
+    "confidence": 0.5327290296554565,
+    "milliseconds": 178.44936200708617
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/metal/metal4.jpg",
+    "expected": "Metal",
+    "predicted": "metal",
+    "confidence": 0.3966010510921478,
+    "milliseconds": 120.70815000333823
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/metal/metal5.jpg",
+    "expected": "Metal",
+    "predicted": "cardboard",
+    "confidence": 0.3466508984565735,
+    "milliseconds": 128.99351300438866
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/metal/metal6.jpg",
+    "expected": "Metal",
+    "predicted": "cardboard",
+    "confidence": 0.35043472051620483,
+    "milliseconds": 109.27001701202244
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/metal/metal7.jpg",
+    "expected": "Metal",
+    "predicted": "paper",
+    "confidence": 0.48746874928474426,
+    "milliseconds": 113.62202001328114
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/metal/metal8.jpg",
+    "expected": "Metal",
+    "predicted": "paper",
+    "confidence": 0.37512069940567017,
+    "milliseconds": 121.67344900080934
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/metal/metal9.jpg",
+    "expected": "Metal",
+    "predicted": "paper",
+    "confidence": 0.28040677309036255,
+    "milliseconds": 116.29284100490622
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/metal/metal10.jpg",
+    "expected": "Metal",
+    "predicted": "plastic",
+    "confidence": 0.21434809267520905,
+    "milliseconds": 141.6266329906648
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/paper/paper1.jpg",
+    "expected": "Paper",
+    "predicted": "paper",
+    "confidence": 0.6424765586853027,
+    "milliseconds": 112.35671599570196
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/paper/paper2.jpg",
+    "expected": "Paper",
+    "predicted": "paper",
+    "confidence": 0.9274601340293884,
+    "milliseconds": 115.29238599177916
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/paper/paper3.jpg",
+    "expected": "Paper",
+    "predicted": "cardboard",
+    "confidence": 0.4334866404533386,
+    "milliseconds": 116.04737899324391
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/paper/paper4.jpg",
+    "expected": "Paper",
+    "predicted": "paper",
+    "confidence": 0.5300888419151306,
+    "milliseconds": 112.34924499876797
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/paper/paper5.jpg",
+    "expected": "Paper",
+    "predicted": "paper",
+    "confidence": 0.733792245388031,
+    "milliseconds": 106.2737940083025
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/paper/paper6.jpg",
+    "expected": "Paper",
+    "predicted": "cardboard",
+    "confidence": 0.43328967690467834,
+    "milliseconds": 105.2064289979171
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/paper/paper7.jpg",
+    "expected": "Paper",
+    "predicted": "cardboard",
+    "confidence": 0.5249407887458801,
+    "milliseconds": 116.4404739974998
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/paper/paper8.jpg",
+    "expected": "Paper",
+    "predicted": "cardboard",
+    "confidence": 0.315921425819397,
+    "milliseconds": 109.13109699322376
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/paper/paper9.jpg",
+    "expected": "Paper",
+    "predicted": "paper",
+    "confidence": 0.2968957722187042,
+    "milliseconds": 110.44234099972527
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/paper/paper10.jpg",
+    "expected": "Paper",
+    "predicted": "medical",
+    "confidence": 0.29480892419815063,
+    "milliseconds": 111.99269500502851
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/cardboard/cardboard1.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.9168596267700195,
+    "milliseconds": 132.15374399442226
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/cardboard/cardboard2.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.6635135412216187,
+    "milliseconds": 137.83846399746835
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/cardboard/cardboard3.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.9196151494979858,
+    "milliseconds": 116.73845999757759
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/cardboard/cardboard4.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.6320869326591492,
+    "milliseconds": 138.47537800029386
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/cardboard/cardboard5.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.7728180289268494,
+    "milliseconds": 113.18013299023733
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/cardboard/cardboard6.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.6930817365646362,
+    "milliseconds": 145.8300880040042
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/cardboard/cardboard7.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.9364326596260071,
+    "milliseconds": 139.1586730023846
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/cardboard/cardboard8.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.754181444644928,
+    "milliseconds": 252.4746589915594
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/cardboard/cardboard9.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.486518919467926,
+    "milliseconds": 196.42862500040792
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/cardboard/cardboard10.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.8558927178382874,
+    "milliseconds": 296.5723590023117
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/trash/trash1.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "paper",
+    "confidence": 0.6271146535873413,
+    "milliseconds": 129.75903200276662
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/trash/trash2.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "cardboard",
+    "confidence": 0.4961793124675751,
+    "milliseconds": 121.04562199965585
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/trash/trash3.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "paper",
+    "confidence": 0.7179459929466248,
+    "milliseconds": 143.22397101204842
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/trash/trash4.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "cardboard",
+    "confidence": 0.43222343921661377,
+    "milliseconds": 141.42531000834424
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/trash/trash5.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "paper",
+    "confidence": 0.8457585573196411,
+    "milliseconds": 137.31355000345502
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/trash/trash6.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "cardboard",
+    "confidence": 0.7527210712432861,
+    "milliseconds": 112.29023701162077
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/trash/trash7.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "cardboard",
+    "confidence": 0.33373206853866577,
+    "milliseconds": 115.54788399371319
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/trash/trash8.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "cardboard",
+    "confidence": 0.9467634558677673,
+    "milliseconds": 170.73536799580324
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/trash/trash9.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "paper",
+    "confidence": 0.47420957684516907,
+    "milliseconds": 119.87501999828964
+  },
+  {
+    "size": 320,
+    "image": "dataset-resized/trash/trash10.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "cardboard",
+    "confidence": 0.3494114279747009,
+    "milliseconds": 117.8739239985589
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/glass/glass1.jpg",
+    "expected": "Glass",
+    "predicted": "cardboard",
+    "confidence": 0.3586909770965576,
+    "milliseconds": 478.51661399181467
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/glass/glass2.jpg",
+    "expected": "Glass",
+    "predicted": "cardboard",
+    "confidence": 0.2898924648761749,
+    "milliseconds": 294.56552299961913
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/glass/glass3.jpg",
+    "expected": "Glass",
+    "predicted": "cardboard",
+    "confidence": 0.7535005211830139,
+    "milliseconds": 309.7939390136162
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/glass/glass4.jpg",
+    "expected": "Glass",
+    "predicted": "cardboard",
+    "confidence": 0.7838261723518372,
+    "milliseconds": 293.9214979996905
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/glass/glass5.jpg",
+    "expected": "Glass",
+    "predicted": "glass",
+    "confidence": 0.4191378057003021,
+    "milliseconds": 283.3528860064689
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/glass/glass6.jpg",
+    "expected": "Glass",
+    "predicted": "glass",
+    "confidence": 0.8554442524909973,
+    "milliseconds": 293.28996199183166
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/glass/glass7.jpg",
+    "expected": "Glass",
+    "predicted": "cardboard",
+    "confidence": 0.5318207740783691,
+    "milliseconds": 297.54468900500797
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/glass/glass8.jpg",
+    "expected": "Glass",
+    "predicted": "e-waste",
+    "confidence": 0.31020456552505493,
+    "milliseconds": 218.11016599531285
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/glass/glass9.jpg",
+    "expected": "Glass",
+    "predicted": "metal",
+    "confidence": 0.5393624305725098,
+    "milliseconds": 236.40329200134147
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/glass/glass10.jpg",
+    "expected": "Glass",
+    "predicted": "cardboard",
+    "confidence": 0.8851202726364136,
+    "milliseconds": 204.5851550064981
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/plastic/plastic1.jpg",
+    "expected": "Plastic",
+    "predicted": "cardboard",
+    "confidence": 0.4772469997406006,
+    "milliseconds": 266.75511299981736
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/plastic/plastic2.jpg",
+    "expected": "Plastic",
+    "predicted": "cardboard",
+    "confidence": 0.7447718381881714,
+    "milliseconds": 280.15271900221705
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/plastic/plastic3.jpg",
+    "expected": "Plastic",
+    "predicted": "paper",
+    "confidence": 0.8028875589370728,
+    "milliseconds": 222.7319169905968
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/plastic/plastic4.jpg",
+    "expected": "Plastic",
+    "predicted": "cardboard",
+    "confidence": 0.3129311501979828,
+    "milliseconds": 216.4223120053066
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/plastic/plastic5.jpg",
+    "expected": "Plastic",
+    "predicted": "cardboard",
+    "confidence": 0.3009569048881531,
+    "milliseconds": 301.4988409995567
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/plastic/plastic6.jpg",
+    "expected": "Plastic",
+    "predicted": "metal",
+    "confidence": 0.3610926568508148,
+    "milliseconds": 309.7185760125285
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/plastic/plastic7.jpg",
+    "expected": "Plastic",
+    "predicted": "cardboard",
+    "confidence": 0.6022579073905945,
+    "milliseconds": 282.8970209957333
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/plastic/plastic8.jpg",
+    "expected": "Plastic",
+    "predicted": "paper",
+    "confidence": 0.69594806432724,
+    "milliseconds": 299.676383001497
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/plastic/plastic9.jpg",
+    "expected": "Plastic",
+    "predicted": "cardboard",
+    "confidence": 0.608656108379364,
+    "milliseconds": 293.7574149982538
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/plastic/plastic10.jpg",
+    "expected": "Plastic",
+    "predicted": "paper",
+    "confidence": 0.6996685862541199,
+    "milliseconds": 200.26566299202386
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/metal/metal1.jpg",
+    "expected": "Metal",
+    "predicted": "metal",
+    "confidence": 0.7951432466506958,
+    "milliseconds": 257.3120140004903
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/metal/metal2.jpg",
+    "expected": "Metal",
+    "predicted": "metal",
+    "confidence": 0.8655269742012024,
+    "milliseconds": 240.83957298716996
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/metal/metal3.jpg",
+    "expected": "Metal",
+    "predicted": "cardboard",
+    "confidence": 0.717154860496521,
+    "milliseconds": 263.87493799848016
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/metal/metal4.jpg",
+    "expected": "Metal",
+    "predicted": "metal",
+    "confidence": 0.7996297478675842,
+    "milliseconds": 259.9688479967881
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/metal/metal5.jpg",
+    "expected": "Metal",
+    "predicted": "glass",
+    "confidence": 0.3728315234184265,
+    "milliseconds": 278.8368530018488
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/metal/metal6.jpg",
+    "expected": "Metal",
+    "predicted": "cardboard",
+    "confidence": 0.5349297523498535,
+    "milliseconds": 259.9653030047193
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/metal/metal7.jpg",
+    "expected": "Metal",
+    "predicted": "cardboard",
+    "confidence": 0.4837568998336792,
+    "milliseconds": 244.39736000203993
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/metal/metal8.jpg",
+    "expected": "Metal",
+    "predicted": "cardboard",
+    "confidence": 0.5221911668777466,
+    "milliseconds": 242.1804870100459
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/metal/metal9.jpg",
+    "expected": "Metal",
+    "predicted": "cardboard",
+    "confidence": 0.5867586135864258,
+    "milliseconds": 255.98860099853482
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/metal/metal10.jpg",
+    "expected": "Metal",
+    "predicted": "plastic",
+    "confidence": 0.3688068687915802,
+    "milliseconds": 250.40916100260802
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/paper/paper1.jpg",
+    "expected": "Paper",
+    "predicted": "paper",
+    "confidence": 0.6736786961555481,
+    "milliseconds": 267.88340500206687
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/paper/paper2.jpg",
+    "expected": "Paper",
+    "predicted": "paper",
+    "confidence": 0.9031640887260437,
+    "milliseconds": 243.48090100102127
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/paper/paper3.jpg",
+    "expected": "Paper",
+    "predicted": "cardboard",
+    "confidence": 0.5163096785545349,
+    "milliseconds": 257.045719990856
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/paper/paper4.jpg",
+    "expected": "Paper",
+    "predicted": "paper",
+    "confidence": 0.8677825927734375,
+    "milliseconds": 294.3716940062586
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/paper/paper5.jpg",
+    "expected": "Paper",
+    "predicted": "paper",
+    "confidence": 0.7121769189834595,
+    "milliseconds": 235.52585700235795
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/paper/paper6.jpg",
+    "expected": "Paper",
+    "predicted": "cardboard",
+    "confidence": 0.6014049649238586,
+    "milliseconds": 343.82763800385874
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/paper/paper7.jpg",
+    "expected": "Paper",
+    "predicted": "cardboard",
+    "confidence": 0.6843451261520386,
+    "milliseconds": 328.65592298912816
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/paper/paper8.jpg",
+    "expected": "Paper",
+    "predicted": "cardboard",
+    "confidence": 0.08700300008058548,
+    "milliseconds": 374.4890950038098
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/paper/paper9.jpg",
+    "expected": "Paper",
+    "predicted": "paper",
+    "confidence": 0.5212370753288269,
+    "milliseconds": 235.54807000618894
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/paper/paper10.jpg",
+    "expected": "Paper",
+    "predicted": "glass",
+    "confidence": 0.3647094964981079,
+    "milliseconds": 265.5769959965255
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/cardboard/cardboard1.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.9225146174430847,
+    "milliseconds": 259.0839339973172
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/cardboard/cardboard2.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.576715886592865,
+    "milliseconds": 288.20836200611666
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/cardboard/cardboard3.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.7933279275894165,
+    "milliseconds": 286.86629100411665
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/cardboard/cardboard4.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.8633586168289185,
+    "milliseconds": 342.39883699046914
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/cardboard/cardboard5.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.846381425857544,
+    "milliseconds": 320.7220860058442
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/cardboard/cardboard6.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.8211292624473572,
+    "milliseconds": 324.32129100197926
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/cardboard/cardboard7.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.8841229677200317,
+    "milliseconds": 280.02958999422844
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/cardboard/cardboard8.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.8963524103164673,
+    "milliseconds": 275.9610710054403
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/cardboard/cardboard9.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.6570554375648499,
+    "milliseconds": 254.14277499658056
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/cardboard/cardboard10.jpg",
+    "expected": "Cardboard",
+    "predicted": "cardboard",
+    "confidence": 0.7691821455955505,
+    "milliseconds": 241.69945700850803
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/trash/trash1.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "paper",
+    "confidence": 0.5591294765472412,
+    "milliseconds": 247.76416800159495
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/trash/trash2.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "cardboard",
+    "confidence": 0.5121071338653564,
+    "milliseconds": 316.9925260008313
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/trash/trash3.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "paper",
+    "confidence": 0.5621020197868347,
+    "milliseconds": 479.4441319972975
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/trash/trash4.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "cardboard",
+    "confidence": 0.4831959307193756,
+    "milliseconds": 559.0812770096818
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/trash/trash5.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "paper",
+    "confidence": 0.874684751033783,
+    "milliseconds": 441.2760840059491
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/trash/trash6.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "cardboard",
+    "confidence": 0.8824723362922668,
+    "milliseconds": 306.1580259964103
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/trash/trash7.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "cardboard",
+    "confidence": 0.43757131695747375,
+    "milliseconds": 279.3620849988656
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/trash/trash8.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "cardboard",
+    "confidence": 0.9638650417327881,
+    "milliseconds": 301.0605849995045
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/trash/trash9.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "cardboard",
+    "confidence": 0.6809042096138,
+    "milliseconds": 310.73425299837254
+  },
+  {
+    "size": 512,
+    "image": "dataset-resized/trash/trash10.jpg",
+    "expected": "Unspecified trash",
+    "predicted": "cardboard",
+    "confidence": 0.49192729592323303,
+    "milliseconds": 316.9987049914198
+  }
+]

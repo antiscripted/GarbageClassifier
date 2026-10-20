@@ -1,0 +1,9 @@
+ERROR: null root node returned by UiTestAutomationBridge.
+Traceback (most recent call last):
+  File "/workspace/tooling/permission_review.py", line 30, in <module>
+    click(n,'Open settings');n=nodes();contains(n,'Garbage Classifier');contains(n,'Permissions')
+                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tooling/permission_review.py", line 19, in contains
+    assert any(n.get('text')==label for n in nodes),label
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Permissions

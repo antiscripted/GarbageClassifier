@@ -5,25 +5,25 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:gravity="center_vertical"
-        android:orientation="horizontal">
-    <TextView
-        android:layout_width="0dp" android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="0dp"
-        android:text="@string/app_name"
-        android:textColor="@color/ink"
-        android:textSize="24sp"
-        android:fontFamily="sans-serif-medium" />
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:text="@string/app_name"
+            android:textColor="@color/ink"
+            android:textSize="24sp"
+            android:fontFamily="sans-serif-medium" />
         <Button
-            android:id="@+id/licensesButton"
-            style="?android:attr/borderlessButtonStyle"
+            android:id="@+id/licensesButton" style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="64dp"
@@ -32,7 +32,6 @@
             android:textSize="12sp"
             android:text="@string/licenses" />
     </LinearLayout>
-
     <RadioGroup
         android:id="@+id/modeGroup"
         android:layout_width="match_parent"
@@ -41,15 +40,12 @@
         android:orientation="horizontal"
         android:checkedButton="@id/scannerButton">
         <RadioButton
-            android:id="@+id/scannerButton"
-            style="@style/Segment"
+            android:id="@+id/scannerButton" style="@style/Segment"
             android:text="@string/scanner" />
         <RadioButton
-            android:id="@+id/inspectionButton"
-            style="@style/Segment"
+            android:id="@+id/inspectionButton" style="@style/Segment"
             android:text="@string/inspection" />
     </RadioGroup>
-
     <RadioGroup
         android:id="@+id/binGroup"
         android:layout_width="match_parent"
@@ -59,15 +55,12 @@
         android:visibility="gone"
         android:checkedButton="@id/wetButton">
         <RadioButton
-            android:id="@+id/wetButton"
-            style="@style/Segment"
+            android:id="@+id/wetButton" style="@style/Segment"
             android:text="@string/wet" />
         <RadioButton
-            android:id="@+id/dryButton"
-            style="@style/Segment"
+            android:id="@+id/dryButton" style="@style/Segment"
             android:text="@string/dry" />
     </RadioGroup>
-
     <FrameLayout
         android:id="@+id/cameraContainer"
         android:layout_width="match_parent"
@@ -85,7 +78,6 @@
             android:layout_height="match_parent"
             android:importantForAccessibility="no" />
     </FrameLayout>
-
     <LinearLayout
         android:id="@+id/resultCard"
         android:layout_width="match_parent"

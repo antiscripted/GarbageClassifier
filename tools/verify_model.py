@@ -12,6 +12,15 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def prepare_image(image, size):
+    image = image.convert("RGB")
+    scale = min(size / image.width, size / image.height)
+    resized = image.resize((round(image.width * scale), round(image.height * scale)), Image.Resampling.BILINEAR)
+    square = Image.new("RGB", (size, size), (114, 114, 114))
+    square.paste(resized, ((size - resized.width) // 2, (size - resized.height) // 2))
+    return np.asarray(square, dtype=np.float32)[None] / 255
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--report", type=Path)
@@ -37,11 +46,7 @@ def main():
     for filename in ["plastic1.jpg", "metal1.jpg", "paper1.jpg", "glass1.jpg", "trash1.jpg", "cardboard1.jpg"]:
         path = ROOT / "app/src/androidTest/assets" / filename
         image = Image.open(path).convert("RGB")
-        scale = min(320 / image.width, 320 / image.height)
-        resized = image.resize((round(image.width * scale), round(image.height * scale)), Image.Resampling.BILINEAR)
-        square = Image.new("RGB", (320, 320), (114, 114, 114))
-        square.paste(resized, ((320 - resized.width) // 2, (320 - resized.height) // 2))
-        engine.set_tensor(inputs[0]["index"], np.asarray(square, dtype=np.float32)[None] / 255)
+        engine.set_tensor(inputs[0]["index"], prepare_image(image, 320))
         engine.invoke()
         output = engine.get_tensor(outputs[0]["index"])
         assert np.isfinite(output).all()

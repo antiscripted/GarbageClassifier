@@ -1,0 +1,7 @@
+# Uncommitted-work preservation — 20 October 2026
+
+This checkpoint saves all source, resources, tests, documentation, model-probe results, legal notices, setup/packaging tools and existing validation evidence that were uncommitted when work resumed. No application source was changed during preservation. The existing generated debug APK is copied here without rebuilding it. Earlier preservation branches and main are not changed.
+
+PROJECT_FILES.json records the current versionable source/project/evidence files and their SHA-256 values. A complete additional local source/evidence archive, including the current app and instrumentation APKs, was verified byte for byte at /workspace/preservation-backups/GarbageClassifier-wip-2026-10-20.tar.gz before committing.
+
+Existing evidence records a successful build, 53 passing JVM tests and eight passing Android tests. These were not rerun during preservation. The remaining development work is to finish manual permission and portrait/landscape/bin-inspection checks, correct any actual issues, assemble the delivery artifacts, and push the completed delivery. One landscape screenshot in the work-in-progress evidence was captured during a screen transition and must be replaced in the final evidence. The license screen is already implemented and covered by a passing Android test. The real requested model is bundled and unchanged. Its documented recognition errors remain a limitation; no physical Galaxy M51 testing is claimed.

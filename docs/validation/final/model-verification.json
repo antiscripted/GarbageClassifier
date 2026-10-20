@@ -1,0 +1,88 @@
+{
+  "sha256": "9c258ac8a0344cd07deb28ddcedb096e5bd30c092b807ff7e442f40279d8f54d",
+  "input_shape": [
+    1,
+    320,
+    320,
+    3
+  ],
+  "output_shape": [
+    1,
+    14,
+    2100
+  ],
+  "float32_io": true,
+  "int8_weight_tensors": 65,
+  "black_image_max_score": 0.0033475239761173725,
+  "host_cpu_median_ms": 6.0781089996453375,
+  "host_cpu_runs": 30,
+  "host_timing_is_not_phone_timing": true,
+  "samples": [
+    {
+      "file": "plastic1.jpg",
+      "label": "Plastic",
+      "confidence": 0.8942602276802063,
+      "normalized_xywh": [
+        0.5203705430030823,
+        0.5122708678245544,
+        0.6288827657699585,
+        0.3521101772785187
+      ]
+    },
+    {
+      "file": "metal1.jpg",
+      "label": "Metal",
+      "confidence": 0.9303463101387024,
+      "normalized_xywh": [
+        0.3009582757949829,
+        0.40192586183547974,
+        0.6017507314682007,
+        0.5543607473373413
+      ]
+    },
+    {
+      "file": "paper1.jpg",
+      "label": "Paper",
+      "confidence": 0.9594324231147766,
+      "normalized_xywh": [
+        0.4921027421951294,
+        0.47609513998031616,
+        0.6968390941619873,
+        0.5897716283798218
+      ]
+    },
+    {
+      "file": "glass1.jpg",
+      "label": "Not Recyclable",
+      "confidence": 0.5007987022399902,
+      "normalized_xywh": [
+        0.6387350559234619,
+        0.521053671836853,
+        0.4576295018196106,
+        0.4640214741230011
+      ]
+    },
+    {
+      "file": "trash1.jpg",
+      "label": "Plastic",
+      "confidence": 0.45871463418006897,
+      "normalized_xywh": [
+        0.5706089735031128,
+        0.5049781799316406,
+        0.5050358176231384,
+        0.6100743412971497
+      ]
+    },
+    {
+      "file": "cardboard1.jpg",
+      "label": "Paper",
+      "confidence": 0.9609155058860779,
+      "normalized_xywh": [
+        0.4987201690673828,
+        0.4994238615036011,
+        0.9979870319366455,
+        0.7430069446563721
+      ]
+    }
+  ]
+}

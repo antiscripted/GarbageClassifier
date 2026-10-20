@@ -1,0 +1,6 @@
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Model SHA256: 9c258ac8a0344cd07deb28ddcedb096e5bd30c092b807ff7e442f40279d8f54d
+Archive SHA256: 0bf472790f8b20e5c950d5b5012a9d38af0d3392efd65f8ce171334fc16b07c2
+Threshold 0.6: 22 accepted, 17 matching material; not detection mAP
+Threshold 0.7: 21 accepted, 16 matching material; not detection mAP
+Threshold 0.8: 20 accepted, 15 matching material; not detection mAP
