@@ -1,77 +1,75 @@
 # Validation and remaining limits
 
-Review date: **20 October 2026 (India)**. Student/teacher review target: **20–21 October**; competition deadline: **25 October**. The APK is an educational review build. Software checks do not establish reliable waste recognition.
+Experimental stability build, **21 October 2026**. Review target: 20–21 October; competition: 25 October. The app remains a prototype with known recognition errors. Software checks do not establish field accuracy or phone performance.
 
-## Build and packaging checks
+## Results for the new APK
 
-The actual Linux cloud build used Temurin JDK 17.0.20.1+1, Gradle 8.11.1, Android Gradle Plugin 8.9.2, Kotlin 2.0.21, SDK Platform 35 and Build Tools 35.0.0. Command:
+| Check | Result |
+| --- | --- |
+| Gradle debug APK and Android test APK | Built successfully |
+| JVM tests | 75 passed, 0 failed, 0 errors, 0 skipped |
+| Python comparison-metric tests | 7 passed |
+| Android instrumentation on API 29 x86_64 emulator | 8 passed, 0 failed, 0 skipped |
+| Lint | 0 errors, 2 warnings |
+| Model asset | Exact original SHA-256 and 2,836,973-byte size verified inside APK |
+| Packaging | Signature v2, same certificate as original, ZIP 16 KB alignment and all 9 native ELF libraries checked |
+| Permissions | CAMERA only runtime permission; no INTERNET or RECORD_AUDIO |
+| Offline legal screen | Bundled texts checked; open/recreation/close and camera resume test passed |
+| Camera permission review | Initial denial, permanent denial, Settings, approval and offline-state checks passed |
+| Interactive orientation review | Portrait → landscape → portrait, Wet/Dry selection, preserved inspection state and return to Scanner passed |
+
+Evidence is in [validation/experimental-2026-10-21](validation/experimental-2026-10-21/). The [inspection JSON](validation/experimental-2026-10-21/apk-inspection.json) identifies the exact APK. The original APK remains unchanged with SHA-256 `a36e198fcdf690f13ff335d352f181a88a10cdf920f1a70ec06c3fc67759e73b`; its source archive is also unchanged. [Original build validation](https://github.com/antiscripted/GarbageClassifier/blob/5021e619e63750cf603975dc0f9057061e22c54a/docs/VALIDATION.md) remains available at its historical commit.
+
+## Commands and test coverage
+
+The existing cloud environment was reused: Temurin JDK 17.0.20.1+1, Gradle 8.11.1, AGP 8.9.2, Kotlin 2.0.21, SDK/Build Tools 35. No repeated setup or model download was needed. Commands:
 
 ```bash
+source /workspace/tooling/android-env.sh
 ./gradlew :app:testDebugUnitTest :app:assembleDebug :app:assembleDebugAndroidTest :app:lintDebug --console plain
+./gradlew :app:connectedDebugAndroidTest --console plain
+/workspace/tooling/compare-venv/bin/python tools/test_accuracy_metrics.py
+python tools/inspect_apk.py --apk app/build/outputs/apk/debug/app-debug.apk --report docs/validation/experimental-2026-10-21/apk-inspection.json
 ```
 
-The debug APK and test APK built successfully. The Gradle command was run again on 20 October, with the JVM test task explicitly rerun (`:app:testDebugUnitTest --rerun`); 53 tests passed. The APK SHA-256 remains `a36e198fcdf690f13ff335d352f181a88a10cdf920f1a70ec06c3fc67759e73b`, identical to the APK used by the passing eight-test Android run on 19 October. No application source or model change was needed in the finishing pass. Lint has zero errors and one `NestedWeights` performance warning for the two-axis landscape layout. The earlier baseline-alignment warning was fixed; the remaining small layout is retained without suppression or another layout dependency. Landscape controls scroll on short displays.
+The first Gradle command completed in 45 seconds. The connected command completed in 4 minutes 10 seconds, including installation and test infrastructure. The eight-test instrumentation runner itself recorded 168.569 seconds. These elapsed times are not inference benchmarks.
 
-Static APK inspection verified the real model's exact bytes/SHA-256, no test photographs in the main APK, no INTERNET or RECORD_AUDIO permission, and only CAMERA as a runtime permission. AndroidX also contributes an app-scoped signature permission for private receiver handling. `apksigner verify --verbose` passes with APK Signature Scheme v2. `zipalign -c -P 16 4` passes, and ELF inspection finds 16 KB load-segment alignment in all nine packaged native libraries. These checks support modern packaging compatibility; no Android 15/16 or 16 KB-page-size device was boot-tested here.
+The 75 JVM tests comprise Geometry 12, Decoder 17, WasteRules 24 and RecognitionTracker 22. They cover box transforms, clipping, normalized YOLO outputs, invalid tensors, class-aware NMS, verified class order, confidence/margin rules, unsupported classes and wet/dry decisions. Tracker tests cover acquisition, a four-second hold, 1.25-second absence, confidence dips, occlusion, contradictions, replacement, smoothing, separate objects/bins, crossing ambiguity, appearance drift, resets and stalled frames. The unchanged geometry/decoder fixtures were rerun with the new tracking suite.
 
-The bundled ABIs are arm64-v8a, armeabi-v7a and x86_64. Minimum SDK is 24; target/compile SDK is 35. API 24, API 35 and physical ARM devices remain untested. No Play Store release signing or upload was performed.
+The eight Android tests actually execute:
 
-## Automated tests
+1. Real bundled LiteRT inference for three regression images (plastic, metal and paper).
+2. No accepted classification from a black image.
+3. An uncertain real glass example does not recommend a bin.
+4. Sensor-buffer rotations 90°, 180° and 270° preserve detection and mapped box IoU above 0.90.
+5. CameraX center-crop coordinate mapping.
+6. CameraX 90° preview coordinate mapping.
+7. Rear preview reaches STREAMING; bin-inspection/Dry state survives activity recreation and background/foreground.
+8. Licenses pauses preview, survives recreation and Close resumes STREAMING.
 
-The JVM suite has **53 tests**: GeometryTest 12, WasteRulesTest 24 and YoloDecoderTest 17. It covers letterboxing, edge/crop clipping, rotations, invalid/nonfinite model outputs, exact tensor length, normalized box decoding, class order, class-aware NMS, score/margin cutoffs, unsupported classes, temporal confirmation and wet/dry inspection decisions. It includes a real model-output fixture. The final unit command reruns the test task rather than relying only on an up-to-date build result.
+The interactive review additionally denied camera permission, exercised permanent denial and Open settings, granted through the actual Android dialog, and confirmed Wi-Fi/mobile data were disabled. UI hierarchy bounds and selected states verified portrait, landscape and return to portrait, with Wet/Dry and Scanner/bin-inspection transitions. See `permission-review.json` and `orientation-review.json` with their logs. These assertions do not claim fresh screenshot rendering.
 
-The Android suite has eight tests:
+The emulator uses a synthetic rear camera, software CPU emulation without KVM, and API 29 x86_64. It is not a Samsung phone. No new screenshot-based visual alignment claim is made: the existing emulator has a recorded framebuffer/capture limitation. Mathematical transforms, real image inference and actual Android view states are separate checks from live physical-camera overlay placement.
 
-1. `bundledModelDetectsThreeRealMaterialExamples`: real LiteRT inference for plastic, metal and paper, confidence checks and source-coordinate box bounds.
-2. `emptyImageDoesNotProduceClassification`: a black image produces no accepted detection.
-3. `uncertainRealExampleDoesNotRecommendABin`: the selected glass regression image stays uncertain.
-4. `allSensorRotationsPreserveObjectAndBoxLocation`: 90°, 180° and 270° sensor-buffer variants preserve the material and box IoU above 0.90 after mapping.
-5. `cameraXMappingAccountsForCenterCrop`: known full-buffer rectangle maps to the expected cropped preview.
-6. `cameraXMappingAccountsForNinetyDegreePreviewRotation`: a known box maps correctly through CameraX's rotated preview transform.
-7. `cameraStreamsAndBinSelectionSurvivesRecreation`: actual rear-camera preview reaches STREAMING; Dry/bin-inspection selection survives recreation; preview resumes after background/foreground.
-8. `licensesSurviveRecreationAndCloseResumesPreview`: the preview becomes IDLE while Licenses is open, the dialog survives recreation, and Close resumes STREAMING.
+## Model decision and accuracy
 
-Existing Android result from 19 October for this exact APK: **8 passed, 0 failed**, 168.097 seconds; the complete final runner output is in `docs/validation/final/instrumentation-final-pass.log`. The freshly rerun JVM suite reports **53 passed, 0 failed, 0 errors, 0 skipped**. The emulator is API 29 x86_64 with a synthetic rear camera, SwiftShader and software CPU emulation, without KVM. Its Wi-Fi and mobile data are disabled. It is not a Samsung phone and its runtime is not a performance benchmark.
+The original 320×320 model remains bundled for fully offline inference, with unchanged preprocessing and thresholds. [The completed comparison](EXPERIMENT.md) found better static-image material accuracy from float SigLIP2, but no justified Android CPU deployment. Dynamic-int8 substantially regressed glass/plastic recognition; int4 saved storage without a comparable host CPU improvement and was not accuracy- or Android-tested. No candidate runtime or weights were added; no training occurred.
 
-## Finishing checks on 20 October
+The stability APK reduces brief result/box changes, but does not change the detector's underlying material accuracy. On 240 known-material RealWaste images the current model gave 86 correct, 80 wrong and 74 rejected results at the exploratory 0.60 cutoff. These static probes do not include application temporal confirmation and are not calibrated field accuracy. A repeated confident error can become a stable wrong classification.
 
-The actual Android permission dialog was exercised from cleared application data: initial denial shows Camera permission required / Allow camera; permanent denial shows Open settings; that action opens Android application settings; a fresh ALLOW returns directly to the scanner. Wi-Fi and mobile data were both confirmed disabled. The results are in `docs/validation/final/permission-review.json` and the matching log.
+## Errors and warnings
 
-Actual Android view-state assertions also passed for portrait preview/result bounds, Wet/Dry selection, a landscape transition preserving bin-inspection/Dry, and return to portrait preserving Wet. Switching back to Scanner hides bin-selection controls. These are recorded in `docs/validation/final/orientation-review.json`; they verify layout/state, not fresh screenshot rendering or physical box alignment. The emulator's screenshot limitation is described below. No production application bug was found that required a source change.
+- Kotlin's compiler daemon reported one startup termination. Gradle recovered automatically; compilation, tests and packaging succeeded in that same invocation. No manual build rerun was needed.
+- Android analytics initialization cannot write `/home/agent/.android/analytics.settings` in this managed environment. This did not block builds or tests.
+- Lint reports the retained landscape `NestedWeights` layout warning and a `UseKtx` style suggestion for `Bitmap.getPixel`. Neither is a correctness error; no cosmetic rebuild was made solely to suppress them.
+- Earlier benchmark TACO EXIF orientation handling affected 11 images. Those rows were corrected and rerun before this delivery; both first-pass and corrected evidence remain explicitly labelled. One selected TACO photo returned HTTP 404 and is excluded with a recorded error.
+- The UI automation tool briefly returned a null root during window transitions. Its bounded existing retry recovered for both permission and orientation checks; the transient output is retained in the log.
+- The existing emulator's screenshot limitation remains; no restart or screenshot recovery loop was attempted for this delivery.
 
-The earlier eight-test Android run was reused because the APK bytes are unchanged. The source APK, model and existing license screen were retained without retraining, replacement, new wording or feature redesign. Only review evidence, branch/build instructions and delivery files were completed.
+No application bug was found by the completed JVM or Android instrumentation tests that required redesign or model changes.
 
-## Model evaluation
+## Remaining acceptance work
 
-The real model was independently inspected and executed on the host, then in Android's LiteRT runtime. `tools/verify_model.py` revalidates its checksum, tensor types/shapes, 65 int8 weight tensors, finite outputs, real fixtures and blank-image behavior. `tools/probe_materials.py` exactly reproduced the first 60 recorded per-image probe results. Larger exports and a separate YOLOv8m checkpoint were evaluated; details and raw evidence are in MODEL.md and `docs/validation`.
+The owner previously tested the original APK on a physical Galaxy M51 and reported that the camera/app work, but glass/plastic confusion, plastic overprediction, uncertainty and angle-sensitive food results remain. Codex has performed **no physical Galaxy M51 testing**. The experimental APK still requires physical validation of tracking, live box alignment, recognition, CPU responsiveness, heat and battery use. No Android 7/API 24, Android 15/16, ARM hardware or 16 KB-page-size device was boot-tested here; the packaging checks do not replace those tests.
 
-The requested model remains demonstrably unreliable on some materials: on the follow-up 200 known-material images, 125 were accepted but only 82 matched the dataset material, including five incorrect wet recommendations for dry examples. There are no wet-food ground-truth examples in those probes. These are material checks, not box-based mAP or calibrated confidence estimates. Temporal confirmation cannot fix repeated confident mistakes. No alternative tested established a dependable replacement. General accuracy and wet-food recognition on local classroom examples remain acceptance blockers, even though the application runs offline.
-
-## Errors encountered and resolution
-
-- The initial Java runtime lacked a compiler. A checksum-verified full Temurin JDK 17 was installed outside the project.
-- The downloaded JDK initially lacked the cloud proxy's trusted CA. Gradle uses the platform Java trust store; TLS verification was not disabled.
-- Model-CDN access was denied. The author-hosted byte-identical mirror was verified against the pinned Hugging Face LFS SHA-256 before use.
-- ADB initially needed a writable Android user directory. It was prepared with the required filesystem permission; no credentials were copied and HOME was not repurposed.
-- The first license UI test accidentally matched “close” inside the legal text. A more specific button selector then exposed the platform's automatic “CLOSE” capitalization. The dialog now explicitly renders the approved “Close”, and the test targets the actual button. The failed runs are retained, not described as passing runs.
-- An interactive `uiautomator` dump briefly returned a null root during a window transition. A later dump and screenshot established the dialog's actual state. No application crash was recorded in that investigation.
-- On 20 October, the long-running software emulator returned black screenshots with the display still ON and logged `openColorBuffer` framebuffer errors. Its UI hierarchy remained responsive. An emulator restart was attempted to restore capture. Its slow software boot also raised a System UI (not Garbage Classifier) ANR dialog, dismissed with Wait. Fresh screenshot capture remained unreliable, so it is not claimed as completed visual verification; this was an environment issue, not a reason to modify application code. The failed capture is explicitly retained as `screenshots/emulator-framebuffer-failure.png`. Current rotation checks use Android view bounds and selected states; the retained valid portrait screenshot is dated 19 October.
-- The ad hoc orientation helper initially encountered the System UI dialog and then an already-landscape state during resume. Its state checks were corrected to continue from the actual orientation; no application change was made for these test-harness issues.
-- Android metrics initialization emits a read-only `analytics.settings` warning in this managed environment; builds and tests still run.
-- Official Indian government references and GitHub's PR API were blocked by the network proxy. Their domains were added to the configuration draft; current local-rule verification and automatic PR creation are not claimed.
-
-## Physical M51 and teacher review checklist
-
-None of the following physical-device checks has been performed here. Record both correct and wrong outcomes; do not rehearse only successful samples.
-
-- Install the final APK on the M51. Test a clean install with permission denial, later approval, permanent denial/Open settings and relaunch. Confirm the rear preview opens immediately after permission.
-- Enable airplane mode and explicitly disable Wi-Fi. Reboot/reopen the app and confirm the scanner works without downloads or network permission.
-- Try at least ten safe, ordinary examples each of food waste, glass, metal, plastic and paper/cardboard, with two lighting conditions and different backgrounds. Include unsupported and ambiguous objects. Record material, recommendation, uncertainty and errors in DEVICE_REVIEW.csv.
-- Confirm purple boxes follow the same object while moving near each screen edge in portrait and landscape. Check tall/wide objects, partial occlusion, multiple objects, device rotation and returned foreground state. Do not count a correct category as proof of correct box placement.
-- Compare the same ordinary objects in Wet and Dry bin-inspection modes. Confirm wrong/correct/uncertain states, and explain that unseen contents are not inspected.
-- Run for ten minutes. Observe preview smoothness, time to first stable result, battery/temperature and memory behavior. Record actual phone measurements instead of quoting host timing or a promised FPS.
-- Open/close Licenses, rotate with it open, then return to the camera. Check large text, small screens, TalkBack and one-handed use.
-- Check local segregation instructions with the teacher/local authority, especially sanitary and special-care streams; do not test with hazardous materials.
-- Review MODEL.md, LICENSES.md, the source and the full failed/passed evidence before presenting. Keep the app described as a prototype if accuracy remains inadequate.
-
-The delivery contains complete source and a debug APK, but physical-device acceptance, current local-rule confirmation and recognition reliability remain limitations. Windows commands were not executed on a Windows machine here.
+The [stability phone checklist](STABILITY.md) specifies same-object comparisons, removal and replacement, multiple objects, inspection, rotation, foreground/background and airplane mode. Record errors as well as successes in `DEVICE_REVIEW.csv`. Sanitary/special-care classes remain unsupported; local segregation rules need teacher/local-authority review. Windows build instructions were documented but not executed on Windows. The APK is debug-signed, with no Play Store release or upload.

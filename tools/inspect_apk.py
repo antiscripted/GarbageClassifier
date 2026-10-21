@@ -18,6 +18,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--apk', type=Path, required=True)
     parser.add_argument('--report', type=Path, required=True)
+    parser.add_argument('--original-apk', type=Path, default=ROOT / 'delivery/GarbageClassifier-debug.apk')
     args = parser.parse_args()
     build_tools = Path(os.environ['ANDROID_HOME']) / 'build-tools/35.0.0'
     contract = json.loads((ROOT / 'docs/model/contract.json').read_text())
@@ -31,10 +32,12 @@ def main():
     assert "sdkVersion:'24'" in badging and "targetSdkVersion:'35'" in badging
     signature = run(build_tools / 'apksigner', 'verify', '--verbose', '--print-certs', args.apk)
     assert 'Verified using v2 scheme (APK Signature Scheme v2): true' in signature
-    original_signature = run(build_tools / 'apksigner', 'verify', '--print-certs',
-                             ROOT / 'delivery/GarbageClassifier-debug.apk')
     certificate = next(line for line in signature.splitlines() if 'certificate SHA-256 digest:' in line)
-    assert certificate in original_signature
+    same_certificate = None
+    if args.original_apk.is_file():
+        original_signature = run(build_tools / 'apksigner', 'verify', '--print-certs', args.original_apk)
+        same_certificate = certificate in original_signature
+        assert same_certificate
     run(build_tools / 'zipalign', '-c', '-P', '16', '4', args.apk)
     libraries = []
     with ZipFile(args.apk) as archive, tempfile.TemporaryDirectory() as temporary:
@@ -63,7 +66,7 @@ def main():
                   model_bytes=len(model), model_sha256=model_sha, permissions=permissions,
                   native_libraries=libraries, minimum_sdk=24, target_sdk=35,
                   test_photos_in_main_apk=False, signature_v2=True,
-                  same_signing_certificate_as_original=True, zipalign_16kb=True,
+                  same_signing_certificate_as_original=same_certificate, zipalign_16kb=True,
                   bundled_license_texts_verified=True)
     args.report.write_text(json.dumps(report, indent=2) + '\n')
     print(json.dumps(report, indent=2))

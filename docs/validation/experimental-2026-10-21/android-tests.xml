@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="org.garbageclassifier.DetectorInstrumentedTest" tests="8" failures="0" errors="0" skipped="0" time="168.569" timestamp="2026-10-21T00:54:25" hostname="localhost">
+  <properties>
+    <property name="device" value="emulator-5554 - 10" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="emptyImageDoesNotProduceClassification" classname="org.garbageclassifier.DetectorInstrumentedTest" time="8.801" />
+  <testcase name="uncertainRealExampleDoesNotRecommendABin" classname="org.garbageclassifier.DetectorInstrumentedTest" time="7.034" />
+  <testcase name="allSensorRotationsPreserveObjectAndBoxLocation" classname="org.garbageclassifier.DetectorInstrumentedTest" time="27.588" />
+  <testcase name="cameraXMappingAccountsForCenterCrop" classname="org.garbageclassifier.DetectorInstrumentedTest" time="0.027" />
+  <testcase name="bundledModelDetectsThreeRealMaterialExamples" classname="org.garbageclassifier.DetectorInstrumentedTest" time="19.687" />
+  <testcase name="cameraXMappingAccountsForNinetyDegreePreviewRotation" classname="org.garbageclassifier.DetectorInstrumentedTest" time="0.003" />
+  <testcase name="cameraStreamsAndBinSelectionSurvivesRecreation" classname="org.garbageclassifier.ScannerInstrumentedTest" time="44.199" />
+  <testcase name="licensesSurviveRecreationAndCloseResumesPreview" classname="org.garbageclassifier.ScannerInstrumentedTest" time="50.354" />
+</testsuite>

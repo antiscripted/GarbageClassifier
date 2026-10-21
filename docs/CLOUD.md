@@ -1,8 +1,10 @@
 # Cloud build environment
 
-The existing checkout is `/workspace/GarbageClassifier`. Use it directly; do not create a worktree unless the user explicitly asks. Preservation branches and their archived outputs remain available. The completed work is on `finish/review-build-2026-10-20`.
+The existing checkout is `/workspace/GarbageClassifier`. Use it directly; do not create a worktree unless the user explicitly asks. Preservation branches and their archived outputs remain available. The active experimental delivery is on `development`; `backup` preserves checkpoint `3eb166f`. The original working delivery remains on `finish/review-build-2026-10-20` and in `delivery/`.
 
 ## Build setup
+
+Reuse `/workspace/tooling/android-env.sh` directly in this prepared workspace. Run the setup script only when restoring missing tools; it is not needed for each build.
 
 ```bash
 cd /workspace/GarbageClassifier
@@ -73,3 +75,16 @@ The optional comparison environment and downloaded alternative checkpoints live 
 ## Saved configuration versus current runtime
 
 The setup script and startup guidance are saved through the onboarding configuration draft. Saved instructions do not run automatically in the current shell, and saving does not publish the environment. Review/save the draft in environment settings, then publish to retain the prepared environment for future tasks. The draft also adds official Indian reference sites and the GitHub API domain while preserving the existing Hugging Face rules. Those additions do not establish working access until applied and tested; the official-site and PR API requests were blocked during development.
+
+## Package a verified experimental build
+
+The packaging script requires explicit output paths and refuses to overwrite an existing APK or archive. The original `delivery/` is frozen. For a new delivery, choose new filenames or a fresh dated folder:
+
+```bash
+python tools/inspect_apk.py --apk app/build/outputs/apk/debug/app-debug.apk --report /tmp/apk-inspection.json
+python tools/package_delivery.py --inspection /tmp/apk-inspection.json --apk-output /tmp/new-delivery/apks/GarbageClassifier-experimental-debug.apk --source-output /tmp/new-delivery/source/GarbageClassifier-experimental-source.zip
+```
+
+`inspect_apk.py` checks the pinned model, native library/ZIP alignment, SDK/permissions, license assets and signature. When the original APK is available, it also checks the signing certificate matches; use `--original-apk` to supply it separately when working from a source ZIP. A missing original is recorded as an unperformed certificate comparison, not a match. The script uses the Android build tools and Linux `readelf`.
+
+`package_delivery.py` verifies the APK against the inspection checksum, archives tracked and unignored source/evidence, and checks every archive entry against its manifest. Historical binaries, other archives and local ignored tooling are excluded. Commit and push the completed APK, corresponding source and evidence together.

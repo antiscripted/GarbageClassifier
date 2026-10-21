@@ -1,0 +1,6 @@
+ERROR: null root node returned by UiTestAutomationBridge.
+Initial camera denial displays Camera permission required and Allow camera
+Permanent denial displays Open settings
+Open settings opens the application settings screen
+Granting camera through the Android dialog returns directly to scanner without recovery button
+Emulator Wi-Fi and mobile data both disabled
