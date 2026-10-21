@@ -6,7 +6,7 @@ An offline Android camera scanner for a Class 9 AI project, due **25 October 202
 
 ## Downloads and review
 
-- [GarbageClassifier-stable.apk](apks/stable/GarbageClassifier-stable.apk) · [complete matching source](source/stable/GarbageClassifier-stable-source.zip)
+- [GarbageClassifier-stable.apk](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/development/apks/stable/GarbageClassifier-stable.apk) · [complete matching source](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/development/source/stable/GarbageClassifier-stable-source.zip)
 - Preserved: [original working APK](delivery/GarbageClassifier-debug.apk) · [previous experimental APK](apks/experimental/GarbageClassifier-experimental-debug.apk)
 - [Windows installation and build instructions](docs/WINDOWS.md)
 - [Main Kotlin files explained for students](docs/ARCHITECTURE.md) · [tracking and phone checklist](docs/STABILITY.md)
@@ -20,6 +20,8 @@ To build, open `development` in Android Studio with JDK 17, SDK 35 and the inclu
 ```powershell
 .\gradlew.bat :app:testDebugUnitTest :app:assembleDebug :app:assembleDebugAndroidTest :app:lintDebug
 ```
+
+Verified: **75 JVM tests, 9 Android scanner tests and 7 metric tests passed**; lint has zero errors. Camera permission, orientation and bin-selection checks passed on the API 29 software emulator. See the validation report for the one skipped optional probe and hardware limitations.
 
 ## Repository guide
 
