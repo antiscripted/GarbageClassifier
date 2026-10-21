@@ -1,0 +1,2702 @@
+{
+  "wrong_bin_images": [
+    {
+      "id": "realwaste/Cardboard_178.jpg",
+      "expected": "Paper",
+      "crop": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9739362001419067,
+        "margin": 0.9654266238212585,
+        "box": [
+          410.39393216371536,
+          95.7758754491806,
+          450.85976952314377,
+          182.01666343212128
+        ],
+        "proposal_score": 0.5097025632858276
+      },
+      "whole": {
+        "label": "Cardboard",
+        "material": "Paper",
+        "score": 0.390417218208313,
+        "margin": 0.2214684635400772
+      }
+    },
+    {
+      "id": "realwaste/Cardboard_442.jpg",
+      "expected": "Paper",
+      "crop": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9998972415924072,
+        "margin": 0.9998635649681091,
+        "box": [
+          276.71045783162117,
+          325.68387708067894,
+          382.38335463404655,
+          424.750545412302
+        ],
+        "proposal_score": 0.992533802986145
+      },
+      "whole": {
+        "label": "Paper",
+        "material": "Paper",
+        "score": 0.9985674619674683,
+        "margin": 0.9978442788124084
+      }
+    },
+    {
+      "id": "realwaste/Cardboard_55.jpg",
+      "expected": "Paper",
+      "crop": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9998557567596436,
+        "margin": 0.9997553825378418,
+        "box": [
+          15.646406307816505,
+          217.62428033351898,
+          52.25658546388149,
+          367.39443266391754
+        ],
+        "proposal_score": 0.7233743667602539
+      },
+      "whole": {
+        "label": "Cardboard",
+        "material": "Paper",
+        "score": 0.9972900152206421,
+        "margin": 0.9952373504638672
+      }
+    },
+    {
+      "id": "realwaste/Food Organics_68.jpg",
+      "expected": "Food waste",
+      "crop": {
+        "label": "Plastic",
+        "material": "Plastic",
+        "score": 0.7754979729652405,
+        "margin": 0.726256251335144,
+        "box": [
+          46.66547679901123,
+          103.20718169212341,
+          487.893657207489,
+          453.030100107193
+        ],
+        "proposal_score": 0.6534322500228882
+      },
+      "whole": {
+        "label": "Plastic",
+        "material": "Plastic",
+        "score": 0.9250824451446533,
+        "margin": 0.9003811478614807
+      }
+    },
+    {
+      "id": "realwaste/Glass_119.jpg",
+      "expected": "Glass",
+      "crop": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.990806519985199,
+        "margin": 0.9860319495201111,
+        "box": [
+          168.091559112072,
+          372.12588588148355,
+          187.5377305150032,
+          391.63877256959677
+        ],
+        "proposal_score": 0.5885356664657593
+      },
+      "whole": {
+        "label": "Plastic",
+        "material": "Plastic",
+        "score": 0.4821139872074127,
+        "margin": 0.16468685865402222
+      }
+    },
+    {
+      "id": "realwaste/Metal_565.jpg",
+      "expected": "Metal",
+      "crop": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.8096243143081665,
+        "margin": 0.7144248485565186,
+        "box": [
+          287.1977211833,
+          90.04760974645615,
+          395.8577340245247,
+          203.67467385530472
+        ],
+        "proposal_score": 0.9827035665512085
+      },
+      "whole": {
+        "label": "Paper",
+        "material": "Paper",
+        "score": 0.30173376202583313,
+        "margin": 0.08948679268360138
+      }
+    },
+    {
+      "id": "realwaste/Metal_62.jpg",
+      "expected": "Metal",
+      "crop": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9977422952651978,
+        "margin": 0.9958099722862244,
+        "box": [
+          251.1764019727707,
+          331.1102266907692,
+          289.01038897037506,
+          385.94872707128525
+        ],
+        "proposal_score": 0.4391583502292633
+      },
+      "whole": {
+        "label": "Metal",
+        "material": "Metal",
+        "score": 0.9736356139183044,
+        "margin": 0.9639605283737183
+      }
+    },
+    {
+      "id": "realwaste/Metal_79.jpg",
+      "expected": "Metal",
+      "crop": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.7915684580802917,
+        "margin": 0.704655647277832,
+        "box": [
+          178.87525328993797,
+          263.5400754213333,
+          299.10466518998146,
+          396.46536099910736
+        ],
+        "proposal_score": 0.9896904230117798
+      },
+      "whole": {
+        "label": "Metal",
+        "material": "Metal",
+        "score": 0.9839629530906677,
+        "margin": 0.9725697636604309
+      }
+    },
+    {
+      "id": "realwaste/Paper_196.jpg",
+      "expected": "Paper",
+      "crop": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9814844131469727,
+        "margin": 0.9756271243095398,
+        "box": [
+          366.82783392071724,
+          264.2274437248707,
+          433.091265887022,
+          310.465444535017
+        ],
+        "proposal_score": 0.8884032368659973
+      },
+      "whole": {
+        "label": "Paper",
+        "material": "Paper",
+        "score": 0.5075799226760864,
+        "margin": 0.20893201231956482
+      }
+    },
+    {
+      "id": "realwaste/Plastic_159.jpg",
+      "expected": "Plastic",
+      "crop": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9962520003318787,
+        "margin": 0.9947085380554199,
+        "box": [
+          191.16763779520988,
+          261.31433583796024,
+          306.097118884325,
+          324.50712345540524
+        ],
+        "proposal_score": 0.46422532200813293
+      },
+      "whole": {
+        "label": "Paper",
+        "material": "Paper",
+        "score": 0.6819369196891785,
+        "margin": 0.46038657426834106
+      }
+    },
+    {
+      "id": "realwaste/Plastic_686.jpg",
+      "expected": "Plastic",
+      "crop": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.987823486328125,
+        "margin": 0.9829432964324951,
+        "box": [
+          416.71438606083393,
+          177.4024675451219,
+          433.13770715892315,
+          191.11530083790421
+        ],
+        "proposal_score": 0.4511147141456604
+      },
+      "whole": {
+        "label": "Plastic",
+        "material": "Plastic",
+        "score": 0.9689611792564392,
+        "margin": 0.9560122489929199
+      }
+    },
+    {
+      "id": "realwaste/Plastic_720.jpg",
+      "expected": "Plastic",
+      "crop": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9999097585678101,
+        "margin": 0.9998605847358704,
+        "box": [
+          170.94251170754433,
+          220.23206970095634,
+          255.03658112883568,
+          293.8843937218189
+        ],
+        "proposal_score": 0.9658516645431519
+      },
+      "whole": {
+        "label": "Plastic",
+        "material": "Plastic",
+        "score": 0.8224950432777405,
+        "margin": 0.7488089203834534
+      }
+    },
+    {
+      "id": "realwaste/Plastic_767.jpg",
+      "expected": "Plastic",
+      "crop": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9937041401863098,
+        "margin": 0.9901884198188782,
+        "box": [
+          158.1533260345459,
+          106.64885258674622,
+          407.7255940437317,
+          428.7779920101166
+        ],
+        "proposal_score": 0.4729742109775543
+      },
+      "whole": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9894220232963562,
+        "margin": 0.9846190810203552
+      }
+    }
+  ],
+  "unmatched_at_08": [
+    {
+      "id": "taco/batch_1/000016.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9528304934501648,
+        "margin": 0.9362497329711914,
+        "box": [
+          880.3960609547794,
+          973.8218550235033,
+          1021.2633732445538,
+          1053.0513793677092
+        ],
+        "proposal_score": 0.8693028092384338
+      },
+      "best_iou": 0.10855168600573384
+    },
+    {
+      "id": "taco/batch_1/000021.jpg",
+      "prediction": {
+        "label": "Plastic",
+        "material": "Plastic",
+        "score": 0.982623279094696,
+        "margin": 0.9763365983963013,
+        "box": [
+          303.83626579865813,
+          735.0533313080668,
+          468.95293686166406,
+          945.8877925351262
+        ],
+        "proposal_score": 0.7603890299797058
+      },
+      "best_iou": 0.12313082059370005
+    },
+    {
+      "id": "taco/batch_1/000021.jpg",
+      "prediction": {
+        "label": "Cardboard",
+        "material": "Paper",
+        "score": 0.9587934017181396,
+        "margin": 0.9371448755264282,
+        "box": [
+          960.9231114573777,
+          682.6069391444325,
+          1161.4662213139236,
+          879.3773947283626
+        ],
+        "proposal_score": 0.5366498231887817
+      },
+      "best_iou": 0.1973867109384928
+    },
+    {
+      "id": "taco/batch_1/000030.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9991927742958069,
+        "margin": 0.9986687302589417,
+        "box": [
+          1072.5610067974776,
+          859.3048146665096,
+          1150.0232303012162,
+          994.6319685280323
+        ],
+        "proposal_score": 0.967067539691925
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_1/000030.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.999363124370575,
+        "margin": 0.9991188049316406,
+        "box": [
+          1010.2581719085574,
+          1231.8444715104997,
+          1282.2708034589887,
+          1392.614111367613
+        ],
+        "proposal_score": 0.6967084407806396
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_1/000030.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9492971897125244,
+        "margin": 0.9304646253585815,
+        "box": [
+          1228.4957460910082,
+          746.3527623340487,
+          1448.1201593130827,
+          1077.315342195332
+        ],
+        "proposal_score": 0.3644569516181946
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_1/000035.jpg",
+      "prediction": {
+        "label": "Glass",
+        "material": "Glass",
+        "score": 0.9856052994728088,
+        "margin": 0.9747415781021118,
+        "box": [
+          1166.4826323613524,
+          149.1994255296886,
+          1526.4904729500413,
+          400.6100427992642
+        ],
+        "proposal_score": 0.9855912923812866
+      },
+      "best_iou": 0.07678856632089484
+    },
+    {
+      "id": "taco/batch_1/000035.jpg",
+      "prediction": {
+        "label": "Glass",
+        "material": "Glass",
+        "score": 0.937079906463623,
+        "margin": 0.9022143483161926,
+        "box": [
+          106.52488104999065,
+          260.1139233894646,
+          380.68295906484127,
+          464.4317025952041
+        ],
+        "proposal_score": 0.9755784869194031
+      },
+      "best_iou": 0.0707057650426998
+    },
+    {
+      "id": "taco/batch_1/000037.jpg",
+      "prediction": {
+        "label": "Metal",
+        "material": "Metal",
+        "score": 0.9991242289543152,
+        "margin": 0.9988085031509399,
+        "box": [
+          553.7927661091089,
+          565.697181083262,
+          853.2338891476393,
+          787.5292913541198
+        ],
+        "proposal_score": 0.9582890868186951
+      },
+      "best_iou": 0.33501612008267656
+    },
+    {
+      "id": "taco/batch_1/000037.jpg",
+      "prediction": {
+        "label": "Metal",
+        "material": "Metal",
+        "score": 0.9995914101600647,
+        "margin": 0.9994926452636719,
+        "box": [
+          736.981397934258,
+          298.622557669878,
+          1023.4295160099864,
+          1078.2538233101368
+        ],
+        "proposal_score": 0.8943220973014832
+      },
+      "best_iou": 0.4986669738014534
+    },
+    {
+      "id": "taco/batch_1/000037.jpg",
+      "prediction": {
+        "label": "Metal",
+        "material": "Metal",
+        "score": 0.999605119228363,
+        "margin": 0.9994758367538452,
+        "box": [
+          775.8372295349836,
+          281.5623704791069,
+          1012.1507418304682,
+          504.0229642987251
+        ],
+        "proposal_score": 0.8244777321815491
+      },
+      "best_iou": 0.35338077968965975
+    },
+    {
+      "id": "taco/batch_1/000038.jpg",
+      "prediction": {
+        "label": "Metal",
+        "material": "Metal",
+        "score": 0.9998490810394287,
+        "margin": 0.9997962713241577,
+        "box": [
+          1626.3611474186182,
+          668.3151852265,
+          1924.0217383950949,
+          904.7276740893722
+        ],
+        "proposal_score": 0.9918123483657837
+      },
+      "best_iou": 0.33004943186726216
+    },
+    {
+      "id": "taco/batch_1/000038.jpg",
+      "prediction": {
+        "label": "Metal",
+        "material": "Metal",
+        "score": 0.9997307658195496,
+        "margin": 0.9996501803398132,
+        "box": [
+          320.424401499331,
+          717.1603994071484,
+          574.682737313211,
+          926.679559379816
+        ],
+        "proposal_score": 0.847822368144989
+      },
+      "best_iou": 0.27967971091099925
+    },
+    {
+      "id": "taco/batch_1/000043.jpg",
+      "prediction": {
+        "label": "Metal",
+        "material": "Metal",
+        "score": 0.9999157190322876,
+        "margin": 0.9998860955238342,
+        "box": [
+          1004.2575616165996,
+          357.9868723899126,
+          1401.5078638270497,
+          652.5861825793982
+        ],
+        "proposal_score": 0.347245454788208
+      },
+      "best_iou": 0.2616608991622233
+    },
+    {
+      "id": "taco/batch_1/000045.jpg",
+      "prediction": {
+        "label": "Metal",
+        "material": "Metal",
+        "score": 0.9074454307556152,
+        "margin": 0.8681266903877258,
+        "box": [
+          472.8801693767309,
+          475.58608201146126,
+          1240.407038167119,
+          985.0339625775814
+        ],
+        "proposal_score": 0.9535126686096191
+      },
+      "best_iou": 0.4213096648192343
+    },
+    {
+      "id": "taco/batch_1/000070.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9986061453819275,
+        "margin": 0.9979909658432007,
+        "box": [
+          1845.6959549188614,
+          1303.6522014141083,
+          2053.5712970495224,
+          1528.5312359333038
+        ],
+        "proposal_score": 0.9769311547279358
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_1/000070.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9984678626060486,
+        "margin": 0.9981420040130615,
+        "box": [
+          1722.2377980351448,
+          972.215588092804,
+          1891.1472403407097,
+          1146.0931391716003
+        ],
+        "proposal_score": 0.8300463557243347
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_1/000070.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9976806640625,
+        "margin": 0.9971129894256592,
+        "box": [
+          1144.6086226701736,
+          3.801668643951416,
+          1526.1411885023117,
+          339.693235874176
+        ],
+        "proposal_score": 0.7412455677986145
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_1/000094.JPG",
+      "prediction": {
+        "label": "Cardboard",
+        "material": "Paper",
+        "score": 0.8693696856498718,
+        "margin": 0.7854465842247009,
+        "box": [
+          584.7519600391388,
+          1813.2082271575928,
+          1139.5757653713226,
+          2478.6990451812744
+        ],
+        "proposal_score": 0.5542455911636353
+      },
+      "best_iou": 0.13831295459561693
+    },
+    {
+      "id": "taco/batch_1/000102.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9322513341903687,
+        "margin": 0.9044985175132751,
+        "box": [
+          1081.7927675843239,
+          1933.5074205100536,
+          1141.5849303603172,
+          1974.4356718361378
+        ],
+        "proposal_score": 0.694676399230957
+      },
+      "best_iou": 0.0024636954247719603
+    },
+    {
+      "id": "taco/batch_1/000104.JPG",
+      "prediction": {
+        "label": "Metal",
+        "material": "Metal",
+        "score": 0.997731626033783,
+        "margin": 0.9970120191574097,
+        "box": [
+          2113.349823117256,
+          587.0049442648888,
+          2264.440963625908,
+          769.0746064782143
+        ],
+        "proposal_score": 0.933138370513916
+      },
+      "best_iou": 0.07120441299331243
+    },
+    {
+      "id": "taco/batch_1/000119.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.8619810342788696,
+        "margin": 0.830639660358429,
+        "box": [
+          1732.087311834097,
+          2569.489604115486,
+          1849.0260399878025,
+          2657.0633286237717
+        ],
+        "proposal_score": 0.9807120561599731
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_1/000127.JPG",
+      "prediction": {
+        "label": "Paper",
+        "material": "Paper",
+        "score": 0.9994478821754456,
+        "margin": 0.9991942644119263,
+        "box": [
+          1274.3523931503296,
+          1020.0652470588684,
+          1532.6005926132202,
+          1370.9860110282898
+        ],
+        "proposal_score": 0.9808796048164368
+      },
+      "best_iou": 0.04256549999650371
+    },
+    {
+      "id": "taco/batch_1/000127.JPG",
+      "prediction": {
+        "label": "Metal",
+        "material": "Metal",
+        "score": 0.9562252163887024,
+        "margin": 0.9274570345878601,
+        "box": [
+          23.69547986984253,
+          1823.3594827651978,
+          820.1375827789307,
+          2269.833701133728
+        ],
+        "proposal_score": 0.9791569709777832
+      },
+      "best_iou": 0.34415360850081606
+    },
+    {
+      "id": "taco/batch_10/000001.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.8868193030357361,
+        "margin": 0.8409470319747925,
+        "box": [
+          1420.0972616672516,
+          1651.036771595478,
+          1514.502376317978,
+          1724.9405652880669
+        ],
+        "proposal_score": 0.6987441778182983
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_10/000001.jpg",
+      "prediction": {
+        "label": "Glass",
+        "material": "Glass",
+        "score": 0.8766981959342957,
+        "margin": 0.8137518167495728,
+        "box": [
+          2057.8747987747192,
+          232.89614081382751,
+          2172.0179319381714,
+          300.3681871891022
+        ],
+        "proposal_score": 0.6431084871292114
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_10/000015.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.8035733103752136,
+        "margin": 0.7157487273216248,
+        "box": [
+          467.39623153209686,
+          3253.0023269355297,
+          598.0052272081375,
+          3371.107418090105
+        ],
+        "proposal_score": 0.55616295337677
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_10/000015.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.8285672664642334,
+        "margin": 0.7266560196876526,
+        "box": [
+          1080.1676967144012,
+          1954.515241086483,
+          1194.7277348041534,
+          2073.920466005802
+        ],
+        "proposal_score": 0.540503740310669
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_10/000015.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.999054491519928,
+        "margin": 0.9982213973999023,
+        "box": [
+          925.5411257743835,
+          3298.494879156351,
+          996.3615231513977,
+          3393.697675317526
+        ],
+        "proposal_score": 0.43995437026023865
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_10/000015.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9993005990982056,
+        "margin": 0.9990147352218628,
+        "box": [
+          1329.9696391224861,
+          2083.1512920558453,
+          1440.7777821421623,
+          2199.364710599184
+        ],
+        "proposal_score": 0.3912862241268158
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_10/000019.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9989411234855652,
+        "margin": 0.9983881711959839,
+        "box": [
+          1031.6863095760345,
+          2750.246539711952,
+          1343.9014971256256,
+          2966.388687491417
+        ],
+        "proposal_score": 0.9891940355300903
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_10/000019.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9980064034461975,
+        "margin": 0.9974489212036133,
+        "box": [
+          29.20243263244629,
+          2579.154133796692,
+          876.2459506988525,
+          2950.7864713668823
+        ],
+        "proposal_score": 0.5317931771278381
+      },
+      "best_iou": 0.08720308577727894
+    },
+    {
+      "id": "taco/batch_10/000024.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9089853763580322,
+        "margin": 0.8719186782836914,
+        "box": [
+          1346.2187583446503,
+          1656.9678243249655,
+          1571.9864609241486,
+          1714.453274384141
+        ],
+        "proposal_score": 0.8991791605949402
+      },
+      "best_iou": 0.1281465729733627
+    },
+    {
+      "id": "taco/batch_10/000024.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9526682496070862,
+        "margin": 0.9265990257263184,
+        "box": [
+          1474.335649073124,
+          2778.915200382471,
+          1537.3021339774132,
+          2819.6456097066402
+        ],
+        "proposal_score": 0.7736462950706482
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_10/000024.jpg",
+      "prediction": {
+        "label": "Metal",
+        "material": "Metal",
+        "score": 0.999855637550354,
+        "margin": 0.9998236298561096,
+        "box": [
+          380.11648321151733,
+          774.3661925196648,
+          567.9891629219055,
+          942.5055459141731
+        ],
+        "proposal_score": 0.34595784544944763
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_10/000035.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.8405774235725403,
+        "margin": 0.7511321306228638,
+        "box": [
+          860.1418318748474,
+          1990.4440306127071,
+          1022.6672501564026,
+          2083.7928391993046
+        ],
+        "proposal_score": 0.9864901304244995
+      },
+      "best_iou": 0.1731683985851229
+    },
+    {
+      "id": "taco/batch_10/000035.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9377423524856567,
+        "margin": 0.9131540060043335,
+        "box": [
+          1164.8454422950745,
+          2848.4028577804565,
+          1342.9982199668884,
+          3107.153058052063
+        ],
+        "proposal_score": 0.5574104189872742
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_11/000003.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9180882573127747,
+        "margin": 0.8871155381202698,
+        "box": [
+          1058.9904529452324,
+          3270.6312388181686,
+          1108.9725750088692,
+          3474.0162640810013
+        ],
+        "proposal_score": 0.30856427550315857
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_11/000025.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9403045177459717,
+        "margin": 0.9153252840042114,
+        "box": [
+          498.0034679174423,
+          2214.197129011154,
+          1366.6964918375015,
+          2884.9120438098907
+        ],
+        "proposal_score": 0.47343316674232483
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_11/000094.jpg",
+      "prediction": {
+        "label": "Plastic",
+        "material": "Plastic",
+        "score": 0.9861095547676086,
+        "margin": 0.9818148016929626,
+        "box": [
+          844.9938111305237,
+          2576.9015879631042,
+          1839.7361969947815,
+          3636.725426197052
+        ],
+        "proposal_score": 0.9870081543922424
+      },
+      "best_iou": 0.3174289577173293
+    },
+    {
+      "id": "taco/batch_11/000094.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.8331109881401062,
+        "margin": 0.7714484333992004,
+        "box": [
+          1993.2599238529801,
+          3451.7939868569374,
+          2094.740205846727,
+          3541.250469624996
+        ],
+        "proposal_score": 0.9618098139762878
+      },
+      "best_iou": 0.0011234667046367574
+    },
+    {
+      "id": "taco/batch_11/000094.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.880752444267273,
+        "margin": 0.8307757377624512,
+        "box": [
+          1943.8504693955183,
+          3481.831259071827,
+          2052.330530360341,
+          3578.2112290263176
+        ],
+        "proposal_score": 0.959003210067749
+      },
+      "best_iou": 0.002646163670443369
+    },
+    {
+      "id": "taco/batch_11/000094.jpg",
+      "prediction": {
+        "label": "Plastic",
+        "material": "Plastic",
+        "score": 0.9968005418777466,
+        "margin": 0.9951725602149963,
+        "box": [
+          1104.4328277111053,
+          1084.597324848175,
+          2096.5268862247467,
+          2057.440776348114
+        ],
+        "proposal_score": 0.7604373097419739
+      },
+      "best_iou": 0.267991177284387
+    },
+    {
+      "id": "taco/batch_12/000003.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9981464147567749,
+        "margin": 0.9973357915878296,
+        "box": [
+          937.6804597377777,
+          4683.665239930153,
+          1066.8508007526398,
+          4870.7466024160385
+        ],
+        "proposal_score": 0.8661890625953674
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_12/000058.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.8443646430969238,
+        "margin": 0.7667112350463867,
+        "box": [
+          777.9316344112158,
+          3924.30959880352,
+          846.3478579670191,
+          4027.82060444355
+        ],
+        "proposal_score": 0.6940985918045044
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_13/000025.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9998076558113098,
+        "margin": 0.9997251629829407,
+        "box": [
+          1165.2949663996696,
+          747.5405097007751,
+          1451.9507601857185,
+          1099.2857766151428
+        ],
+        "proposal_score": 0.9997726082801819
+      },
+      "best_iou": 0.08642106287030232
+    },
+    {
+      "id": "taco/batch_13/000025.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9999034404754639,
+        "margin": 0.999860942363739,
+        "box": [
+          1280.678178369999,
+          1109.9365425109863,
+          1602.3638758063316,
+          1500.0503540039062
+        ],
+        "proposal_score": 0.9997722506523132
+      },
+      "best_iou": 0.0064993328086547135
+    },
+    {
+      "id": "taco/batch_13/000025.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9962634444236755,
+        "margin": 0.9949222803115845,
+        "box": [
+          1424.771443605423,
+          1078.2168579101562,
+          1727.330836057663,
+          1345.2771377563477
+        ],
+        "proposal_score": 0.9992378950119019
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_13/000025.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9997320771217346,
+        "margin": 0.9996124505996704,
+        "box": [
+          1205.0455829501152,
+          3697.8008031845093,
+          1526.8968370556831,
+          4158.2534646987915
+        ],
+        "proposal_score": 0.9960466027259827
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_13/000025.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9887235164642334,
+        "margin": 0.9795582294464111,
+        "box": [
+          1403.7677603960037,
+          2635.179296731949,
+          1762.7896946668625,
+          2940.2429139614105
+        ],
+        "proposal_score": 0.95717453956604
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_14/000007.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9952313303947449,
+        "margin": 0.993485152721405,
+        "box": [
+          3115.815908908844,
+          754.9744775891304,
+          3260.4107451438904,
+          860.6627914309502
+        ],
+        "proposal_score": 0.9285377860069275
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_14/000007.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9984564781188965,
+        "margin": 0.9979501962661743,
+        "box": [
+          822.2360315918922,
+          579.4273862242699,
+          902.339354455471,
+          805.901075899601
+        ],
+        "proposal_score": 0.8351340889930725
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_14/000094.jpg",
+      "prediction": {
+        "label": "Plastic",
+        "material": "Plastic",
+        "score": 0.9887478351593018,
+        "margin": 0.9801650047302246,
+        "box": [
+          1656.8695131540298,
+          2068.130088329315,
+          1886.0142320394516,
+          2425.1817784309387
+        ],
+        "proposal_score": 0.9387927651405334
+      },
+      "best_iou": 0.47884199482710704
+    },
+    {
+      "id": "taco/batch_14/000094.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9570974707603455,
+        "margin": 0.943136990070343,
+        "box": [
+          1511.210126593709,
+          1535.620542705059,
+          1604.384693428874,
+          1647.9212663769722
+        ],
+        "proposal_score": 0.8959822654724121
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_15/000007.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.8814006447792053,
+        "margin": 0.8313903212547302,
+        "box": [
+          1.9392725229263306,
+          1255.1196112632751,
+          515.6018768548965,
+          1699.0082688331604
+        ],
+        "proposal_score": 0.2711648643016815
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_15/000013.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9582805633544922,
+        "margin": 0.9460779428482056,
+        "box": [
+          504.16957998275757,
+          18.00581932067871,
+          3024.0,
+          3285.528081893921
+        ],
+        "proposal_score": 0.7786001563072205
+      },
+      "best_iou": 0.033970187065045065
+    },
+    {
+      "id": "taco/batch_15/000029.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9318183660507202,
+        "margin": 0.8766461610794067,
+        "box": [
+          115.39945220947266,
+          685.4788932800293,
+          176.98555755615234,
+          769.9835090637207
+        ],
+        "proposal_score": 0.9391668438911438
+      },
+      "best_iou": 0.3599706237751506
+    },
+    {
+      "id": "taco/batch_15/000029.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9986478686332703,
+        "margin": 0.9983492493629456,
+        "box": [
+          501.2892150878906,
+          146.09661865234375,
+          1043.2286682128906,
+          1283.6397094726562
+        ],
+        "proposal_score": 0.656777024269104
+      },
+      "best_iou": 0.06188177898016001
+    },
+    {
+      "id": "taco/batch_15/000029.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9982238411903381,
+        "margin": 0.9976734519004822,
+        "box": [
+          1128.6689701080322,
+          1038.6464004516602,
+          1318.1300411224365,
+          1231.8362655639648
+        ],
+        "proposal_score": 0.4945814609527588
+      },
+      "best_iou": 0.3103442739939239
+    },
+    {
+      "id": "taco/batch_15/000029.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9996016621589661,
+        "margin": 0.9994516372680664,
+        "box": [
+          775.7399711608887,
+          1411.8076171875,
+          1065.483112335205,
+          1772.888671875
+        ],
+        "proposal_score": 0.2787725031375885
+      },
+      "best_iou": 0.33320347063024097
+    },
+    {
+      "id": "taco/batch_15/000056.jpg",
+      "prediction": {
+        "label": "Paper",
+        "material": "Paper",
+        "score": 0.8751831650733948,
+        "margin": 0.7723217010498047,
+        "box": [
+          1151.8613008260727,
+          2826.378547668457,
+          1706.7200800180435,
+          3287.7081985473633
+        ],
+        "proposal_score": 0.7850238680839539
+      },
+      "best_iou": 0.39780738980784774
+    },
+    {
+      "id": "taco/batch_15/000072.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.978520393371582,
+        "margin": 0.970233142375946,
+        "box": [
+          600.4730072021484,
+          990.9565277099609,
+          1442.248306274414,
+          1293.188003540039
+        ],
+        "proposal_score": 0.9659481048583984
+      },
+      "best_iou": 0.34815096619170355
+    },
+    {
+      "id": "taco/batch_15/000080.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9767398238182068,
+        "margin": 0.9669370651245117,
+        "box": [
+          1090.5901708602905,
+          1235.9142837524414,
+          1150.7350244522095,
+          1348.3633041381836
+        ],
+        "proposal_score": 0.9934613704681396
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_15/000080.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9850408434867859,
+        "margin": 0.9750871658325195,
+        "box": [
+          1210.2735872268677,
+          898.9533996582031,
+          1302.6508512496948,
+          1084.8793640136719
+        ],
+        "proposal_score": 0.9596432447433472
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_15/000080.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9098409414291382,
+        "margin": 0.8710178732872009,
+        "box": [
+          232.62066650390625,
+          184.6087646484375,
+          483.04920959472656,
+          462.3299560546875
+        ],
+        "proposal_score": 0.852020800113678
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_15/000080.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.96932452917099,
+        "margin": 0.9561625719070435,
+        "box": [
+          1399.7741947174072,
+          1448.2984619140625,
+          1536.0,
+          1976.1112060546875
+        ],
+        "proposal_score": 0.7363137006759644
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_15/000084.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.999313235282898,
+        "margin": 0.9990119338035583,
+        "box": [
+          2290.161771297455,
+          2088.5355920791626,
+          2634.4763131141663,
+          2446.1569833755493
+        ],
+        "proposal_score": 0.9977830052375793
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_15/000084.jpg",
+      "prediction": {
+        "label": "Glass",
+        "material": "Glass",
+        "score": 0.8708165287971497,
+        "margin": 0.792585015296936,
+        "box": [
+          1131.257592201233,
+          543.7479043006897,
+          2186.3170766830444,
+          1898.6886105537415
+        ],
+        "proposal_score": 0.8829063773155212
+      },
+      "best_iou": 0.286649933032421
+    },
+    {
+      "id": "taco/batch_15/000084.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9992203712463379,
+        "margin": 0.9988316297531128,
+        "box": [
+          1027.0547318458557,
+          818.3665464520454,
+          1154.4475836753845,
+          948.1961862444878
+        ],
+        "proposal_score": 0.7454317212104797
+      },
+      "best_iou": 0.02986845010795804
+    },
+    {
+      "id": "taco/batch_2/000022.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9816535115242004,
+        "margin": 0.976097047328949,
+        "box": [
+          1354.3181058615446,
+          1211.4103422760963,
+          1392.877717807889,
+          1265.9047746062279
+        ],
+        "proposal_score": 0.905356228351593
+      },
+      "best_iou": 0.25155206126708096
+    },
+    {
+      "id": "taco/batch_2/000026.JPG",
+      "prediction": {
+        "label": "Metal",
+        "material": "Metal",
+        "score": 0.830132782459259,
+        "margin": 0.6860346794128418,
+        "box": [
+          494.2051291465759,
+          1429.2670663297176,
+          601.567352771759,
+          1522.463476806879
+        ],
+        "proposal_score": 0.9955164790153503
+      },
+      "best_iou": 0.25109086277212067
+    },
+    {
+      "id": "taco/batch_2/000026.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9987508058547974,
+        "margin": 0.9981667995452881,
+        "box": [
+          3222.662185370922,
+          989.5467195510864,
+          3264.0,
+          1080.4367237091064
+        ],
+        "proposal_score": 0.9135730862617493
+      },
+      "best_iou": 0.36905619742591267
+    },
+    {
+      "id": "taco/batch_2/000036.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9941458702087402,
+        "margin": 0.991991400718689,
+        "box": [
+          240.89571315050125,
+          2194.9686424434185,
+          350.7907592654228,
+          2242.4418571293354
+        ],
+        "proposal_score": 0.8840144872665405
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_2/000036.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.982624351978302,
+        "margin": 0.9728219509124756,
+        "box": [
+          781.6794390678406,
+          2292.8027907013893,
+          882.6438031196594,
+          2357.761654794216
+        ],
+        "proposal_score": 0.8296112418174744
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_2/000052.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9575173258781433,
+        "margin": 0.9406844973564148,
+        "box": [
+          836.6454884111881,
+          127.05714440345764,
+          869.7607205808163,
+          282.8455502986908
+        ],
+        "proposal_score": 0.9603146910667419
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_2/000074.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.8409679532051086,
+        "margin": 0.7747715711593628,
+        "box": [
+          2566.0852786302567,
+          1099.9579527676105,
+          2629.873957514763,
+          1152.8721167743206
+        ],
+        "proposal_score": 0.4516431391239166
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_2/000075.JPG",
+      "prediction": {
+        "label": "Metal",
+        "material": "Metal",
+        "score": 0.9228140115737915,
+        "margin": 0.8875169157981873,
+        "box": [
+          1171.5016887187958,
+          930.4085168838501,
+          1373.5884640216827,
+          1209.8595056533813
+        ],
+        "proposal_score": 0.9998775720596313
+      },
+      "best_iou": 0.4628658663690315
+    },
+    {
+      "id": "taco/batch_2/000075.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.8048564791679382,
+        "margin": 0.7156119346618652,
+        "box": [
+          1510.4952058196068,
+          905.3331946358085,
+          1583.6239233613014,
+          933.8390818610787
+        ],
+        "proposal_score": 0.7646676301956177
+      },
+      "best_iou": 0.0836143327021912
+    },
+    {
+      "id": "taco/batch_2/000079.JPG",
+      "prediction": {
+        "label": "Plastic",
+        "material": "Plastic",
+        "score": 0.8469538688659668,
+        "margin": 0.7974604368209839,
+        "box": [
+          1138.4850536584854,
+          1679.131394147873,
+          1293.981720328331,
+          1879.9041817188263
+        ],
+        "proposal_score": 0.9863155484199524
+      },
+      "best_iou": 0.3767817024056857
+    },
+    {
+      "id": "taco/batch_3/IMG_4862.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9953349232673645,
+        "margin": 0.9931155443191528,
+        "box": [
+          1189.9007999897003,
+          1961.0464503765106,
+          1537.796780347824,
+          2263.439671754837
+        ],
+        "proposal_score": 0.9013909101486206
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_3/IMG_4919.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.8850699663162231,
+        "margin": 0.8184658885002136,
+        "box": [
+          1995.5813182890415,
+          2476.2727020978928,
+          2056.352086633444,
+          2559.954730153084
+        ],
+        "proposal_score": 0.9075642228126526
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_3/IMG_4919.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9504311680793762,
+        "margin": 0.9125993847846985,
+        "box": [
+          1791.2238410711288,
+          2365.315634250641,
+          2024.3805824518204,
+          2595.0927214622498
+        ],
+        "proposal_score": 0.4942094385623932
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_3/IMG_4919.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9325703382492065,
+        "margin": 0.9030261635780334,
+        "box": [
+          1264.3920408189297,
+          2862.106843829155,
+          1331.526713758707,
+          2942.4326001405716
+        ],
+        "proposal_score": 0.37795472145080566
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_3/IMG_4941.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.8101381063461304,
+        "margin": 0.676908016204834,
+        "box": [
+          2797.7263634204865,
+          1301.9069387242198,
+          2851.853188276291,
+          1336.688791103661
+        ],
+        "proposal_score": 0.9873500466346741
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_3/IMG_4941.JPG",
+      "prediction": {
+        "label": "Paper",
+        "material": "Paper",
+        "score": 0.985511839389801,
+        "margin": 0.9779057502746582,
+        "box": [
+          564.0609941482544,
+          1961.6495205760002,
+          833.2024126052856,
+          2077.7684138417244
+        ],
+        "proposal_score": 0.9867603778839111
+      },
+      "best_iou": 0.4516109134972058
+    },
+    {
+      "id": "taco/batch_3/IMG_4941.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.978950560092926,
+        "margin": 0.9629785418510437,
+        "box": [
+          183.6489669084549,
+          1846.0748979449272,
+          295.17957293987274,
+          1933.4795892834663
+        ],
+        "proposal_score": 0.9616706371307373
+      },
+      "best_iou": 0.32522269133123854
+    },
+    {
+      "id": "taco/batch_3/IMG_4941.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9074984192848206,
+        "margin": 0.8756943941116333,
+        "box": [
+          724.6413198709488,
+          916.7378905043006,
+          782.434224486351,
+          941.4098260179162
+        ],
+        "proposal_score": 0.8889934420585632
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_3/IMG_4994.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9385790824890137,
+        "margin": 0.9068073034286499,
+        "box": [
+          974.0409067869186,
+          2286.3543786406517,
+          1127.0403596162796,
+          2385.913237631321
+        ],
+        "proposal_score": 0.5736982226371765
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_3/IMG_4994.JPG",
+      "prediction": {
+        "label": "Cardboard",
+        "material": "Paper",
+        "score": 0.988657534122467,
+        "margin": 0.9836935997009277,
+        "box": [
+          925.9859645962715,
+          803.4447684288025,
+          1219.1982766985893,
+          1128.6049332618713
+        ],
+        "proposal_score": 0.4691954255104065
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_3/IMG_4994.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9866387844085693,
+        "margin": 0.9791143536567688,
+        "box": [
+          967.3267035484314,
+          3.4224064350128174,
+          1225.933117389679,
+          346.1008107662201
+        ],
+        "proposal_score": 0.3721703290939331
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_3/IMG_5003.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.925698459148407,
+        "margin": 0.897844135761261,
+        "box": [
+          2145.506999015808,
+          2610.979544341564,
+          2206.202084541321,
+          2704.8774731755257
+        ],
+        "proposal_score": 0.8818024396896362
+      },
+      "best_iou": 0.26488234058262866
+    },
+    {
+      "id": "taco/batch_3/IMG_5003.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9581613540649414,
+        "margin": 0.9335566163063049,
+        "box": [
+          1235.9415796995163,
+          2117.7714877724648,
+          1397.3712540864944,
+          2179.4687771201134
+        ],
+        "proposal_score": 0.8695622682571411
+      },
+      "best_iou": 0.19125878987336156
+    },
+    {
+      "id": "taco/batch_3/IMG_5053.JPG",
+      "prediction": {
+        "label": "Glass",
+        "material": "Glass",
+        "score": 0.9904224872589111,
+        "margin": 0.9865545630455017,
+        "box": [
+          1750.964083313942,
+          948.31993496418,
+          1843.0546163320541,
+          1139.2914007902145
+        ],
+        "proposal_score": 0.9777672290802002
+      },
+      "best_iou": 0.13979813911552827
+    },
+    {
+      "id": "taco/batch_4/000054.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9747183918952942,
+        "margin": 0.9602112770080566,
+        "box": [
+          1685.1911265850067,
+          1548.5448258519173,
+          1898.333958864212,
+          1720.6561648249626
+        ],
+        "proposal_score": 0.9989171028137207
+      },
+      "best_iou": 0.4525182912887817
+    },
+    {
+      "id": "taco/batch_4/000054.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9994862079620361,
+        "margin": 0.9993055462837219,
+        "box": [
+          1312.0729508399963,
+          1675.1045556664467,
+          1429.943768978119,
+          1769.4452185034752
+        ],
+        "proposal_score": 0.7341527342796326
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_4/000093.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9717718958854675,
+        "margin": 0.9569175839424133,
+        "box": [
+          1196.786919683218,
+          2462.7856115698814,
+          1295.897515207529,
+          2555.116419374943
+        ],
+        "proposal_score": 0.39761221408843994
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_4/000093.JPG",
+      "prediction": {
+        "label": "Glass",
+        "material": "Glass",
+        "score": 0.9384348392486572,
+        "margin": 0.9001633524894714,
+        "box": [
+          1222.8789567947388,
+          1937.2370678186417,
+          1433.52476978302,
+          2106.91133916378
+        ],
+        "proposal_score": 0.3196965754032135
+      },
+      "best_iou": 0.3504613868278043
+    },
+    {
+      "id": "taco/batch_4/000096.JPG",
+      "prediction": {
+        "label": "Glass",
+        "material": "Glass",
+        "score": 0.8370473384857178,
+        "margin": 0.765743613243103,
+        "box": [
+          1054.4651234149933,
+          2192.5508884191513,
+          1190.3266446590424,
+          2373.951804757118
+        ],
+        "proposal_score": 0.9952326416969299
+      },
+      "best_iou": 0.2295579408061513
+    },
+    {
+      "id": "taco/batch_4/000096.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9944829344749451,
+        "margin": 0.9918439984321594,
+        "box": [
+          1231.712023615837,
+          2219.8799461126328,
+          1317.7801047563553,
+          2313.9827781915665
+        ],
+        "proposal_score": 0.9868985414505005
+      },
+      "best_iou": 0.15322660080727513
+    },
+    {
+      "id": "taco/batch_4/000096.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9983952641487122,
+        "margin": 0.9974008202552795,
+        "box": [
+          1184.6070699691772,
+          2215.2764961719513,
+          1289.3623781204224,
+          2340.8306357860565
+        ],
+        "proposal_score": 0.9500386714935303
+      },
+      "best_iou": 0.288083662742962
+    },
+    {
+      "id": "taco/batch_4/000096.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9760826826095581,
+        "margin": 0.9701500535011292,
+        "box": [
+          707.6764796376228,
+          2000.6568138599396,
+          885.7636515498161,
+          2111.6461951732635
+        ],
+        "proposal_score": 0.6479566693305969
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_4/000096.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9748427867889404,
+        "margin": 0.9680930376052856,
+        "box": [
+          1566.349952235818,
+          2401.9993522167206,
+          1634.164343342185,
+          2462.21475148201
+        ],
+        "proposal_score": 0.6039978861808777
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_4/000097.JPG",
+      "prediction": {
+        "label": "Plastic",
+        "material": "Plastic",
+        "score": 0.9960886240005493,
+        "margin": 0.9950345158576965,
+        "box": [
+          1639.803987801075,
+          1440.3203737735748,
+          1835.441913306713,
+          1534.5859830379486
+        ],
+        "proposal_score": 0.999305009841919
+      },
+      "best_iou": 0.270234855640719
+    },
+    {
+      "id": "taco/batch_5/000027.JPG",
+      "prediction": {
+        "label": "Glass",
+        "material": "Glass",
+        "score": 0.9827531576156616,
+        "margin": 0.9734079241752625,
+        "box": [
+          977.0402363240719,
+          1913.6072301864624,
+          1050.558347851038,
+          2184.7753686904907
+        ],
+        "proposal_score": 0.8474676609039307
+      },
+      "best_iou": 0.4552076970388658
+    },
+    {
+      "id": "taco/batch_5/000027.JPG",
+      "prediction": {
+        "label": "Glass",
+        "material": "Glass",
+        "score": 0.9200448393821716,
+        "margin": 0.8437889814376831,
+        "box": [
+          1282.4827287197113,
+          858.3379848003387,
+          1468.6346304416656,
+          1068.2024624347687
+        ],
+        "proposal_score": 0.7055984139442444
+      },
+      "best_iou": 0.06106926968818432
+    },
+    {
+      "id": "taco/batch_5/000040.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9935083389282227,
+        "margin": 0.991326093673706,
+        "box": [
+          980.992983341217,
+          1258.8617734909058,
+          1292.794499874115,
+          1479.1859407424927
+        ],
+        "proposal_score": 0.2746792137622833
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_5/000040.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9996694326400757,
+        "margin": 0.9995174407958984,
+        "box": [
+          3071.121687054634,
+          708.7308592200279,
+          3257.991075396538,
+          930.3765712380409
+        ],
+        "proposal_score": 0.2520938515663147
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_5/000046.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9975823163986206,
+        "margin": 0.9967488646507263,
+        "box": [
+          185.705939412117,
+          2051.8173294067383,
+          341.6467627286911,
+          2173.983558654785
+        ],
+        "proposal_score": 0.9133313894271851
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_5/000046.JPG",
+      "prediction": {
+        "label": "Metal",
+        "material": "Metal",
+        "score": 0.97333163022995,
+        "margin": 0.951437771320343,
+        "box": [
+          1191.1204980611801,
+          1627.55490732193,
+          1413.6466623544693,
+          1928.470208644867
+        ],
+        "proposal_score": 0.8361762762069702
+      },
+      "best_iou": 0.2157232539300643
+    },
+    {
+      "id": "taco/batch_6/000038.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9651978611946106,
+        "margin": 0.95717853307724,
+        "box": [
+          855.4518723487854,
+          794.6357377767563,
+          1430.571988582611,
+          1032.6459213495255
+        ],
+        "proposal_score": 0.7759737372398376
+      },
+      "best_iou": 0.02297829521808505
+    },
+    {
+      "id": "taco/batch_6/000038.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9981149435043335,
+        "margin": 0.9973151683807373,
+        "box": [
+          1681.358787536621,
+          1664.0566974878311,
+          1761.8166580200195,
+          1715.3610767126083
+        ],
+        "proposal_score": 0.7592737078666687
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_6/000038.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9923449158668518,
+        "margin": 0.9898117780685425,
+        "box": [
+          2221.376014471054,
+          1879.794197022915,
+          2370.4203493595123,
+          1968.0
+        ],
+        "proposal_score": 0.7513967156410217
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_6/000059.JPG",
+      "prediction": {
+        "label": "Cardboard",
+        "material": "Paper",
+        "score": 0.9981406927108765,
+        "margin": 0.9966305494308472,
+        "box": [
+          579.9262189865112,
+          637.9448618888855,
+          1778.9801988601685,
+          1960.325996875763
+        ],
+        "proposal_score": 0.3041613698005676
+      },
+      "best_iou": 0.407314208081923
+    },
+    {
+      "id": "taco/batch_6/000100.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.8710733652114868,
+        "margin": 0.8051716685295105,
+        "box": [
+          2250.9417107105255,
+          1876.8282680511475,
+          2348.9410178661346,
+          1967.1671619415283
+        ],
+        "proposal_score": 0.8765773773193359
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_6/000100.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9906817674636841,
+        "margin": 0.987112283706665,
+        "box": [
+          2072.6934700012207,
+          899.1283992826939,
+          2321.415355682373,
+          1027.087782472372
+        ],
+        "proposal_score": 0.8566165566444397
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_6/000100.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9904521703720093,
+        "margin": 0.9860060214996338,
+        "box": [
+          1749.255400121212,
+          409.0647127479315,
+          1834.7552810311317,
+          470.5786254554987
+        ],
+        "proposal_score": 0.5312743782997131
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_6/000100.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9982179999351501,
+        "margin": 0.9978073239326477,
+        "box": [
+          1630.2056572437286,
+          1721.797644853592,
+          1750.7240760326385,
+          1845.8941218852997
+        ],
+        "proposal_score": 0.5236691832542419
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_7/000035.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.995758593082428,
+        "margin": 0.9939293265342712,
+        "box": [
+          1049.065315246582,
+          925.0191049575806,
+          1461.4259490966797,
+          1261.853702545166
+        ],
+        "proposal_score": 0.6331048011779785
+      },
+      "best_iou": 0.037999291057445414
+    },
+    {
+      "id": "taco/batch_7/000047.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9135664105415344,
+        "margin": 0.8736702799797058,
+        "box": [
+          864.6896616518497,
+          1516.3892276287079,
+          892.528126090765,
+          1566.77987408638
+        ],
+        "proposal_score": 0.9371702671051025
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_7/000089.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9999245405197144,
+        "margin": 0.9998860955238342,
+        "box": [
+          57.50513845682144,
+          1228.5550929754972,
+          138.91145342588425,
+          1296.040333583951
+        ],
+        "proposal_score": 0.9167988896369934
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_7/000089.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9905547499656677,
+        "margin": 0.9878639578819275,
+        "box": [
+          1537.3782677650452,
+          1337.8271226212382,
+          1618.5418639183044,
+          1368.571074552834
+        ],
+        "proposal_score": 0.8667956590652466
+      },
+      "best_iou": 0.1021559395474592
+    },
+    {
+      "id": "taco/batch_7/000089.JPG",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9987614154815674,
+        "margin": 0.9983797073364258,
+        "box": [
+          1509.6293721199036,
+          1345.5887962728739,
+          1592.408507823944,
+          1375.503048285842
+        ],
+        "proposal_score": 0.25103962421417236
+      },
+      "best_iou": 0.09374507835076702
+    },
+    {
+      "id": "taco/batch_7/000092.JPG",
+      "prediction": {
+        "label": "Metal",
+        "material": "Metal",
+        "score": 0.9997839331626892,
+        "margin": 0.9996645450592041,
+        "box": [
+          1380.795260667801,
+          529.6115137338638,
+          1626.7751891613007,
+          740.661612868309
+        ],
+        "proposal_score": 0.9898253083229065
+      },
+      "best_iou": 0.16716605902238216
+    },
+    {
+      "id": "taco/batch_8/000013.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9524468779563904,
+        "margin": 0.9297400116920471,
+        "box": [
+          2106.0231018662453,
+          947.6636706590652,
+          2209.257257401943,
+          1096.1446369886398
+        ],
+        "proposal_score": 0.9786932468414307
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_8/000013.jpg",
+      "prediction": {
+        "label": "Glass",
+        "material": "Glass",
+        "score": 0.8681930303573608,
+        "margin": 0.7961665987968445,
+        "box": [
+          1268.5716151446104,
+          2400.4034074544907,
+          1336.3306599408388,
+          2462.4437910318375
+        ],
+        "proposal_score": 0.8899795413017273
+      },
+      "best_iou": 0.06737387347557791
+    },
+    {
+      "id": "taco/batch_8/000031.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9626498818397522,
+        "margin": 0.9471103549003601,
+        "box": [
+          648.6564202308655,
+          1333.6645231246948,
+          1285.1134886741638,
+          2156.9985551834106
+        ],
+        "proposal_score": 0.9749757051467896
+      },
+      "best_iou": 0.010717618516373973
+    },
+    {
+      "id": "taco/batch_8/000035.jpg",
+      "prediction": {
+        "label": "Metal",
+        "material": "Metal",
+        "score": 0.8391760587692261,
+        "margin": 0.7219015955924988,
+        "box": [
+          1363.0133609175682,
+          597.1708488464355,
+          1466.8174858689308,
+          742.1237926483154
+        ],
+        "proposal_score": 0.9973204731941223
+      },
+      "best_iou": 0.3739157279866361
+    },
+    {
+      "id": "taco/batch_8/000035.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9985462427139282,
+        "margin": 0.9976727366447449,
+        "box": [
+          1557.2849648594856,
+          426.27875804901123,
+          1643.801598250866,
+          516.7265996932983
+        ],
+        "proposal_score": 0.48744699358940125
+      },
+      "best_iou": 0.04336566598716812
+    },
+    {
+      "id": "taco/batch_8/000036.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9972113966941833,
+        "margin": 0.9964264631271362,
+        "box": [
+          1567.5231544822454,
+          63.61670011281967,
+          1639.3540790230036,
+          122.53605276346207
+        ],
+        "proposal_score": 0.5834601521492004
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_8/000036.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9975887537002563,
+        "margin": 0.9969751238822937,
+        "box": [
+          1554.5079233944416,
+          77.72641003131866,
+          1622.526185721159,
+          139.73328244686127
+        ],
+        "proposal_score": 0.5126491189002991
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_8/000066.jpg",
+      "prediction": {
+        "label": "Metal",
+        "material": "Metal",
+        "score": 0.9985243678092957,
+        "margin": 0.9976072311401367,
+        "box": [
+          963.5118389725685,
+          1823.408630847931,
+          1135.8346776366234,
+          2132.271087169647
+        ],
+        "proposal_score": 0.9765322208404541
+      },
+      "best_iou": 0.2385236548767699
+    },
+    {
+      "id": "taco/batch_8/000066.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9998425245285034,
+        "margin": 0.999779999256134,
+        "box": [
+          831.2128636837006,
+          1937.1912635564804,
+          934.3337366580963,
+          2067.4487968683243
+        ],
+        "proposal_score": 0.843905508518219
+      },
+      "best_iou": 0.11294579191850704
+    },
+    {
+      "id": "taco/batch_9/000073.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9864633083343506,
+        "margin": 0.9774073958396912,
+        "box": [
+          1244.626707315445,
+          1799.94285851717,
+          1387.3976075649261,
+          1931.443564593792
+        ],
+        "proposal_score": 0.8600372672080994
+      },
+      "best_iou": 0.25986141480327446
+    },
+    {
+      "id": "taco/batch_9/000073.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9987485408782959,
+        "margin": 0.9982454776763916,
+        "box": [
+          906.4375823736191,
+          2449.400559067726,
+          1014.7651344537735,
+          2582.363948225975
+        ],
+        "proposal_score": 0.7618672847747803
+      },
+      "best_iou": 0.223382611124622
+    },
+    {
+      "id": "taco/batch_9/000073.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9995433688163757,
+        "margin": 0.9992287755012512,
+        "box": [
+          1318.4158603549004,
+          1793.229766190052,
+          1415.1799305081367,
+          1895.1960131525993
+        ],
+        "proposal_score": 0.7454385161399841
+      },
+      "best_iou": 0.07861621394750283
+    },
+    {
+      "id": "taco/batch_9/000073.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9977282881736755,
+        "margin": 0.9967823028564453,
+        "box": [
+          778.3091844320297,
+          2858.057200908661,
+          897.2855325937271,
+          3084.9178433418274
+        ],
+        "proposal_score": 0.631514847278595
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_9/000076.jpg",
+      "prediction": {
+        "label": "Glass",
+        "material": "Glass",
+        "score": 0.9309189915657043,
+        "margin": 0.8903961181640625,
+        "box": [
+          924.0344688296318,
+          1157.1966075897217,
+          1117.889054119587,
+          1564.6499347686768
+        ],
+        "proposal_score": 0.9525814056396484
+      },
+      "best_iou": 0.2916156621121931
+    },
+    {
+      "id": "taco/batch_9/000076.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9218036532402039,
+        "margin": 0.9006657004356384,
+        "box": [
+          168.40696334838867,
+          27.810233116149902,
+          1484.7806692123413,
+          1090.3594522476196
+        ],
+        "proposal_score": 0.851382851600647
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_9/000076.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9913491606712341,
+        "margin": 0.9890379309654236,
+        "box": [
+          53.7286251783371,
+          4.8680641651153564,
+          442.1433061361313,
+          302.1380488872528
+        ],
+        "proposal_score": 0.7624183297157288
+      },
+      "best_iou": 0.0
+    },
+    {
+      "id": "taco/batch_9/000089.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.8373600840568542,
+        "margin": 0.7643023133277893,
+        "box": [
+          985.940664678812,
+          3407.853428274393,
+          1027.255395501852,
+          3468.6738811433315
+        ],
+        "proposal_score": 0.7945725917816162
+      },
+      "best_iou": 0.12769261921714528
+    },
+    {
+      "id": "taco/batch_9/000089.jpg",
+      "prediction": {
+        "label": "Biological",
+        "material": "Food waste",
+        "score": 0.9786457419395447,
+        "margin": 0.9679686427116394,
+        "box": [
+          111.46164706349373,
+          1516.2074901163578,
+          139.12885710597038,
+          1561.4139698445797
+        ],
+        "proposal_score": 0.7542397975921631
+      },
+      "best_iou": 0.0
+    }
+  ]
+}
