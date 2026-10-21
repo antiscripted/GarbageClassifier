@@ -1,6 +1,6 @@
 # Model verification and accuracy limits
 
-Model evaluation below was completed on 19 October 2026. The 20 October finishing task retains the same model without retraining, replacement or new comparison work.
+The original contract and probes below were completed on 19 October 2026. The [20–21 October comparison](EXPERIMENT.md) adds RealWaste, TACO and three candidate families. The experimental APK retains the same model: the best accuracy candidate is not yet qualified for Android CPU deployment. No retraining occurred.
 
 ## Bundled artifact
 
@@ -26,7 +26,7 @@ Machine-readable details are in [model/contract.json](model/contract.json), with
 
 Verified label order: Not Recyclable, Food waste, Glass, Textile, Metal, Wooden, Leather, Plastic, Ceramic, Paper. Unsupported labels remain uncertain for disposal purposes. RGB is not changed to BGR.
 
-The app uses uniform letterboxing with RGB padding 114 and reverses that geometry when decoding. Candidate scores below 0.25 are dropped; class-aware NMS uses IoU 0.45 and keeps at most 20 boxes. Final recommendations require confidence 0.60, best-versus-second class margin 0.15 and two nearby detections within 700 ms. Contradictory overlapping classes are rejected. These checks reduce instability; they cannot eliminate confident model errors.
+The app uses uniform letterboxing with RGB padding 114 and reverses that geometry when decoding. Candidate scores below 0.25 are dropped; class-aware NMS uses IoU 0.45 and keeps at most 20 boxes. Final recommendations require confidence 0.60, best-versus-second class margin 0.15 and two nearby detections within 700 ms. Contradictory overlapping classes are rejected. The experimental build additionally requires three confirmed observations over at least 400 ms before locking a tracked result; see [stability behavior](STABILITY.md). These checks reduce instability; they cannot eliminate confident model errors.
 
 ## Actual inference checks
 

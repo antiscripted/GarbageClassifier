@@ -1,41 +1,64 @@
 # Garbage Classifier
 
-Native Kotlin Android app for the Class 9 AI startup competition. Opens the rear camera, runs a bundled waste detector entirely on the phone, and shows a material, a wet/dry recommendation and a bounding box. Bin inspection flags recognizable objects that disagree with the selected bin. No account, server, microphone, uploads, paid API or Internet permission is used.
+A native Kotlin Android project for two Class 9 students and their teacher. The rear camera runs a bundled waste detector entirely offline. The app shows a material and wet/dry recommendation; bin inspection highlights recognizable items in the wrong selected bin. No account, photo upload, microphone, paid API or Internet permission.
 
-**Review build, 20 October 2026:** the application and automated checks are implemented. The pretrained model makes confident mistakes on some waste materials. This is a working educational prototype, not a validated general-purpose waste sorter. Physical Galaxy M51 testing and student/teacher acceptance are still required before the 20–21 October review and 25 October competition.
+**21 October 2026 experimental build:** adds conservative object tracking, a four-second result hold, smoothed boxes and automatic removal resets. The original model and interface are retained. This improves display stability, not the model's underlying accuracy. The owner reports that the original APK works on the Galaxy M51 but confuses some materials; Codex has not physically tested that phone. Competition deadline: **25 October**.
 
-The downloadable APK and matching complete source ZIP are in [`delivery/`](delivery/). File checksums are in `delivery/SHA256SUMS.txt`.
+## Download
 
-## Get started
+- [Experimental debug APK](apks/experimental/GarbageClassifier-experimental-debug.apk) — new stability build.
+- [Complete matching source ZIP](source/GarbageClassifier-experimental-source.zip).
+- [Original working APK](delivery/GarbageClassifier-debug.apk) and [original source ZIP](delivery/GarbageClassifier-source.zip) — unchanged fallback.
+- Checksums: [experimental APK](apks/experimental/SHA256SUMS.txt), [experimental source](source/SHA256SUMS.txt), [original delivery](delivery/SHA256SUMS.txt).
 
-- [Windows installation, Android Studio build and APK installation](docs/WINDOWS.md)
-- [How the components work](docs/ARCHITECTURE.md)
-- [Indian segregation rules and scope](docs/SEGREGATION.md)
-- [Model verification, comparisons and limitations](docs/MODEL.md)
-- [Tests, errors and device review checklist](docs/VALIDATION.md)
-- [Attribution and distribution obligations](docs/LICENSES.md)
-- [Reproducing the cloud build](docs/CLOUD.md)
+On GitHub, open a file and choose **Download raw file**. The two APKs share a package name and signing key; installing one updates the installed app. Keep both files to switch back. Android 7/API 24 or newer and a rear camera are required. The universal APK supports ARM64, ARMv7 and x86_64.
 
-Android 7.0/API 24 or newer, with a rear camera. The universal debug APK supports arm64-v8a, armeabi-v7a and x86_64. Primary intended phone: Samsung Galaxy M51, Snapdragon 730G. This phone has not been tested here.
+## Build and review
 
-Open the project folder in Android Studio, select JDK 17, install SDK Platform 35 and Build Tools 35.0.0, then run:
+Open the extracted project or clone `development` in Android Studio. Use JDK 17, SDK Platform 35 and Build Tools 35.0.0. Gradle is included:
 
 ```powershell
-.\gradlew.bat :app:testDebugUnitTest :app:assembleDebug :app:lintDebug
+git clone --branch development https://github.com/antiscripted/GarbageClassifier.git
+Set-Location GarbageClassifier
+.\gradlew.bat :app:testDebugUnitTest :app:assembleDebug :app:assembleDebugAndroidTest :app:lintDebug
 ```
 
-The APK is generated at `app/build/outputs/apk/debug/app-debug.apk`. An initial build downloads development dependencies; the installed app works without network access. Gradle 8.11.1 and its checksum are pinned in the included wrapper. No separate Gradle installation is necessary.
+Output: `app/build/outputs/apk/debug/app-debug.apk`. The first build needs Internet access for development dependencies; the installed application needs no download or connection.
 
-## Using the app
+- [Exact Windows setup, build and installation instructions](docs/WINDOWS.md)
+- [Main Kotlin files explained for student review](docs/ARCHITECTURE.md)
+- [Tracking behavior and phone review checklist](docs/STABILITY.md)
+- [Tests, errors and limitations](docs/VALIDATION.md)
+- [Completed model comparison and deployment decision](docs/EXPERIMENT.md)
+- [Model contract](docs/MODEL.md), [Indian segregation rules](docs/SEGREGATION.md), [licenses](docs/LICENSES.md)
 
-Grant the camera permission. Hold one ordinary, well-lit object against a simple background. Confirmed detections show purple boxes, the material and a wet/dry recommendation. Ambiguous, unsupported or missing detections show “Object not clear”; uncertain boxes are gray and dashed. Scores and repeated frames reduce instability but cannot guarantee a correct prediction.
+## Use
 
-Select “Bin inspection”, then “Wet” or “Dry”. Confirmed mismatches use orange boxes and “Wrong bin”; matches show “Correct bin”. Uncertain objects keep their uncertain state. A visible match cannot establish that everything in a bin is correctly sorted: hidden objects, contamination and hazardous contents are outside the model's capabilities.
+Grant camera access and hold one well-lit object against a simple background. Purple boxes indicate confirmed objects. Uncertain objects show “Object not clear” and gray dashed boxes. A confirmed card is held briefly, but a missing object's box disappears immediately. Replacement, ambiguity and lifecycle resets can end a hold early; see the stability guide.
 
-“Licenses” opens bundled attribution and legal texts without network access. Camera analysis pauses while that screen is open.
+Select “Bin inspection”, then “Wet” or “Dry”. Orange boxes and “Wrong bin” flag confirmed mismatches; “Correct bin” applies only to recognizable matches. Hidden contents, contamination and unsupported materials remain outside the detector's capabilities. “Licenses” opens attribution offline and pauses the camera.
 
-## Project contents
+## Repository organization
 
-`app/src/main` contains the application and actual 2,836,973-byte model. `app/src/test` contains deterministic decoder, geometry and sorting tests. `app/src/androidTest` tests native inference, camera transforms and UI lifecycle. Test photos are excluded from the main APK. `tools/verify_model.py` independently checks the model with desktop TensorFlow. `docs/validation` contains measured results. `preservation` holds historical snapshots; their APKs and reports are intentionally not overwritten by later development.
+| Branch | Purpose |
+| --- | --- |
+| `main` | Existing default branch; left unchanged pending owner approval. Switch to `development` for this delivery. |
+| `development` | Latest verified experimental source, evidence and APK. |
+| `backup` | Saved pre-finishing checkpoint `3eb166f9bb09b9207b4f33bf1a1feefa704cf691`. |
+| Previous `finish/`, `experiment/`, `preserve/` branches | Retained historical work; none deleted or rewritten. |
 
-The application and bundled detector are distributed under AGPL-3.0. Keep the complete corresponding source, model and notices with any APK distribution. See [LICENSE](LICENSE) and [distribution guidance](docs/LICENSES.md).
+| Folder | Contents |
+| --- | --- |
+| `app/` | Android source, bundled real model, JVM and Android tests. Kept in standard Android Studio layout. |
+| `apks/experimental/` | New experimental APK and checksum. |
+| `source/` | Complete experimental source archive and checksum. |
+| `delivery/` | Frozen original working APK and source archive. |
+| `docs/` | Build instructions, explanations, rules, licenses and limitations. |
+| `docs/experiments/2026-10-20/` | Model comparison results, provenance and export evidence. |
+| `docs/validation/experimental-2026-10-21/` | New build and test evidence. Earlier validation folders remain historical. |
+| `tools/` | Optional developer verification, benchmarking and packaging scripts. |
+| `preservation/` | Historical snapshots, retained without overwriting. |
+
+No old branches or useful artifacts were deleted. Source archives intentionally exclude other APKs/archives and local build tools to avoid recursive duplication. Candidate research weights and evaluation datasets are not bundled.
+
+The app and bundled model are distributed under **AGPL-3.0**. Share complete corresponding source and required notices with any APK. This remains an educational prototype: stable output can still be wrong, and physical-phone recognition, responsiveness and student/teacher acceptance require review.

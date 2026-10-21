@@ -9,7 +9,8 @@ flowchart LR
     C --> D[Bundled LiteRT detector]
     D --> E[Decode boxes and remove duplicates]
     E --> F[Confidence, ambiguity and repeated-frame checks]
-    F --> G[Wet/dry rules]
+    F --> T[Track identity, hold result and smooth boxes]
+    T --> G[Wet/dry rules]
     G --> H[Map to preview and draw]
     G --> I[Compare with selected bin]
 ```
@@ -18,11 +19,13 @@ flowchart LR
 | --- | --- |
 | `MainActivity` | Permission flow, approved screen text, scanner/bin selection, result display, license dialog and lifecycle. |
 | `CameraController` | Binds the rear camera preview and analysis to one CameraX viewport. Starts/stops the worker and ignores callbacks from obsolete camera sessions. |
-| `CameraAnalyzer` | Keeps analysis off the UI thread, accepts at most one frame every 180 ms, closes every ImageProxy in `finally`, and passes detections to the temporal filter. |
+| `CameraAnalyzer` | Keeps analysis off the UI thread, accepts at most one frame every 180 ms, closes every ImageProxy in `finally`, and passes detections through confirmation and tracking. |
 | `TrashDetector` | Checks the model's SHA-256, input/output shapes and float32 types, rotates and letterboxes the frame, runs two-thread CPU inference and restores boxes to camera-buffer coordinates. |
 | `ModelContract` / `YoloDecoder` | Defines verified class order and tensor shape. Reads center coordinates and class scores, removes padding, clips boxes and calls class-aware non-maximum suppression. |
 | `Geometry` | Small, Android-independent box, rotation and letterbox calculations. |
 | `RecognitionFilter` | Requires confidence ≥ 0.60, class margin ≥ 0.15 and the same class at a nearby box in two consecutive analyzed frames no more than 700 ms apart. Conflicting overlapping classes remain uncertain. |
+| `AppearanceSampler` | Reads a small RGB grid from each object box to help distinguish replacements. |
+| `RecognitionTracker` | Matches repeated sightings conservatively, holds confirmed labels, smooths boxes and clears missing or ambiguous objects. |
 | `WasteRules` | Compares a confirmed wet/dry recommendation with the selected bin. It never maps an unknown detection to a guessed category. |
 | `DetectionOverlay` | Draws confirmed purple boxes, wrong-bin orange boxes and uncertain gray dashed boxes. The text also distinguishes states, so color is not the only signal. |
 
@@ -36,7 +39,9 @@ Unit tests cover coordinate arithmetic. Android tests run the real detector with
 
 `STRATEGY_KEEP_ONLY_LATEST` drops queued old frames rather than making the preview wait. Analysis has its own single worker; there are never several concurrent interpreter calls. Most model input/output arrays, the 320×320 bitmap and paint objects are reused. CameraX's image-to-bitmap conversion still allocates a frame bitmap, which is recycled after inference.
 
-The 180 ms throttle is an upper limit of about 5.6 analyzed frames per second, not a promised phone frame rate. The preview runs independently. Results older than 900 ms are discarded, and displayed results expire. Rebinding the camera clears boxes immediately. Two-frame confirmation reduces flicker but does not prove a material is correct: a model can repeat the same confident mistake.
+The 180 ms throttle is an upper limit of about 5.6 analyzed frames per second, not a promised phone frame rate. The preview runs independently. Results older than 900 ms are discarded, and displayed results expire. Rebinding the camera clears boxes immediately. Two-frame eligibility followed by tracked confirmation and a four-second result hold reduces flicker but does not prove a material is correct: a model can repeat the same confident mistake.
+
+[STABILITY.md](STABILITY.md) explains hold timing and early resets. Missing objects lose their overlay immediately; their card can remain briefly. Mode and bin changes clear tracking, and queued results from the previous tracking generation are ignored.
 
 Closing or backgrounding the app stops camera use. Rebinding removes old camera-state observers. Opening Licenses pauses the camera; closing it resumes if the activity is active. Errors stop analysis and show only approved recovery text. No frame or result is written to storage.
 
