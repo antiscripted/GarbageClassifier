@@ -1,0 +1,4 @@
+yolo: 50/104
+yolo: 100/104
+{'box_iou_threshold': 0.25, 'targets': 494, 'targets_with_proposal': 15, 'scenes_with_proposal': 104, 'host_ms': 385.0421565002762}
+{'box_iou_threshold': 0.5, 'targets': 494, 'targets_with_proposal': 2, 'scenes_with_proposal': 104, 'host_ms': 385.0421565002762}

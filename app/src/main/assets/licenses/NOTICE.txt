@@ -14,3 +14,9 @@ AndroidX CameraX, Activity, Core and Lifecycle: Copyright The Android Open Sourc
 Google AI Edge LiteRT: Copyright Google AI Edge Authors and the TensorFlow Authors. Apache License 2.0.
 Kotlin: Copyright JetBrains s.r.o. and Kotlin Programming Language contributors. Apache License 2.0.
 The Apache License 2.0 follows the AGPL license.
+
+Candidate material classifier: prithivMLmods/Augmented-Waste-Classifier-SigLIP2
+https://huggingface.co/prithivMLmods/Augmented-Waste-Classifier-SigLIP2
+Revision d203b52311f70ac3245d5fb8345d88344bec138e, declared Apache License 2.0.
+Modified on 21 October 2026 by this project: ONNX export and 4-bit weight-only quantization, without training.
+The Apache License 2.0 text is included in ANDROIDX-LITERT-APACHE-2.0.txt.

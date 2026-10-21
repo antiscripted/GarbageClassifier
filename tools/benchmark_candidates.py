@@ -221,6 +221,8 @@ def main():
     parser.add_argument("--baseline", type=Path)
     parser.add_argument("--skip-trashnet", action="store_true")
     parser.add_argument("--only-ids", type=Path)
+    parser.add_argument("--proposals-only", action="store_true")
+    parser.add_argument("--reuse", type=Path)
     args = parser.parse_args()
     rows = json.loads((args.data / "manifest.json").read_text())
     if args.skip_trashnet:
@@ -229,6 +231,12 @@ def main():
         selected = set(json.loads(args.only_ids.read_text()))
         rows = [row for row in rows if row["id"] in selected]
     baseline = {row["id"]: row for row in json.loads(args.baseline.read_text())["results"]} if args.baseline else {}
+    model_sha = hashlib.sha256(args.model.read_bytes()).hexdigest()
+    reused = {}
+    if args.reuse:
+        cached = json.loads(args.reuse.read_text())
+        assert cached["model_sha256"] == model_sha
+        reused = {row["id"]: row for row in cached["results"]}
     constructors = {"lite": LiteDetector, "efficientnet": EfficientNet, "siglip": Siglip,
                     "siglip-onnx": OnnxClassifier,
                     "mobile-detector": MobileDetector}
@@ -239,6 +247,7 @@ def main():
         engine.predict(Image.new("RGB", (512, 384), (114, 114, 114)))
     results = []
     durations = []
+    reused_crops = 0
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.with_suffix(".partial.jsonl").write_text("")
     for number, row in enumerate(rows, 1):
@@ -248,7 +257,7 @@ def main():
             assert list(image.size) == row["annotated_size"], row["id"]
         record = dict(id=row["id"], dataset=row["dataset"], category=row["category"], expected=row["expected"])
         start = time.perf_counter()
-        if row["dataset"] != "taco" or engine.kind == "detector":
+        if not args.proposals_only and (row["dataset"] != "taco" or engine.kind == "detector"):
             predictions, elapsed = engine.predict(image)
             record["predictions"] = predictions
             durations.append(elapsed)
@@ -258,7 +267,7 @@ def main():
             record["targets"] = [dict(target, box=[target["box"][0] * sx, target["box"][1] * sy,
                                                      target["box"][2] * sx, target["box"][3] * sy])
                                  for target in row["targets"]]
-            if engine.kind == "classifier":
+            if engine.kind == "classifier" and not args.proposals_only:
                 record["oracle_crops"] = []
                 for target in record["targets"]:
                     if target["box"][2] - target["box"][0] < 2 or target["box"][3] - target["box"][1] < 2:
@@ -268,9 +277,15 @@ def main():
                     record["oracle_crops"].append(dict(target=target, prediction=predictions[0]))
         if engine.kind == "classifier" and row["id"] in baseline:
             record["hybrid"] = []
+            cached_crops = {tuple(item["box"]): item for item in reused.get(row["id"], {}).get("hybrid", [])}
             for proposal in baseline[row["id"]]["predictions"][:5]:
-                predictions, elapsed = engine.predict(image.crop(tuple(proposal["box"])))
-                durations.append(elapsed)
+                saved = cached_crops.get(tuple(proposal["box"]))
+                if saved is None:
+                    predictions, elapsed = engine.predict(image.crop(tuple(proposal["box"])))
+                    durations.append(elapsed)
+                else:
+                    predictions = [saved]
+                    reused_crops += 1
                 record["hybrid"].append(dict(predictions[0], box=proposal["box"],
                                              proposal_score=proposal["score"]))
         record["total_ms"] = (time.perf_counter() - start) * 1000
@@ -280,13 +295,14 @@ def main():
         if number % 50 == 0:
             print(f"{args.engine}: {number}/{len(rows)}", flush=True)
     report = dict(engine=args.engine, kind=engine.kind,
-                  model_sha256=hashlib.sha256(args.model.read_bytes()).hexdigest(),
+                  model_sha256=model_sha,
                   model_bytes=args.model.stat().st_size, metadata=engine.metadata, init_ms=init_ms,
-                  host_inference_median_ms=statistics.median(durations),
-                  host_inference_p95_ms=float(np.percentile(durations, 95)),
+                  host_inference_median_ms=statistics.median(durations) if durations else None,
+                  host_inference_p95_ms=float(np.percentile(durations, 95)) if durations else None,
                   host_peak_rss_mib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024,
                   cpu_threads=2, timing_is_not_phone_timing=True, environment=os.uname().machine,
-                  results=results)
+                  reused_crops=reused_crops, measured_inferences=len(durations),
+                  proposals_only=args.proposals_only, results=results)
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps({key: value for key, value in report.items() if key != "results"}, indent=2), flush=True)

@@ -1,0 +1,12 @@
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+coco: 50/464
+coco: 100/464
+coco: 150/464
+coco: 200/464
+coco: 250/464
+coco: 300/464
+coco: 350/464
+coco: 400/464
+coco: 450/464
+{'box_iou_threshold': 0.25, 'targets': 494, 'targets_with_proposal': 29, 'scenes_with_proposal': 22, 'host_ms': 15.140837509534322}
+{'box_iou_threshold': 0.5, 'targets': 494, 'targets_with_proposal': 27, 'scenes_with_proposal': 22, 'host_ms': 15.140837509534322}

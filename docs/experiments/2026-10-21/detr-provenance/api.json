@@ -1,0 +1,106 @@
+{
+  "_id": "64f3e1a10cab3be01135f494",
+  "id": "Yorai/detr-resnet-50_finetuned_detect-waste",
+  "private": false,
+  "pipeline_tag": "object-detection",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "pytorch",
+    "detr",
+    "object-detection",
+    "generated_from_trainer",
+    "dataset:Yorai/detect-waste",
+    "base_model:facebook/detr-resnet-50",
+    "base_model:finetune:facebook/detr-resnet-50",
+    "license:apache-2.0",
+    "endpoints_compatible",
+    "region:us"
+  ],
+  "downloads": 50,
+  "likes": 2,
+  "modelId": "Yorai/detr-resnet-50_finetuned_detect-waste",
+  "author": "Yorai",
+  "sha": "12c9760517571e60d5372d013021a509f555e6cc",
+  "lastModified": "2023-09-05T18:57:13.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": [
+    {
+      "name": "detr-resnet-50_finetuned_detect-waste",
+      "results": []
+    }
+  ],
+  "config": {
+    "architectures": [
+      "DetrForObjectDetection"
+    ],
+    "model_type": "detr"
+  },
+  "cardData": {
+    "license": "apache-2.0",
+    "base_model": "facebook/detr-resnet-50",
+    "tags": [
+      "generated_from_trainer"
+    ],
+    "model-index": [
+      {
+        "name": "detr-resnet-50_finetuned_detect-waste",
+        "results": []
+      }
+    ],
+    "datasets": [
+      "Yorai/detect-waste"
+    ]
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForObjectDetection",
+    "pipeline_tag": "object-detection",
+    "processor": "AutoImageProcessor"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "size": 1519
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "19b59ea17ee5e4942d625ac6615c377a9abcfa91",
+      "size": 69071
+    },
+    {
+      "rfilename": "config.json",
+      "blobId": "5d46b96bc7420d1b3b2b41f73681899e12f69d99",
+      "size": 1504
+    },
+    {
+      "rfilename": "preprocessor_config.json",
+      "blobId": "a249a9ae21dff8f1c99bfc79ef452487f893d053",
+      "size": 401
+    },
+    {
+      "rfilename": "pytorch_model.bin",
+      "blobId": "c624b0ba576a7314eae2b4d7ac9cd615845f2874",
+      "size": 166528661,
+      "lfs": {
+        "sha256": "f5e9cb4ec7bdc3274417ce8c5bcfb8787fad6c4eefb5321add70e8966c078065",
+        "size": 166528661,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "training_args.bin",
+      "blobId": "303fe13d513ee6aa521cb140864f7f2df2869bb6",
+      "size": 4027,
+      "lfs": {
+        "sha256": "005e2575be85964661863d8e119e05bd58b2cb3f2de7c25c4e8b942103239142",
+        "size": 4027,
+        "pointerSize": 129
+      }
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2023-09-03T01:30:09.000Z",
+  "usedStorage": 22815901829
+}

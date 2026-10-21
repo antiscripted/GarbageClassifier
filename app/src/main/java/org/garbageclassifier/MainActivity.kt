@@ -54,6 +54,7 @@ class MainActivity : ComponentActivity() {
     private val expiry = object : Runnable {
         override fun run() {
             if (running && lastResult != 0L && SystemClock.elapsedRealtime() - lastResult > 900) {
+                camera.resetTracking()
                 clearResults(R.string.unclear)
             }
             if (running) handler.postDelayed(this, 250)

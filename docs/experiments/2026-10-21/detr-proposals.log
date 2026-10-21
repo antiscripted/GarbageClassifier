@@ -1,0 +1,4 @@
+detr: 50/104
+detr: 100/104
+{'box_iou_threshold': 0.25, 'targets': 494, 'targets_with_proposal': 172, 'scenes_with_proposal': 104, 'host_ms': 447.32562551507726}
+{'box_iou_threshold': 0.5, 'targets': 494, 'targets_with_proposal': 123, 'scenes_with_proposal': 104, 'host_ms': 447.32562551507726}

@@ -4,10 +4,12 @@ import android.os.ParcelFileDescriptor
 import android.os.SystemClock
 import android.widget.Button
 import android.widget.RadioButton
+import android.widget.TextView
 import androidx.camera.view.PreviewView
 import androidx.test.core.app.ActivityScenario
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import org.garbageclassifier.camera.CameraAnalyzer
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Before
@@ -68,6 +70,31 @@ class ScannerInstrumentedTest {
             }
             assertTrue("License dialog must survive recreation and close", closed)
             awaitPreview(scenario)
+        }
+    }
+
+    @Test fun expiredResultsInvalidateTrackingBeforeFramesResume() {
+        ActivityScenario.launch(MainActivity::class.java).use { scenario ->
+            awaitPreview(scenario)
+            scenario.onActivity { activity ->
+                val camera = MainActivity::class.java.getDeclaredField("camera").apply {
+                    isAccessible = true
+                }.get(activity)
+                val analyzer = camera.javaClass.getDeclaredField("analyzer").apply {
+                    isAccessible = true
+                }.get(camera) as CameraAnalyzer
+                val generation = analyzer.trackingGeneration
+                MainActivity::class.java.getDeclaredField("lastResult").apply {
+                    isAccessible = true
+                    setLong(activity, SystemClock.elapsedRealtime() - 1000)
+                }
+                val expiry = MainActivity::class.java.getDeclaredField("expiry").apply {
+                    isAccessible = true
+                }.get(activity) as Runnable
+                expiry.run()
+                assertEquals(generation + 1, analyzer.trackingGeneration)
+                assertEquals("Object not clear", activity.findViewById<TextView>(R.id.status).text.toString())
+            }
         }
     }
 
