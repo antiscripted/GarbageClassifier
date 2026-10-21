@@ -1,0 +1,9 @@
+detr: 50/360
+detr: 100/360
+detr: 150/360
+detr: 200/360
+detr: 250/360
+detr: 300/360
+detr: 350/360
+{'box_iou_threshold': 0.25, 'targets': 0, 'targets_with_proposal': 0, 'scenes_with_proposal': 0, 'host_ms': 475.3701640001964}
+{'box_iou_threshold': 0.5, 'targets': 0, 'targets_with_proposal': 0, 'scenes_with_proposal': 0, 'host_ms': 475.3701640001964}

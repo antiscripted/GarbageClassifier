@@ -1,0 +1,12 @@
+test_duplicate_box_cannot_match_same_object_twice (test_accuracy_metrics.AccuracyMetricsTest.test_duplicate_box_cannot_match_same_object_twice) ... ok
+test_food_confusion_is_wrong_bin (test_accuracy_metrics.AccuracyMetricsTest.test_food_confusion_is_wrong_bin) ... ok
+test_material_error_does_not_imply_wrong_dry_bin (test_accuracy_metrics.AccuracyMetricsTest.test_material_error_does_not_imply_wrong_dry_bin) ... ok
+test_rejection_and_missing_detections_are_distinct (test_accuracy_metrics.AccuracyMetricsTest.test_rejection_and_missing_detections_are_distinct) ... ok
+test_right_material_on_wrong_object_is_not_correct (test_accuracy_metrics.AccuracyMetricsTest.test_right_material_on_wrong_object_is_not_correct) ... ok
+test_unlabelled_material_is_not_scored_as_known_wrong (test_accuracy_metrics.AccuracyMetricsTest.test_unlabelled_material_is_not_scored_as_known_wrong) ... ok
+test_wrong_label_can_still_be_localized (test_accuracy_metrics.AccuracyMetricsTest.test_wrong_label_can_still_be_localized) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.000s
+
+OK

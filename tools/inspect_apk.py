@@ -44,6 +44,7 @@ def main():
         model = archive.read('assets/trash_detector.tflite')
         model_sha = hashlib.sha256(model).hexdigest()
         assert model_sha == contract['sha256'] and len(model) == contract['bytes']
+        assert not any(name.endswith('.onnx') or 'onnxruntime' in name for name in archive.namelist())
         assert not any(name.lower().endswith(('.jpg', '.jpeg')) for name in archive.namelist())
         for name in sorted(archive.namelist()):
             if name.startswith('lib/') and name.endswith('.so'):
@@ -68,6 +69,7 @@ def main():
                   test_photos_in_main_apk=False, signature_v2=True,
                   same_signing_certificate_as_original=same_certificate, zipalign_16kb=True,
                   bundled_license_texts_verified=True)
+    report['candidate_weights_or_runtime_in_scanner_apk'] = False
     args.report.write_text(json.dumps(report, indent=2) + '\n')
     print(json.dumps(report, indent=2))
 

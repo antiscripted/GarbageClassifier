@@ -1,0 +1,32 @@
+siglip-onnx: 50/104
+siglip-onnx: 100/104
+{
+  "engine": "siglip-onnx",
+  "kind": "classifier",
+  "model_sha256": "fec39a575bd1a2d2434a1f763989bba0c2ecdd3c2cbfd52a27d9f923f53abd10",
+  "model_bytes": 56733021,
+  "metadata": {
+    "parameter_count": 92891914,
+    "input_shape": [
+      1,
+      3,
+      224,
+      224
+    ],
+    "output_shape": [
+      1,
+      10
+    ],
+    "runtime": "1.22.0"
+  },
+  "init_ms": 183.77064101514407,
+  "host_inference_median_ms": 366.44151600194164,
+  "host_inference_p95_ms": 792.933909682324,
+  "host_peak_rss_mib": 505.77734375,
+  "cpu_threads": 2,
+  "timing_is_not_phone_timing": true,
+  "environment": "x86_64",
+  "reused_crops": 0,
+  "measured_inferences": 388,
+  "proposals_only": true
+}

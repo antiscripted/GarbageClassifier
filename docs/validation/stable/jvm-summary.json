@@ -1,0 +1,30 @@
+[
+  {
+    "name": "org.garbageclassifier.core.YoloDecoderTest",
+    "tests": "17",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0"
+  },
+  {
+    "name": "org.garbageclassifier.core.GeometryTest",
+    "tests": "12",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0"
+  },
+  {
+    "name": "org.garbageclassifier.core.RecognitionTrackerTest",
+    "tests": "22",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0"
+  },
+  {
+    "name": "org.garbageclassifier.core.WasteRulesTest",
+    "tests": "24",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0"
+  }
+]

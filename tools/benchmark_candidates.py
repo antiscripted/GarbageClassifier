@@ -156,14 +156,14 @@ class Siglip:
 class OnnxClassifier:
     kind = "classifier"
 
-    def __init__(self, path):
+    def __init__(self, path, metadata=None):
         import onnxruntime as ort
         options = ort.SessionOptions()
         options.intra_op_num_threads = 2
         options.inter_op_num_threads = 1
         options.execution_mode = ort.ExecutionMode.ORT_SEQUENTIAL
         self.session = ort.InferenceSession(str(path), options, providers=["CPUExecutionProvider"])
-        report = json.loads((path.parent / "export-report.json").read_text())
+        report = json.loads((metadata or path.parent / "export-report.json").read_text())
         self.labels = [report["labels"][str(index)] for index in range(10)]
         self.metadata = dict(parameter_count=report["parameters"], input_shape=[1, 3, 224, 224],
                              output_shape=[1, 10], runtime=ort.__version__)
@@ -223,6 +223,7 @@ def main():
     parser.add_argument("--only-ids", type=Path)
     parser.add_argument("--proposals-only", action="store_true")
     parser.add_argument("--reuse", type=Path)
+    parser.add_argument("--metadata", type=Path)
     args = parser.parse_args()
     rows = json.loads((args.data / "manifest.json").read_text())
     if args.skip_trashnet:
@@ -238,7 +239,7 @@ def main():
         assert cached["model_sha256"] == model_sha
         reused = {row["id"]: row for row in cached["results"]}
     constructors = {"lite": LiteDetector, "efficientnet": EfficientNet, "siglip": Siglip,
-                    "siglip-onnx": OnnxClassifier,
+                    "siglip-onnx": lambda path: OnnxClassifier(path, args.metadata),
                     "mobile-detector": MobileDetector}
     start = time.perf_counter()
     engine = constructors[args.engine](args.model)

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.garbageclassifier.core.YoloDecoderTest" tests="17" skipped="0" failures="0" errors="0" timestamp="2026-10-21T10:20:43" hostname="1f68f4629262" time="0.027">
+  <properties/>
+  <testcase name="actualModelOutputDecodesMetalAndExpectedImagePosition" classname="org.garbageclassifier.core.YoloDecoderTest" time="0.006"/>
+  <testcase name="scoresAreAlreadyProbabilitiesWithoutObjectnessOrExtraSigmoid" classname="org.garbageclassifier.core.YoloDecoderTest" time="0.003"/>
+  <testcase name="duplicateBoxesOfSameClassAreSuppressed" classname="org.garbageclassifier.core.YoloDecoderTest" time="0.003"/>
+  <testcase name="nonFiniteScoresAreDiscarded" classname="org.garbageclassifier.core.YoloDecoderTest" time="0.001"/>
+  <testcase name="channelsAreNormalizedXywhFollowedByTenClassScores" classname="org.garbageclassifier.core.YoloDecoderTest" time="0.001"/>
+  <testcase name="scoresOutsideProbabilityRangeAreDiscarded" classname="org.garbageclassifier.core.YoloDecoderTest" time="0.001"/>
+  <testcase name="intermediateConfidenceIsRetainedAsUncertain" classname="org.garbageclassifier.core.YoloDecoderTest" time="0.001"/>
+  <testcase name="nonFiniteCoordinatesAreDiscarded" classname="org.garbageclassifier.core.YoloDecoderTest" time="0.0"/>
+  <testcase name="overlappingDifferentClassesArePreserved" classname="org.garbageclassifier.core.YoloDecoderTest" time="0.001"/>
+  <testcase name="portraitPaddingIsRemovedBeforeCameraCoordinates" classname="org.garbageclassifier.core.YoloDecoderTest" time="0.001"/>
+  <testcase name="tiesHaveNoConfidenceMargin" classname="org.garbageclassifier.core.YoloDecoderTest" time="0.001"/>
+  <testcase name="weakScoresAreDiscarded" classname="org.garbageclassifier.core.YoloDecoderTest" time="0.001"/>
+  <testcase name="incompatibleOutputFailsClosed" classname="org.garbageclassifier.core.YoloDecoderTest" time="0.0"/>
+  <testcase name="zeroTensorHasNoDetections" classname="org.garbageclassifier.core.YoloDecoderTest" time="0.0"/>
+  <testcase name="predictionsOutsideImageAreClipped" classname="org.garbageclassifier.core.YoloDecoderTest" time="0.001"/>
+  <testcase name="resultCountIsBounded" classname="org.garbageclassifier.core.YoloDecoderTest" time="0.002"/>
+  <testcase name="negativeAndZeroBoxSizesAreDiscarded" classname="org.garbageclassifier.core.YoloDecoderTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
