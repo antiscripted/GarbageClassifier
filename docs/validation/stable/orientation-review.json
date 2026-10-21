@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-21",
+  "device": "API 29 x86_64 software emulator",
+  "checks": [
+    "Portrait: live camera region and result visible; Wet and Dry selection works; synthetic scene stays uncertain",
+    "Landscape: actual rotated layout, preview and result visible; bin inspection and Dry selection preserved",
+    "Return to portrait preserves Wet selection; Scanner hides the bin-selection controls"
+  ],
+  "method": "Android hierarchy bounds and selected states; no screenshot verification"
+}

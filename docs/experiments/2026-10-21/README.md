@@ -31,6 +31,10 @@ At most five proposals, IoU ≥0.5 coverage of 494 TACO targets: original 34; YO
 
 The earlier combined-proposal experiment used tiling for TACO only, and original + COCO for RealWaste. It is retained as exploratory evidence, not presented as one uniform application pipeline. YOLOv8m initially reset its CPU thread count to eight; that timing is marked accordingly. Other host timings include some shared CPU activity and are not controlled phone comparisons.
 
+## Smaller two-stage fallback
+
+The original detector + SigLIP2 int4 was also evaluated on the same images. At 0.60 it gives **175 correct / 25 wrong / 40 rejected** known-material RealWaste images, with **2 wrong bins**, and **27 correct material-and-box matches, 20 unmatched boxes and 463 misses** on TACO. This is a more promising small fallback than DETR for bin-error rate, but its original proposals still cover only 34/494 targets. It needs roughly 59.6 MB of weights before runtime. The SigLIP2 Android probe below applies to this fallback too: its latency and output parity were not verified, and simply putting it in the current synchronous analyzer would risk exceeding the 700/900 ms confirmation/freshness limits. It is preserved as a candidate for a measured ARM test, not silently integrated or advertised as working.
+
 ## Models, licensing and conversion
 
 - SigLIP2: `prithivMLmods/Augmented-Waste-Classifier-SigLIP2`, revision `d203b52311f70ac3245d5fb8345d88344bec138e`, Apache-2.0. The actual 56,733,021-byte int4 export is preserved in `tools/models/material_classifier.onnx`, SHA-256 `fec39a575bd1a2d2434a1f763989bba0c2ecdd3c2cbfd52a27d9f923f53abd10`. Float activations, MatMulNBits block size 32, symmetric four-bit weights; float input `[1,3,224,224]`, ten logits. Full precision is ~343 MB; the ~89 MB dynamic-int8 variant regressed badly and was rejected.

@@ -80,3 +80,15 @@
 Starting 10 tests on emulator-5554 - 10
 
 org.garbageclassifier.CandidateRuntimeTest > candidateRunsOnAndroidCpu[emulator-5554 - 10] [33mSKIPPED [0m
+
+emulator-5554 - 10 Tests 3/10 completed. (1 skipped) (0 failed)
+emulator-5554 - 10 Tests 4/10 completed. (1 skipped) (0 failed)
+emulator-5554 - 10 Tests 6/10 completed. (1 skipped) (0 failed)
+emulator-5554 - 10 Tests 8/10 completed. (1 skipped) (0 failed)
+emulator-5554 - 10 Tests 9/10 completed. (1 skipped) (0 failed)
+emulator-5554 - 10 Tests 10/10 completed. (1 skipped) (0 failed)
+emulator-5554 - 10 Tests 11/10 completed. (1 skipped) (0 failed)
+Finished 11 tests on emulator-5554 - 10
+
+BUILD SUCCESSFUL in 3m 41s
+70 actionable tasks: 1 executed, 69 up-to-date
