@@ -52,4 +52,5 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test:runner:1.6.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation(files(rootProject.file("tools/android-runtime/onnxruntime-android-1.22.0.aar")))
 }

@@ -1,0 +1,1555 @@
+{
+  "method": "Same 104 EXIF-corrected TACO scenes, greedy class-agnostic IoU >= 0.5 matching; not mAP. Still-image results omit temporal confirmation.",
+  "original": {
+    "0.6": {
+      "counts": {
+        "images": 104,
+        "targets": 494,
+        "known_targets": 333,
+        "multiple_object_images": 86,
+        "accepted_boxes": 44,
+        "localized": 22,
+        "wrong_material": 9,
+        "confident_wrong": 9,
+        "unmatched_boxes": 22,
+        "missed_targets": 472,
+        "correct_material_and_box": 11,
+        "wrong_bin": 1,
+        "unsupported_acceptance": 2,
+        "confident_unsupported_acceptance": 1
+      },
+      "per_class": {
+        "Food Can": {
+          "localized": 7,
+          "wrong": 3,
+          "targets": 23,
+          "missed": 16,
+          "correct": 4
+        },
+        "Glass cup": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Pop tab": {
+          "targets": 18,
+          "missed": 18
+        },
+        "Clear plastic bottle": {
+          "targets": 23,
+          "missed": 23
+        },
+        "Plastic bottle cap": {
+          "targets": 20,
+          "missed": 20
+        },
+        "Glass bottle": {
+          "targets": 27,
+          "missed": 27
+        },
+        "Other plastic wrapper": {
+          "targets": 14,
+          "missed": 14
+        },
+        "Drink can": {
+          "targets": 15,
+          "missed": 15
+        },
+        "Other plastic bottle": {
+          "localized": 5,
+          "wrong": 2,
+          "targets": 15,
+          "missed": 10,
+          "correct": 3
+        },
+        "Food waste": {
+          "targets": 8,
+          "missed": 8
+        },
+        "Plastic film": {
+          "localized": 3,
+          "wrong": 2,
+          "targets": 25,
+          "correct": 1,
+          "missed": 22
+        },
+        "Single-use carrier bag": {
+          "targets": 5,
+          "missed": 5
+        },
+        "Shoe": {
+          "targets": 7,
+          "missed": 7
+        },
+        "Corrugated carton": {
+          "targets": 25,
+          "missed": 22,
+          "localized": 3,
+          "correct": 3
+        },
+        "Unlabeled litter": {
+          "targets": 40,
+          "missed": 40
+        },
+        "Aluminium blister pack": {
+          "targets": 2,
+          "missed": 1,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Battery": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Aerosol": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Squeezable tube": {
+          "targets": 4,
+          "missed": 4
+        },
+        "Garbage bag": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Other carton": {
+          "targets": 9,
+          "missed": 8,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Disposable food container": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Spread tub": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Tissues": {
+          "targets": 6,
+          "missed": 6
+        },
+        "Normal paper": {
+          "targets": 18,
+          "missed": 18
+        },
+        "Cigarette": {
+          "targets": 83,
+          "missed": 83
+        },
+        "Styrofoam piece": {
+          "targets": 4,
+          "missed": 4
+        },
+        "Wrapping paper": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Other plastic": {
+          "targets": 16,
+          "missed": 16
+        },
+        "Disposable plastic cup": {
+          "targets": 3,
+          "missed": 3
+        },
+        "Plastic straw": {
+          "targets": 37,
+          "missed": 37
+        },
+        "Drink carton": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Meal carton": {
+          "targets": 3,
+          "missed": 3
+        },
+        "Plastic utensils": {
+          "targets": 4,
+          "missed": 4
+        },
+        "Paper cup": {
+          "targets": 3,
+          "missed": 3
+        },
+        "Crisp packet": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Paper bag": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Aluminium foil": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Scrap metal": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Metal bottle cap": {
+          "targets": 12,
+          "missed": 12
+        },
+        "Plastic lid": {
+          "targets": 1,
+          "missed": 1
+        }
+      },
+      "matching": "class-agnostic greedy IoU >= 0.5; not mAP"
+    },
+    "0.8": {
+      "counts": {
+        "images": 104,
+        "targets": 494,
+        "known_targets": 333,
+        "multiple_object_images": 86,
+        "accepted_boxes": 30,
+        "localized": 18,
+        "wrong_material": 9,
+        "confident_wrong": 9,
+        "missed_targets": 476,
+        "unmatched_boxes": 12,
+        "correct_material_and_box": 8,
+        "wrong_bin": 1,
+        "unsupported_acceptance": 1,
+        "confident_unsupported_acceptance": 1
+      },
+      "per_class": {
+        "Food Can": {
+          "localized": 6,
+          "wrong": 3,
+          "targets": 23,
+          "missed": 17,
+          "correct": 3
+        },
+        "Glass cup": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Pop tab": {
+          "targets": 18,
+          "missed": 18
+        },
+        "Clear plastic bottle": {
+          "targets": 23,
+          "missed": 23
+        },
+        "Plastic bottle cap": {
+          "targets": 20,
+          "missed": 20
+        },
+        "Glass bottle": {
+          "targets": 27,
+          "missed": 27
+        },
+        "Other plastic wrapper": {
+          "targets": 14,
+          "missed": 14
+        },
+        "Drink can": {
+          "targets": 15,
+          "missed": 15
+        },
+        "Other plastic bottle": {
+          "localized": 4,
+          "wrong": 2,
+          "targets": 15,
+          "missed": 11,
+          "correct": 2
+        },
+        "Food waste": {
+          "targets": 8,
+          "missed": 8
+        },
+        "Plastic film": {
+          "localized": 3,
+          "wrong": 2,
+          "targets": 25,
+          "correct": 1,
+          "missed": 22
+        },
+        "Single-use carrier bag": {
+          "targets": 5,
+          "missed": 5
+        },
+        "Shoe": {
+          "targets": 7,
+          "missed": 7
+        },
+        "Corrugated carton": {
+          "targets": 25,
+          "missed": 23,
+          "localized": 2,
+          "correct": 2
+        },
+        "Unlabeled litter": {
+          "targets": 40,
+          "missed": 40
+        },
+        "Aluminium blister pack": {
+          "targets": 2,
+          "missed": 1,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Battery": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Aerosol": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Squeezable tube": {
+          "targets": 4,
+          "missed": 4
+        },
+        "Garbage bag": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Other carton": {
+          "targets": 9,
+          "missed": 8,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Disposable food container": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Spread tub": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Tissues": {
+          "targets": 6,
+          "missed": 6
+        },
+        "Normal paper": {
+          "targets": 18,
+          "missed": 18
+        },
+        "Cigarette": {
+          "targets": 83,
+          "missed": 83
+        },
+        "Styrofoam piece": {
+          "targets": 4,
+          "missed": 4
+        },
+        "Wrapping paper": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Other plastic": {
+          "targets": 16,
+          "missed": 16
+        },
+        "Disposable plastic cup": {
+          "targets": 3,
+          "missed": 3
+        },
+        "Plastic straw": {
+          "targets": 37,
+          "missed": 37
+        },
+        "Drink carton": {
+          "targets": 4,
+          "missed": 4
+        },
+        "Meal carton": {
+          "targets": 3,
+          "missed": 3
+        },
+        "Plastic utensils": {
+          "targets": 4,
+          "missed": 4
+        },
+        "Paper cup": {
+          "targets": 3,
+          "missed": 3
+        },
+        "Crisp packet": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Paper bag": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Aluminium foil": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Scrap metal": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Metal bottle cap": {
+          "targets": 12,
+          "missed": 12
+        },
+        "Plastic lid": {
+          "targets": 1,
+          "missed": 1
+        }
+      },
+      "matching": "class-agnostic greedy IoU >= 0.5; not mAP"
+    }
+  },
+  "detr_int4": {
+    "0.6": {
+      "counts": {
+        "images": 104,
+        "targets": 494,
+        "known_targets": 333,
+        "multiple_object_images": 86,
+        "accepted_boxes": 264,
+        "localized": 89,
+        "correct_material_and_box": 66,
+        "unmatched_boxes": 175,
+        "missed_targets": 405,
+        "wrong_material": 13,
+        "confident_wrong": 9,
+        "wrong_bin": 2,
+        "unsupported_acceptance": 10,
+        "confident_unsupported_acceptance": 8
+      },
+      "per_class": {
+        "Food Can": {
+          "localized": 16,
+          "correct": 15,
+          "targets": 23,
+          "missed": 7,
+          "wrong": 1
+        },
+        "Glass cup": {
+          "localized": 1,
+          "correct": 1,
+          "targets": 2,
+          "missed": 1
+        },
+        "Pop tab": {
+          "targets": 18,
+          "missed": 18
+        },
+        "Clear plastic bottle": {
+          "localized": 6,
+          "correct": 5,
+          "targets": 23,
+          "missed": 17,
+          "wrong": 1
+        },
+        "Plastic bottle cap": {
+          "targets": 20,
+          "missed": 19,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Glass bottle": {
+          "targets": 27,
+          "missed": 22,
+          "localized": 5,
+          "correct": 3,
+          "wrong": 2
+        },
+        "Other plastic wrapper": {
+          "targets": 14,
+          "missed": 14
+        },
+        "Drink can": {
+          "localized": 8,
+          "correct": 6,
+          "targets": 15,
+          "wrong": 2,
+          "missed": 7
+        },
+        "Other plastic bottle": {
+          "localized": 9,
+          "correct": 8,
+          "targets": 15,
+          "missed": 6,
+          "wrong": 1
+        },
+        "Food waste": {
+          "targets": 8,
+          "missed": 6,
+          "localized": 2,
+          "correct": 2
+        },
+        "Plastic film": {
+          "targets": 25,
+          "missed": 22,
+          "localized": 3,
+          "wrong": 2,
+          "correct": 1
+        },
+        "Single-use carrier bag": {
+          "localized": 2,
+          "correct": 2,
+          "targets": 5,
+          "missed": 3
+        },
+        "Shoe": {
+          "targets": 7,
+          "missed": 7
+        },
+        "Corrugated carton": {
+          "localized": 15,
+          "correct": 15,
+          "targets": 25,
+          "missed": 10
+        },
+        "Unlabeled litter": {
+          "targets": 40,
+          "missed": 39,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Squeezable tube": {
+          "localized": 2,
+          "wrong": 2,
+          "targets": 4,
+          "missed": 2
+        },
+        "Aluminium blister pack": {
+          "targets": 2,
+          "missed": 1,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Battery": {
+          "targets": 2,
+          "missed": 1,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Aerosol": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Garbage bag": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Other carton": {
+          "targets": 9,
+          "missed": 6,
+          "localized": 3,
+          "correct": 3
+        },
+        "Disposable food container": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "correct": 1
+        },
+        "Spread tub": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Tissues": {
+          "targets": 6,
+          "missed": 6
+        },
+        "Normal paper": {
+          "targets": 18,
+          "missed": 14,
+          "localized": 4,
+          "correct": 4
+        },
+        "Cigarette": {
+          "targets": 83,
+          "missed": 83
+        },
+        "Styrofoam piece": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Wrapping paper": {
+          "localized": 1,
+          "wrong": 1,
+          "targets": 1
+        },
+        "Other plastic": {
+          "targets": 16,
+          "missed": 16
+        },
+        "Disposable plastic cup": {
+          "targets": 3,
+          "missed": 1,
+          "localized": 2,
+          "wrong": 2
+        },
+        "Plastic straw": {
+          "targets": 37,
+          "missed": 37
+        },
+        "Drink carton": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Meal carton": {
+          "targets": 3,
+          "missed": 1,
+          "localized": 2,
+          "wrong": 2
+        },
+        "Plastic utensils": {
+          "targets": 4,
+          "missed": 4
+        },
+        "Paper cup": {
+          "targets": 3,
+          "missed": 2,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Crisp packet": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Paper bag": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Aluminium foil": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Scrap metal": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Metal bottle cap": {
+          "targets": 12,
+          "missed": 12
+        },
+        "Plastic lid": {
+          "targets": 1,
+          "missed": 1
+        }
+      },
+      "matching": "class-agnostic greedy IoU >= 0.5; not mAP"
+    },
+    "0.8": {
+      "counts": {
+        "images": 104,
+        "targets": 494,
+        "known_targets": 333,
+        "multiple_object_images": 86,
+        "accepted_boxes": 222,
+        "localized": 79,
+        "correct_material_and_box": 62,
+        "missed_targets": 415,
+        "unmatched_boxes": 143,
+        "wrong_material": 9,
+        "confident_wrong": 9,
+        "wrong_bin": 2,
+        "unsupported_acceptance": 8,
+        "confident_unsupported_acceptance": 8
+      },
+      "per_class": {
+        "Food Can": {
+          "localized": 15,
+          "correct": 15,
+          "targets": 23,
+          "missed": 8
+        },
+        "Glass cup": {
+          "localized": 1,
+          "correct": 1,
+          "targets": 2,
+          "missed": 1
+        },
+        "Pop tab": {
+          "targets": 18,
+          "missed": 18
+        },
+        "Clear plastic bottle": {
+          "localized": 6,
+          "correct": 5,
+          "targets": 23,
+          "missed": 17,
+          "wrong": 1
+        },
+        "Plastic bottle cap": {
+          "targets": 20,
+          "missed": 20
+        },
+        "Glass bottle": {
+          "targets": 27,
+          "missed": 22,
+          "localized": 5,
+          "correct": 3,
+          "wrong": 2
+        },
+        "Other plastic wrapper": {
+          "targets": 14,
+          "missed": 14
+        },
+        "Drink can": {
+          "localized": 8,
+          "correct": 6,
+          "targets": 15,
+          "wrong": 2,
+          "missed": 7
+        },
+        "Other plastic bottle": {
+          "localized": 7,
+          "correct": 7,
+          "targets": 15,
+          "missed": 8
+        },
+        "Food waste": {
+          "targets": 8,
+          "missed": 6,
+          "localized": 2,
+          "correct": 2
+        },
+        "Plastic film": {
+          "targets": 25,
+          "missed": 22,
+          "localized": 3,
+          "wrong": 2,
+          "correct": 1
+        },
+        "Single-use carrier bag": {
+          "localized": 2,
+          "correct": 2,
+          "targets": 5,
+          "missed": 3
+        },
+        "Shoe": {
+          "targets": 7,
+          "missed": 7
+        },
+        "Corrugated carton": {
+          "localized": 15,
+          "correct": 15,
+          "targets": 25,
+          "missed": 10
+        },
+        "Unlabeled litter": {
+          "targets": 40,
+          "missed": 39,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Aluminium blister pack": {
+          "targets": 2,
+          "missed": 1,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Battery": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Aerosol": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Squeezable tube": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Garbage bag": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Other carton": {
+          "targets": 9,
+          "missed": 8,
+          "localized": 1,
+          "correct": 1
+        },
+        "Disposable food container": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "correct": 1
+        },
+        "Spread tub": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Tissues": {
+          "targets": 6,
+          "missed": 6
+        },
+        "Normal paper": {
+          "targets": 18,
+          "missed": 15,
+          "localized": 3,
+          "correct": 3
+        },
+        "Cigarette": {
+          "targets": 83,
+          "missed": 83
+        },
+        "Styrofoam piece": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Wrapping paper": {
+          "localized": 1,
+          "wrong": 1,
+          "targets": 1
+        },
+        "Other plastic": {
+          "targets": 16,
+          "missed": 16
+        },
+        "Disposable plastic cup": {
+          "targets": 3,
+          "missed": 2,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Plastic straw": {
+          "targets": 37,
+          "missed": 37
+        },
+        "Drink carton": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Meal carton": {
+          "targets": 3,
+          "missed": 1,
+          "localized": 2,
+          "wrong": 2
+        },
+        "Plastic utensils": {
+          "targets": 4,
+          "missed": 4
+        },
+        "Paper cup": {
+          "targets": 3,
+          "missed": 2,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Crisp packet": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Paper bag": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Aluminium foil": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Scrap metal": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Metal bottle cap": {
+          "targets": 12,
+          "missed": 12
+        },
+        "Plastic lid": {
+          "targets": 1,
+          "missed": 1
+        }
+      },
+      "matching": "class-agnostic greedy IoU >= 0.5; not mAP"
+    }
+  },
+  "stricter_proposal_diagnostic": {
+    "0.6": {
+      "counts": {
+        "images": 104,
+        "targets": 494,
+        "known_targets": 333,
+        "multiple_object_images": 86,
+        "accepted_boxes": 184,
+        "localized": 75,
+        "correct_material_and_box": 59,
+        "missed_targets": 419,
+        "unmatched_boxes": 109,
+        "wrong_material": 9,
+        "confident_wrong": 9,
+        "wrong_bin": 2,
+        "unsupported_acceptance": 7,
+        "confident_unsupported_acceptance": 7
+      },
+      "per_class": {
+        "Food Can": {
+          "localized": 15,
+          "correct": 15,
+          "targets": 23,
+          "missed": 8
+        },
+        "Glass cup": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Pop tab": {
+          "targets": 18,
+          "missed": 18
+        },
+        "Clear plastic bottle": {
+          "localized": 6,
+          "correct": 5,
+          "targets": 23,
+          "missed": 17,
+          "wrong": 1
+        },
+        "Plastic bottle cap": {
+          "targets": 20,
+          "missed": 20
+        },
+        "Glass bottle": {
+          "targets": 27,
+          "missed": 22,
+          "localized": 5,
+          "correct": 3,
+          "wrong": 2
+        },
+        "Other plastic wrapper": {
+          "targets": 14,
+          "missed": 14
+        },
+        "Drink can": {
+          "localized": 8,
+          "correct": 6,
+          "targets": 15,
+          "wrong": 2,
+          "missed": 7
+        },
+        "Other plastic bottle": {
+          "localized": 7,
+          "correct": 7,
+          "targets": 15,
+          "missed": 8
+        },
+        "Food waste": {
+          "targets": 8,
+          "missed": 7,
+          "localized": 1,
+          "correct": 1
+        },
+        "Plastic film": {
+          "targets": 25,
+          "missed": 22,
+          "localized": 3,
+          "wrong": 2,
+          "correct": 1
+        },
+        "Single-use carrier bag": {
+          "localized": 2,
+          "correct": 2,
+          "targets": 5,
+          "missed": 3
+        },
+        "Shoe": {
+          "targets": 7,
+          "missed": 7
+        },
+        "Corrugated carton": {
+          "localized": 15,
+          "correct": 15,
+          "targets": 25,
+          "missed": 10
+        },
+        "Unlabeled litter": {
+          "targets": 40,
+          "missed": 40
+        },
+        "Aluminium blister pack": {
+          "targets": 2,
+          "missed": 1,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Battery": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Aerosol": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Squeezable tube": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Garbage bag": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Other carton": {
+          "targets": 9,
+          "missed": 8,
+          "localized": 1,
+          "correct": 1
+        },
+        "Disposable food container": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "correct": 1
+        },
+        "Spread tub": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Tissues": {
+          "targets": 6,
+          "missed": 6
+        },
+        "Normal paper": {
+          "targets": 18,
+          "missed": 16,
+          "localized": 2,
+          "correct": 2
+        },
+        "Cigarette": {
+          "targets": 83,
+          "missed": 83
+        },
+        "Styrofoam piece": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Wrapping paper": {
+          "localized": 1,
+          "wrong": 1,
+          "targets": 1
+        },
+        "Other plastic": {
+          "targets": 16,
+          "missed": 16
+        },
+        "Disposable plastic cup": {
+          "targets": 3,
+          "missed": 2,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Plastic straw": {
+          "targets": 37,
+          "missed": 37
+        },
+        "Drink carton": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Meal carton": {
+          "targets": 3,
+          "missed": 1,
+          "localized": 2,
+          "wrong": 2
+        },
+        "Plastic utensils": {
+          "targets": 4,
+          "missed": 4
+        },
+        "Paper cup": {
+          "targets": 3,
+          "missed": 2,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Crisp packet": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Paper bag": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Aluminium foil": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Scrap metal": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Metal bottle cap": {
+          "targets": 12,
+          "missed": 12
+        },
+        "Plastic lid": {
+          "targets": 1,
+          "missed": 1
+        }
+      },
+      "matching": "class-agnostic greedy IoU >= 0.5; not mAP"
+    },
+    "0.8": {
+      "counts": {
+        "images": 104,
+        "targets": 494,
+        "known_targets": 333,
+        "multiple_object_images": 86,
+        "accepted_boxes": 148,
+        "localized": 69,
+        "correct_material_and_box": 57,
+        "missed_targets": 425,
+        "unmatched_boxes": 79,
+        "wrong_material": 7,
+        "confident_wrong": 7,
+        "wrong_bin": 2,
+        "unsupported_acceptance": 5,
+        "confident_unsupported_acceptance": 5
+      },
+      "per_class": {
+        "Food Can": {
+          "localized": 15,
+          "correct": 15,
+          "targets": 23,
+          "missed": 8
+        },
+        "Glass cup": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Pop tab": {
+          "targets": 18,
+          "missed": 18
+        },
+        "Clear plastic bottle": {
+          "localized": 5,
+          "correct": 5,
+          "targets": 23,
+          "missed": 18
+        },
+        "Plastic bottle cap": {
+          "targets": 20,
+          "missed": 20
+        },
+        "Glass bottle": {
+          "targets": 27,
+          "missed": 22,
+          "localized": 5,
+          "correct": 3,
+          "wrong": 2
+        },
+        "Other plastic wrapper": {
+          "targets": 14,
+          "missed": 14
+        },
+        "Drink can": {
+          "localized": 7,
+          "correct": 5,
+          "targets": 15,
+          "wrong": 2,
+          "missed": 8
+        },
+        "Other plastic bottle": {
+          "localized": 7,
+          "correct": 7,
+          "targets": 15,
+          "missed": 8
+        },
+        "Food waste": {
+          "targets": 8,
+          "missed": 7,
+          "localized": 1,
+          "correct": 1
+        },
+        "Plastic film": {
+          "targets": 25,
+          "missed": 22,
+          "localized": 3,
+          "wrong": 2,
+          "correct": 1
+        },
+        "Single-use carrier bag": {
+          "localized": 2,
+          "correct": 2,
+          "targets": 5,
+          "missed": 3
+        },
+        "Shoe": {
+          "targets": 7,
+          "missed": 7
+        },
+        "Corrugated carton": {
+          "localized": 15,
+          "correct": 15,
+          "targets": 25,
+          "missed": 10
+        },
+        "Unlabeled litter": {
+          "targets": 40,
+          "missed": 40
+        },
+        "Aluminium blister pack": {
+          "targets": 2,
+          "missed": 1,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Battery": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Aerosol": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Squeezable tube": {
+          "targets": 4,
+          "missed": 4
+        },
+        "Garbage bag": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Other carton": {
+          "targets": 9,
+          "missed": 9
+        },
+        "Disposable food container": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "correct": 1
+        },
+        "Spread tub": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Tissues": {
+          "targets": 6,
+          "missed": 6
+        },
+        "Normal paper": {
+          "targets": 18,
+          "missed": 16,
+          "localized": 2,
+          "correct": 2
+        },
+        "Cigarette": {
+          "targets": 83,
+          "missed": 83
+        },
+        "Styrofoam piece": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Wrapping paper": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Other plastic": {
+          "targets": 16,
+          "missed": 16
+        },
+        "Disposable plastic cup": {
+          "targets": 3,
+          "missed": 2,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Plastic straw": {
+          "targets": 37,
+          "missed": 37
+        },
+        "Drink carton": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Meal carton": {
+          "targets": 3,
+          "missed": 2,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Plastic utensils": {
+          "targets": 4,
+          "missed": 4
+        },
+        "Paper cup": {
+          "targets": 3,
+          "missed": 2,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Crisp packet": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Paper bag": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Aluminium foil": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Scrap metal": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Metal bottle cap": {
+          "targets": 12,
+          "missed": 12
+        },
+        "Plastic lid": {
+          "targets": 1,
+          "missed": 1
+        }
+      },
+      "matching": "class-agnostic greedy IoU >= 0.5; not mAP"
+    },
+    "0.9": {
+      "counts": {
+        "images": 104,
+        "targets": 494,
+        "known_targets": 333,
+        "multiple_object_images": 86,
+        "accepted_boxes": 116,
+        "localized": 62,
+        "correct_material_and_box": 51,
+        "missed_targets": 432,
+        "unmatched_boxes": 54,
+        "wrong_material": 7,
+        "confident_wrong": 7,
+        "wrong_bin": 2,
+        "unsupported_acceptance": 4,
+        "confident_unsupported_acceptance": 4
+      },
+      "per_class": {
+        "Food Can": {
+          "localized": 14,
+          "correct": 14,
+          "targets": 23,
+          "missed": 9
+        },
+        "Glass cup": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Pop tab": {
+          "targets": 18,
+          "missed": 18
+        },
+        "Clear plastic bottle": {
+          "targets": 23,
+          "missed": 19,
+          "localized": 4,
+          "correct": 4
+        },
+        "Plastic bottle cap": {
+          "targets": 20,
+          "missed": 20
+        },
+        "Glass bottle": {
+          "targets": 27,
+          "missed": 23,
+          "localized": 4,
+          "correct": 2,
+          "wrong": 2
+        },
+        "Other plastic wrapper": {
+          "targets": 14,
+          "missed": 14
+        },
+        "Drink can": {
+          "localized": 7,
+          "correct": 5,
+          "targets": 15,
+          "wrong": 2,
+          "missed": 8
+        },
+        "Other plastic bottle": {
+          "localized": 7,
+          "correct": 7,
+          "targets": 15,
+          "missed": 8
+        },
+        "Food waste": {
+          "targets": 8,
+          "missed": 7,
+          "localized": 1,
+          "correct": 1
+        },
+        "Plastic film": {
+          "targets": 25,
+          "missed": 22,
+          "localized": 3,
+          "wrong": 2,
+          "correct": 1
+        },
+        "Single-use carrier bag": {
+          "localized": 2,
+          "correct": 2,
+          "targets": 5,
+          "missed": 3
+        },
+        "Shoe": {
+          "targets": 7,
+          "missed": 7
+        },
+        "Corrugated carton": {
+          "localized": 12,
+          "correct": 12,
+          "targets": 25,
+          "missed": 13
+        },
+        "Unlabeled litter": {
+          "targets": 40,
+          "missed": 40
+        },
+        "Aluminium blister pack": {
+          "targets": 2,
+          "missed": 1,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Battery": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Aerosol": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Squeezable tube": {
+          "targets": 4,
+          "missed": 4
+        },
+        "Garbage bag": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Other carton": {
+          "targets": 9,
+          "missed": 9
+        },
+        "Disposable food container": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "correct": 1
+        },
+        "Spread tub": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Tissues": {
+          "targets": 6,
+          "missed": 6
+        },
+        "Normal paper": {
+          "targets": 18,
+          "missed": 16,
+          "localized": 2,
+          "correct": 2
+        },
+        "Cigarette": {
+          "targets": 83,
+          "missed": 83
+        },
+        "Styrofoam piece": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Wrapping paper": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Other plastic": {
+          "targets": 16,
+          "missed": 16
+        },
+        "Disposable plastic cup": {
+          "targets": 3,
+          "missed": 2,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Plastic straw": {
+          "targets": 37,
+          "missed": 37
+        },
+        "Drink carton": {
+          "targets": 4,
+          "missed": 3,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Meal carton": {
+          "targets": 3,
+          "missed": 3
+        },
+        "Plastic utensils": {
+          "targets": 4,
+          "missed": 4
+        },
+        "Paper cup": {
+          "targets": 3,
+          "missed": 2,
+          "localized": 1,
+          "wrong": 1
+        },
+        "Crisp packet": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Paper bag": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Aluminium foil": {
+          "targets": 1,
+          "missed": 1
+        },
+        "Scrap metal": {
+          "targets": 2,
+          "missed": 2
+        },
+        "Metal bottle cap": {
+          "targets": 12,
+          "missed": 12
+        },
+        "Plastic lid": {
+          "targets": 1,
+          "missed": 1
+        }
+      },
+      "matching": "class-agnostic greedy IoU >= 0.5; not mAP"
+    }
+  }
+}
