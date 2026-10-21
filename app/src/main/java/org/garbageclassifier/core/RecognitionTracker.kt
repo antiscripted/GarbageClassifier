@@ -11,7 +11,19 @@ class ObjectAppearance(private val samples: FloatArray) {
         samples.indices.sumOf { abs(samples[it] - other.samples[it]).toDouble() }.toFloat() / samples.size
 }
 
-class RecognitionTracker {
+object ObjectAssociation {
+    fun matches(previous: Detection, current: Detection, minimumOverlap: Float,
+                reference: ObjectAppearance? = previous.appearance): Boolean {
+        val appearance = current.appearance ?: return false
+        reference ?: return false
+        return current.box.area / previous.box.area in 0.5f..2f &&
+            previous.box.intersectionOverUnion(current.box) >= minimumOverlap &&
+            reference.distance(appearance) <= 0.14f
+    }
+}
+
+class RecognitionTracker(private val maximumEvidenceGapMs: Long = 700,
+                         private val requiredObservations: Int = 3) {
     private data class Track(
         val id: Long,
         var observation: Recognition,
@@ -23,14 +35,15 @@ class RecognitionTracker {
         var locked: Recognition? = null,
         var lockedAt: Long = 0,
         var contradictions: Int = 0,
-        var contradictionSince: Long = 0
+        var contradictionSince: Long = 0,
+        var lastEvidence: Long = Long.MIN_VALUE
     )
 
     private val tracks = mutableListOf<Track>()
     private var nextId = 1L
     private var lastUpdate = Long.MIN_VALUE
 
-    fun update(observations: List<Recognition>, timeMs: Long): List<Recognition> {
+    fun update(observations: List<Recognition>, timeMs: Long, freshEvidence: Boolean = true): List<Recognition> {
         if (lastUpdate != Long.MIN_VALUE && (timeMs < lastUpdate || timeMs - lastUpdate > 1500)) reset()
         lastUpdate = timeMs
         tracks.removeAll { expired(it, timeMs) }
@@ -56,14 +69,14 @@ class RecognitionTracker {
                 available.removeAll(changed.toSet())
                 val created = Track(nextId++, observation, detection.box, timeMs, detection.classId)
                 tracks += created
-                updateConfirmation(created, observation, timeMs)
+                if (freshEvidence) updateConfirmation(created, observation, timeMs)
                 visible += render(created, observation, true)
             } else {
                 available.remove(track)
-                if (timeMs - track.lastSeen > 700) track.consistent = 0
+                if (timeMs - track.lastSeen > maximumEvidenceGapMs) track.consistent = 0
                 track.lastSeen = timeMs
                 track.box = smooth(track.box, detection.box)
-                updateConfirmation(track, observation, timeMs)
+                if (freshEvidence) updateConfirmation(track, observation, timeMs)
                 track.observation = observation
                 visible += render(track, observation, true)
             }
@@ -81,12 +94,8 @@ class RecognitionTracker {
     private fun matches(track: Track, detection: Detection, timeMs: Long): Boolean {
         val previous = track.observation.detection
         val reference = track.locked?.detection?.appearance ?: previous.appearance ?: return false
-        val appearance = detection.appearance ?: return false
         val minimumOverlap = if (timeMs - track.lastSeen > 500) 0.65f else 0.40f
-        val areaRatio = detection.box.area / previous.box.area
-        return areaRatio in 0.5f..2f &&
-            previous.box.intersectionOverUnion(detection.box) >= minimumOverlap &&
-            reference.distance(appearance) <= 0.14f
+        return ObjectAssociation.matches(previous, detection, minimumOverlap, reference)
     }
 
     private fun incompatibleAppearance(track: Track, detection: Detection): Boolean {
@@ -96,6 +105,11 @@ class RecognitionTracker {
     }
 
     private fun updateConfirmation(track: Track, observation: Recognition, timeMs: Long) {
+        if (track.lastEvidence != Long.MIN_VALUE && timeMs - track.lastEvidence > maximumEvidenceGapMs) {
+            track.consistent = 0
+            track.contradictions = 0
+        }
+        track.lastEvidence = timeMs
         val detection = observation.detection
         val locked = track.locked
         if (locked != null) {
@@ -125,7 +139,7 @@ class RecognitionTracker {
         }
         if (track.consistent == 0) track.consistentSince = timeMs
         track.consistent++
-        if (track.consistent >= 3 && timeMs - track.consistentSince >= 400) {
+        if (track.consistent >= requiredObservations && timeMs - track.consistentSince >= 400) {
             track.locked = observation
             track.lockedAt = timeMs
             track.contradictions = 0

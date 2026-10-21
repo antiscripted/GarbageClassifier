@@ -7,10 +7,7 @@ import androidx.camera.core.ImageProxy
 import androidx.camera.view.TransformExperimental
 import androidx.camera.view.transform.ImageProxyTransformFactory
 import androidx.camera.view.transform.OutputTransform
-import org.garbageclassifier.core.ModelContract
 import org.garbageclassifier.core.Recognition
-import org.garbageclassifier.core.RecognitionFilter
-import org.garbageclassifier.core.RecognitionTracker
 import java.io.Closeable
 import java.util.concurrent.atomic.AtomicLong
 
@@ -20,9 +17,7 @@ class CameraAnalyzer(
     private val onFrame: (AnalyzedFrame) -> Unit,
     private val onError: (Exception) -> Unit
 ) : ImageAnalysis.Analyzer, Closeable {
-    private var detector: TrashDetector? = null
-    private val filter = RecognitionFilter(ModelContract.materials)
-    private val tracker = RecognitionTracker()
+    private var processor: FrameProcessor? = null
     private val resetGeneration = AtomicLong()
     private var appliedGeneration = 0L
     val trackingGeneration: Long get() = resetGeneration.get()
@@ -37,26 +32,21 @@ class CameraAnalyzer(
             lastFrame = now
             val generation = trackingGeneration
             if (generation != appliedGeneration) {
-                filter.reset()
-                tracker.reset()
+                processor?.reset()
                 appliedGeneration = generation
             }
-            val engine = detector ?: TrashDetector(context).also { detector = it }
+            val engine = processor ?: ScannerFactory.create(context).also { processor = it }
             val transform = transforms.getOutputTransform(image)
             val bitmap = image.toBitmap()
-            val detections = try {
-                engine.detect(bitmap, image.imageInfo.rotationDegrees).map {
-                    it.copy(appearance = AppearanceSampler.sample(bitmap, it.box))
-                }
+            val result = try {
+                engine.process(bitmap, image.imageInfo.rotationDegrees, image.cropRect, now)
             } finally {
                 bitmap.recycle()
             }
-            val recognitions = tracker.update(filter.update(detections, now), now)
-            onFrame(AnalyzedFrame(recognitions, transform, now, generation))
+            onFrame(AnalyzedFrame(result.recognitions, transform, now, generation, result.localized))
         } catch (error: Exception) {
             failed = true
-            filter.reset()
-            tracker.reset()
+            processor?.reset()
             onError(error)
         } finally {
             image.close()
@@ -68,10 +58,8 @@ class CameraAnalyzer(
     }
 
     override fun close() {
-        detector?.close()
-        detector = null
-        filter.reset()
-        tracker.reset()
+        processor?.close()
+        processor = null
     }
 }
 
@@ -80,5 +68,6 @@ data class AnalyzedFrame(
     val recognitions: List<Recognition>,
     val transform: OutputTransform,
     val capturedAtMs: Long,
-    val trackingGeneration: Long
+    val trackingGeneration: Long,
+    val localized: Boolean = true
 )

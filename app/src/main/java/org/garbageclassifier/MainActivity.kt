@@ -225,7 +225,7 @@ class MainActivity : ComponentActivity() {
             }
             OverlayItem(bounds, label, status)
         }
-        binding.overlay.show(overlays)
+        binding.overlay.show(if (frame.localized) overlays else emptyList())
         val candidates = visible.map { it.first }.ifEmpty {
             frame.recognitions.filter { !it.visible && it.bin != null }
         }

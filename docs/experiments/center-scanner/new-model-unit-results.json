@@ -1,0 +1,52 @@
+[
+  {
+    "name": "org.garbageclassifier.core.YoloDecoderTest",
+    "tests": "17",
+    "skipped": "0",
+    "failures": "0",
+    "errors": "0",
+    "timestamp": "2026-10-21T16:18:50",
+    "hostname": "1f68f4629262",
+    "time": "0.027"
+  },
+  {
+    "name": "org.garbageclassifier.core.CenterScannerTest",
+    "tests": "8",
+    "skipped": "0",
+    "failures": "0",
+    "errors": "0",
+    "timestamp": "2026-10-21T16:18:50",
+    "hostname": "1f68f4629262",
+    "time": "0.043"
+  },
+  {
+    "name": "org.garbageclassifier.core.GeometryTest",
+    "tests": "12",
+    "skipped": "0",
+    "failures": "0",
+    "errors": "0",
+    "timestamp": "2026-10-21T16:18:50",
+    "hostname": "1f68f4629262",
+    "time": "0.024"
+  },
+  {
+    "name": "org.garbageclassifier.core.RecognitionTrackerTest",
+    "tests": "22",
+    "skipped": "0",
+    "failures": "0",
+    "errors": "0",
+    "timestamp": "2026-10-21T16:18:50",
+    "hostname": "1f68f4629262",
+    "time": "0.04"
+  },
+  {
+    "name": "org.garbageclassifier.core.WasteRulesTest",
+    "tests": "24",
+    "skipped": "0",
+    "failures": "0",
+    "errors": "0",
+    "timestamp": "2026-10-21T16:18:50",
+    "hostname": "1f68f4629262",
+    "time": "0.007"
+  }
+]

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.garbageclassifier.core.GeometryTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-10-21T16:18:50" hostname="1f68f4629262" time="0.024">
+  <properties/>
+  <testcase name="portraitLetterboxHasHorizontalPadding" classname="org.garbageclassifier.core.GeometryTest" time="0.001"/>
+  <testcase name="boxesRoundTripAcrossAspectRatios" classname="org.garbageclassifier.core.GeometryTest" time="0.001"/>
+  <testcase name="landscapeLetterboxHasVerticalPadding" classname="org.garbageclassifier.core.GeometryTest" time="0.0"/>
+  <testcase name="eachCameraRotationIsInvertible" classname="org.garbageclassifier.core.GeometryTest" time="0.001"/>
+  <testcase name="invalidDimensionsAreRejected" classname="org.garbageclassifier.core.GeometryTest" time="0.0"/>
+  <testcase name="ninetyDegreeBoxReturnsToBufferCoordinates" classname="org.garbageclassifier.core.GeometryTest" time="0.0"/>
+  <testcase name="paddingOnlyBoxBecomesEmpty" classname="org.garbageclassifier.core.GeometryTest" time="0.0"/>
+  <testcase name="oneEightyDegreeBoxReturnsToBufferCoordinates" classname="org.garbageclassifier.core.GeometryTest" time="0.0"/>
+  <testcase name="intersectionHandlesTouchingAndInvalidBoxes" classname="org.garbageclassifier.core.GeometryTest" time="0.001"/>
+  <testcase name="unexpectedRotationIsRejected" classname="org.garbageclassifier.core.GeometryTest" time="0.017"/>
+  <testcase name="twoSeventyDegreeBoxReturnsToBufferCoordinates" classname="org.garbageclassifier.core.GeometryTest" time="0.0"/>
+  <testcase name="clippingDoesNotStretchVisibleBox" classname="org.garbageclassifier.core.GeometryTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

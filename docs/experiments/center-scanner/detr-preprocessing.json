@@ -1,0 +1,1787 @@
+{
+  "policy": "First 16 TACO IDs by SHA-256, fixed before inference; published processor; no training",
+  "results": [
+    {
+      "id": "taco/batch_7/000089.JPG",
+      "input_shape": [
+        1,
+        3,
+        800,
+        1066
+      ],
+      "predictions": [
+        {
+          "box": [
+            1404.2716064453125,
+            1315.2646484375,
+            1504.33154296875,
+            1339.475341796875
+          ],
+          "score": 0.9859639406204224,
+          "label": "non_recyclable"
+        },
+        {
+          "box": [
+            2890.431884765625,
+            1115.4796142578125,
+            2966.177001953125,
+            1161.968017578125
+          ],
+          "score": 0.9573588371276855,
+          "label": "metals_and_plastic"
+        },
+        {
+          "box": [
+            13.944108963012695,
+            1194.7147216796875,
+            132.6143341064453,
+            1267.1533203125
+          ],
+          "score": 0.8859195113182068,
+          "label": "metals_and_plastic"
+        },
+        {
+          "box": [
+            91.38097381591797,
+            418.6228942871094,
+            258.13720703125,
+            647.2564697265625
+          ],
+          "score": 0.8808018565177917,
+          "label": "metals_and_plastic"
+        },
+        {
+          "box": [
+            789.404052734375,
+            2195.669677734375,
+            852.1646118164062,
+            2235.2197265625
+          ],
+          "score": 0.8589267134666443,
+          "label": "metals_and_plastic"
+        }
+      ],
+      "targets": [
+        {
+          "id": 3906,
+          "category": "Clear plastic bottle",
+          "expected": "Plastic",
+          "box": [
+            1449.0,
+            1316.0,
+            1578.0,
+            1355.0
+          ]
+        }
+      ],
+      "host_ms": 2798.821766016772,
+      "upstream_covered": 0,
+      "square_covered": 0
+    },
+    {
+      "id": "taco/batch_2/000022.JPG",
+      "input_shape": [
+        1,
+        3,
+        1066,
+        800
+      ],
+      "predictions": [
+        {
+          "box": [
+            1233.7825927734375,
+            1088.7735595703125,
+            1272.9853515625,
+            1183.1392822265625
+          ],
+          "score": 0.9676914811134338,
+          "label": "unknown"
+        },
+        {
+          "box": [
+            538.0695190429688,
+            1168.802734375,
+            582.3709716796875,
+            1197.229248046875
+          ],
+          "score": 0.9125207662582397,
+          "label": "metals_and_plastic"
+        },
+        {
+          "box": [
+            1356.150146484375,
+            1124.93310546875,
+            1404.3193359375,
+            1191.8426513671875
+          ],
+          "score": 0.884266197681427,
+          "label": "metals_and_plastic"
+        },
+        {
+          "box": [
+            663.8956909179688,
+            1728.613525390625,
+            710.6906127929688,
+            1781.7220458984375
+          ],
+          "score": 0.825658917427063,
+          "label": "metals_and_plastic"
+        },
+        {
+          "box": [
+            123.997802734375,
+            1108.1025390625,
+            164.53790283203125,
+            1144.4693603515625
+          ],
+          "score": 0.7990024089813232,
+          "label": "metals_and_plastic"
+        }
+      ],
+      "targets": [
+        {
+          "id": 2236,
+          "category": "Plastic bottle cap",
+          "expected": "Plastic",
+          "box": [
+            1225.0,
+            1717.0,
+            1254.0,
+            1746.0
+          ]
+        },
+        {
+          "id": 2237,
+          "category": "Food waste",
+          "expected": "Food waste",
+          "box": [
+            1346.0,
+            1183.0,
+            1398.0,
+            1237.0
+          ]
+        },
+        {
+          "id": 2238,
+          "category": "Unlabeled litter",
+          "expected": null,
+          "box": [
+            1227.0,
+            1131.0,
+            1274.0,
+            1236.0
+          ]
+        },
+        {
+          "id": 2239,
+          "category": "Normal paper",
+          "expected": "Paper",
+          "box": [
+            1514.0,
+            1725.0,
+            1559.0,
+            1749.0
+          ]
+        }
+      ],
+      "host_ms": 2421.5920970018487,
+      "upstream_covered": 0,
+      "square_covered": 0
+    },
+    {
+      "id": "taco/batch_10/000031.jpg",
+      "input_shape": [
+        1,
+        3,
+        1333,
+        608
+      ],
+      "predictions": [
+        {
+          "box": [
+            638.9769897460938,
+            1099.58935546875,
+            1824,
+            2113.83203125
+          ],
+          "score": 0.8075812458992004,
+          "label": "paper"
+        }
+      ],
+      "targets": [
+        {
+          "id": 443,
+          "category": "Corrugated carton",
+          "expected": "Paper",
+          "box": [
+            631.0,
+            1508.0,
+            1823.0,
+            2155.0
+          ]
+        },
+        {
+          "id": 444,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            482.0,
+            1872.0,
+            523.0,
+            1896.0
+          ]
+        }
+      ],
+      "host_ms": 1953.1853360240348,
+      "upstream_covered": 1,
+      "square_covered": 1
+    },
+    {
+      "id": "taco/batch_14/000077.jpg",
+      "input_shape": [
+        1,
+        3,
+        1066,
+        800
+      ],
+      "predictions": [],
+      "targets": [
+        {
+          "id": 1813,
+          "category": "Other plastic bottle",
+          "expected": "Plastic",
+          "box": [
+            1131.0,
+            2248.0,
+            2404.0,
+            3054.0
+          ]
+        },
+        {
+          "id": 1814,
+          "category": "Plastic bottle cap",
+          "expected": "Plastic",
+          "box": [
+            991.0,
+            2828.5,
+            1218.0,
+            3116.5
+          ]
+        }
+      ],
+      "host_ms": 2049.1934129968286,
+      "upstream_covered": 0,
+      "square_covered": 1
+    },
+    {
+      "id": "taco/batch_15/000003.jpg",
+      "input_shape": [
+        1,
+        3,
+        1066,
+        800
+      ],
+      "predictions": [
+        {
+          "box": [
+            1209.2149658203125,
+            2135.756103515625,
+            1500.0289306640625,
+            2657.714111328125
+          ],
+          "score": 0.9730017185211182,
+          "label": "non_recyclable"
+        },
+        {
+          "box": [
+            1925.1456298828125,
+            1174.0263671875,
+            2074.3662109375,
+            1536.3824462890625
+          ],
+          "score": 0.3034920394420624,
+          "label": "metals_and_plastic"
+        }
+      ],
+      "targets": [
+        {
+          "id": 1891,
+          "category": "Unlabeled litter",
+          "expected": null,
+          "box": [
+            1907.0,
+            1214.0,
+            2168.0,
+            1678.0
+          ]
+        },
+        {
+          "id": 1892,
+          "category": "Other plastic bottle",
+          "expected": "Plastic",
+          "box": [
+            1208.0,
+            2220.0,
+            1513.0,
+            2738.0
+          ]
+        }
+      ],
+      "host_ms": 2184.835136984475,
+      "upstream_covered": 1,
+      "square_covered": 1
+    },
+    {
+      "id": "taco/batch_11/000025.jpg",
+      "input_shape": [
+        1,
+        3,
+        800,
+        1200
+      ],
+      "predictions": [
+        {
+          "box": [
+            1713.5360107421875,
+            1017.57373046875,
+            4553.29150390625,
+            2558.43017578125
+          ],
+          "score": 0.9959787130355835,
+          "label": "non_recyclable"
+        }
+      ],
+      "targets": [
+        {
+          "id": 750,
+          "category": "Shoe",
+          "expected": null,
+          "box": [
+            1813.0,
+            942.41064,
+            4646.0,
+            2581.0798
+          ]
+        }
+      ],
+      "host_ms": 2351.930023985915,
+      "upstream_covered": 1,
+      "square_covered": 1
+    },
+    {
+      "id": "taco/batch_2/000074.JPG",
+      "input_shape": [
+        1,
+        3,
+        800,
+        1066
+      ],
+      "predictions": [
+        {
+          "box": [
+            1338.613037109375,
+            805.0983276367188,
+            1419.718017578125,
+            899.971435546875
+          ],
+          "score": 0.9936662316322327,
+          "label": "unknown"
+        },
+        {
+          "box": [
+            1034.7803955078125,
+            713.4254760742188,
+            1199.1290283203125,
+            1101.794189453125
+          ],
+          "score": 0.9816479682922363,
+          "label": "glass"
+        },
+        {
+          "box": [
+            2256.57275390625,
+            1528.1175537109375,
+            2424.785400390625,
+            1576.538818359375
+          ],
+          "score": 0.9803130030632019,
+          "label": "metals_and_plastic"
+        },
+        {
+          "box": [
+            1252.748291015625,
+            1143.175048828125,
+            1309.02197265625,
+            1351.0662841796875
+          ],
+          "score": 0.8251590132713318,
+          "label": "non_recyclable"
+        },
+        {
+          "box": [
+            2370.39013671875,
+            1039.139892578125,
+            2555.337158203125,
+            1125.2950439453125
+          ],
+          "score": 0.45289719104766846,
+          "label": "non_recyclable"
+        }
+      ],
+      "targets": [
+        {
+          "id": 2338,
+          "category": "Glass bottle",
+          "expected": "Glass",
+          "box": [
+            1089.0,
+            727.0,
+            1226.0,
+            1113.0
+          ]
+        },
+        {
+          "id": 2339,
+          "category": "Plastic straw",
+          "expected": "Plastic",
+          "box": [
+            1288.0,
+            1157.0,
+            1359.0,
+            1358.0
+          ]
+        },
+        {
+          "id": 2340,
+          "category": "Unlabeled litter",
+          "expected": null,
+          "box": [
+            1662.0,
+            159.0,
+            1700.0,
+            244.0
+          ]
+        }
+      ],
+      "host_ms": 1548.2768490037415,
+      "upstream_covered": 1,
+      "square_covered": 0
+    },
+    {
+      "id": "taco/batch_6/000100.JPG",
+      "input_shape": [
+        1,
+        3,
+        800,
+        1066
+      ],
+      "predictions": [
+        {
+          "box": [
+            926.7161865234375,
+            579.6044921875,
+            1598.46337890625,
+            894.3160400390625
+          ],
+          "score": 0.9581032395362854,
+          "label": "non_recyclable"
+        },
+        {
+          "box": [
+            2405.644775390625,
+            2031.5428466796875,
+            2638.99755859375,
+            2341.1201171875
+          ],
+          "score": 0.8228011131286621,
+          "label": "metals_and_plastic"
+        },
+        {
+          "box": [
+            1892.20849609375,
+            850.3338623046875,
+            2199.736083984375,
+            1009.1013793945312
+          ],
+          "score": 0.5175067782402039,
+          "label": "unknown"
+        },
+        {
+          "box": [
+            1832.542236328125,
+            1745.605712890625,
+            1965.756591796875,
+            1842.478759765625
+          ],
+          "score": 0.47533923387527466,
+          "label": "unknown"
+        },
+        {
+          "box": [
+            1485.639892578125,
+            1665.2281494140625,
+            1685.2454833984375,
+            1811.1502685546875
+          ],
+          "score": 0.45506051182746887,
+          "label": "unknown"
+        }
+      ],
+      "targets": [
+        {
+          "id": 3244,
+          "category": "Clear plastic bottle",
+          "expected": "Plastic",
+          "box": [
+            994.0,
+            579.0,
+            1602.0,
+            894.0
+          ]
+        },
+        {
+          "id": 3245,
+          "category": "Clear plastic bottle",
+          "expected": "Plastic",
+          "box": [
+            2478.0,
+            1995.0,
+            2745.0,
+            2340.0
+          ]
+        }
+      ],
+      "host_ms": 1396.3274550042115,
+      "upstream_covered": 1,
+      "square_covered": 0
+    },
+    {
+      "id": "taco/batch_5/000040.JPG",
+      "input_shape": [
+        1,
+        3,
+        800,
+        1066
+      ],
+      "predictions": [
+        {
+          "box": [
+            1500.118896484375,
+            412.25140380859375,
+            1789.3277587890625,
+            624.8564453125
+          ],
+          "score": 0.5359289646148682,
+          "label": "metals_and_plastic"
+        },
+        {
+          "box": [
+            1938.847412109375,
+            963.3838500976562,
+            2476.445068359375,
+            1380.7532958984375
+          ],
+          "score": 0.33749493956565857,
+          "label": "metals_and_plastic"
+        }
+      ],
+      "targets": [
+        {
+          "id": 3133,
+          "category": "Drink can",
+          "expected": "Metal",
+          "box": [
+            2054.0,
+            988.0,
+            2524.0,
+            1360.0
+          ]
+        },
+        {
+          "id": 3134,
+          "category": "Metal bottle cap",
+          "expected": "Metal",
+          "box": [
+            1658.0,
+            1300.0,
+            1750.0,
+            1390.0
+          ]
+        },
+        {
+          "id": 3135,
+          "category": "Plastic straw",
+          "expected": "Plastic",
+          "box": [
+            679.0,
+            846.0,
+            776.0,
+            1393.0
+          ]
+        }
+      ],
+      "host_ms": 1561.2931810028385,
+      "upstream_covered": 1,
+      "square_covered": 1
+    },
+    {
+      "id": "taco/batch_3/IMG_5067.JPG",
+      "input_shape": [
+        1,
+        3,
+        1066,
+        800
+      ],
+      "predictions": [
+        {
+          "box": [
+            26.619340896606445,
+            834.3543701171875,
+            1255.033203125,
+            2334.4765625
+          ],
+          "score": 0.9994630217552185,
+          "label": "metals_and_plastic"
+        },
+        {
+          "box": [
+            1556.90673828125,
+            432.10400390625,
+            2429.739013671875,
+            1024.6820068359375
+          ],
+          "score": 0.9992984533309937,
+          "label": "paper"
+        },
+        {
+          "box": [
+            1129.0457763671875,
+            1395.3792724609375,
+            1638.9439697265625,
+            2046.173583984375
+          ],
+          "score": 0.9969989061355591,
+          "label": "paper"
+        },
+        {
+          "box": [
+            1807.1385498046875,
+            1540.0003662109375,
+            2445.9609375,
+            2158.882568359375
+          ],
+          "score": 0.9783637523651123,
+          "label": "non_recyclable"
+        }
+      ],
+      "targets": [
+        {
+          "id": 2715,
+          "category": "Other carton",
+          "expected": "Paper",
+          "box": [
+            1530.0,
+            448.0,
+            2432.0,
+            1077.0
+          ]
+        },
+        {
+          "id": 2716,
+          "category": "Aluminium blister pack",
+          "expected": null,
+          "box": [
+            1790.0,
+            1602.0,
+            2448.0,
+            2213.0
+          ]
+        },
+        {
+          "id": 2717,
+          "category": "Normal paper",
+          "expected": "Paper",
+          "box": [
+            1131.0,
+            1450.0,
+            1642.0,
+            2098.0
+          ]
+        },
+        {
+          "id": 2718,
+          "category": "Plastic film",
+          "expected": "Plastic",
+          "box": [
+            30.0,
+            871.0,
+            1248.0,
+            2420.0
+          ]
+        }
+      ],
+      "host_ms": 1493.1981739937328,
+      "upstream_covered": 4,
+      "square_covered": 4
+    },
+    {
+      "id": "taco/batch_9/000073.jpg",
+      "input_shape": [
+        1,
+        3,
+        1333,
+        608
+      ],
+      "predictions": [
+        {
+          "box": [
+            795.37109375,
+            2261.71630859375,
+            1014.8184814453125,
+            2558.299560546875
+          ],
+          "score": 0.9527872800827026,
+          "label": "metals_and_plastic"
+        },
+        {
+          "box": [
+            861.9273681640625,
+            2730.6298828125,
+            988.2271728515625,
+            2926.18603515625
+          ],
+          "score": 0.5472270250320435,
+          "label": "metals_and_plastic"
+        },
+        {
+          "box": [
+            1131.6873779296875,
+            1670.095947265625,
+            1336.8475341796875,
+            1954.9090576171875
+          ],
+          "score": 0.36451098322868347,
+          "label": "paper"
+        },
+        {
+          "box": [
+            736.221923828125,
+            3464.663330078125,
+            815.117919921875,
+            3635.602294921875
+          ],
+          "score": 0.30892831087112427,
+          "label": "unknown"
+        },
+        {
+          "box": [
+            377.18304443359375,
+            3153.041015625,
+            469.591552734375,
+            3345.69287109375
+          ],
+          "score": 0.2513178884983063,
+          "label": "unknown"
+        }
+      ],
+      "targets": [
+        {
+          "id": 4676,
+          "category": "Plastic film",
+          "expected": "Plastic",
+          "box": [
+            757.0,
+            2359.0,
+            1020.0,
+            2565.0
+          ]
+        },
+        {
+          "id": 4677,
+          "category": "Corrugated carton",
+          "expected": "Paper",
+          "box": [
+            1088.5,
+            1761.0,
+            1368.5,
+            1976.0
+          ]
+        }
+      ],
+      "host_ms": 1350.5566850071773,
+      "upstream_covered": 2,
+      "square_covered": 0
+    },
+    {
+      "id": "taco/batch_15/000029.jpg",
+      "input_shape": [
+        1,
+        3,
+        1066,
+        800
+      ],
+      "predictions": [
+        {
+          "box": [
+            95.21578216552734,
+            610.6404418945312,
+            179.4774627685547,
+            718.4089965820312
+          ],
+          "score": 0.9834575653076172,
+          "label": "non_recyclable"
+        },
+        {
+          "box": [
+            538.4635620117188,
+            260.23126220703125,
+            975.401611328125,
+            1415.427978515625
+          ],
+          "score": 0.9507179856300354,
+          "label": "metals_and_plastic"
+        },
+        {
+          "box": [
+            1037.847900390625,
+            940.5838623046875,
+            1259.61083984375,
+            1172.9959716796875
+          ],
+          "score": 0.8713905215263367,
+          "label": "metals_and_plastic"
+        },
+        {
+          "box": [
+            542.833251953125,
+            408.62701416015625,
+            725.114990234375,
+            1000.5068969726562
+          ],
+          "score": 0.6879668831825256,
+          "label": "metals_and_plastic"
+        },
+        {
+          "box": [
+            229.0375213623047,
+            0.6212539672851562,
+            346.1595153808594,
+            222.7838134765625
+          ],
+          "score": 0.4581535756587982,
+          "label": "unknown"
+        }
+      ],
+      "targets": [
+        {
+          "id": 2020,
+          "category": "Plastic film",
+          "expected": "Plastic",
+          "box": [
+            12.0,
+            543.0,
+            224.0,
+            632.0
+          ]
+        },
+        {
+          "id": 2021,
+          "category": "Plastic bottle cap",
+          "expected": "Plastic",
+          "box": [
+            83.0,
+            650.0,
+            185.0,
+            753.0
+          ]
+        },
+        {
+          "id": 2022,
+          "category": "Plastic film",
+          "expected": "Plastic",
+          "box": [
+            153.0,
+            751.0,
+            262.0,
+            862.0
+          ]
+        },
+        {
+          "id": 2023,
+          "category": "Plastic straw",
+          "expected": "Plastic",
+          "box": [
+            12.0,
+            952.0,
+            380.0,
+            982.0
+          ]
+        },
+        {
+          "id": 2024,
+          "category": "Unlabeled litter",
+          "expected": null,
+          "box": [
+            356.0,
+            546.0,
+            477.0,
+            599.0
+          ]
+        },
+        {
+          "id": 2025,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            549.0,
+            840.0,
+            577.0,
+            913.0
+          ]
+        },
+        {
+          "id": 2026,
+          "category": "Plastic utensils",
+          "expected": "Plastic",
+          "box": [
+            321.0,
+            1255.0,
+            504.0,
+            1542.0
+          ]
+        },
+        {
+          "id": 2027,
+          "category": "Plastic utensils",
+          "expected": "Plastic",
+          "box": [
+            1300.0,
+            1016.0,
+            1426.0,
+            1239.0
+          ]
+        },
+        {
+          "id": 2028,
+          "category": "Plastic utensils",
+          "expected": "Plastic",
+          "box": [
+            783.0,
+            1427.0,
+            949.0,
+            1637.0
+          ]
+        },
+        {
+          "id": 2029,
+          "category": "Other plastic wrapper",
+          "expected": "Plastic",
+          "box": [
+            1278.0,
+            1348.0,
+            1479.0,
+            1492.0
+          ]
+        },
+        {
+          "id": 2030,
+          "category": "Disposable food container",
+          "expected": "Plastic",
+          "box": [
+            948.0,
+            975.0,
+            1019.0,
+            1071.0
+          ]
+        },
+        {
+          "id": 2031,
+          "category": "Plastic straw",
+          "expected": "Plastic",
+          "box": [
+            958.0,
+            949.0,
+            1300.0,
+            1215.0
+          ]
+        },
+        {
+          "id": 2032,
+          "category": "Other plastic wrapper",
+          "expected": "Plastic",
+          "box": [
+            1145.0,
+            731.0,
+            1196.0,
+            798.0
+          ]
+        },
+        {
+          "id": 2033,
+          "category": "Plastic film",
+          "expected": "Plastic",
+          "box": [
+            1290.0,
+            791.0,
+            1454.0,
+            944.0
+          ]
+        },
+        {
+          "id": 2034,
+          "category": "Other plastic wrapper",
+          "expected": "Plastic",
+          "box": [
+            1040.0,
+            923.0,
+            1093.0,
+            1006.0
+          ]
+        },
+        {
+          "id": 2035,
+          "category": "Plastic film",
+          "expected": "Plastic",
+          "box": [
+            1159.0,
+            1170.0,
+            1199.0,
+            1243.0
+          ]
+        },
+        {
+          "id": 2036,
+          "category": "Plastic straw",
+          "expected": "Plastic",
+          "box": [
+            1207.0,
+            1984.0,
+            1218.0,
+            2043.0
+          ]
+        },
+        {
+          "id": 2037,
+          "category": "Plastic straw",
+          "expected": "Plastic",
+          "box": [
+            1043.0,
+            1990.0,
+            1160.0,
+            2046.0
+          ]
+        },
+        {
+          "id": 2038,
+          "category": "Unlabeled litter",
+          "expected": null,
+          "box": [
+            96.0,
+            1921.0,
+            196.0,
+            1978.0
+          ]
+        },
+        {
+          "id": 2039,
+          "category": "Plastic straw",
+          "expected": "Plastic",
+          "box": [
+            501.0,
+            796.0,
+            786.0,
+            930.0
+          ]
+        },
+        {
+          "id": 2040,
+          "category": "Tissues",
+          "expected": null,
+          "box": [
+            100.0,
+            204.0,
+            333.0,
+            444.0
+          ]
+        },
+        {
+          "id": 2041,
+          "category": "Plastic film",
+          "expected": "Plastic",
+          "box": [
+            490.0,
+            615.0,
+            565.0,
+            671.0
+          ]
+        },
+        {
+          "id": 2042,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            477.0,
+            1292.0,
+            524.0,
+            1320.0
+          ]
+        },
+        {
+          "id": 2043,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            554.0,
+            1265.0,
+            582.0,
+            1327.0
+          ]
+        },
+        {
+          "id": 2044,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            158.0,
+            1542.0,
+            204.0,
+            1595.0
+          ]
+        },
+        {
+          "id": 2045,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            1262.0,
+            1710.0,
+            1297.0,
+            1762.0
+          ]
+        },
+        {
+          "id": 2046,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            675.0,
+            1267.0,
+            718.0,
+            1322.0
+          ]
+        },
+        {
+          "id": 2047,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            1047.0,
+            850.0,
+            1070.0,
+            890.0
+          ]
+        },
+        {
+          "id": 2048,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            1165.0,
+            819.0,
+            1222.0,
+            856.0
+          ]
+        }
+      ],
+      "host_ms": 1765.8820029755589,
+      "upstream_covered": 1,
+      "square_covered": 1
+    },
+    {
+      "id": "taco/batch_7/000036.JPG",
+      "input_shape": [
+        1,
+        3,
+        800,
+        1066
+      ],
+      "predictions": [
+        {
+          "box": [
+            1792.814453125,
+            1159.907958984375,
+            2143.337158203125,
+            1547.47314453125
+          ],
+          "score": 0.9987441301345825,
+          "label": "metals_and_plastic"
+        },
+        {
+          "box": [
+            856.5616455078125,
+            547.5122680664062,
+            975.6693725585938,
+            590.8134765625
+          ],
+          "score": 0.9629793167114258,
+          "label": "unknown"
+        },
+        {
+          "box": [
+            1072.1907958984375,
+            1416.4539794921875,
+            1409.222900390625,
+            1710.7369384765625
+          ],
+          "score": 0.9441511034965515,
+          "label": "non_recyclable"
+        },
+        {
+          "box": [
+            981.1512451171875,
+            932.7857055664062,
+            1270.0714111328125,
+            1201.6539306640625
+          ],
+          "score": 0.9395605325698853,
+          "label": "non_recyclable"
+        },
+        {
+          "box": [
+            391.71051025390625,
+            626.1586303710938,
+            435.7859191894531,
+            662.9012451171875
+          ],
+          "score": 0.887977123260498,
+          "label": "non_recyclable"
+        }
+      ],
+      "targets": [
+        {
+          "id": 3707,
+          "category": "Drink carton",
+          "expected": null,
+          "box": [
+            1029.0,
+            933.0,
+            1314.0,
+            1209.0
+          ]
+        },
+        {
+          "id": 3708,
+          "category": "Meal carton",
+          "expected": null,
+          "box": [
+            1132.0,
+            1412.0,
+            1440.0,
+            1715.0
+          ]
+        },
+        {
+          "id": 3709,
+          "category": "Plastic straw",
+          "expected": "Plastic",
+          "box": [
+            1383.0,
+            779.0,
+            1569.0,
+            852.0
+          ]
+        },
+        {
+          "id": 3710,
+          "category": "Single-use carrier bag",
+          "expected": "Plastic",
+          "box": [
+            1379.0,
+            1115.0,
+            1767.0,
+            1523.0
+          ]
+        },
+        {
+          "id": 3711,
+          "category": "Single-use carrier bag",
+          "expected": "Plastic",
+          "box": [
+            1681.0,
+            952.0,
+            2213.0,
+            1278.0
+          ]
+        },
+        {
+          "id": 3712,
+          "category": "Plastic film",
+          "expected": "Plastic",
+          "box": [
+            1612.0,
+            864.0,
+            1982.0,
+            1266.0
+          ]
+        },
+        {
+          "id": 3713,
+          "category": "Food Can",
+          "expected": "Metal",
+          "box": [
+            1881.0,
+            1158.0,
+            2199.0,
+            1553.0
+          ]
+        },
+        {
+          "id": 3714,
+          "category": "Other plastic",
+          "expected": "Plastic",
+          "box": [
+            913.0,
+            548.0,
+            1004.0,
+            593.0
+          ]
+        }
+      ],
+      "host_ms": 1454.4703390274663,
+      "upstream_covered": 3,
+      "square_covered": 4
+    },
+    {
+      "id": "taco/batch_3/IMG_5003.JPG",
+      "input_shape": [
+        1,
+        3,
+        1066,
+        800
+      ],
+      "predictions": [
+        {
+          "box": [
+            1771.6221923828125,
+            772.1083374023438,
+            1824.110595703125,
+            808.286865234375
+          ],
+          "score": 0.9982781410217285,
+          "label": "non_recyclable"
+        },
+        {
+          "box": [
+            1023.6051635742188,
+            1825.2320556640625,
+            1053.716796875,
+            1900.77490234375
+          ],
+          "score": 0.9965420365333557,
+          "label": "non_recyclable"
+        },
+        {
+          "box": [
+            1080.6038818359375,
+            823.77294921875,
+            1150.6114501953125,
+            860.6107177734375
+          ],
+          "score": 0.9924815893173218,
+          "label": "non_recyclable"
+        },
+        {
+          "box": [
+            1855.9095458984375,
+            1007.8577880859375,
+            1940.4959716796875,
+            1074.785888671875
+          ],
+          "score": 0.919743001461029,
+          "label": "unknown"
+        },
+        {
+          "box": [
+            2100.526123046875,
+            2487.60693359375,
+            2141.4384765625,
+            2599.39794921875
+          ],
+          "score": 0.8942021727561951,
+          "label": "non_recyclable"
+        }
+      ],
+      "targets": [
+        {
+          "id": 2505,
+          "category": "Plastic utensils",
+          "expected": "Plastic",
+          "box": [
+            1157.0,
+            2086.0,
+            1358.0,
+            2147.0
+          ]
+        },
+        {
+          "id": 2506,
+          "category": "Unlabeled litter",
+          "expected": null,
+          "box": [
+            1433.0,
+            2347.0,
+            1504.0,
+            2375.0
+          ]
+        },
+        {
+          "id": 2728,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            1234.0,
+            3148.0,
+            1274.0,
+            3248.0
+          ]
+        },
+        {
+          "id": 2729,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            1642.0,
+            2790.0,
+            1710.0,
+            2856.0
+          ]
+        },
+        {
+          "id": 2730,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            1014.0,
+            1880.0,
+            1042.0,
+            1958.0
+          ]
+        },
+        {
+          "id": 2731,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            1086.0,
+            860.0,
+            1152.0,
+            898.0
+          ]
+        },
+        {
+          "id": 2732,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            1858.0,
+            1058.0,
+            1940.0,
+            1122.0
+          ]
+        },
+        {
+          "id": 2733,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            2140.0,
+            2674.0,
+            2188.0,
+            2744.0
+          ]
+        },
+        {
+          "id": 2734,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            2092.0,
+            2548.0,
+            2136.0,
+            2652.0
+          ]
+        },
+        {
+          "id": 2735,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            2164.0,
+            2644.0,
+            2236.0,
+            2688.0
+          ]
+        },
+        {
+          "id": 2736,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            2096.0,
+            1826.0,
+            2208.0,
+            1854.0
+          ]
+        },
+        {
+          "id": 2737,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            1864.0,
+            1476.0,
+            1922.0,
+            1550.0
+          ]
+        },
+        {
+          "id": 2738,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            1776.0,
+            816.0,
+            1826.0,
+            844.0
+          ]
+        },
+        {
+          "id": 2739,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            2018.0,
+            272.0,
+            2082.0,
+            286.0
+          ]
+        },
+        {
+          "id": 2740,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            2144.0,
+            478.0,
+            2196.0,
+            504.0
+          ]
+        },
+        {
+          "id": 2741,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            1852.0,
+            276.0,
+            1874.0,
+            304.0
+          ]
+        },
+        {
+          "id": 2742,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            2348.0,
+            810.0,
+            2400.0,
+            830.0
+          ]
+        },
+        {
+          "id": 2743,
+          "category": "Cigarette",
+          "expected": null,
+          "box": [
+            528.0,
+            2624.0,
+            578.0,
+            2698.0
+          ]
+        }
+      ],
+      "host_ms": 1408.9318320038728,
+      "upstream_covered": 0,
+      "square_covered": 0
+    },
+    {
+      "id": "taco/batch_6/000002.JPG",
+      "input_shape": [
+        1,
+        3,
+        800,
+        1066
+      ],
+      "predictions": [
+        {
+          "box": [
+            673.3618774414062,
+            574.6974487304688,
+            1157.68505859375,
+            970.7344360351562
+          ],
+          "score": 0.9897525310516357,
+          "label": "paper"
+        },
+        {
+          "box": [
+            1307.981201171875,
+            1045.771728515625,
+            2457.694091796875,
+            1557.8233642578125
+          ],
+          "score": 0.7037226557731628,
+          "label": "paper"
+        }
+      ],
+      "targets": [
+        {
+          "id": 3574,
+          "category": "Corrugated carton",
+          "expected": "Paper",
+          "box": [
+            1385.0,
+            1052.0,
+            2513.0,
+            1583.0
+          ]
+        },
+        {
+          "id": 3575,
+          "category": "Corrugated carton",
+          "expected": "Paper",
+          "box": [
+            715.0,
+            578.0,
+            1193.0,
+            976.0
+          ]
+        }
+      ],
+      "host_ms": 1680.3723860066384,
+      "upstream_covered": 2,
+      "square_covered": 2
+    },
+    {
+      "id": "taco/batch_4/000054.JPG",
+      "input_shape": [
+        1,
+        3,
+        800,
+        1066
+      ],
+      "predictions": [
+        {
+          "box": [
+            1668.907470703125,
+            1880.7447509765625,
+            1932.6505126953125,
+            2110.571533203125
+          ],
+          "score": 0.9992338418960571,
+          "label": "metals_and_plastic"
+        },
+        {
+          "box": [
+            1552.8740234375,
+            1517.24853515625,
+            1802.1495361328125,
+            1695.4075927734375
+          ],
+          "score": 0.9978072047233582,
+          "label": "metals_and_plastic"
+        },
+        {
+          "box": [
+            1094.284912109375,
+            1542.0216064453125,
+            1351.4100341796875,
+            1738.7525634765625
+          ],
+          "score": 0.9581606984138489,
+          "label": "unknown"
+        },
+        {
+          "box": [
+            431.71405029296875,
+            986.2550048828125,
+            1097.031005859375,
+            1589.5352783203125
+          ],
+          "score": 0.7796187400817871,
+          "label": "metals_and_plastic"
+        },
+        {
+          "box": [
+            1846.5684814453125,
+            383.3079833984375,
+            2044.6966552734375,
+            603.3663330078125
+          ],
+          "score": 0.6212320923805237,
+          "label": "metals_and_plastic"
+        }
+      ],
+      "targets": [
+        {
+          "id": 2835,
+          "category": "Food waste",
+          "expected": "Food waste",
+          "box": [
+            1611.0,
+            364.0,
+            2088.0,
+            770.0
+          ]
+        },
+        {
+          "id": 2836,
+          "category": "Other plastic",
+          "expected": "Plastic",
+          "box": [
+            1636.0,
+            1502.0,
+            1853.0,
+            1694.0
+          ]
+        },
+        {
+          "id": 2837,
+          "category": "Other plastic",
+          "expected": "Plastic",
+          "box": [
+            1738.0,
+            1871.0,
+            1972.0,
+            2121.0
+          ]
+        },
+        {
+          "id": 2838,
+          "category": "Other plastic",
+          "expected": "Plastic",
+          "box": [
+            523.0,
+            966.0,
+            1107.0,
+            1580.0
+          ]
+        }
+      ],
+      "host_ms": 1636.1160499800462,
+      "upstream_covered": 3,
+      "square_covered": 1
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preNewModelBuild UP-TO-DATE
+> Task :app:generateNewModelResValues
+> Task :app:dataBindingMergeDependencyArtifactsNewModel
+> Task :app:generateNewModelResources
+> Task :app:packageNewModelResources
+> Task :app:checkNewModelAarMetadata
+> Task :app:mapNewModelSourceSetPaths
+> Task :app:createNewModelCompatibleScreenManifests
+> Task :app:extractDeepLinksNewModel
+> Task :app:parseNewModelLocalResources
+> Task :app:mergeNewModelResources
+> Task :app:processNewModelMainManifest
+> Task :app:dataBindingGenBaseClassesNewModel
+> Task :app:processNewModelManifest
+> Task :app:preNewModelUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileNewModel
+> Task :app:mergeNewModelNativeDebugMetadata NO-SOURCE
+> Task :app:javaPreCompileNewModelUnitTest
+> Task :app:mergeNewModelShaders
+> Task :app:compileNewModelShaders NO-SOURCE
+> Task :app:generateNewModelAssets UP-TO-DATE
+> Task :app:mergeNewModelAssets
+> Task :app:processNewModelManifestForPackage
+> Task :app:checkNewModelDuplicateClasses
+> Task :app:mergeLibDexNewModel
+> Task :app:mergeNewModelJniLibFolders
+> Task :app:compressNewModelAssets
+> Task :app:validateSigningNewModel
+> Task :app:writeNewModelAppMetadata
+> Task :app:writeNewModelSigningConfigVersions
+> Task :app:preNewModelAndroidTestBuild SKIPPED
+> Task :app:generateNewModelAndroidTestResValues
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :app:processNewModelResources
+> Task :app:mergeNewModelNativeLibs
+
+> Task :app:stripNewModelDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libimage_processing_util_jni.so, libonnxruntime.so, libonnxruntime4j_jni.so, libsurface_util_jni.so, libtensorflowlite_jni.so.
+
+> Task :app:desugarNewModelFileDependencies
+> Task :app:mergeExtDexNewModel
+> Task :app:compileNewModelKotlin
+> Task :app:compileNewModelJavaWithJavac
+> Task :app:bundleNewModelClassesToCompileJar
+> Task :app:bundleNewModelClassesToRuntimeJar
+> Task :app:processNewModelJavaRes
+> Task :app:dexBuilderNewModel
+> Task :app:mergeNewModelGlobalSynthetics
+> Task :app:mergeProjectDexNewModel
+> Task :app:generateNewModelAndroidTestLintModel
+> Task :app:generateNewModelLintReportModel
+> Task :app:generateNewModelUnitTestLintModel
+> Task :app:mergeNewModelJavaResource
+> Task :app:compileNewModelUnitTestKotlin
+> Task :app:compileNewModelUnitTestJavaWithJavac NO-SOURCE
+> Task :app:processNewModelUnitTestJavaRes
+> Task :app:testNewModelUnitTest
+> Task :app:packageNewModel
+> Task :app:createNewModelApkListingFileRedirect
+> Task :app:assembleNewModel
+
+> Task :app:lintAnalyzeNewModelAndroidTest
+Warning: Unable to initialize metrics, ensure /home/agent/.android is writable, details: /home/agent/.android/analytics.settings (Read-only file system)
+
+> Task :app:lintAnalyzeNewModelUnitTest
+> Task :app:lintAnalyzeNewModel
+
+> Task :app:lintReportNewModel
+Wrote HTML report to file:///workspace/GarbageClassifier/app/build/reports/lint-results-newModel.html
+
+> Task :app:lintNewModel
+
+BUILD SUCCESSFUL in 48s
+54 actionable tasks: 53 executed, 1 up-to-date

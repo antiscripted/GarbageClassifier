@@ -17,3 +17,9 @@ RealWaste image labels are evaluated as before. TACO center targets are defined 
 ## Android diagnosis
 
 The existing probe now records runtime-loading, session-creation and inference stages to an app-private progress file. It disables worker spinning, permits one cold inference, and no longer spends time rerunning the original model. This addresses the missing diagnostic information in the previous aborted four-call test. No Android success or phone timing is assumed before numerical outputs are checked.
+
+## Center variant implementation checkpoint
+
+The separate `newModel` build type now uses the actual SigLIP2 int4 model for material classification and the original small detector only as a conservative center-presence gate. No original material label is used as fallback. It runs classification on a separate bounded worker, shares one classifier session across camera owners, checks current object appearance/generation before accepting asynchronous results, and requires two independent high-confidence inference results before the four-second lock. Cached camera frames cannot acquire a lock. Unsupported classes stay uncertain; new-model mode draws no object outlines. Bin inspection checks the same centered object. Verified model label “Biological” is retained rather than asserting all organic material is food.
+
+The new variant compiles; its 83 JVM tests passed and lint has no errors. Android model execution is still being diagnosed, so the build has not been qualified for delivery. The completed center measurements and preprocessing audit are preserved here; no old-model APK was rebuilt. The published DETR processor localized 21/87 targets in the fixed 16-image diagnostic, versus 17/87 for the earlier square processor: better, but not a complete localization fix.
