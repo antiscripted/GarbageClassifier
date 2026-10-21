@@ -30,3 +30,7 @@ When distributing a built APK:
 The complete initial model card and metadata are retained in `docs/model`. Test-image provenance and SHA-256 values are in `docs/validation/fixture-sources.json`. Model alternatives were evaluated using local development tools; their weights and Python dependencies are not bundled in the application or source ZIP.
 
 This file explains how this project is packaged; the full license texts control the legal terms. The school should retain the source distribution when sharing the APK publicly.
+# Research assets outside the scanner APK
+
+The preserved SigLIP2 candidate in `tools/models/` is Apache-2.0, with source revision and modification notice beside it. The ONNX Runtime Android test-only AAR in `tools/android-runtime/` is MIT; its license and third-party notices are included there. Both are included in the complete source archive for reproducibility, but neither is inside the stable scanner APK. DETR source attribution and export provenance are recorded in the latest experiment report. These research assets do not change the app's existing AGPL-3.0 distribution obligations below.
+

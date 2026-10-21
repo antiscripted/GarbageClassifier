@@ -27,3 +27,7 @@ Compare original and experimental APKs using the same safe objects, distances, l
 - Run in airplane mode for ten minutes and record preview smoothness, delay, temperature and errors. Desktop timing is not a phone FPS estimate.
 
 The 22 deterministic tracker tests exercise timing boundaries, confirmation, brief uncertainty, occlusion, contradictions, appearance/position replacement, smoothing, independent bins, crossing ambiguity, resets and frame stalls. They validate logic, not real-camera recognition accuracy.
+
+## Expiry fix in the stable APK
+
+UI expiry at 900 ms now invalidates the camera tracking generation. Frames queued before expiry cannot restore an old label, and resumed analysis starts confirmation again. The regression test exercises the activity expiry path; see [CODE_REVIEW.md](CODE_REVIEW.md).

@@ -39,7 +39,7 @@ Unit tests cover coordinate arithmetic. Android tests run the real detector with
 
 `STRATEGY_KEEP_ONLY_LATEST` drops queued old frames rather than making the preview wait. Analysis has its own single worker; there are never several concurrent interpreter calls. Most model input/output arrays, the 320×320 bitmap and paint objects are reused. CameraX's image-to-bitmap conversion still allocates a frame bitmap, which is recycled after inference.
 
-The 180 ms throttle is an upper limit of about 5.6 analyzed frames per second, not a promised phone frame rate. The preview runs independently. Results older than 900 ms are discarded, and displayed results expire. Rebinding the camera clears boxes immediately. Two-frame eligibility followed by tracked confirmation and a four-second result hold reduces flicker but does not prove a material is correct: a model can repeat the same confident mistake.
+The 180 ms throttle is an upper limit of about 5.6 analyzed frames per second, not a promised phone frame rate. The preview runs independently. Results older than 900 ms are discarded, and displayed results expire and invalidate tracking, so an old lock cannot revive when frames resume. Rebinding the camera clears boxes immediately. Two-frame eligibility followed by tracked confirmation and a four-second result hold reduces flicker but does not prove a material is correct: a model can repeat the same confident mistake.
 
 [STABILITY.md](STABILITY.md) explains hold timing and early resets. Missing objects lose their overlay immediately; their card can remain briefly. Mode and bin changes clear tracking, and queued results from the previous tracking generation are ignored.
 

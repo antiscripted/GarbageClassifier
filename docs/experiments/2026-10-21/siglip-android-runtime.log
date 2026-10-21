@@ -1,2 +1,3 @@
 
-org.garbageclassifier.CandidateRuntimeTest:
+org.garbageclassifier.CandidateRuntimeTest:INSTRUMENTATION_RESULT: shortMsg=Process crashed.
+INSTRUMENTATION_CODE: 0

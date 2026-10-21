@@ -4,13 +4,13 @@ These commands are for Windows 10/11 PowerShell. The Android build has been run 
 
 ## Install the supplied APK
 
-1. Copy the supplied `GarbageClassifier-experimental-debug.apk` to the Galaxy M51 using a USB cable, or download it from the project's `apks/experimental/` folder (the original remains in `delivery/`).
+1. Copy the supplied `GarbageClassifier-stable.apk` to the Galaxy M51 using a USB cable, or download it from the project's `apks/stable/` folder (the original remains in `delivery/`).
 2. Open it in Samsung My Files. If Android requests it, enable “Allow from this source” for My Files, then install. The supplied APK is a development/debug build, not a Play Store release.
 3. Launch “Garbage Classifier” and allow camera access. No other runtime permission is needed. Android's camera permission dialog may mention recording video; the app only analyzes frames and does not save video.
 4. Turn on airplane mode and turn Wi-Fi off. Reopen the app and try the scanner. The model is already inside the APK; there is no first-launch model download.
 5. Review the device checklist in VALIDATION.md. Do not use hazardous, sharp or sanitary waste as classroom test objects.
 
-The original and experimental APKs share the package name and cloud debug signing key. Installing with `adb install -r` updates the installed version; it does not overwrite either saved APK file. To return to the original, install `delivery/GarbageClassifier-debug.apk` with the same command. No uninstall is normally needed between the supplied APKs.
+The original, experimental and stable APKs share the package name and cloud debug signing key. Installing with `adb install -r` updates the installed version; it does not overwrite either saved APK file. To return to the original, install `delivery/GarbageClassifier-debug.apk` with the same command. No uninstall is normally needed between the supplied APKs.
 
 If Android reports that an existing installation conflicts, it may be signed by a different debug key. Uninstall the old `org.garbageclassifier` app and reinstall. This removes its permission history and UI settings; the app does not store photos or accounts. A version built on another computer usually has a different debug signing key.
 

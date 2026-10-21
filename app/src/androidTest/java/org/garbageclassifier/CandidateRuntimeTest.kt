@@ -25,6 +25,8 @@ class CandidateRuntimeTest {
         val name = arguments.getString("candidateModel")
         assumeTrue("Explicit candidate model is required", name != null)
         val size = arguments.getString("candidateSize")!!.toInt()
+        val runs = arguments.getString("candidateRuns", "4").toInt()
+        require(runs in 1..10)
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         val model = File(context.filesDir, checkNotNull(name))
         val digest = MessageDigest.getInstance("SHA-256")
@@ -67,12 +69,12 @@ class CandidateRuntimeTest {
                 OnnxTensor.createTensor(environment, FloatBuffer.wrap(FloatArray(3 * size * size)), shape).use { input ->
                     val times = JSONArray()
                     val outputs = JSONObject()
-                    repeat(4) { iteration ->
+                    repeat(runs) { iteration ->
                         val before = SystemClock.elapsedRealtimeNanos()
                         session.run(mapOf("pixels" to input)).use { result ->
                             val elapsed = (SystemClock.elapsedRealtimeNanos() - before) / 1_000_000.0
-                            if (iteration > 0) times.put(elapsed)
-                            if (iteration == 3) {
+                            if (iteration > 0 || runs == 1) times.put(elapsed)
+                            if (iteration == runs - 1) {
                                 for ((outputName, value) in result) {
                                     val tensor = value as OnnxTensor
                                     val buffer = tensor.floatBuffer
@@ -93,6 +95,7 @@ class CandidateRuntimeTest {
                     val report = JSONObject().put("model", name).put("sha256", hash)
                         .put("runtime", environment.version).put("load_ms", loadMs)
                         .put("original_detect_ms", originalTimes)
+                        .put("warmup_calls", if (runs > 1) 1 else 0)
                         .put("inference_ms", times).put("outputs", outputs)
                         .put("baseline_pss_kib", baselinePss).put("loaded_pss_kib", memory.totalPss)
                         .put("native_heap_allocated_bytes", Debug.getNativeHeapAllocatedSize())

@@ -1,4 +1,6 @@
-# Material recognition comparison — 20–21 October 2026
+# Earlier material recognition comparison — 20–21 October 2026
+
+**Latest results and delivery decision:** [DETR + int4 SigLIP2 complete-pipeline evaluation](experiments/2026-10-21/README.md). The original model is retained; improved-model integration remains unfinished.
 
 Starting point: `finish/review-build-2026-10-20`, commit `5021e619e63750cf603975dc0f9057061e22c54a`.
 

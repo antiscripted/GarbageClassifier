@@ -1,0 +1,15 @@
+{
+  "status": "aborted_by_operator_after_slow_emulator_run",
+  "host_seconds_before_stop": 531,
+  "device": "API 29 x86_64 software emulator, no KVM",
+  "runtime_version": "1.22.0",
+  "candidate_sha256": "fec39a575bd1a2d2434a1f763989bba0c2ecdd3c2cbfd52a27d9f923f53abd10",
+  "requested_calls": 4,
+  "completed_calls_unknown": true,
+  "outputs_verified": false,
+  "latency_verified": false,
+  "physical_phone": false,
+  "reason": "The four-call candidate probe had not completed after 531 host seconds. Android process was deliberately force-stopped to continue stable scanner validation. The instrumentation Process crashed message is from this stop, not evidence of an independent runtime crash.",
+  "memory": "See siglip-android-memory-snapshot.txt; a process snapshot, not a measured peak or combined-pipeline memory requirement.",
+  "detr_android_executed": false
+}
