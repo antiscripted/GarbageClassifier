@@ -2,14 +2,15 @@
 
 An offline Android camera scanner for a Class 9 AI project, due **25 October 2026**. It recognizes supported materials, recommends Wet/Dry bins and checks recognizable bin contents. No account, upload, microphone or Internet permission.
 
-**New SigLIP2 center-scanner: experimental and unverified on phones.** A separate build now bundles the real 56.7 MB SigLIP2 model and ONNX Runtime. It improves cached single-object material results, but production Android inference did not finish within a 60-second emulator limit. The older standalone runtime probe returned correct outputs in 23.6 minutes under software emulation. This is not a verified real-time release or a Galaxy M51 speed measurement. No physical phone testing was performed.
+**New SigLIP2 CPU-optimized APK available. Physical phone speed remains unverified.** The new build uses capability-selected int4 CPU kernels while retaining float compute in the first and last transformer blocks. It improves the recorded supported-image result from 152 to **153/240 correct**, retaining **two wrong wet/dry recommendations**. All weights remain unchanged. Desktop inference measured a 197 ms median across 464 center crops; this is not a Galaxy M51 measurement or proof of the 1–2-second target on phones.
 
-- [Download GarbageClassifier-new-model-unverified.apk](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/checkpoint/apks/new-model/GarbageClassifier-new-model-unverified.apk)
-- [Matching new-model source ZIP](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/checkpoint/source/new-model/GarbageClassifier-new-model-source.zip)
-- [APK SHA-256](apks/new-model/SHA256SUMS.txt) · [source SHA-256](source/new-model/SHA256SUMS.txt)
-- [New-model results, limitations and Windows/phone instructions](docs/experiments/center-scanner/DELIVERY.md)
+- [Download GarbageClassifier-new-model.apk](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/checkpoint/apks/new-model-cpu/GarbageClassifier-new-model.apk)
+- [Matching complete source ZIP](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/checkpoint/source/new-model-cpu/GarbageClassifier-new-model-source.zip)
+- [APK SHA-256](apks/new-model-cpu/SHA256SUMS.txt) · [source SHA-256](source/new-model-cpu/SHA256SUMS.txt)
+- [Performance, tests, limitations and Windows/phone instructions](docs/experiments/int4-cpu/README.md)
+- [Previous unverified SigLIP2 APK](apks/new-model/GarbageClassifier-new-model-unverified.apk) remains preserved.
 
-Only `checkpoint` contains this experiment. The stable `development` APK and all older APKs remain preserved.
+The build, all 85 JVM tests, lint and APK integrity checks passed. A bounded Android test verified small real-weight matrix outputs and full production model loading. Full-model ARM inference and live phone behavior remain untested. No costly full-model software-emulator run was repeated. Only `checkpoint` contains this delivery; protected branches and previous APKs are unchanged.
 
 ## Preserved stable downloads and review
 
