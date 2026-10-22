@@ -48,6 +48,8 @@ def main():
         assert model_sha == contract['sha256'] and len(model) == contract['bytes']
         assert archive.testzip() is None
         if args.new_model:
+            overhead = args.apk.stat().st_size - sum(item.compress_size for item in archive.infolist())
+            assert overhead < 1024 * 1024, 'Repackage the APK to remove retained ZIP space'
             candidate = archive.read('assets/material_classifier.onnx')
             candidate_sha = hashlib.sha256(candidate).hexdigest()
             assert candidate_sha == '63802ff39c00c52663846e4bf7c0dfe511e4e4242398a24240bce733cdbdf366'

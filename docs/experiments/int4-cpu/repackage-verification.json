@@ -1,0 +1,9 @@
+{
+  "all_uncompressed_apk_entries_identical": true,
+  "entries": 495,
+  "before_bytes": 148958074,
+  "after_bytes": 92225477,
+  "unpublished_snapshot_commit": "fcb8421f5dae39961892fb8fddd0692017a916cf",
+  "unpublished_snapshot_local_branch": "packaging-snapshot",
+  "published_history_rewritten": false
+}
