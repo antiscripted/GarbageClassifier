@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.garbageclassifier.core.RecognitionTrackerTest" tests="22" skipped="0" failures="0" errors="0" timestamp="2026-10-22T01:08:53" hostname="1f68f4629262" time="0.025">
+  <properties/>
+  <testcase name="visibleObjectRemainsLockedBeyondMinimumHold" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.002"/>
+  <testcase name="sustainedContradictionRevokesBeforeReacquisition" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.001"/>
+  <testcase name="differentPositionNeverInheritsTheLockEvenWithSameAppearance" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.0"/>
+  <testcase name="boundingBoxesMoveSmoothlyWithoutChangingIdentity" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.0"/>
+  <testcase name="uncertaintyInterruptsAcquisition" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.001"/>
+  <testcase name="ambiguousCrossingRevokesBothLocksBeforeObjectsSeparate" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.0"/>
+  <testcase name="absenceAfterMinimumHoldStillHasAOneAndQuarterSecondGracePeriod" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.001"/>
+  <testcase name="differentAppearanceAtTheSamePositionNeverInheritsTheLock" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.0"/>
+  <testcase name="simultaneousObjectsKeepIndependentBins" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.001"/>
+  <testcase name="unsupportedClassCannotLock" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.0"/>
+  <testcase name="appearanceIsRequiredForIdentityAndLocking" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.001"/>
+  <testcase name="clockRegressionAndLongFrameStallClearStaleLocks" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.0"/>
+  <testcase name="briefConfidenceDipDoesNotFlicker" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.0"/>
+  <testcase name="oneContradictoryFrameCannotReplaceLockedMaterial" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.0"/>
+  <testcase name="temporaryOcclusionHoldsCardButHidesTheBox" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.0"/>
+  <testcase name="resetClearsHoldAndRequiresNewConfirmation" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.001"/>
+  <testcase name="gradualAppearanceDriftCannotMoveTheLockedIdentityToAnotherObject" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.0"/>
+  <testcase name="livePipelineRequiresFourRawSightingsAcrossSixHundredMilliseconds" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.014"/>
+  <testcase name="rapidFramesAloneCannotImmediatelyLock" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.0"/>
+  <testcase name="acquisitionRequiresThreeConsistentConfirmedObservations" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.0"/>
+  <testcase name="oneTrackCannotBeAssignedToTwoOverlappingObjects" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.001"/>
+  <testcase name="missingObjectIsHeldForFourSecondsThenAutomaticallyCleared" classname="org.garbageclassifier.core.RecognitionTrackerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

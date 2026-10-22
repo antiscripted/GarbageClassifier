@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.garbageclassifier.core.CenterScannerTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-10-22T01:08:53" hostname="1f68f4629262" time="0.024">
+  <properties/>
+  <testcase name="cachedFramesCannotConfirmOneClassifierPrediction" classname="org.garbageclassifier.core.CenterScannerTest" time="0.019"/>
+  <testcase name="duplicateClassProposalsDoNotBecomeSeparateObjects" classname="org.garbageclassifier.core.CenterScannerTest" time="0.002"/>
+  <testcase name="differentObjectCannotInheritCenterLock" classname="org.garbageclassifier.core.CenterScannerTest" time="0.0"/>
+  <testcase name="centerGateRejectsSeparateObjectsAndOffcenterObjects" classname="org.garbageclassifier.core.CenterScannerTest" time="0.0"/>
+  <testcase name="centerLockLastsFourSecondsAndRemovalResetsIt" classname="org.garbageclassifier.core.CenterScannerTest" time="0.001"/>
+  <testcase name="centerGateAcceptsOneLargeObjectWithoutUsingItsMaterialClass" classname="org.garbageclassifier.core.CenterScannerTest" time="0.0"/>
+  <testcase name="expiredEvidenceCannotAcquireLockDespiteFreshCameraFrames" classname="org.garbageclassifier.core.CenterScannerTest" time="0.0"/>
+  <testcase name="centerGateRejectsEmptyBackgroundAndTinyPrintedDetail" classname="org.garbageclassifier.core.CenterScannerTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

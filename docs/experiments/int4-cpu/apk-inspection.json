@@ -1,0 +1,136 @@
+{
+  "apk_bytes": 148958074,
+  "apk_sha256": "36aeabc02e2ac4f3c950bea290beb7e5017d7b593498c678a889348f47fcc612",
+  "model_bytes": 2836973,
+  "model_sha256": "9c258ac8a0344cd07deb28ddcedb096e5bd30c092b807ff7e442f40279d8f54d",
+  "permissions": [
+    "uses-permission: name='android.permission.CAMERA'",
+    "uses-permission: name='org.garbageclassifier.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'"
+  ],
+  "native_libraries": [
+    {
+      "path": "lib/arm64-v8a/libimage_processing_util_jni.so",
+      "load_segment_alignment": [
+        "0x4000",
+        "0x4000",
+        "0x4000"
+      ]
+    },
+    {
+      "path": "lib/arm64-v8a/libonnxruntime.so",
+      "load_segment_alignment": [
+        "0x4000",
+        "0x4000",
+        "0x4000"
+      ]
+    },
+    {
+      "path": "lib/arm64-v8a/libonnxruntime4j_jni.so",
+      "load_segment_alignment": [
+        "0x4000",
+        "0x4000"
+      ]
+    },
+    {
+      "path": "lib/arm64-v8a/libsurface_util_jni.so",
+      "load_segment_alignment": [
+        "0x4000",
+        "0x4000"
+      ]
+    },
+    {
+      "path": "lib/arm64-v8a/libtensorflowlite_jni.so",
+      "load_segment_alignment": [
+        "0x4000",
+        "0x4000",
+        "0x4000"
+      ]
+    },
+    {
+      "path": "lib/armeabi-v7a/libimage_processing_util_jni.so",
+      "load_segment_alignment": [
+        "0x4000",
+        "0x4000",
+        "0x4000"
+      ]
+    },
+    {
+      "path": "lib/armeabi-v7a/libonnxruntime.so",
+      "load_segment_alignment": [
+        "0x4000",
+        "0x4000",
+        "0x4000"
+      ]
+    },
+    {
+      "path": "lib/armeabi-v7a/libonnxruntime4j_jni.so",
+      "load_segment_alignment": [
+        "0x1000",
+        "0x1000"
+      ]
+    },
+    {
+      "path": "lib/armeabi-v7a/libsurface_util_jni.so",
+      "load_segment_alignment": [
+        "0x4000",
+        "0x4000"
+      ]
+    },
+    {
+      "path": "lib/armeabi-v7a/libtensorflowlite_jni.so",
+      "load_segment_alignment": [
+        "0x4000",
+        "0x4000",
+        "0x4000"
+      ]
+    },
+    {
+      "path": "lib/x86_64/libimage_processing_util_jni.so",
+      "load_segment_alignment": [
+        "0x4000",
+        "0x4000",
+        "0x4000"
+      ]
+    },
+    {
+      "path": "lib/x86_64/libonnxruntime.so",
+      "load_segment_alignment": [
+        "0x4000",
+        "0x4000",
+        "0x4000"
+      ]
+    },
+    {
+      "path": "lib/x86_64/libonnxruntime4j_jni.so",
+      "load_segment_alignment": [
+        "0x4000",
+        "0x4000"
+      ]
+    },
+    {
+      "path": "lib/x86_64/libsurface_util_jni.so",
+      "load_segment_alignment": [
+        "0x4000",
+        "0x4000"
+      ]
+    },
+    {
+      "path": "lib/x86_64/libtensorflowlite_jni.so",
+      "load_segment_alignment": [
+        "0x4000",
+        "0x4000",
+        "0x4000"
+      ]
+    }
+  ],
+  "minimum_sdk": 24,
+  "target_sdk": 35,
+  "test_photos_in_main_apk": false,
+  "signature_v2": true,
+  "same_signing_certificate_as_original": true,
+  "zipalign_16kb": true,
+  "bundled_license_texts_verified": true,
+  "candidate_weights_or_runtime_in_scanner_apk": true,
+  "candidate_model_sha256": "63802ff39c00c52663846e4bf7c0dfe511e4e4242398a24240bce733cdbdf366",
+  "production_inference_verified": false
+}

@@ -34,6 +34,8 @@ class MaterialClassifier(context: Context) : Closeable {
             .digest().joinToString("") { "%02x".format(it.toInt() and 255) }
         check(digest == SHA256) { "Unexpected material model checksum" }
         session = OrtSession.SessionOptions().use { options ->
+            options.setOptimizationLevel(OrtSession.SessionOptions.OptLevel.ALL_OPT)
+            options.setExecutionMode(OrtSession.SessionOptions.ExecutionMode.SEQUENTIAL)
             options.setIntraOpNumThreads(2)
             options.setInterOpNumThreads(1)
             options.addConfigEntry("session.intra_op.allow_spinning", "0")
@@ -89,7 +91,7 @@ class MaterialClassifier(context: Context) : Closeable {
     companion object {
         const val SIZE = 224
         const val ASSET = "material_classifier.onnx"
-        const val SHA256 = "fec39a575bd1a2d2434a1f763989bba0c2ecdd3c2cbfd52a27d9f923f53abd10"
+        const val SHA256 = "63802ff39c00c52663846e4bf7c0dfe511e4e4242398a24240bce733cdbdf366"
         private val SHAPE = longArrayOf(1, 3, 224, 224)
         val materials = listOf(
             Material(0, "Battery", null), Material(1, "Biological", BinType.WET),

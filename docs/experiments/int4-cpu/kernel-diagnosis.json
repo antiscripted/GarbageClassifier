@@ -1,0 +1,30 @@
+{
+  "version": "1.22.0",
+  "sources": {
+    "qnbitgemm_kernel_neon.cpp": {
+      "sha256": "014a72ee077e6d0ad97ef75681d74c365e8d6dc006e768fb05cb582a837e0314",
+      "url": "https://github.com/microsoft/onnxruntime/blob/v1.22.0/onnxruntime/core/mlas/lib/qnbitgemm_kernel_neon.cpp"
+    },
+    "sqnbitgemm_kernel_neon_int8.cpp": {
+      "sha256": "afe65d4b40d797c3b510527db1c6abe909e4a8577ac09a335a6b57318dd3bdbe",
+      "url": "https://github.com/microsoft/onnxruntime/blob/v1.22.0/onnxruntime/core/mlas/lib/sqnbitgemm_kernel_neon_int8.cpp"
+    },
+    "platform.cpp": {
+      "sha256": "8baf6661eac04b30d775fb41b1ed05dee9b2a7c450e7ab8f0fb2f1ee3d543057",
+      "url": "https://github.com/microsoft/onnxruntime/blob/v1.22.0/onnxruntime/core/mlas/lib/platform.cpp"
+    },
+    "qnbitgemm.cpp": {
+      "sha256": "bd7cec31eb693e5608eec99cab6b23f53e9c1bf075c359909625dd5ddf79fae2",
+      "url": "https://github.com/microsoft/onnxruntime/blob/v1.22.0/onnxruntime/core/mlas/lib/qnbitgemm.cpp"
+    },
+    "matmul_nbits.cc": {
+      "sha256": "37441dfdcfbcadf120ff8ac4a7e6b40a87362999d28fe6752b153eeca704bfce",
+      "url": "https://github.com/microsoft/onnxruntime/blob/v1.22.0/onnxruntime/contrib_ops/cpu/quantization/matmul_nbits.cc"
+    }
+  },
+  "observed_x86_emulator": "No KVM; no AVX/AVX2; MatMulNBits packed path unavailable by ORT CPU dispatch predicate. Unpacked path allocates/dequantizes B per call before SGEMM.",
+  "arm64": "NEON dispatch; int8 compute enabled when runtime detects dot-product instructions, otherwise GetComputeType falls back to FP32. No mandatory GPU, NNAPI or chipset checks in app.",
+  "graph_profile": "All-fast desktop profile spent 77,386,188 us in MatMulNBits over 465 calls, the dominant operator. ALL optimization already fuses matrix operations and layer normalization.",
+  "provider_choice": "CPU EP retained. Custom MatMulNBits is CPU-registered; adding NNAPI/XNNPACK does not establish acceleration for these dominant nodes. No unverified EP partitioning was introduced.",
+  "prior_kernel_probe": "All-fast variant screened first: 151 correct, 2 wrong bins. Mixed first/last-block FP32 compute selected after 153 correct and 2 wrong bins. Packed int4 weight bytes are identical."
+}

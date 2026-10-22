@@ -50,7 +50,7 @@ def main():
         if args.new_model:
             candidate = archive.read('assets/material_classifier.onnx')
             candidate_sha = hashlib.sha256(candidate).hexdigest()
-            assert candidate_sha == 'fec39a575bd1a2d2434a1f763989bba0c2ecdd3c2cbfd52a27d9f923f53abd10'
+            assert candidate_sha == '63802ff39c00c52663846e4bf7c0dfe511e4e4242398a24240bce733cdbdf366'
             assert len(candidate) == 56733021
             assert archive.getinfo('assets/material_classifier.onnx').compress_type == 0
             with ZipFile(ROOT / 'tools/android-runtime/onnxruntime-android-1.22.0.aar') as runtime:

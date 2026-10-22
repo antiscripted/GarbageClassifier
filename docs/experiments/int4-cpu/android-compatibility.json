@@ -1,0 +1,13 @@
+{
+  "model_sha256": "63802ff39c00c52663846e4bf7c0dfe511e4e4242398a24240bce733cdbdf366",
+  "abis": [
+    "x86_64",
+    "x86"
+  ],
+  "full_model_inference": false,
+  "stage": "passed",
+  "kernel_pair_ms": 38,
+  "original_maximum_absolute_error": 2.9802322387695312E-8,
+  "optimized_maximum_absolute_error": 2.9802322387695312E-8,
+  "production_session_ms": 5127
+}
