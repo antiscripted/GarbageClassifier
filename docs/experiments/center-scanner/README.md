@@ -1,6 +1,6 @@
-# New-model work in progress
+# New-model experimental checkpoint
 
-Only `checkpoint` is used for this work. Verified `development`, `main`, `backup` and all previous APKs remain unchanged at the beginning of this experiment. No new-model APK has been qualified yet.
+Only `checkpoint` is used for this work. Verified `development`, `main`, `backup` and all previous APKs remain unchanged at the beginning of this experiment. An unverified experimental APK is now packaged for phone testing; see [delivery results and instructions](DELIVERY.md). No new-model APK has been qualified for reliable real-time use.
 
 ## Error audit
 
@@ -22,4 +22,4 @@ The existing probe now records runtime-loading, session-creation and inference s
 
 The separate `newModel` build type now uses the actual SigLIP2 int4 model for material classification and the original small detector only as a conservative center-presence gate. No original material label is used as fallback. It runs classification on a separate bounded worker, shares one classifier session across camera owners, checks current object appearance/generation before accepting asynchronous results, and requires two independent high-confidence inference results before the four-second lock. Cached camera frames cannot acquire a lock. Unsupported classes stay uncertain; new-model mode draws no object outlines. Bin inspection checks the same centered object. Verified model label “Biological” is retained rather than asserting all organic material is food.
 
-The new variant compiles; its 83 JVM tests passed and lint has no errors. Android model execution is still being diagnosed, so the build has not been qualified for delivery. The completed center measurements and preprocessing audit are preserved here; no old-model APK was rebuilt. The published DETR processor localized 21/87 targets in the fixed 16-image diagnostic, versus 17/87 for the earlier square processor: better, but not a complete localization fix.
+The new variant compiles; its 85 JVM tests passed and lint has no errors. The earlier standalone Android probe returned numerically correct logits but took 23.6 minutes. A final bounded production call timed out at 60 seconds after successfully creating the bundled model session. The experimental APK is therefore explicitly unverified for live use; see DELIVERY.md. The completed center measurements and preprocessing audit are preserved here; no old-model APK was rebuilt. The published DETR processor localized 21/87 targets in the fixed 16-image diagnostic, versus 17/87 for the earlier square processor: better, but not a complete localization fix.

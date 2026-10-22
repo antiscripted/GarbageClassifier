@@ -10,7 +10,6 @@ import org.garbageclassifier.core.AntialiasedResize
 import org.garbageclassifier.core.BinType
 import org.garbageclassifier.core.Material
 import java.io.Closeable
-import java.io.FileInputStream
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.nio.channels.FileChannel
@@ -24,7 +23,7 @@ class MaterialClassifier(context: Context) : Closeable {
     private val input = ByteBuffer.allocateDirect(SIZE * SIZE * 3 * 4)
         .order(ByteOrder.nativeOrder()).asFloatBuffer()
     private val model = context.assets.openFd(ASSET).use { asset ->
-        FileInputStream(asset.fileDescriptor).use { stream ->
+        asset.createInputStream().use { stream ->
             stream.channel.map(FileChannel.MapMode.READ_ONLY, asset.startOffset, asset.declaredLength)
         }
     }

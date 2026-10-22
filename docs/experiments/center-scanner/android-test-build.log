@@ -1,0 +1,67 @@
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+> Configure project :app
+Unable to initialize metrics, ensure /home/agent/.android is writable, details: /home/agent/.android/analytics.settings (Read-only file system)
+
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preNewModelBuild UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsNewModel UP-TO-DATE
+> Task :app:generateNewModelResValues UP-TO-DATE
+> Task :app:generateNewModelResources UP-TO-DATE
+> Task :app:mergeNewModelResources UP-TO-DATE
+> Task :app:packageNewModelResources UP-TO-DATE
+> Task :app:parseNewModelLocalResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesNewModel UP-TO-DATE
+> Task :app:checkNewModelAarMetadata UP-TO-DATE
+> Task :app:mapNewModelSourceSetPaths UP-TO-DATE
+> Task :app:createNewModelCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksNewModel UP-TO-DATE
+> Task :app:processNewModelMainManifest UP-TO-DATE
+> Task :app:processNewModelManifest UP-TO-DATE
+> Task :app:processNewModelManifestForPackage UP-TO-DATE
+> Task :app:processNewModelResources UP-TO-DATE
+> Task :app:compileNewModelKotlin UP-TO-DATE
+> Task :app:javaPreCompileNewModel UP-TO-DATE
+> Task :app:compileNewModelJavaWithJavac UP-TO-DATE
+> Task :app:bundleNewModelClassesToCompileJar UP-TO-DATE
+> Task :app:preNewModelAndroidTestBuild SKIPPED
+> Task :app:generateNewModelAndroidTestResValues UP-TO-DATE
+> Task :app:generateNewModelAndroidTestResources
+> Task :app:dataBindingMergeDependencyArtifactsNewModelAndroidTest
+> Task :app:mergeNewModelAndroidTestResources
+> Task :app:checkNewModelAndroidTestAarMetadata
+> Task :app:dataBindingGenBaseClassesNewModelAndroidTest
+> Task :app:mapNewModelAndroidTestSourceSetPaths
+> Task :app:processNewModelAndroidTestManifest
+> Task :app:javaPreCompileNewModelAndroidTest
+> Task :app:mergeNewModelAndroidTestShaders
+> Task :app:compileNewModelAndroidTestShaders NO-SOURCE
+> Task :app:generateNewModelAndroidTestAssets UP-TO-DATE
+> Task :app:mergeNewModelAndroidTestAssets
+> Task :app:compressNewModelAndroidTestAssets
+> Task :app:desugarNewModelAndroidTestFileDependencies
+> Task :app:checkNewModelAndroidTestDuplicateClasses
+> Task :app:mergeNewModelAndroidTestJniLibFolders
+> Task :app:processNewModelAndroidTestResources
+> Task :app:mergeNewModelJniLibFolders UP-TO-DATE
+> Task :app:mergeLibDexNewModelAndroidTest
+> Task :app:mergeNewModelNativeLibs UP-TO-DATE
+> Task :app:mergeNewModelAndroidTestNativeLibs NO-SOURCE
+> Task :app:stripNewModelAndroidTestDebugSymbols NO-SOURCE
+> Task :app:validateSigningNewModelAndroidTest
+> Task :app:writeNewModelAndroidTestSigningConfigVersions
+> Task :app:mergeExtDexNewModelAndroidTest
+> Task :app:compileNewModelAndroidTestKotlin
+> Task :app:compileNewModelAndroidTestJavaWithJavac NO-SOURCE
+> Task :app:dexBuilderNewModelAndroidTest
+> Task :app:mergeNewModelAndroidTestGlobalSynthetics
+> Task :app:processNewModelAndroidTestJavaRes
+> Task :app:mergeProjectDexNewModelAndroidTest
+> Task :app:mergeNewModelAndroidTestJavaResource
+> Task :app:packageNewModelAndroidTest
+> Task :app:createNewModelAndroidTestApkListingFileRedirect
+> Task :app:assembleNewModelAndroidTest
+
+BUILD SUCCESSFUL in 18s
+49 actionable tasks: 27 executed, 22 up-to-date

@@ -18,13 +18,14 @@ def main():
     parser.add_argument('--inspection', type=Path, required=True)
     parser.add_argument('--apk-output', type=Path, required=True)
     parser.add_argument('--source-output', type=Path, required=True)
+    parser.add_argument('--apk', type=Path, default=ROOT / 'app/build/outputs/apk/debug/app-debug.apk')
     args = parser.parse_args()
     output_apk = args.apk_output.resolve()
     archive_path = args.source_output.resolve()
     for output in [output_apk, archive_path]:
         assert not output.exists(), f'Refusing to overwrite {output}'
         output.parent.mkdir(parents=True, exist_ok=True)
-    apk = ROOT / 'app/build/outputs/apk/debug/app-debug.apk'
+    apk = args.apk.resolve()
     assert apk.is_file(), 'Build the debug APK before packaging'
     inspected = json.loads(args.inspection.read_text())
     assert checksum(apk) == inspected['apk_sha256'], 'APK differs from the verified artifact'

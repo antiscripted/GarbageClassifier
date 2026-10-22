@@ -1,0 +1,12 @@
+{
+  "status": "unverified_experimental",
+  "deadline_seconds": 60,
+  "instrumentation_timeout_exit_code": 124,
+  "last_completed_stage": "production_session_ready",
+  "session_ready_ms": 6105,
+  "inference_completed": false,
+  "installed_apk": true,
+  "physical_phone_tested": false,
+  "environment": "API 29 x86_64 software emulator, two virtual CPUs, no /dev/kvm and no AVX/AVX2 flags",
+  "diagnosis": "Bundled model checksum, memory mapping, tensor contract and ONNX session creation succeeded. The production classification call did not return before the 60-second host deadline. A previous identical-weights runtime probe completed correct zero-input logits after 1413039 ms. Slow software emulation and available CPU kernels are plausible causes; exact kernel-level cause and ARM performance are not established."
+}

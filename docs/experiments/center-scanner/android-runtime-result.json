@@ -1,0 +1,37 @@
+{
+  "model": "material_classifier.onnx",
+  "sha256": "fec39a575bd1a2d2434a1f763989bba0c2ecdd3c2cbfd52a27d9f923f53abd10",
+  "stage": "complete",
+  "elapsed_ms": 1420933,
+  "load_ms": 4882,
+  "runtime": "1.22.0",
+  "warmup_calls": 0,
+  "inference_ms": [
+    1413039.265827
+  ],
+  "outputs": {
+    "logits": {
+      "shape": [
+        1,
+        10
+      ],
+      "values": [
+        1.8471380472183228,
+        0.0881064236164093,
+        -1.9032268524169922,
+        -0.6679560542106628,
+        1.4104392528533936,
+        -0.8437665700912476,
+        -0.491277277469635,
+        -0.9566517472267151,
+        -1.4315094947814941,
+        -1.161027431488037
+      ]
+    }
+  },
+  "baseline_pss_kib": 55290,
+  "loaded_pss_kib": 141086,
+  "native_heap_allocated_bytes": 150823856,
+  "threads": 2,
+  "physical_phone": false
+}

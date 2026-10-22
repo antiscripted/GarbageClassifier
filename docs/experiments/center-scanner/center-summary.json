@@ -1,0 +1,317 @@
+{
+  "method": "Cached still images, not live video. Center classifier threshold 0.80, margin 0.15; original baseline 0.60, margin 0.15. No temporal lock simulated. Cardboard maps to Paper; Biological maps to Food waste for benchmark comparison.",
+  "original_realwaste": {
+    "counts": {
+      "total": 360,
+      "known": 240,
+      "rejected": 155,
+      "known_rejected": 74,
+      "accepted": 205,
+      "known_accepted": 166,
+      "wrong_material": 80,
+      "undetected": 26,
+      "confident_wrong": 53,
+      "correct": 86,
+      "wrong_bin": 5,
+      "unsupported": 120,
+      "unsupported_rejected": 81,
+      "unsupported_accepted": 39,
+      "unsupported_acceptance": 39,
+      "confident_unsupported_acceptance": 19
+    },
+    "per_class": {
+      "Cardboard": {
+        "total": 40,
+        "rejected": 15,
+        "accepted": 25,
+        "wrong": 17,
+        "correct": 8
+      },
+      "Food Organics": {
+        "total": 40,
+        "accepted": 23,
+        "correct": 20,
+        "rejected": 17,
+        "wrong": 3,
+        "wrong_bin": 3
+      },
+      "Glass": {
+        "total": 40,
+        "rejected": 10,
+        "accepted": 30,
+        "wrong": 20,
+        "correct": 10
+      },
+      "Metal": {
+        "total": 40,
+        "accepted": 30,
+        "correct": 22,
+        "wrong": 8,
+        "rejected": 10
+      },
+      "Miscellaneous Trash": {
+        "total": 40,
+        "rejected": 26,
+        "accepted": 14,
+        "wrong": 14
+      },
+      "Paper": {
+        "total": 40,
+        "accepted": 28,
+        "wrong": 17,
+        "correct": 11,
+        "rejected": 12,
+        "wrong_bin": 1
+      },
+      "Plastic": {
+        "total": 40,
+        "accepted": 30,
+        "correct": 15,
+        "wrong": 15,
+        "rejected": 10,
+        "wrong_bin": 1
+      },
+      "Textile Trash": {
+        "total": 40,
+        "rejected": 22,
+        "accepted": 18,
+        "wrong": 18
+      },
+      "Vegetation": {
+        "total": 40,
+        "rejected": 33,
+        "accepted": 7,
+        "wrong": 7
+      }
+    },
+    "confusion": {
+      "Paper": {
+        "Plastic": 20,
+        "Glass": 1,
+        "Paper": 19,
+        "Metal": 12,
+        "Food waste": 1
+      },
+      "Food waste": {
+        "Food waste": 20,
+        "Metal": 1,
+        "Glass": 2
+      },
+      "Glass": {
+        "Plastic": 11,
+        "Glass": 10,
+        "Metal": 9
+      },
+      "Metal": {
+        "Metal": 22,
+        "Plastic": 4,
+        "Glass": 4
+      },
+      "Unsupported": {
+        "Food waste": 7,
+        "Paper": 2,
+        "Metal": 21,
+        "Glass": 4,
+        "Plastic": 5
+      },
+      "Plastic": {
+        "Plastic": 15,
+        "Metal": 10,
+        "Glass": 4,
+        "Food waste": 1
+      }
+    }
+  },
+  "center_gated_realwaste": {
+    "counts": {
+      "total": 360,
+      "known": 240,
+      "rejected": 173,
+      "known_rejected": 75,
+      "undetected": 59,
+      "accepted": 187,
+      "known_accepted": 165,
+      "correct": 152,
+      "wrong_material": 13,
+      "confident_wrong": 13,
+      "wrong_bin": 2,
+      "unsupported": 120,
+      "unsupported_rejected": 98,
+      "unsupported_accepted": 22,
+      "unsupported_acceptance": 22,
+      "confident_unsupported_acceptance": 22
+    },
+    "per_class": {
+      "Cardboard": {
+        "total": 40,
+        "rejected": 14,
+        "accepted": 26,
+        "correct": 24,
+        "wrong": 2
+      },
+      "Food Organics": {
+        "total": 40,
+        "accepted": 26,
+        "correct": 25,
+        "rejected": 14,
+        "wrong": 1,
+        "wrong_bin": 1
+      },
+      "Glass": {
+        "total": 40,
+        "accepted": 25,
+        "correct": 23,
+        "rejected": 15,
+        "wrong": 2
+      },
+      "Metal": {
+        "total": 40,
+        "rejected": 15,
+        "accepted": 25,
+        "correct": 25
+      },
+      "Miscellaneous Trash": {
+        "total": 40,
+        "rejected": 35,
+        "accepted": 5,
+        "wrong": 5
+      },
+      "Paper": {
+        "total": 40,
+        "accepted": 36,
+        "correct": 36,
+        "rejected": 4
+      },
+      "Plastic": {
+        "total": 40,
+        "accepted": 27,
+        "wrong": 8,
+        "rejected": 13,
+        "correct": 19,
+        "wrong_bin": 1
+      },
+      "Textile Trash": {
+        "total": 40,
+        "rejected": 38,
+        "accepted": 2,
+        "wrong": 2
+      },
+      "Vegetation": {
+        "total": 40,
+        "accepted": 15,
+        "wrong": 15,
+        "rejected": 25
+      }
+    },
+    "confusion": {
+      "Paper": {
+        "Paper": 60,
+        "Plastic": 2
+      },
+      "Food waste": {
+        "Food waste": 25,
+        "Plastic": 1
+      },
+      "Glass": {
+        "Glass": 23,
+        "Paper": 1,
+        "Plastic": 1
+      },
+      "Metal": {
+        "Metal": 25
+      },
+      "Unsupported": {
+        "Glass": 1,
+        "Paper": 6,
+        "Food waste": 14,
+        "Plastic": 1
+      },
+      "Plastic": {
+        "Paper": 2,
+        "Plastic": 19,
+        "Metal": 1,
+        "Glass": 4,
+        "Food waste": 1
+      }
+    }
+  },
+  "center_gated_taco": {
+    "counts": {
+      "total": 104,
+      "unsupported": 96,
+      "rejected": 82,
+      "unsupported_rejected": 78,
+      "undetected": 55,
+      "accepted": 22,
+      "unsupported_accepted": 18,
+      "unsupported_acceptance": 18,
+      "confident_unsupported_acceptance": 18,
+      "known": 8,
+      "known_accepted": 4,
+      "correct": 4,
+      "known_rejected": 4
+    },
+    "per_class": {
+      "scene": {
+        "total": 104,
+        "rejected": 82,
+        "accepted": 22,
+        "wrong": 18,
+        "correct": 4
+      }
+    },
+    "confusion": {
+      "Unsupported": {
+        "Food waste": 6,
+        "Metal": 3,
+        "Paper": 8,
+        "Plastic": 1
+      },
+      "Metal": {
+        "Metal": 1
+      },
+      "Plastic": {
+        "Plastic": 2
+      },
+      "Paper": {
+        "Paper": 1
+      }
+    }
+  },
+  "taco_policy_groups": {
+    "no_significant_annotated_object": {
+      "total": 49,
+      "unsupported": 49,
+      "accepted": 5,
+      "unsupported_accepted": 5,
+      "unsupported_acceptance": 5,
+      "confident_unsupported_acceptance": 5,
+      "rejected": 44,
+      "unsupported_rejected": 44,
+      "undetected": 31
+    },
+    "single_dominant_center_object": {
+      "total": 9,
+      "known": 8,
+      "accepted": 4,
+      "known_accepted": 4,
+      "correct": 4,
+      "rejected": 5,
+      "known_rejected": 4,
+      "undetected": 2,
+      "unsupported": 1,
+      "unsupported_rejected": 1
+    },
+    "small_offcenter_or_multiple": {
+      "total": 46,
+      "unsupported": 46,
+      "rejected": 33,
+      "unsupported_rejected": 33,
+      "undetected": 22,
+      "accepted": 13,
+      "unsupported_accepted": 13,
+      "unsupported_acceptance": 13,
+      "confident_unsupported_acceptance": 13
+    }
+  }
+}
