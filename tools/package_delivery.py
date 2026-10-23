@@ -34,7 +34,7 @@ def main():
         ['git', 'ls-files', '--cached', '--others', '--exclude-standard', '-z'], cwd=ROOT
     ).decode().split('\0')
     files = sorted({name for name in files if name and not name.startswith(
-        ('preservation/', 'delivery/', 'apks/', 'source/'))})
+        ('preservation/', 'delivery/', 'apks/', 'source/', 'backup/'))})
     inventory = [{'path': name, 'bytes': (ROOT / name).stat().st_size, 'sha256': checksum(ROOT / name)}
                  for name in files]
     manifest = {'apk_sha256': checksum(output_apk), 'files': inventory}

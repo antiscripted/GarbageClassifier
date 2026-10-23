@@ -1,5 +1,5 @@
-# APKs
+# Android downloads
 
-[experimental/](experimental/) contains the new stability APK and its SHA-256. [../delivery/](../delivery/) retains the original working APK without duplication or modification.
+Current submission: [GarbageClassifier.apk](GarbageClassifier.apk) · [SHA-256](SHA256SUMS.txt) · [matching source](../source/GarbageClassifier-source.zip).
 
-Both builds use `org.garbageclassifier` and the same cloud debug certificate. They update one another on a phone; they do not install side by side. Keep both downloads. The matching experimental source is in [../source/](../source/). See [Windows installation](../docs/WINDOWS.md) and [validation](../docs/VALIDATION.md).
+Fallbacks: [verified stable APK](stable/GarbageClassifier-stable.apk), [original old-model APK](../delivery/GarbageClassifier-debug.apk), and [archived new-model deliveries](../backup/README.md). Supplied APKs share an application ID and signing key, so they update the installed application rather than installing side by side.

@@ -1,7 +1,7 @@
-# Complete source archive
+# Complete source
 
-`GarbageClassifier-experimental-source.zip` contains the complete corresponding Android project, real bundled model, Gradle wrapper, license texts, tests, documentation and verification scripts. Extract it and open the enclosed `GarbageClassifier` folder in Android Studio. The source code also remains directly browsable in [../app/](../app/).
+Current submission: [GarbageClassifier-source.zip](GarbageClassifier-source.zip) · [SHA-256](SHA256SUMS.txt) · [matching APK](../apks/GarbageClassifier.apk).
 
-The archive's `SOURCE_MANIFEST.json` records every included file's checksum and the matching APK checksum. Local SDKs, signing keys, build caches, research weights/datasets, other APKs and other source archives are excluded. Research tools may require the separately documented external assets; building the Android application does not.
+The archive includes Kotlin/Android source, Gradle wrapper, actual bundled models, native runtime, licenses, tests, documentation and verification scripts. `SOURCE_MANIFEST.json` records every included file's checksum and the matching APK checksum. Extract the archive and open its `GarbageClassifier` folder in Android Studio. Local SDK paths, private signing keys, build caches and historical APK/source archives are excluded.
 
-[APK](../apks/experimental/GarbageClassifier-experimental-debug.apk) · [Windows instructions](../docs/WINDOWS.md) · [AGPL obligations](../docs/LICENSES.md)
+[Archived new-model source](../backup/README.md) and [verified stable source](stable/GarbageClassifier-stable-source.zip) remain available. See the main [README](../README.md) for Windows build/install instructions and license obligations.

@@ -1,0 +1,76 @@
+{
+  "candidate_commit": "20ea77c2a74e8e0aa23a82d3df9be470d459cbe8",
+  "application_build_model_runtime_unchanged": true,
+  "archived_files_unchanged": [
+    {
+      "previous": "apks/new-model/GarbageClassifier-new-model-unverified.apk",
+      "archive": "backup/new-model/apks/GarbageClassifier-new-model-unverified.apk",
+      "git_blob": "5a01c13877da83db4df9bc66e7deb5f0b5a98df0"
+    },
+    {
+      "previous": "apks/new-model/SHA256SUMS.txt",
+      "archive": "backup/new-model/apks/SHA256SUMS.txt",
+      "git_blob": "02874807b1c752898397988e6e48d7dc61a6ec40"
+    },
+    {
+      "previous": "source/new-model/GarbageClassifier-new-model-source.zip",
+      "archive": "backup/new-model/source/GarbageClassifier-new-model-source.zip",
+      "git_blob": "de0e000eff01ab2137ea1543ae16ad6e851f83d2"
+    },
+    {
+      "previous": "source/new-model/SHA256SUMS.txt",
+      "archive": "backup/new-model/source/SHA256SUMS.txt",
+      "git_blob": "627bead0d530d23f32be306f67fd82f7b75f4ee6"
+    },
+    {
+      "previous": "apks/new-model-cpu/GarbageClassifier-new-model.apk",
+      "archive": "backup/new-model-cpu/apks/GarbageClassifier-new-model.apk",
+      "git_blob": "d37eab64d0beb62b5924e2822102b8f9d6e811aa"
+    },
+    {
+      "previous": "apks/new-model-cpu/SHA256SUMS.txt",
+      "archive": "backup/new-model-cpu/apks/SHA256SUMS.txt",
+      "git_blob": "d0ba4f0e9e92a0a2a2479516bdf66107aa57bda6"
+    },
+    {
+      "previous": "source/new-model-cpu/GarbageClassifier-new-model-source.zip",
+      "archive": "backup/new-model-cpu/source/GarbageClassifier-new-model-source.zip",
+      "git_blob": "c2239238fda382589631344ea0ffba22385920b2"
+    },
+    {
+      "previous": "source/new-model-cpu/SHA256SUMS.txt",
+      "archive": "backup/new-model-cpu/source/SHA256SUMS.txt",
+      "git_blob": "c1e9d65592b34a16ebcc9ff6669d727ae3c90f05"
+    },
+    {
+      "previous": "apks/final-candidate/GarbageClassifier-final-candidate.apk",
+      "archive": "backup/final-candidate/apks/GarbageClassifier-final-candidate.apk",
+      "git_blob": "53348d16132be1437167b9c41801b26187767cb1"
+    },
+    {
+      "previous": "apks/final-candidate/SHA256SUMS.txt",
+      "archive": "backup/final-candidate/apks/SHA256SUMS.txt",
+      "git_blob": "1c56bb2c36fd1733923bcfb2faf828ed1d7cb7db"
+    },
+    {
+      "previous": "source/final-candidate/GarbageClassifier-final-candidate-source.zip",
+      "archive": "backup/final-candidate/source/GarbageClassifier-final-candidate-source.zip",
+      "git_blob": "4491d77903f7ad18814853db422efdf4176ec885"
+    },
+    {
+      "previous": "source/final-candidate/SHA256SUMS.txt",
+      "archive": "backup/final-candidate/source/SHA256SUMS.txt",
+      "git_blob": "a9e6f27f83d1eb540d5b83e74c72eff0587a9546"
+    },
+    {
+      "previous": "source/GarbageClassifier-experimental-source.zip",
+      "archive": "backup/experimental/source/GarbageClassifier-experimental-source.zip"
+    },
+    {
+      "previous": "source/SHA256SUMS.txt",
+      "archive": "backup/experimental/source/SHA256SUMS.txt"
+    }
+  ],
+  "jvm_tests_reused": 91,
+  "new_phone_testing": false
+}
