@@ -82,7 +82,8 @@ class CenterScanner(private val context: Context) : FrameProcessor {
         val observation = cached?.let {
             it.copy(detection = it.detection.copy(box = found.box, appearance = found.appearance))
         } ?: Recognition(found.copy(classId = -1, confidence = 0f, margin = 0f), null, false)
-        return FrameResult(tracker.update(listOf(observation), timeMs, freshEvidence = fresh), localized = false)
+        val tracked = tracker.update(listOf(observation), timeMs, freshEvidence = fresh)
+        return FrameResult(tracked, localized = CenterGate.canLocalize(tracked, observation))
     }
 
     private fun invalidateEvidence() {

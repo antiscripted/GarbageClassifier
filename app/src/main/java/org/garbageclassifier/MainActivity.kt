@@ -35,6 +35,7 @@ import org.garbageclassifier.core.Recognition
 import org.garbageclassifier.core.SortingStatus
 import org.garbageclassifier.core.WasteRules
 import org.garbageclassifier.databinding.ActivityMainBinding
+import org.json.JSONArray
 
 @androidx.annotation.OptIn(TransformExperimental::class)
 class MainActivity : ComponentActivity() {
@@ -47,6 +48,16 @@ class MainActivity : ComponentActivity() {
     private var primaryTrackId: Long? = null
     private var running = false
     private var licenseDialog: AlertDialog? = null
+    private var selectedLicense = -1
+    private data class LicenseEntry(val title: String, val files: List<String>)
+    private val licenseEntries by lazy {
+        val entries = JSONArray(assets.open("licenses/index.json").bufferedReader().use { it.readText() })
+        List(entries.length()) { index ->
+            val entry = entries.getJSONObject(index)
+            val files = entry.getJSONArray("files")
+            LicenseEntry(entry.getString("title"), List(files.length()) { files.getString(it) })
+        }
+    }
     private val permissionHistory by lazy { getPreferences(MODE_PRIVATE) }
     private val permissionRequest = registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
         if (granted) startCamera() else showPermission()
@@ -103,7 +114,9 @@ class MainActivity : ComponentActivity() {
             camera.resetTracking()
             clearResults(R.string.hold_object)
         }
-        if (savedInstanceState?.getBoolean("licenses") == true) showLicenses()
+        if (savedInstanceState?.getBoolean("licenses") == true) {
+            showLicenses(savedInstanceState.getInt("selectedLicense", -1))
+        }
         binding.preview.addOnLayoutChangeListener { _, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
             if (right - left != oldRight - oldLeft || bottom - top != oldBottom - oldTop) {
                 if (running) {
@@ -146,29 +159,42 @@ class MainActivity : ComponentActivity() {
         camera.start()
     }
 
-    private fun showLicenses() {
+    private fun showLicenses(selection: Int = -1) {
         if (licenseDialog?.isShowing == true) return
         running = false
         handler.removeCallbacks(expiry)
         camera.stop()
         clearResults(R.string.hold_object)
-        val padding = (20 * resources.displayMetrics.density).toInt()
-        val text = TextView(this).apply {
-            textSize = 14f
-            setTextIsSelectable(true)
-            setPadding(padding, padding, padding, padding)
-            text = listOf("NOTICE.txt", "MODEL-AND-APP-AGPL-3.0.txt", "ANDROIDX-LITERT-APACHE-2.0.txt", "LITERT-NOTICES.txt")
-                .joinToString("\n\n") { name -> assets.open("licenses/$name").bufferedReader().use { it.readText() } }
+        val entry = licenseEntries.getOrNull(selection)
+        selectedLicense = if (entry == null) -1 else selection
+        val builder = AlertDialog.Builder(this)
+            .setPositiveButton(R.string.close, null)
+        if (entry == null) {
+            builder.setTitle(R.string.licenses)
+                .setItems(licenseEntries.map { it.title }.toTypedArray()) { dialog, index ->
+                    (dialog as AlertDialog).setOnDismissListener(null)
+                    dialog.dismiss()
+                    licenseDialog = null
+                    showLicenses(index)
+                }
+        } else {
+            val padding = (20 * resources.displayMetrics.density).toInt()
+            val text = TextView(this).apply {
+                textSize = 14f
+                setTextIsSelectable(true)
+                setPadding(padding, padding, padding, padding)
+                text = entry.files.joinToString("\n\n") { name ->
+                    assets.open("licenses/$name").bufferedReader().use { it.readText() }
+                }
+            }
+            builder.setTitle(entry.title).setView(ScrollView(this).apply { addView(text) })
         }
-        val scroll = ScrollView(this).apply { addView(text) }
-        licenseDialog = AlertDialog.Builder(this)
-            .setTitle(R.string.licenses)
-            .setView(scroll)
-            .setPositiveButton(R.string.close) { dialog, _ -> dialog.dismiss() }
-            .create().also { dialog ->
+        licenseDialog = builder.create().also { dialog ->
                 dialog.setOnDismissListener {
                     licenseDialog = null
-                    if (!isFinishing && !isDestroyed) startCamera()
+                    if (!isFinishing && !isDestroyed) {
+                        if (entry == null) startCamera() else showLicenses()
+                    }
                 }
                 dialog.show()
                 dialog.getButton(AlertDialog.BUTTON_POSITIVE).isAllCaps = false
@@ -281,6 +307,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         outState.putBoolean("licenses", licenseDialog?.isShowing == true)
+        outState.putInt("selectedLicense", selectedLicense)
         outState.putBoolean("inspection", inspection)
         outState.putBoolean("dry", selectedBin == BinType.DRY)
         super.onSaveInstanceState(outState)

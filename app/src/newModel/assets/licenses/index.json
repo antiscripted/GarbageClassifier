@@ -1,0 +1,41 @@
+[
+  {
+    "title": "Garbage Classifier \u00b7 YOLO-TrashDet-Pruned",
+    "files": [
+      "NOTICE.txt",
+      "MODEL-AND-APP-AGPL-3.0.txt"
+    ]
+  },
+  {
+    "title": "AndroidX \u00b7 Kotlin",
+    "files": [
+      "ANDROIDX-LITERT-APACHE-2.0.txt"
+    ]
+  },
+  {
+    "title": "Google AI Edge LiteRT",
+    "files": [
+      "ANDROIDX-LITERT-APACHE-2.0.txt",
+      "LITERT-NOTICES.txt"
+    ]
+  },
+  {
+    "title": "prithivMLmods/Augmented-Waste-Classifier-SigLIP2",
+    "files": [
+      "SIGLIP-NOTICE.txt",
+      "ANDROIDX-LITERT-APACHE-2.0.txt"
+    ]
+  },
+  {
+    "title": "ONNX Runtime Android 1.22.0",
+    "files": [
+      "ONNX-LICENSE.txt"
+    ]
+  },
+  {
+    "title": "ONNX Runtime \u00b7 THIRD PARTY SOFTWARE NOTICES AND INFORMATION",
+    "files": [
+      "ONNX-NOTICES.txt"
+    ]
+  }
+]

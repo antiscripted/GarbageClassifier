@@ -1,45 +1,36 @@
 # Garbage Classifier
 
-An offline Android camera scanner for a Class 9 AI project, due **25 October 2026**. It recognizes supported materials, recommends Wet/Dry bins and checks recognizable bin contents. No account, upload, microphone or Internet permission.
+Fully offline native Android waste scanner for the **25 October 2026** school submission. Kotlin, CameraX, LiteRT and ONNX Runtime; no accounts, uploads, microphone or Internet permission.
 
-**New SigLIP2 CPU-optimized APK available. Physical phone speed remains unverified.** The new build uses capability-selected int4 CPU kernels while retaining float compute in the first and last transformer blocks. It improves the recorded supported-image result from 152 to **153/240 correct**, retaining **two wrong wet/dry recommendations**. All weights remain unchanged. Desktop inference measured a 197 ms median across 464 center crops; this is not a Galaxy M51 measurement or proof of the 1–2-second target on phones.
+## Final candidate
 
-- [Download GarbageClassifier-new-model.apk](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/checkpoint/apks/new-model-cpu/GarbageClassifier-new-model.apk)
-- [Matching complete source ZIP](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/checkpoint/source/new-model-cpu/GarbageClassifier-new-model-source.zip)
-- [APK SHA-256](apks/new-model-cpu/SHA256SUMS.txt) · [source SHA-256](source/new-model-cpu/SHA256SUMS.txt)
-- [Performance, tests, limitations and Windows/phone instructions](docs/experiments/int4-cpu/README.md)
-- [Previous unverified SigLIP2 APK](apks/new-model/GarbageClassifier-new-model-unverified.apk) remains preserved.
+- [Download GarbageClassifier-final-candidate.apk](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/checkpoint/apks/final-candidate/GarbageClassifier-final-candidate.apk)
+- [Download matching complete source ZIP](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/checkpoint/source/final-candidate/GarbageClassifier-final-candidate-source.zip)
+- SHA-256: [APK](apks/final-candidate/SHA256SUMS.txt) · [source](source/final-candidate/SHA256SUMS.txt)
+- [Final changes, test results, limitations and Windows instructions](docs/final-candidate/README.md)
 
-The build, all 85 JVM tests, lint and APK integrity checks passed. A bounded Android test verified small real-weight matrix outputs and full production model loading. Full-model ARM inference and live phone behavior remain untested. No costly full-model software-emulator run was repeated. Only `checkpoint` contains this delivery; protected branches and previous APKs are unchanged.
+This candidate restores smoothed detector rectangles only for the confidently identified, same tracked centered object. Wrong-bin items use the existing inspection color. Inspection remains single-object; it does not certify an entire bin. Licenses opens a compact component list, with all complete notices and license texts accessible offline.
 
-## Preserved stable downloads and review
+The CPU-optimized SigLIP2 model, confidence thresholds, four-second holds and stale-result safeguards are unchanged. The project owner reported that the preceding CPU-optimized APK works on a physical Samsung Galaxy M51 with somewhat better recognition. **The final candidate's restored rectangles and license navigation have not yet been physically verified.**
 
-- [GarbageClassifier-stable.apk](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/development/apks/stable/GarbageClassifier-stable.apk) · [complete matching source](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/development/source/stable/GarbageClassifier-stable-source.zip)
-- Preserved: [original working APK](delivery/GarbageClassifier-debug.apk) · [previous experimental APK](apks/experimental/GarbageClassifier-experimental-debug.apk)
-- [Windows installation and build instructions](docs/WINDOWS.md)
-- [Main Kotlin files explained for students](docs/ARCHITECTURE.md) · [tracking and phone checklist](docs/STABILITY.md)
-- [Tests and limitations](docs/VALIDATION.md) · [code review](docs/CODE_REVIEW.md) · [model comparison and blockers](docs/experiments/2026-10-21/README.md)
-- [Indian sorting rules](docs/SEGREGATION.md) · [model contract](docs/MODEL.md) · [licenses](docs/LICENSES.md)
+Essential checks passed: **91 JVM tests**, APK build, lint with zero errors/two existing warnings, signing/model/runtime integrity, offline permissions, complete license accessibility and lossless notice preservation. No model benchmarks or expensive emulator inference were repeated. API 24+, ARM64, ARMv7 and x86_64 remain packaged; physical compatibility on all devices is not claimed.
 
-Download the raw APK file and open it on an Android 7/API 24 or newer phone with a rear camera. All supplied APKs share one package/signing key: installing one updates the installed app; saved APK files remain available for rollback. The universal APK supports ARM64, ARMv7 and x86_64. Grant Camera, then hold a well-lit object against a simple background. Uncertain items show “Object not clear”.
+## Build and install
 
-To build, open `development` in Android Studio with JDK 17, SDK 35 and the included Gradle wrapper:
+Open the source folder in Android Studio with **JDK 17, SDK Platform 35 and Build Tools 35.0.0**. Use the included Gradle wrapper:
 
 ```powershell
-.\gradlew.bat :app:testDebugUnitTest :app:assembleDebug :app:assembleDebugAndroidTest :app:lintDebug
+.\gradlew.bat :app:testNewModelUnitTest :app:assembleNewModel :app:lintNewModel -PnewModel
 ```
 
-Stable release verification (not the new-model APK): **75 JVM tests, 9 Android scanner tests and 7 metric tests passed**; lint has zero errors. Camera permission, orientation and bin-selection checks passed on the API 29 software emulator. See the validation report for the one skipped optional probe and hardware limitations.
+The output is `app\build\outputs\apk\newModel\app-newModel.apk`. First-time development dependency resolution needs internet; installed inference does not. Open the downloaded APK on the phone and allow installation from that browser/file manager, then grant Camera. The supplied APK shares the previous signing key and installs as an update. Keep the previous APK for rollback.
 
 ## Repository guide
 
-| Branch | Purpose |
-| --- | --- |
-| `main` | Owner-approved final version; untouched by this task. |
-| `development` | Verified source, APK and reports. |
-| `backup` | Preserved previous work; untouched. |
-| `checkpoint` | Progress protection during this task. |
+`checkpoint` holds this final candidate for review. `main`, `development` and `backup` remain unchanged; promotion requires owner approval. `app/` contains Kotlin and Android resources, `tools/models/` the actual SigLIP2 weights, `tools/android-runtime/` the bundled runtime, `apks/` named APKs, `source/` matching archives and `docs/` instructions/evidence.
 
-Older branches and APKs remain preserved. `app/` contains Android source and its real bundled detector; `apks/` contains named builds; `source/` contains matching archives; `docs/` contains reports/instructions; `tools/` contains verification scripts and preserved candidate assets. `delivery/` and `preservation/` retain historical work. Only verified duplicate partial benchmark files were removed; complete reports and Git history remain.
+All historical branches, APKs, archives and experiment evidence are preserved. [Previous CPU-optimized APK](apks/new-model-cpu/GarbageClassifier-new-model.apk) · [stable release](apks/stable/GarbageClassifier-stable.apk) · [original APK](delivery/GarbageClassifier-debug.apk).
 
-The application and bundled original model are **AGPL-3.0**. Distribute corresponding source and notices with the APK. First-time builds need development dependency downloads; the installed scanner works entirely offline.
+[Architecture](docs/ARCHITECTURE.md) · [Indian segregation rules](docs/SEGREGATION.md) · [Model performance evidence](docs/experiments/int4-cpu/README.md) · [Licenses](docs/LICENSES.md).
+
+The app and original detector retain AGPL-3.0 source-distribution obligations. SigLIP2 is Apache-2.0; ONNX Runtime is MIT with third-party notices. Distribute the matching source and notices with the APK.

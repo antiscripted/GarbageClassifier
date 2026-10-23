@@ -1,0 +1,78 @@
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+> Configure project :app
+Unable to initialize metrics, ensure /home/agent/.android is writable, details: /home/agent/.android/analytics.settings (Read-only file system)
+
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preNewModelBuild UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsNewModel UP-TO-DATE
+> Task :app:generateNewModelResValues UP-TO-DATE
+> Task :app:generateNewModelResources UP-TO-DATE
+> Task :app:mergeNewModelResources UP-TO-DATE
+> Task :app:packageNewModelResources UP-TO-DATE
+> Task :app:parseNewModelLocalResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesNewModel UP-TO-DATE
+> Task :app:checkNewModelAarMetadata UP-TO-DATE
+> Task :app:mapNewModelSourceSetPaths UP-TO-DATE
+> Task :app:createNewModelCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksNewModel UP-TO-DATE
+> Task :app:processNewModelMainManifest UP-TO-DATE
+> Task :app:processNewModelManifest UP-TO-DATE
+> Task :app:processNewModelManifestForPackage UP-TO-DATE
+> Task :app:processNewModelResources UP-TO-DATE
+> Task :app:javaPreCompileNewModel UP-TO-DATE
+> Task :app:preNewModelUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileNewModelUnitTest UP-TO-DATE
+> Task :app:mergeNewModelNativeDebugMetadata NO-SOURCE
+> Task :app:mergeNewModelShaders UP-TO-DATE
+> Task :app:compileNewModelShaders NO-SOURCE
+> Task :app:generateNewModelAssets UP-TO-DATE
+> Task :app:mergeNewModelAssets
+> Task :app:compressNewModelAssets
+> Task :app:checkNewModelDuplicateClasses UP-TO-DATE
+> Task :app:desugarNewModelFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexNewModel UP-TO-DATE
+> Task :app:mergeLibDexNewModel UP-TO-DATE
+> Task :app:mergeNewModelJniLibFolders UP-TO-DATE
+> Task :app:mergeNewModelNativeLibs UP-TO-DATE
+> Task :app:stripNewModelDebugSymbols UP-TO-DATE
+> Task :app:validateSigningNewModel UP-TO-DATE
+> Task :app:writeNewModelAppMetadata UP-TO-DATE
+> Task :app:writeNewModelSigningConfigVersions UP-TO-DATE
+> Task :app:preNewModelAndroidTestBuild SKIPPED
+> Task :app:generateNewModelAndroidTestResValues UP-TO-DATE
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :app:compileNewModelKotlin
+> Task :app:compileNewModelJavaWithJavac UP-TO-DATE
+> Task :app:processNewModelJavaRes UP-TO-DATE
+> Task :app:bundleNewModelClassesToCompileJar
+> Task :app:bundleNewModelClassesToRuntimeJar
+> Task :app:dexBuilderNewModel
+> Task :app:mergeNewModelGlobalSynthetics UP-TO-DATE
+> Task :app:mergeNewModelJavaResource UP-TO-DATE
+> Task :app:mergeProjectDexNewModel
+> Task :app:generateNewModelAndroidTestLintModel
+> Task :app:compileNewModelUnitTestKotlin
+> Task :app:generateNewModelLintReportModel
+> Task :app:compileNewModelUnitTestJavaWithJavac NO-SOURCE
+> Task :app:processNewModelUnitTestJavaRes UP-TO-DATE
+> Task :app:testNewModelUnitTest
+> Task :app:generateNewModelUnitTestLintModel
+> Task :app:packageNewModel
+> Task :app:createNewModelApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleNewModel
+
+> Task :app:lintAnalyzeNewModelUnitTest
+Warning: Unable to initialize metrics, ensure /home/agent/.android is writable, details: /home/agent/.android/analytics.settings (Read-only file system)
+
+> Task :app:lintAnalyzeNewModelAndroidTest
+> Task :app:lintAnalyzeNewModel
+
+> Task :app:lintReportNewModel
+Wrote HTML report to file:///workspace/GarbageClassifier/app/build/reports/lint-results-newModel.html
+
+> Task :app:lintNewModel
+
+BUILD SUCCESSFUL in 43s
+54 actionable tasks: 18 executed, 36 up-to-date

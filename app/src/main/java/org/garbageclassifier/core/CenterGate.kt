@@ -1,6 +1,13 @@
 package org.garbageclassifier.core
 
 object CenterGate {
+    fun canLocalize(tracked: List<Recognition>, current: Recognition): Boolean {
+        val visible = tracked.filter { it.visible }.singleOrNull() ?: return false
+        return current.bin != null && visible.bin != null &&
+            visible.detection.classId == current.detection.classId &&
+            ObjectAssociation.matches(visible.detection, current.detection, 0.40f)
+    }
+
     fun select(detections: List<Detection>, center: Box): Detection? {
         val significant = detections.filter { coverage(it.box, center) >= 0.15f }
             .map { it.copy(classId = 0) }

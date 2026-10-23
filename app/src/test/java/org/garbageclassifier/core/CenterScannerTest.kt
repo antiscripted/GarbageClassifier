@@ -72,4 +72,59 @@ class CenterScannerTest {
         assertNotEquals(original.trackId, next.trackId)
         assertNull(next.bin)
     }
+
+    @Test fun rectangleRequiresTwoIndependentConfirmedResults() {
+        val tracker = RecognitionTracker(6000, 2)
+        val current = recognition()
+        assertFalse(CenterGate.canLocalize(tracker.update(listOf(current), 0), current))
+        assertFalse(CenterGate.canLocalize(tracker.update(listOf(current), 350, false), current))
+        assertTrue(CenterGate.canLocalize(tracker.update(listOf(current), 700), current))
+    }
+
+    @Test fun confirmedRectangleUsesSmoothedDetectorCoordinates() {
+        val tracker = RecognitionTracker(6000, 2)
+        val current = recognition()
+        tracker.update(listOf(current), 0)
+        tracker.update(listOf(current), 700)
+        val moved = current.copy(detection = current.detection.copy(box = Box(30f, 20f, 90f, 80f)))
+        val tracked = tracker.update(listOf(moved), 900, false)
+        assertTrue(CenterGate.canLocalize(tracked, moved))
+        assertEquals(Box(23.5f, 20f, 83.5f, 80f), tracked.single().detection.box)
+    }
+
+    @Test fun inspectionAppliesBinStatusOnlyToTheConfirmedObject() {
+        val current = recognition()
+        assertTrue(CenterGate.canLocalize(listOf(current), current))
+        assertEquals(SortingStatus.WRONG, WasteRules.inspect(current, BinType.WET))
+        assertEquals(SortingStatus.CORRECT, WasteRules.inspect(current, BinType.DRY))
+        assertFalse(CenterGate.canLocalize(listOf(current, current.copy(trackId = 2)), current))
+    }
+
+    @Test fun uncertainOrContradictoryEvidenceCannotLabelAHeldRectangle() {
+        val locked = recognition()
+        assertFalse(CenterGate.canLocalize(listOf(locked), locked.copy(confirmed = false)))
+        val changed = locked.copy(detection = locked.detection.copy(classId = 4))
+        assertFalse(CenterGate.canLocalize(listOf(locked), changed))
+    }
+
+    @Test fun changedAppearanceOrPositionCannotReuseAConfirmedRectangle() {
+        val locked = recognition()
+        val changed = locked.copy(detection = locked.detection.copy(
+            appearance = ObjectAppearance(FloatArray(48) { 0.9f })))
+        assertFalse(CenterGate.canLocalize(listOf(locked), changed))
+        val displaced = locked.copy(detection = locked.detection.copy(box = Box(150f, 150f, 210f, 210f)))
+        assertFalse(CenterGate.canLocalize(listOf(locked), displaced))
+    }
+
+    @Test fun removalKeepsTheCardButHidesItsRectangleAndResetClearsBoth() {
+        val tracker = RecognitionTracker(6000, 2)
+        val current = recognition()
+        tracker.update(listOf(current), 0)
+        tracker.update(listOf(current), 700)
+        val held = tracker.update(emptyList(), 900, false)
+        assertEquals(BinType.DRY, held.single().bin)
+        assertFalse(CenterGate.canLocalize(held, current))
+        tracker.reset()
+        assertFalse(CenterGate.canLocalize(tracker.update(listOf(current), 1100), current))
+    }
 }

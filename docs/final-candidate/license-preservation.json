@@ -1,0 +1,13 @@
+{
+  "original_commit": "170c7b70",
+  "original_bytes": 329834,
+  "original_sha256": "de0fef5eff89d2870f88e0fdc2a3a94230153b222ad4bfa99c601e16e73a6b0f",
+  "reassembled_sha256": "de0fef5eff89d2870f88e0fdc2a3a94230153b222ad4bfa99c601e16e73a6b0f",
+  "lossless_split": true,
+  "files": [
+    "NOTICE.txt",
+    "SIGLIP-NOTICE.txt",
+    "ONNX-LICENSE.txt",
+    "ONNX-NOTICES.txt"
+  ]
+}

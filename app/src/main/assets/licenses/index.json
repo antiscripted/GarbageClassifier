@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Garbage Classifier \u00b7 YOLO-TrashDet-Pruned",
+    "files": [
+      "NOTICE.txt",
+      "MODEL-AND-APP-AGPL-3.0.txt"
+    ]
+  },
+  {
+    "title": "AndroidX \u00b7 Kotlin",
+    "files": [
+      "ANDROIDX-LITERT-APACHE-2.0.txt"
+    ]
+  },
+  {
+    "title": "Google AI Edge LiteRT",
+    "files": [
+      "ANDROIDX-LITERT-APACHE-2.0.txt",
+      "LITERT-NOTICES.txt"
+    ]
+  }
+]

@@ -84,6 +84,16 @@ def main():
             location = 'newModel' if args.new_model and name == 'NOTICE.txt' else 'main'
             assert archive.read('assets/licenses/' + name) == (
                 ROOT / f'app/src/{location}/assets/licenses' / name).read_bytes()
+        catalog = json.loads(archive.read('assets/licenses/index.json'))
+        accessible = {name for entry in catalog for name in entry['files']}
+        packaged = {Path(name).name for name in archive.namelist()
+                    if name.startswith('assets/licenses/') and name.endswith('.txt')}
+        assert accessible == packaged
+        for name in accessible | {'index.json'}:
+            source = ROOT / 'app/src/newModel/assets/licenses' / name
+            if not args.new_model or not source.exists():
+                source = ROOT / 'app/src/main/assets/licenses' / name
+            assert archive.read('assets/licenses/' + name) == source.read_bytes()
     report = dict(apk_bytes=args.apk.stat().st_size,
                   apk_sha256=hashlib.sha256(args.apk.read_bytes()).hexdigest(),
                   model_bytes=len(model), model_sha256=model_sha, permissions=permissions,
@@ -91,6 +101,8 @@ def main():
                   test_photos_in_main_apk=False, signature_v2=True,
                   same_signing_certificate_as_original=same_certificate, zipalign_16kb=True,
                   bundled_license_texts_verified=True)
+    report['license_catalog_entries'] = len(catalog)
+    report['all_license_texts_accessible'] = True
     report['candidate_weights_or_runtime_in_scanner_apk'] = args.new_model
     report['candidate_model_sha256'] = candidate_sha
     report['production_inference_verified'] = False if args.new_model else None

@@ -1,0 +1,6 @@
+Candidate material classifier: prithivMLmods/Augmented-Waste-Classifier-SigLIP2
+https://huggingface.co/prithivMLmods/Augmented-Waste-Classifier-SigLIP2
+Revision d203b52311f70ac3245d5fb8345d88344bec138e, declared Apache License 2.0.
+Modified on 21 October 2026 by this project: ONNX export and 4-bit weight-only quantization, without training.
+The Apache License 2.0 text is included in ANDROIDX-LITERT-APACHE-2.0.txt.
+

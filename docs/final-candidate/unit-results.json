@@ -1,0 +1,62 @@
+[
+  {
+    "name": "org.garbageclassifier.core.AntialiasedResizeTest",
+    "tests": "2",
+    "skipped": "0",
+    "failures": "0",
+    "errors": "0",
+    "timestamp": "2026-10-23T16:00:36",
+    "hostname": "1f68f4629262",
+    "time": "0.035"
+  },
+  {
+    "name": "org.garbageclassifier.core.CenterScannerTest",
+    "tests": "14",
+    "skipped": "0",
+    "failures": "0",
+    "errors": "0",
+    "timestamp": "2026-10-23T16:00:36",
+    "hostname": "1f68f4629262",
+    "time": "0.028"
+  },
+  {
+    "name": "org.garbageclassifier.core.GeometryTest",
+    "tests": "12",
+    "skipped": "0",
+    "failures": "0",
+    "errors": "0",
+    "timestamp": "2026-10-23T16:00:36",
+    "hostname": "1f68f4629262",
+    "time": "0.007"
+  },
+  {
+    "name": "org.garbageclassifier.core.RecognitionTrackerTest",
+    "tests": "22",
+    "skipped": "0",
+    "failures": "0",
+    "errors": "0",
+    "timestamp": "2026-10-23T16:00:36",
+    "hostname": "1f68f4629262",
+    "time": "0.025"
+  },
+  {
+    "name": "org.garbageclassifier.core.WasteRulesTest",
+    "tests": "24",
+    "skipped": "0",
+    "failures": "0",
+    "errors": "0",
+    "timestamp": "2026-10-23T16:00:36",
+    "hostname": "1f68f4629262",
+    "time": "0.006"
+  },
+  {
+    "name": "org.garbageclassifier.core.YoloDecoderTest",
+    "tests": "17",
+    "skipped": "0",
+    "failures": "0",
+    "errors": "0",
+    "timestamp": "2026-10-23T16:00:36",
+    "hostname": "1f68f4629262",
+    "time": "0.061"
+  }
+]
