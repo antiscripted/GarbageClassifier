@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.garbageclassifier.core.LiveRecognitionTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-10-24T16:36:55" hostname="1f68f4629262" time="0.008">
+  <properties/>
+  <testcase name="abruptPositionJumpCannotBorrowTheOldObjectsIdentity" classname="org.garbageclassifier.core.LiveRecognitionTest" time="0.006"/>
+  <testcase name="absentObjectsCannotProduceAVisibleRectangle" classname="org.garbageclassifier.core.LiveRecognitionTest" time="0.0"/>
+  <testcase name="heldCardDoesNotLabelAnUncertainOrContradictoryBox" classname="org.garbageclassifier.core.LiveRecognitionTest" time="0.0"/>
+  <testcase name="verifiedMaterialKeepsTheExistingWrongBinStatus" classname="org.garbageclassifier.core.LiveRecognitionTest" time="0.0"/>
+  <testcase name="detectedUnclassifiedObjectHasNeutralRealCoordinatesAndNoBinAdvice" classname="org.garbageclassifier.core.LiveRecognitionTest" time="0.001"/>
+  <testcase name="continuousMotionAndBackgroundChangeDoNotDiscardPendingClassification" classname="org.garbageclassifier.core.LiveRecognitionTest" time="0.0"/>
+  <testcase name="changedViewportCannotAcceptAnOldCenterCrop" classname="org.garbageclassifier.core.LiveRecognitionTest" time="0.0"/>
+  <testcase name="appearanceReplacementDuringMotionStillInvalidatesTheTicket" classname="org.garbageclassifier.core.LiveRecognitionTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

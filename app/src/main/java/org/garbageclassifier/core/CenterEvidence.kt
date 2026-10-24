@@ -10,6 +10,7 @@ class CenterEvidence {
         private set
     private var sceneAnchor: Detection? = null
     private var objectAnchor: Detection? = null
+    private var lastObject: Detection? = null
     private var previousFrame = Long.MIN_VALUE
     private var lastDetected = Long.MIN_VALUE
     private var stableSince = Long.MIN_VALUE
@@ -18,9 +19,11 @@ class CenterEvidence {
                 timeMs: Long): Boolean {
         val reason = when {
             previousFrame != Long.MIN_VALUE && timeMs - previousFrame !in 0..1500 -> "frame_gap"
-            sceneAnchor != null && !ObjectAssociation.matches(checkNotNull(sceneAnchor), scene, 0.90f) -> "scene_changed"
+            objectAnchor == null && sceneAnchor != null &&
+                !ObjectAssociation.matches(checkNotNull(sceneAnchor), scene, 0.90f) -> "scene_changed"
             objectAnchor != null && detected != null &&
-                !ObjectAssociation.matches(checkNotNull(objectAnchor), detected, 0.40f) -> "object_changed"
+                !ObjectAssociation.matches(checkNotNull(lastObject), detected, 0.40f,
+                    checkNotNull(objectAnchor).appearance) -> "object_changed"
             objectAnchor != null && detected == null &&
                 (retainedAppearance == null || checkNotNull(objectAnchor).appearance?.distance(retainedAppearance)
                     ?.let { it > 0.14f } != false) -> "object_removed"
@@ -34,6 +37,7 @@ class CenterEvidence {
         }
         if (detected != null) {
             if (objectAnchor == null) objectAnchor = detected
+            lastObject = detected
             lastDetected = timeMs
         }
         previousFrame = timeMs
@@ -43,7 +47,7 @@ class CenterEvidence {
     fun ready(timeMs: Long): Boolean = sceneAnchor != null && timeMs - stableSince >= 350
 
     fun ticket(scene: Detection, detected: Detection?, timeMs: Long) =
-        Ticket(generation, timeMs, scene, detected ?: objectAnchor?.takeIf {
+        Ticket(generation, timeMs, scene, detected ?: lastObject?.takeIf {
             timeMs - lastDetected in 0..LOSS_GRACE_MS
         })
 
@@ -52,9 +56,13 @@ class CenterEvidence {
         ticket.generation != generation -> "identity_changed"
         completedAt - ticket.capturedAt !in 0..MAX_INFERENCE_MS -> "inference_too_old"
         timeMs - completedAt !in 0..LOSS_GRACE_MS -> "delivery_too_old"
-        !ObjectAssociation.matches(ticket.scene, scene, 0.90f) -> "scene_mismatch"
+        ticket.scene.box.intersectionOverUnion(scene.box) < 0.90f -> "viewport_changed"
         ticket.subject == null || detected == null -> "no_object_evidence"
-        !ObjectAssociation.matches(ticket.subject, detected, 0.40f) -> "object_mismatch"
+        lastObject == null || objectAnchor == null ||
+            !ObjectAssociation.matches(checkNotNull(lastObject), detected, 0.40f,
+                checkNotNull(objectAnchor).appearance) -> "object_mismatch"
+        ticket.subject.appearance?.distance(checkNotNull(detected.appearance))
+            ?.let { it > 0.14f } != false -> "object_mismatch"
         else -> null
     }
 
@@ -63,6 +71,7 @@ class CenterEvidence {
         resetReason = reason
         sceneAnchor = null
         objectAnchor = null
+        lastObject = null
         previousFrame = Long.MIN_VALUE
         lastDetected = Long.MIN_VALUE
         stableSince = Long.MIN_VALUE

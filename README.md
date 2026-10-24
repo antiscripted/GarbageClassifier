@@ -1,12 +1,14 @@
-# Garbage Classifier — recognition test
+# Garbage Classifier — live recognition test
 
-This `checkpoint` branch contains a separate recognition-blocker fix for phone testing. **The published `main` version is unchanged; do not promote this build until the owner confirms it works.**
+This `checkpoint` build separates visible object detection from material confirmation and fixes cumulative-motion rejection. **It has not been verified on the M51; `main` stays unchanged until owner approval.**
 
-- [Download GarbageClassifier-recognition-test.apk](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/checkpoint/apks/recognition-test/GarbageClassifier-recognition-test.apk)
-- [Matching test source ZIP](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/checkpoint/source/recognition-test/GarbageClassifier-recognition-test-source.zip)
-- [Fixes, tests, limitations and focused phone diagnostics](docs/recognition-fix/README.md)
+- [Download GarbageClassifier-live-test.apk](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/checkpoint/apks/live-test/GarbageClassifier-live-test.apk)
+- [Matching complete source ZIP](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/checkpoint/source/live-test/GarbageClassifier-live-test-source.zip)
+- [Exact changes, verification, limitations and diagnostics](docs/live-test/README.md)
 
-The test lets stable center frames reach SigLIP2 without waiting for YOLO, accepts substantial narrow centered shapes, preserves evidence through brief detection loss, and handles slow inference using continuous identity checks and completion-time freshness. Confidence thresholds, model weights, UI and licenses are unchanged. Bin advice still requires verified real-object evidence and two independent confident results.
+A valid centered detector box now appears immediately in the existing neutral/dashed style. Material labels and normal/wrong-bin colors require verified classification. Continuous object tracking tolerates gradual motion and changing backgrounds while retaining original appearance, removal and timeout safeguards. Model weights, confidence thresholds, UI wording and licenses are unchanged.
+
+114 JVM tests, build, lint and APK/model/license checks passed. These results do not establish real-phone recognition reliability. No M51 rejection logs were supplied; the fixes address code-reproduced errors. All previous deliveries remain preserved, including the [preceding recognition test](apks/recognition-test/GarbageClassifier-recognition-test.apk).
 
 ## Preserved main submission
 

@@ -1,6 +1,11 @@
 package org.garbageclassifier.core
 
 object CenterGate {
+    fun withBoxLabels(tracked: List<Recognition>, current: Recognition): List<Recognition> {
+        val verified = canLocalize(tracked, current)
+        return tracked.map { it.copy(boxLabelVerified = verified && it.visible) }
+    }
+
     fun canLocalize(tracked: List<Recognition>, current: Recognition): Boolean {
         val visible = tracked.filter { it.visible }.singleOrNull() ?: return false
         return current.bin != null && visible.bin != null &&

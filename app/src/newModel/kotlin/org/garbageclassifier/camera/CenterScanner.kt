@@ -9,7 +9,6 @@ import org.garbageclassifier.core.Box
 import org.garbageclassifier.core.CenterEvidence
 import org.garbageclassifier.core.CenterGate
 import org.garbageclassifier.core.Detection
-import org.garbageclassifier.core.ObjectAssociation
 import org.garbageclassifier.core.Recognition
 import org.garbageclassifier.core.RecognitionTracker
 import java.util.concurrent.atomic.AtomicBoolean
@@ -85,10 +84,16 @@ class CenterScanner(private val context: Context) : FrameProcessor {
                 Log.i(TAG, "result=${rejection ?: "accepted"} class=${prediction.classId} " +
                     "confidence=${prediction.confidence} margin=${prediction.margin} " +
                     "inference_ms=${prediction.inferenceMs} latency_ms=${result.completedAt - result.ticket.capturedAt}")
+                val classification = when {
+                    prediction.confidence < 0.80f -> "confidence_rejected"
+                    prediction.margin < 0.15f -> "margin_rejected"
+                    MaterialClassifier.materials[prediction.classId].bin == null -> "unsupported_material"
+                    else -> "eligible"
+                }
+                Log.i(TAG, "classification=$classification generation=${result.ticket.generation}")
             }
         }
-        if (cached != null && (now - cachedAt > CenterEvidence.EVIDENCE_LIFETIME_MS ||
-                found != null && !ObjectAssociation.matches(checkNotNull(cached).detection, found, 0.40f))) {
+        if (cached != null && now - cachedAt > CenterEvidence.EVIDENCE_LIFETIME_MS) {
             cached = null
             tracker.reset()
         }
@@ -98,7 +103,10 @@ class CenterScanner(private val context: Context) : FrameProcessor {
             bitmap.getPixels(pixels, 0, side, left, top, side, side)
             val ticket = evidence.ticket(scene, found, now)
             if (CenterModelRunner.submit(context, pixels, side, rotation) { prediction ->
-                    if (!closed.get()) completed.set(Completed(ticket, SystemClock.elapsedRealtime(), prediction))
+                    val finishedAt = SystemClock.elapsedRealtime()
+                    Log.i(TAG, "inference_finished generation=${ticket.generation} " +
+                        "latency_ms=${finishedAt - ticket.capturedAt} inference_ms=${prediction.getOrNull()?.inferenceMs}")
+                    if (!closed.get()) completed.set(Completed(ticket, finishedAt, prediction))
                 }) {
                 lastSubmitted = now
                 submissions++
@@ -113,19 +121,23 @@ class CenterScanner(private val context: Context) : FrameProcessor {
             } ?: Recognition(found.copy(classId = -1, confidence = 0f, margin = 0f), null, false)
             val tracked = tracker.update(listOf(observation), now, freshEvidence = fresh,
                 missingGraceMs = CenterEvidence.LOSS_GRACE_MS)
-            FrameResult(tracked, localized = CenterGate.canLocalize(tracked, observation))
+            FrameResult(CenterGate.withBoxLabels(tracked, observation), localized = true)
         }
         if (lastDiagnostic == Long.MIN_VALUE || now - lastDiagnostic >= 5000) {
             Log.i(TAG, "frames=$frames proposals=${proposals.size} object_frames=$detections " +
                 "submitted=$submissions accepted=$accepted busy=${!CenterModelRunner.available} " +
-                "confirmed=${output.recognitions.any { it.bin != null }} localized=${output.localized}")
+                "confirmed=${output.recognitions.any { it.bin != null }} localized=${output.localized} " +
+                "confirmation_pending=${cached?.confirmed == true && output.recognitions.none { it.bin != null }} " +
+                "box_label_verified=${output.recognitions.any { it.visible && it.boxLabelVerified && it.bin != null }}")
             lastDiagnostic = now
         }
         return output
     }
 
     private fun clearEvidence() {
-        completed.set(null)
+        completed.getAndSet(null)?.let {
+            Log.i(TAG, "result=discarded_on_reset reason=${evidence.resetReason} generation=${it.ticket.generation}")
+        }
         cached = null
         cachedAt = Long.MIN_VALUE
         lastSubmitted = Long.MIN_VALUE

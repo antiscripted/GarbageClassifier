@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.garbageclassifier.core.CenterScannerTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2026-10-24T16:36:55" hostname="1f68f4629262" time="0.04">
+  <properties/>
+  <testcase name="inspectionAppliesBinStatusOnlyToTheConfirmedObject" classname="org.garbageclassifier.core.CenterScannerTest" time="0.001"/>
+  <testcase name="rectangleRequiresTwoIndependentConfirmedResults" classname="org.garbageclassifier.core.CenterScannerTest" time="0.0"/>
+  <testcase name="cachedFramesCannotConfirmOneClassifierPrediction" classname="org.garbageclassifier.core.CenterScannerTest" time="0.003"/>
+  <testcase name="duplicateClassProposalsDoNotBecomeSeparateObjects" classname="org.garbageclassifier.core.CenterScannerTest" time="0.001"/>
+  <testcase name="differentObjectCannotInheritCenterLock" classname="org.garbageclassifier.core.CenterScannerTest" time="0.0"/>
+  <testcase name="centerGateRejectsSeparateObjectsAndOffcenterObjects" classname="org.garbageclassifier.core.CenterScannerTest" time="0.0"/>
+  <testcase name="removalKeepsTheCardButHidesItsRectangleAndResetClearsBoth" classname="org.garbageclassifier.core.CenterScannerTest" time="0.0"/>
+  <testcase name="centerLockLastsFourSecondsAndRemovalResetsIt" classname="org.garbageclassifier.core.CenterScannerTest" time="0.003"/>
+  <testcase name="confirmedRectangleUsesSmoothedDetectorCoordinates" classname="org.garbageclassifier.core.CenterScannerTest" time="0.0"/>
+  <testcase name="centerGateAcceptsOneLargeObjectWithoutUsingItsMaterialClass" classname="org.garbageclassifier.core.CenterScannerTest" time="0.0"/>
+  <testcase name="expiredEvidenceCannotAcquireLockDespiteFreshCameraFrames" classname="org.garbageclassifier.core.CenterScannerTest" time="0.004"/>
+  <testcase name="uncertainOrContradictoryEvidenceCannotLabelAHeldRectangle" classname="org.garbageclassifier.core.CenterScannerTest" time="0.0"/>
+  <testcase name="centerGateRejectsEmptyBackgroundAndTinyPrintedDetail" classname="org.garbageclassifier.core.CenterScannerTest" time="0.0"/>
+  <testcase name="changedAppearanceOrPositionCannotReuseAConfirmedRectangle" classname="org.garbageclassifier.core.CenterScannerTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

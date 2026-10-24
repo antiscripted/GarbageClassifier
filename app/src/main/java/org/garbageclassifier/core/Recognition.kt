@@ -17,9 +17,11 @@ data class Recognition(
     val material: Material?,
     val confirmed: Boolean,
     val trackId: Long? = null,
-    val visible: Boolean = true
+    val visible: Boolean = true,
+    val boxLabelVerified: Boolean = true
 ) {
     val bin: BinType? get() = if (confirmed) material?.bin else null
+    fun forOverlay(): Recognition = if (boxLabelVerified) this else copy(confirmed = false)
 }
 
 object WasteRules {

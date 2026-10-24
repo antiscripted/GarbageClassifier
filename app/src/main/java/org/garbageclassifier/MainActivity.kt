@@ -238,7 +238,8 @@ class MainActivity : ComponentActivity() {
                 bounds.width() < 2f || bounds.height() < 2f) null else recognition to bounds
         }
         lastResult = frame.capturedAtMs
-        val overlays = visible.map { (recognition, bounds) ->
+        val overlays = visible.map { (tracked, bounds) ->
+            val recognition = tracked.forOverlay()
             val status = statusOf(recognition)
             val label = if (recognition.bin == null) getString(R.string.unclear) else buildString {
                 append(recognition.material?.label)

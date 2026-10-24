@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.garbageclassifier.core.CenterEvidenceTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2026-10-24T16:36:55" hostname="1f68f4629262" time="0.084">
+  <properties/>
+  <testcase name="removalDespiteSameBackgroundInvalidatesPendingResultImmediately" classname="org.garbageclassifier.core.CenterEvidenceTest" time="0.03"/>
+  <testcase name="prolongedDetectorLossInvalidatesTheOldTicket" classname="org.garbageclassifier.core.CenterEvidenceTest" time="0.001"/>
+  <testcase name="briefDetectorLossKeepsPendingInferenceForTheSameVisibleAppearance" classname="org.garbageclassifier.core.CenterEvidenceTest" time="0.001"/>
+  <testcase name="stableSceneCanSubmitInferenceWithoutAnyYoloDetection" classname="org.garbageclassifier.core.CenterEvidenceTest" time="0.001"/>
+  <testcase name="pendingResultIsNotAcceptedDuringTheDetectionGap" classname="org.garbageclassifier.core.CenterEvidenceTest" time="0.004"/>
+  <testcase name="tinyOffcenterAndMultipleObjectsStillFail" classname="org.garbageclassifier.core.CenterEvidenceTest" time="0.009"/>
+  <testcase name="slowInferenceCanConfirmOnlyWithContinuousMatchingObservations" classname="org.garbageclassifier.core.CenterEvidenceTest" time="0.001"/>
+  <testcase name="narrowBottleJitterDuringBriefLossKeepsItsIdentity" classname="org.garbageclassifier.core.CenterEvidenceTest" time="0.025"/>
+  <testcase name="briefLossPreservesFirstIndependentEvidenceWithoutDrawingABox" classname="org.garbageclassifier.core.CenterEvidenceTest" time="0.0"/>
+  <testcase name="inferenceStartedDuringABriefLossRetainsVerifiedObjectEvidence" classname="org.garbageclassifier.core.CenterEvidenceTest" time="0.0"/>
+  <testcase name="gradualAppearanceDriftCannotReplaceTheAnchoredObject" classname="org.garbageclassifier.core.CenterEvidenceTest" time="0.0"/>
+  <testcase name="cameraGapOrResetCannotValidateACompletedInference" classname="org.garbageclassifier.core.CenterEvidenceTest" time="0.0"/>
+  <testcase name="narrowUprightAndHorizontalBottlesPassWithoutLoweringClassConfidence" classname="org.garbageclassifier.core.CenterEvidenceTest" time="0.0"/>
+  <testcase name="longLossDropsUnconfirmedEvidence" classname="org.garbageclassifier.core.CenterEvidenceTest" time="0.002"/>
+  <testcase name="twoSlowIndependentResultsConfirmButReusedFramesNeverDo" classname="org.garbageclassifier.core.CenterEvidenceTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
