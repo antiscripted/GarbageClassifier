@@ -1,8 +1,18 @@
-# Garbage Classifier
+# Garbage Classifier — recognition test
+
+This `checkpoint` branch contains a separate recognition-blocker fix for phone testing. **The published `main` version is unchanged; do not promote this build until the owner confirms it works.**
+
+- [Download GarbageClassifier-recognition-test.apk](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/checkpoint/apks/recognition-test/GarbageClassifier-recognition-test.apk)
+- [Matching test source ZIP](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/checkpoint/source/recognition-test/GarbageClassifier-recognition-test-source.zip)
+- [Fixes, tests, limitations and focused phone diagnostics](docs/recognition-fix/README.md)
+
+The test lets stable center frames reach SigLIP2 without waiting for YOLO, accepts substantial narrow centered shapes, preserves evidence through brief detection loss, and handles slow inference using continuous identity checks and completion-time freshness. Confidence thresholds, model weights, UI and licenses are unchanged. Bin advice still requires verified real-object evidence and two independent confident results.
+
+## Preserved main submission
 
 **School submission — 25 October 2026.** A native Android application that classifies one centered waste object automatically, fully offline. Kotlin, CameraX, LiteRT and CPU-optimized SigLIP2/ONNX Runtime. No accounts, uploads, microphone or Internet permission.
 
-## Download
+### Main downloads (unchanged)
 
 - **[GarbageClassifier.apk](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/main/apks/GarbageClassifier.apk)**
 - **[Complete matching source ZIP](https://github.com/antiscripted/GarbageClassifier/raw/refs/heads/main/source/GarbageClassifier-source.zip)**

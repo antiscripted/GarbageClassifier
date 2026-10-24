@@ -1,0 +1,73 @@
+{
+  "method": "Only replayed cached SigLIP2 mixed-compute center outputs and YOLO proposals; no new inference. Still images omit new temporal logic and are not phone validation.",
+  "previous": {
+    "realwaste": {
+      "total": 360,
+      "known": 240,
+      "rejected": 174,
+      "known_rejected": 76,
+      "undetected": 59,
+      "accepted": 186,
+      "known_accepted": 164,
+      "correct": 153,
+      "wrong_material": 11,
+      "confident_wrong": 11,
+      "wrong_bin": 2,
+      "unsupported": 120,
+      "unsupported_rejected": 98,
+      "unsupported_accepted": 22,
+      "unsupported_acceptance": 22,
+      "confident_unsupported_acceptance": 22
+    },
+    "taco": {
+      "total": 104,
+      "unsupported": 96,
+      "rejected": 82,
+      "unsupported_rejected": 78,
+      "undetected": 55,
+      "accepted": 22,
+      "unsupported_accepted": 18,
+      "unsupported_acceptance": 18,
+      "confident_unsupported_acceptance": 18,
+      "known": 8,
+      "known_accepted": 4,
+      "correct": 4,
+      "known_rejected": 4
+    }
+  },
+  "new": {
+    "realwaste": {
+      "total": 360,
+      "known": 240,
+      "rejected": 163,
+      "known_rejected": 66,
+      "accepted": 197,
+      "known_accepted": 174,
+      "correct": 162,
+      "undetected": 39,
+      "wrong_material": 12,
+      "confident_wrong": 12,
+      "wrong_bin": 2,
+      "unsupported": 120,
+      "unsupported_rejected": 97,
+      "unsupported_accepted": 23,
+      "unsupported_acceptance": 23,
+      "confident_unsupported_acceptance": 23
+    },
+    "taco": {
+      "total": 104,
+      "unsupported": 96,
+      "rejected": 85,
+      "unsupported_rejected": 81,
+      "undetected": 59,
+      "accepted": 19,
+      "unsupported_accepted": 15,
+      "unsupported_acceptance": 15,
+      "confident_unsupported_acceptance": 15,
+      "known": 8,
+      "known_accepted": 4,
+      "correct": 4,
+      "known_rejected": 4
+    }
+  }
+}

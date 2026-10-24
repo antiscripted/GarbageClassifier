@@ -43,12 +43,13 @@ class RecognitionTracker(private val maximumEvidenceGapMs: Long = 700,
     private var nextId = 1L
     private var lastUpdate = Long.MIN_VALUE
 
-    fun update(observations: List<Recognition>, timeMs: Long, freshEvidence: Boolean = true): List<Recognition> {
+    fun update(observations: List<Recognition>, timeMs: Long, freshEvidence: Boolean = true,
+               missingGraceMs: Long = 0): List<Recognition> {
         if (lastUpdate != Long.MIN_VALUE && (timeMs < lastUpdate || timeMs - lastUpdate > 1500)) reset()
         lastUpdate = timeMs
         tracks.removeAll { expired(it, timeMs) }
         val associations = observations.map { observation ->
-            tracks.filter { matches(it, observation.detection, timeMs) }
+            tracks.filter { matches(it, observation.detection, timeMs, missingGraceMs) }
         }
         val sharedIds = associations.flatten().groupingBy { it.id }.eachCount()
             .filterValues { it > 1 }.keys
@@ -58,7 +59,7 @@ class RecognitionTracker(private val maximumEvidenceGapMs: Long = 700,
         val visible = mutableListOf<Recognition>()
         for (observation in observations.sortedByDescending { it.detection.confidence }) {
             val detection = observation.detection
-            val matches = available.filter { matches(it, detection, timeMs) }
+            val matches = available.filter { matches(it, detection, timeMs, missingGraceMs) }
             val track = matches.singleOrNull()
             if (track == null) {
                 val changed = available.filter {
@@ -82,19 +83,19 @@ class RecognitionTracker(private val maximumEvidenceGapMs: Long = 700,
             }
         }
         for (track in available) {
-            track.consistent = 0
+            if (timeMs - track.lastSeen > missingGraceMs) track.consistent = 0
             if (track.locked != null && !expired(track, timeMs)) {
                 visible += render(track, track.observation, false)
             }
         }
-        tracks.removeAll { it in available && it.locked == null }
+        tracks.removeAll { it in available && it.locked == null && timeMs - it.lastSeen > missingGraceMs }
         return visible
     }
 
-    private fun matches(track: Track, detection: Detection, timeMs: Long): Boolean {
+    private fun matches(track: Track, detection: Detection, timeMs: Long, missingGraceMs: Long): Boolean {
         val previous = track.observation.detection
         val reference = track.locked?.detection?.appearance ?: previous.appearance ?: return false
-        val minimumOverlap = if (timeMs - track.lastSeen > 500) 0.65f else 0.40f
+        val minimumOverlap = if (timeMs - track.lastSeen > maxOf(500, missingGraceMs)) 0.65f else 0.40f
         return ObjectAssociation.matches(previous, detection, minimumOverlap, reference)
     }
 
