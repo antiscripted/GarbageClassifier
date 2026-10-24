@@ -1,0 +1,1 @@
+b36540ef40b19fe23517204dee71fe568d24e2ef14d7081bda8da4e758e8e1cf  GarbageClassifier-recognition-test.apk
